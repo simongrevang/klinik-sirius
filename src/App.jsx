@@ -876,7 +876,6 @@ const App = () => {
           </div>
 
           <nav className="hidden lg:flex items-center space-x-8">
-            <button onClick={() => setActivePage('forside')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'forside' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Forside</button>
             <NavItemComponent title="Hudsygdomme" items={services.hud} id="hud" />
             <NavItemComponent title="ØNH Undersøgelser" items={services.onhUndersogelser} id="onhU" />
             <NavItemComponent title="ØNH Operationer" items={services.onhOperationer} id="onhO" />
@@ -917,15 +916,6 @@ const App = () => {
 
           {/* Nav items */}
           <nav className="flex flex-col px-4 py-4 flex-1">
-            {/* Forside */}
-            <button
-              onClick={() => setActivePage('forside')}
-              className={`flex items-center justify-between px-4 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-colors ${activePage === 'forside' ? 'bg-blue-50 text-blue-900' : 'text-slate-700 hover:bg-slate-50'}`}
-            >
-              Forside
-              <ChevronRight size={16} className="text-slate-300" />
-            </button>
-
             {/* Hudsygdomme accordion */}
             <div>
               <button
