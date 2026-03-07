@@ -62,21 +62,62 @@ const App = () => {
     if (!canonEl) { canonEl = document.createElement('link'); canonEl.rel = 'canonical'; document.head.appendChild(canonEl); }
     canonEl.href = canonical;
 
-    // Opdater dynamisk schema.org per behandlingsside
+    // Opdater Open Graph tags
+    const ogTitle = service ? `${service.title} i Varde | Klinik Sirius` : (staticMeta[activePage] || staticMeta.forside).title;
+    const ogDesc = service
+      ? `${service.shortIntro} Klinik Sirius, Varde.`
+      : (staticMeta[activePage] || staticMeta.forside).desc;
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', ogTitle);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', ogDesc);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonical);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', ogTitle);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', ogDesc);
+
+    // Dynamisk MedicalProcedure schema
     const schemaEl = document.getElementById('dynamic-schema');
     if (schemaEl) {
+      schemaEl.textContent = service ? JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'MedicalProcedure',
+        'name': service.title,
+        'description': service.shortIntro,
+        'procedureType': 'https://schema.org/TherapeuticProcedure',
+        'relevantSpecialty': service.category === 'hud' ? 'Dermatology' : 'Otolaryngology',
+        'recognizingAuthority': { '@type': 'Organization', 'name': 'Klinik Sirius, Varde' }
+      }) : '';
+    }
+
+    // FAQPage schema
+    const faqEl = document.getElementById('faq-schema');
+    if (faqEl) {
+      faqEl.textContent = service?.faq?.length ? JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': service.faq.map(item => ({
+          '@type': 'Question',
+          'name': item.q,
+          'acceptedAnswer': { '@type': 'Answer', 'text': item.a }
+        }))
+      }) : '';
+    }
+
+    // BreadcrumbList schema
+    const breadcrumbEl = document.getElementById('breadcrumb-schema');
+    if (breadcrumbEl) {
       if (service) {
-        schemaEl.textContent = JSON.stringify({
+        const categoryName = service.category === 'hud' ? 'Hudsygdomme'
+          : services.onhUndersogelser.some(s => s.slug === activePage) ? 'ØNH Undersøgelser' : 'ØNH Operationer';
+        breadcrumbEl.textContent = JSON.stringify({
           '@context': 'https://schema.org',
-          '@type': 'MedicalProcedure',
-          'name': service.title,
-          'description': service.shortIntro,
-          'procedureType': 'https://schema.org/TherapeuticProcedure',
-          'relevantSpecialty': service.category === 'hud' ? 'Dermatology' : 'Otolaryngology',
-          'recognizingAuthority': { '@type': 'Organization', 'name': 'Klinik Sirius, Varde' }
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            { '@type': 'ListItem', 'position': 1, 'name': 'Forside', 'item': 'https://sirius.simongrevang.dk/' },
+            { '@type': 'ListItem', 'position': 2, 'name': categoryName },
+            { '@type': 'ListItem', 'position': 3, 'name': service.title, 'item': canonical }
+          ]
         });
       } else {
-        schemaEl.textContent = '';
+        breadcrumbEl.textContent = '';
       }
     }
   }, [activePage]);

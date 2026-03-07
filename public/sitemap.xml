@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Forside -->
+  <url><loc>https://sirius.simongrevang.dk/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+
+  <!-- Statiske sider -->
+  <url><loc>https://sirius.simongrevang.dk/patientinfo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/personale</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/find-os</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Hudsygdomme -->
+  <url><loc>https://sirius.simongrevang.dk/eksem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/naeldefeber</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/psoriasis</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/modermaerker</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/hudkraeft</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/rosacea</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/akne</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/fnat</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/hyperhidrose</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/kondylomer</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- ØNH Undersøgelser -->
+  <url><loc>https://sirius.simongrevang.dk/allergi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/hoere</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/bihulebetaendelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/halsbetaendelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/laryngoskopi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/mellemoereproblem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/naeseblodning</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/stritoere</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/struboskopi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/svimmelhed</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- ØNH Operationer -->
+  <url><loc>https://sirius.simongrevang.dk/naese-operation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/naeseskillevaeg</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/mandler-fjernelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/mandler-reduktion</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/naesepolypper</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/bihuler-operation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/stritoere-operation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/bornepolypper</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sirius.simongrevang.dk/draenanlaeggelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+</urlset>
