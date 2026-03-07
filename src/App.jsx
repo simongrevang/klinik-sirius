@@ -14,10 +14,71 @@ const App = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(null);
   const [openFaq, setOpenFaq] = useState(null);
 
+  // Læs URL ved første load og lyt på browser-knapper frem/tilbage
+  useEffect(() => {
+    const path = window.location.pathname.replace(/^\//, '') || 'forside';
+    setActivePage(path);
+    const handlePop = () => {
+      const p = window.location.pathname.replace(/^\//, '') || 'forside';
+      setActivePage(p);
+    };
+    window.addEventListener('popstate', handlePop);
+    return () => window.removeEventListener('popstate', handlePop);
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsMenuOpen(false);
     setIsServicesOpen(null);
+
+    // Opdater URL
+    const url = activePage === 'forside' ? '/' : `/${activePage}`;
+    if (window.location.pathname !== url) window.history.pushState({}, '', url);
+
+    // Opdater title og meta description
+    const allServices = [...services.hud, ...services.onhUndersogelser, ...services.onhOperationer];
+    const service = allServices.find(s => s.slug === activePage);
+    const staticMeta = {
+      forside:       { title: 'Klinik Sirius | Speciallæger i Varde – Hud og ØNH', desc: 'Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme. Vi betjener patienter fra Varde, Esbjerg og hele Sydvestjylland.' },
+      patientinfo:   { title: 'Patientinfo | Klinik Sirius, Varde', desc: 'Praktisk information til patienter hos Klinik Sirius i Varde. Priser, forsikring, åbningstider og hvad du skal medbringe.' },
+      personale:     { title: 'Vores personale | Klinik Sirius, Varde', desc: 'Mød speciallægerne bag Klinik Sirius i Varde: Jalal Taha Saadi (ØNH) og Kawa Ajgeiy (hudsygdomme).' },
+      'find-os':     { title: 'Find os | Klinik Sirius, Søndertoften 22, Varde', desc: 'Find Klinik Sirius på Søndertoften 22, 6800 Varde. Book tid online eller ring på 32 22 32 24.' },
+      privacypolitik:{ title: 'Privatlivspolitik | Klinik Sirius, Varde', desc: 'Privatlivspolitik for Klinik Sirius, privat speciallægepraksis i Varde.' },
+    };
+    if (service) {
+      document.title = `${service.title} i Varde | Klinik Sirius`;
+      document.querySelector('meta[name="description"]')?.setAttribute('content',
+        `${service.shortIntro} Klinik Sirius er en privat speciallægepraksis i Varde, der betjener patienter fra Esbjerg og hele Sydvestjylland.`
+      );
+    } else {
+      const m = staticMeta[activePage] || staticMeta.forside;
+      document.title = m.title;
+      document.querySelector('meta[name="description"]')?.setAttribute('content', m.desc);
+    }
+
+    // Opdater canonical
+    const canonical = `https://sirius.simongrevang.dk${url}`;
+    let canonEl = document.querySelector('link[rel="canonical"]');
+    if (!canonEl) { canonEl = document.createElement('link'); canonEl.rel = 'canonical'; document.head.appendChild(canonEl); }
+    canonEl.href = canonical;
+
+    // Opdater dynamisk schema.org per behandlingsside
+    const schemaEl = document.getElementById('dynamic-schema');
+    if (schemaEl) {
+      if (service) {
+        schemaEl.textContent = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'MedicalProcedure',
+          'name': service.title,
+          'description': service.shortIntro,
+          'procedureType': 'https://schema.org/TherapeuticProcedure',
+          'relevantSpecialty': service.category === 'hud' ? 'Dermatology' : 'Otolaryngology',
+          'recognizingAuthority': { '@type': 'Organization', 'name': 'Klinik Sirius, Varde' }
+        });
+      } else {
+        schemaEl.textContent = '';
+      }
+    }
   }, [activePage]);
 
   const colors = {
@@ -37,7 +98,7 @@ const App = () => {
         category: 'hud',
         title: 'Behandling af eksem hos både børn og voksne',
         h2Title: 'Forståelse og effektiv behandling af eksem',
-        shortIntro: 'Vi hjælper både børn og voksne med at få bugt med kløe og irritation gennem en målrettet indsats.',
+        shortIntro: 'Vi hjælper børn og voksne i Varde, Esbjerg og Sydvestjylland med at få bugt med kløe og irritation gennem en målrettet indsats.',
         narrative: 'Når huden bliver tør, rød og begynder at klø, er det ofte det første tegn på eksem. Det er en tilstand, som vi ser hos rigtig mange af vores patienter i klinikken, og det er noget, vi har mange års erfaring i at behandle. Eksem er en betændelsestilstand, hvor hudens naturlige barriere er svækket, og det kan ramme alle aldersgrupper fra de mindste babyer til voksne i alle aldre.\n\nVores speciallæge i hudsygdomme, Kawa Ajgeiy, har en bred og dyb erfaring med eksem fra sine år på de store hudafdelinger i Odense og Aarhus. Det betyder, at du fra første konsultation møder en læge, der kender alle aspekter af sygdommen og ved, hvornår det kræver en enkel lokal behandling, og hvornår der er behov for noget mere.\n\nNår du kommer til os med eksem, begynder vi altid med en grundig samtale. Vi spørger til, hvornår generne opstod, hvad der gør det bedre eller værre, og hvordan det påvirker din hverdag. Mange patienter har gået med gener i lang tid og prøvet en masse selv, og det er helt fint. Vi samler trådene og laver en samlet plan, der tager udgangspunkt i netop din situation.\n\nHos børn kræver det lidt ekstra opmærksomhed, fordi huden reagerer anderledes, og fordi det kan påvirke søvn og trivsel for hele familien. Vi er vant til at se børn med eksem og til at tale med forældre om, hvad der er realistisk at forvente, og hvilke redskaber man kan bruge derhjemme. Vi sørger for, at I forlader konsultationen med en klar forståelse af, hvad I skal gøre, og ikke bare med en recept i hånden.\n\nMålet er ikke kun at dæmpe det aktuelle udbrud. Vi arbejder på at lære dig at kende din hud bedre, så du på sigt kan forebygge udbrud og håndtere hverdagen uden at eksem styrer den.',
         extraInfo: {
           col1Title: 'Helhedsorienteret tilgang',
@@ -125,7 +186,7 @@ const App = () => {
         category: 'hud',
         title: 'Undersøgelse og behandling af hudkræft',
         h2Title: 'Tidlig opdagelse gør den afgørende forskel',
-        shortIntro: 'Hudkræft er en af de mest almindelige kræftformer i Danmark, og jo tidligere den opdages, desto bedre er mulighederne for behandling.',
+        shortIntro: 'Hudkræft er en af de mest almindelige kræftformer i Danmark. Klinik Sirius i Varde tilbyder specialistundersøgelse, og jo tidligere den opdages, desto bedre er mulighederne for behandling.',
         narrative: 'Hudkræft er noget rigtig mange danskere stifter bekendtskab med i løbet af livet, og forekomsten stiger. Det skyldes blandt andet mange års soleksponering, og det er en af grundene til, at regelmæssig kontrol af huden er så vigtig. De fleste tilfælde af hudkræft kan behandles effektivt, hvis de opdages tidligt nok.\n\nDer findes flere typer hudkræft. Basalcellekarcinom er den hyppigste og sjældent livstruende, men den vokser og bør fjernes. Pladeepitelkarcinom kan sprede sig og kræver hurtig handling. Modermærkekræft, også kaldet malignt melanom, er den mest alvorlige form og kræver specialiseret behandling. I klinikken er vi i stand til at undersøge og i mange tilfælde håndtere alle tre typer.\n\nVores speciallæge Kawa Ajgeiy anvender dermatoskopi til at vurdere hudforandringer med langt større præcision end ved det blotte øje. Det giver os mulighed for at skelne mellem godartede og potentielt ondartede forandringer og tage de rigtige beslutninger hurtigt. Mange patienter kommer til os med bekymring over en plet, de har lagt mærke til, og det er præcis den slags tidlig opmærksomhed, der redder liv.\n\nHvis vi finder noget, der bør fjernes, kan vi i mange tilfælde gøre det samme dag under lokalbedøvelse. Vævsprøven sendes altid til patologisk analyse, og vi vender tilbage med resultatet. Hvis der er behov for videre udredning eller behandling på sygehus, hjælper vi med en hurtig og relevant henvisning.\n\nVi anbefaler, at du henvender dig, hvis du har en hudplet, der har forandret sig i størrelse, form eller farve, som bløder uden grund, eller som bare ikke ser rigtig ud. Det koster ikke noget at få det undersøgt, og sindsroen er det hele værd.',
         extraInfo: {
           col1Title: 'Dermatoskopi',
@@ -169,7 +230,7 @@ const App = () => {
         category: 'hud',
         title: 'Effektiv behandling af akne',
         h2Title: 'Klar hud gennem målrettet behandling',
-        shortIntro: 'Akne påvirker både udseende og selvtillid. Vi tilbyder en grundig udredning og en behandlingsplan, der rent faktisk virker.',
+        shortIntro: 'Akne påvirker både udseende og selvtillid. Hos Klinik Sirius i Varde tilbyder vi en grundig udredning og en behandlingsplan, der rent faktisk virker.',
         narrative: 'Akne er en af de mest udbredte hudlidelser overhovedet og rammer langt fra kun teenagere. Mange voksne kæmper med akne godt ind i tyverne, trediverne og endda fyrrerne, og for en del er det forbundet med skam og frustration, særligt hvis man har prøvet mange ting uden varig effekt. Hos Klinik Sirius møder vi dig, hvor du er, og tager problemet alvorligt uanset alder.\n\nAkne opstår, når talgkirtlerne producerer for meget talg, og porerne tilstoppes. Bakterier trives i det miljø og skaber betændelse, der viser sig som buler, bylder og ar. Det er ikke et spørgsmål om manglende hygiejne. Det er en biologisk proces, som er stærkt påvirket af hormoner, arvelighed og i nogen grad kost og stress.\n\nVores speciallæge Kawa Ajgeiy starter altid med at se på helheden. Hvad slags akne er der tale om? Sidder den overfladisk eller dybt? Er der hormonelle mønstre, der peger på en underliggende årsag? Svarene på de spørgsmål afgør, hvilken behandling der er den rette. Der er stor forskel på, om vi skal bruge en lokal creme, en mundtlig antibiotikakur, hormonal behandling eller noget helt andet.\n\nEt forløb hos os handler ikke om at finde en hurtig løsning, der virker i to måneder og derefter holder op. Vi arbejder på at finde den behandling, der giver langvarig bedring, og vi følger dig tæt undervejs. Mange patienter har oplevet en enorm forskel i livskvalitet, når aknen kommer under kontrol, og det driver os i vores arbejde.\n\nSelvom ar allerede er opstået, er der muligheder. Vi vejleder om, hvad der kan hjælpe på eksisterende arvæv, og hvad du fremover kan gøre for at mindske risikoen for nye ar. Det er aldrig for sent at søge hjælp.',
         extraInfo: {
           col1Title: 'Alle aldre',
@@ -259,7 +320,7 @@ const App = () => {
         category: 'onh',
         title: 'Allergiudredning med priktest',
         h2Title: 'Find årsagen til dine allergiske gener',
-        shortIntro: 'Vi tilbyder grundig udredning med priktest og moderne rådgivning om behandling, herunder allergivaccination.',
+        shortIntro: 'Klinik Sirius i Varde tilbyder grundig allergiudredning med priktest og moderne rådgivning om behandling, herunder allergivaccination, til patienter fra Esbjerg og Sydvestjylland.',
         narrative: 'Allergi er langt mere udbredt end de fleste tror, og mange går rundt i årevis med gener, de ikke ved skyldes en allergi. Det kan være en løbende næse, kløende øjne, nysen, hudreaktioner eller vejrtrækningsbesvær, som alle kan have en allergisk årsag, der nemt kan kortlægges.\n\nHos Klinik Sirius anvender vi priktest, som er den mest præcise og hurtige metode til allergiudredning. Testen foretages på underarmen og giver svar på de mest almindelige allergener inden for 15 minutter. Vi tester for alt fra pollen og husstøvmider til dyr, skimmelsvamp og fødevarer. Det er en enkel procedure, og du behøver ikke forberede dig på noget særligt.\n\nVores speciallæge Jalal Taha Saadi gennemgår resultatet grundigt og sætter dine gener i sammenhæng med testresultaterne. Det er ikke altid et simpelt svar, da mange har reaktioner på flere ting, og vi hjælper dig med at forstå, hvad der er det primære problem.\n\nNår diagnosen er på plads, lægger vi en behandlingsplan. Den kan bestå af råd om at undgå udløsende faktorer, moderne antihistaminer eller næsespray. Vi tilbyder desuden allergivaccination i tabletform, som kan behandles hjemmefra og over tid nedsætter din følsomhed over for det, du reagerer på.\n\nMålet er ikke bare at lindre symptomerne, men at give dig en hverdag, hvor allergi fylder mindst muligt.',
         extraInfo: {
           col1Title: 'Priktesten',
@@ -303,7 +364,7 @@ const App = () => {
         category: 'onh',
         title: 'Udredning og behandling af bihulebetændelse',
         h2Title: 'Kikkertundersøgelse og målrettet behandling',
-        shortIntro: 'Kronisk eller tilbagevendende bihulebetændelse kræver en grundig undersøgelse. Vi anvender kikkertudstyr til at se præcist, hvad der foregår i næse og bihuler.',
+        shortIntro: 'Kronisk eller tilbagevendende bihulebetændelse kræver en grundig undersøgelse. Klinik Sirius i Varde betjener patienter fra Esbjerg og hele Sydvestjylland og anvender kikkertudstyr til at se præcist, hvad der foregår i næse og bihuler.',
         narrative: 'Bihulebetændelse er en af de hyppigste årsager til, at folk søger læge, og for mange er det en tilstand, der vender tilbage igen og igen. En akut bihulebetændelse kan opstå efter en forkølelse og gå over af sig selv, men når den bliver kronisk eller tilbagevender hyppigt, er det tid til en grundig udredning.\n\nSymptomerne er typisk trykkende smerter i ansigtet, tilstoppet næse, tykt sekret og nedsat lugtesans. Mange har derudover smerter bag øjnene, over kinderne eller i panden. Det kan gøre det svært at sove, koncentrere sig og fungere normalt i hverdagen, og det er ikke noget, man bare skal leve med.\n\nHos Klinik Sirius foretager vi en kikkertundersøgelse af næse og næsebihuler, en endoskopi, der giver os et klart billede af, hvad der foregår inde i næsen. Det kan afsløre polypper, afvigelser i næseskillevæggen, hævede næsemuslinger eller andre forandringer, der blokerer dræningen fra bihulerne.\n\nJalal Taha Saadi er specialist i netop bihulekirurgi og har mange års erfaring med at vurdere, hvornår der er brug for medicinsk behandling, og hvornår en operation er den rette løsning. Mange tilstande kan behandles med næsespray og kortison, men er der strukturelle problemer, kan en operation give en varig forbedring.\n\nVi går altid fra den mindst indgribende løsning og optrapper kun, hvis det er nødvendigt. Du forlader konsultationen med en klar plan og en forståelse af, hvad der er årsagen til dine problemer.',
         extraInfo: {
           col1Title: 'Endoskopi',
@@ -503,7 +564,7 @@ const App = () => {
         category: 'onh',
         title: 'Operation af næseskillevæg og næsemuslinger',
         h2Title: 'Bedre vejrtrækning gennem kirurgisk korrektion',
-        shortIntro: 'En skæv næseskillevæg og forstørrede næsemuslinger er hyppige årsager til tilstoppet næse. Operation giver ofte varig forbedring.',
+        shortIntro: 'En skæv næseskillevæg og forstørrede næsemuslinger er hyppige årsager til tilstoppet næse. Klinik Sirius i Varde tilbyder operation med varig forbedring og betjener patienter fra Esbjerg og Sydvestjylland.',
         narrative: 'Svær ved at trække vejret gennem næsen er et problem, der kan påvirke søvn, energi og livskvalitet markant. Mange vænner sig til det over tid og opdager ikke, hvor meget det egentlig generer dem, før de endelig får hjælp. To af de hyppigste årsager er en skæv næseskillevæg og forstørrede næsemuslinger.\n\nNæseskillevæggen er den brusk- og benstruktur, der deler næsen i to. Hos de fleste mennesker er den ikke helt lige, men kun når den er udtalt skæv, giver den symptomer som ensidig eller bilateral tilstoppet næse, hyppig snorken og forstyrret søvn. En operation, en septumplastik, retter skillevæggen og giver mere luft til begge næsegange.\n\nNæsemuslingerne er tre par slimhindebeklædte knoglestruktur inde i næsen, der regulerer luftstrømmen og fugter og varmer den indåndede luft. Når de er kronisk forstørrede, typisk pga. allergi eller kronisk betændelse, giver de en konstant tilstoppet følelse. De kan skrumpes med en lille operation, der bevarer funktionen men fjerner det overskydende væv.\n\nJalal Taha Saadi er specialist i netop denne type kirurgi og udfører operationen med stor præcision. Det er et indgreb, der typisk foretages i fuld narkose, tager ca. to timer og har en forholdsvis let heling. De fleste kan vende tilbage til arbejde efter en til to uger.\n\nFordelen er, at resultatet er varigt. En vellykket septumplastik og næsemuslingereduktion giver mange patienter en markant bedre næsevejrtrækning for resten af livet, og det forbedrer søvnkvaliteten og den generelle velvære betydeligt.',
         extraInfo: {
           col1Title: 'Septumplastik',
@@ -525,7 +586,7 @@ const App = () => {
         category: 'onh',
         title: 'Fjernelse af mandler, tonsillektomi',
         h2Title: 'Varig løsning på tilbagevendende halsbetændelse',
-        shortIntro: 'Fjernelse af mandlerne er en af de mest udbredte operationer og giver varig lindring ved gentagen halsbetændelse.',
+        shortIntro: 'Fjernelse af mandlerne er en af de mest udbredte operationer og giver varig lindring ved gentagen halsbetændelse. Vi udfører indgrebet hos Klinik Sirius i Varde og betjener patienter fra Esbjerg og Sydvestjylland.',
         narrative: 'Tonsillektomi, fjernelse af mandlerne, er en veletableret operation med en lang og god dokumentation for effekten. Det er en operation, vi foretager hos patienter, der har haft tilbagevendende halsbetændelse, og som ikke længere ønsker at leve med hyppige sygdomsforløb, brug af antibiotika og sygedage.\n\nBeslutningen om at fjerne mandlerne tages aldrig let og altid i fællesskab med patienten. Vi vurderer, om du opfylder kriterierne, som typisk er fem til seks eller flere halsbetændelser om året i mindst to år, eller færre men meget invaliderende forløb. Er du et barn, er det selvfølgelig forældrene, vi taler med, men vi forsøger altid at inddrage barnet i samtalen.\n\nJalal Taha Saadi udfører tonsillektomien i fuld narkose. Operationen tager ca. 30 minutter, og de fleste er hjemme igen samme dag. Helingen tager ca. to uger, og de første dage kan smerterne mærkes. Det er vigtigt at spise blødt, drikke rigeligt og hvile sig tilstrækkeligt i den periode.\n\nDet er normalt, at der opstår et hvidt belæg i halsen de første dage. Det er en del af helingen og ikke tegn på infektion. Vi informerer dig grundigt om, hvad du skal kigge efter, og hvornår du bør kontakte os.\n\nResultatet er for langt de fleste permanent. Fjernede mandler vokser ikke tilbage, og de fleste patienter oplever en markant forbedring i livskvalitet og en dramatisk reduktion i antallet af sygdomsdage.',
         extraInfo: {
           col1Title: 'Kort indgreb',

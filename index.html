@@ -1,14 +1,51 @@
 <!doctype html>
-<html lang="en">
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>klinik-sirius</title>
+    <title>Klinik Sirius | Speciallæger i Varde – Hud og ØNH</title>
+    <meta name="description" content="Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme. Vi betjener patienter fra Varde, Esbjerg og hele Sydvestjylland." />
+    <meta name="robots" content="index, follow" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Klinik Sirius",
+      "url": "https://sirius.simongrevang.dk",
+      "telephone": "+4532223224",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Søndertoften 22",
+        "addressLocality": "Varde",
+        "postalCode": "6800",
+        "addressCountry": "DK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.6038,
+        "longitude": 8.4839
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Varde" },
+        { "@type": "City", "name": "Esbjerg" },
+        { "@type": "AdministrativeArea", "name": "Sydvestjylland" }
+      ],
+      "medicalSpecialty": ["Dermatology", "Otolaryngology"],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "16:00"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json" id="dynamic-schema"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-<!-- deploy test -->
