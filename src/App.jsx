@@ -252,41 +252,425 @@ const App = () => {
         ]
       }
     ],
-    onh: [
+    onhUndersogelser: [
       {
         name: 'Allergiudredning',
         slug: 'allergi',
         category: 'onh',
         title: 'Allergiudredning med priktest',
         h2Title: 'Find årsagen til dine allergiske gener',
-        shortIntro: 'Vi tilbyder grundig udredning gennem priktest og moderne rådgivning om behandling.',
-        narrative: 'Mange går rundt med gener uden at kende den præcise årsag. Vi anvender priktest på huden, som giver et svar på de mest almindelige allergier på 15 minutter.',
+        shortIntro: 'Vi tilbyder grundig udredning med priktest og moderne rådgivning om behandling, herunder allergivaccination.',
+        narrative: 'Allergi er langt mere udbredt end de fleste tror, og mange går rundt i årevis med gener, de ikke ved skyldes en allergi. Det kan være en løbende næse, kløende øjne, nysen, hudreaktioner eller vejrtrækningsbesvær, som alle kan have en allergisk årsag, der nemt kan kortlægges.\n\nHos Klinik Sirius anvender vi priktest, som er den mest præcise og hurtige metode til allergiudredning. Testen foretages på underarmen og giver svar på de mest almindelige allergener inden for 15 minutter. Vi tester for alt fra pollen og husstøvmider til dyr, skimmelsvamp og fødevarer. Det er en enkel procedure, og du behøver ikke forberede dig på noget særligt.\n\nVores speciallæge Jalal Taha Saadi gennemgår resultatet grundigt og sætter dine gener i sammenhæng med testresultaterne. Det er ikke altid et simpelt svar, da mange har reaktioner på flere ting, og vi hjælper dig med at forstå, hvad der er det primære problem.\n\nNår diagnosen er på plads, lægger vi en behandlingsplan. Den kan bestå af råd om at undgå udløsende faktorer, moderne antihistaminer eller næsespray. Vi tilbyder desuden allergivaccination i tabletform, som kan behandles hjemmefra og over tid nedsætter din følsomhed over for det, du reagerer på.\n\nMålet er ikke bare at lindre symptomerne, men at give dig en hverdag, hvor allergi fylder mindst muligt.',
         extraInfo: {
           col1Title: 'Priktesten',
-          col1Text: 'En hurtig og sikker metode. Svaret foreligger med det samme.',
-          col2Title: 'Vaccination',
-          col2Text: 'Tabletbehandling er en nem vej for mange, da det kan foregå hjemme.'
+          col1Text: 'En hurtig og sikker metode direkte på huden. Svar foreligger inden for 15 minutter.',
+          col2Title: 'Allergivaccination',
+          col2Text: 'Tabletbehandling kan gives hjemmefra og reducerer gradvist din allergiske følsomhed.'
         },
         faq: [
-          { q: "Gør testen ondt?", a: "Det føles som en let prikken i huden og er hurtigt overstået." }
+          { q: "Gør priktesten ondt?", a: "Det føles som en let prikken i huden og er hurtigt overstået. De fleste synes, det er uproblematisk. Børn kan godt have lidt modstand mod det, men selve testen tager kun få minutter." },
+          { q: "Hvad kan jeg blive testet for?", a: "Vi tester for de hyppigste luftbårne allergener som pollen fra græsser, birk og bynke, husstøvmider, katte- og hundeskæl og skimmelsvamp. Vi kan også teste for en række fødevarer og insektstik. Snak med os på forhånd, hvis du har en specifik mistanke." },
+          { q: "Skal jeg holde op med antihistaminer inden testen?", a: "Ja, antihistaminer kan dæmpe hudreaktionen og give et falsk negativt resultat. Du bør holde pause i mindst fem dage inden. Næsespray og astmamedicin påvirker ikke resultatet og kan fortsættes som normalt." },
+          { q: "Hvad er allergivaccination, og hvordan virker det?", a: "Allergivaccination, også kaldet immunterapi eller hyposensibilisering, træner immunsystemet til at tåle det, du reagerer på. I tabletform lægges en tablet under tungen dagligt hjemme. Over tid mindskes din reaktion. Behandlingen varer typisk tre år og kan give langvarig effekt." },
+          { q: "Kan børn allergi-testes?", a: "Ja, priktest kan foretages på børn fra to til tre år. Det er faktisk særlig vigtigt at udrede allergi tidligt hos børn, da ubehandlet allergi kan føre til astma. Vi er vant til at teste børn og tilpasser undersøgelsen til alder og samarbejdsevne." }
         ]
       },
       {
-        name: 'Høreprøve',
+        name: 'Høreprøve og audiometri',
         slug: 'hoere',
         category: 'onh',
-        title: 'Audiometri ved høretab og tinnitus',
-        h2Title: 'Præcis måling af din hørelse',
-        shortIntro: 'Vi udreder hørenedsættelse og tinnitus gennem avancerede målinger.',
-        narrative: 'Problemer med hørelsen påvirker ofte både arbejdsliv og socialt samvær. Til små børn anvender vi specialiseret hørescreening (OAE), der er smertefrit.',
+        title: 'Høreprøve, audiometri og tinnitus',
+        h2Title: 'Præcis kortlægning af din hørelse',
+        shortIntro: 'Vi udreder hørenedsættelse og øresusen med avancerede målemetoder, herunder audiometri, tympanometri og OAE-screening til børn.',
+        narrative: 'Problemer med hørelsen er langt mere udbredt end de fleste ved, og det kan ramme alle aldersgrupper. Mange vokser langsomt ind i et høretab uden at bemærke det, fordi tilpasningen sker gradvist. Det er først, når andre begynder at gøre opmærksom på det, eller man begynder at gå glip af samtaler, at man søger hjælp. Vi anbefaler at komme tidligere.\n\nHos Klinik Sirius foretager vi en grundig høreundersøgelse med tonalaudiometer, der måler præcist, hvilke frekvenser der er påvirket, og i hvilken grad. Det giver et detaljeret billede af dit høremønster og er udgangspunktet for den videre rådgivning og behandling. Vi laver også tympanometri, som måler trykket i mellemøret og kan afsløre væske, tryk eller andre problemer, som kan forklare høretab.\n\nTinnitus, øresusen, er en tilstand, der kan opleves som meget belastende. Den ledsager ofte et høretab, men kan også opstå uden. Vi kortlægger dit mønster, undersøger hørelsen og drøfter, hvilke muligheder der findes for at reducere generne. Der er ingen universel kur mod tinnitus, men der er meget man kan gøre.\n\nTil børn anvender vi OAE-screening, OtoAcoustic Emission, som er en smertefri test, der måler det svar, det indre øre sender tilbage, når det stimuleres med lyd. Den er velegnet til helt små børn og babyer, der ikke kan samarbejde om en traditionel høretest, og den giver hurtigt et klart svar.\n\nJalal Taha Saadi har bred erfaring med høreudredning og vejleder dig om det videre forløb, hvad enten det drejer sig om en henvisning til høreapparatbehandling, medicinsk behandling eller blot observation og råd.',
         extraInfo: {
-          col1Title: 'Hørescreening',
-          col1Text: 'OAE måler det svar, som det indre øre sender tilbage.',
-          col2Title: 'Tinnitus',
-          col2Text: 'Vi gennemgår dit høremønster for at finde den bedste lindring.'
+          col1Title: 'OAE-screening',
+          col1Text: 'Smertefri hørescreening til spædbørn og småbørn, der ikke kan samarbejde om en traditionel test.',
+          col2Title: 'Tympanometri',
+          col2Text: 'Måler trykforhold i mellemøret og afslører væske eller tryk bag trommehinden.'
         },
         faq: [
-          { q: "Hvad er tympanometri?", a: "Det måler trykket i dit mellemøre og viser væske." }
+          { q: "Hvad er audiometri?", a: "Audiometri er en præcis måling af din høreevne. Du sidder med høretelefoner og trykker på en knap, når du hører en tone. Tonen varieres i frekvens og styrke, og resultatet tegner et audiogram, der viser præcist, hvilke lyde du hører svagt eller slet ikke." },
+          { q: "Hvad forårsager høretab?", a: "De hyppigste årsager er aldersbetinget høretab, støjskade fra arbejde eller musik, og mellemøreproblemer som væske eller tryk. Andre årsager kan være infektioner, medicin, eller i sjældne tilfælde en vækst på hørenervens forløb. En grundig undersøgelse kan afklare årsagen." },
+          { q: "Hvornår bør mit barn hørescreenes?", a: "Alle nyfødte screenes på hospitalet, men et bestået screeningsresultat er ikke en garanti for normal hørelse hele livet. Er du bekymret for dit barns reaktion på lyde, sprogudvikling eller opmærksomhed, bør du kontakte os. Tidlig opdagelse af høretab er afgørende for barnets sprog og indlæring." },
+          { q: "Kan tinnitus behandles?", a: "Der findes ingen medicinsk kur mod tinnitus, men generne kan reduceres markant. Behandlinger som lydsmaskning, kognitiv adfærdsterapi og i nogle tilfælde høreapparater kan hjælpe. Vi laver en grundig udredning og vejleder dig til det, der passer bedst til din situation." },
+          { q: "Hvornår skal jeg have høreapparat?", a: "Det er en individuel vurdering. Et audiogram kan vise, at høretabet er der, men graden af gene i hverdagen er mindst ligeså vigtig. Vi drøfter det med dig og vejleder om mulighederne, men det er altid dig, der beslutter, hvornår du er klar." }
+        ]
+      },
+      {
+        name: 'Bihulebetændelse',
+        slug: 'bihulebetaendelse',
+        category: 'onh',
+        title: 'Udredning og behandling af bihulebetændelse',
+        h2Title: 'Kikkertundersøgelse og målrettet behandling',
+        shortIntro: 'Kronisk eller tilbagevendende bihulebetændelse kræver en grundig undersøgelse. Vi anvender kikkertudstyr til at se præcist, hvad der foregår i næse og bihuler.',
+        narrative: 'Bihulebetændelse er en af de hyppigste årsager til, at folk søger læge, og for mange er det en tilstand, der vender tilbage igen og igen. En akut bihulebetændelse kan opstå efter en forkølelse og gå over af sig selv, men når den bliver kronisk eller tilbagevender hyppigt, er det tid til en grundig udredning.\n\nSymptomerne er typisk trykkende smerter i ansigtet, tilstoppet næse, tykt sekret og nedsat lugtesans. Mange har derudover smerter bag øjnene, over kinderne eller i panden. Det kan gøre det svært at sove, koncentrere sig og fungere normalt i hverdagen, og det er ikke noget, man bare skal leve med.\n\nHos Klinik Sirius foretager vi en kikkertundersøgelse af næse og næsebihuler, en endoskopi, der giver os et klart billede af, hvad der foregår inde i næsen. Det kan afsløre polypper, afvigelser i næseskillevæggen, hævede næsemuslinger eller andre forandringer, der blokerer dræningen fra bihulerne.\n\nJalal Taha Saadi er specialist i netop bihulekirurgi og har mange års erfaring med at vurdere, hvornår der er brug for medicinsk behandling, og hvornår en operation er den rette løsning. Mange tilstande kan behandles med næsespray og kortison, men er der strukturelle problemer, kan en operation give en varig forbedring.\n\nVi går altid fra den mindst indgribende løsning og optrapper kun, hvis det er nødvendigt. Du forlader konsultationen med en klar plan og en forståelse af, hvad der er årsagen til dine problemer.',
+        extraInfo: {
+          col1Title: 'Endoskopi',
+          col1Text: 'Kikkertundersøgelse giver os et præcist billede af næse og bihuler uden stråling.',
+          col2Title: 'Kirurgisk ekspertise',
+          col2Text: 'Jalal Taha Saadi er specialist i bihulekirurgi og kan tilbyde operation, hvis det er nødvendigt.'
+        },
+        faq: [
+          { q: "Hvornår er bihulebetændelse kronisk?", a: "Man taler om kronisk bihulebetændelse, når symptomerne har varet i mere end 12 uger trods behandling. Det er en tilstand, der kræver en mere systematisk tilgang end en akut betændelse og ofte involverer en kikkertundersøgelse." },
+          { q: "Er endoskopi ubehageligt?", a: "En endoskopi af næsen er en hurtig undersøgelse, der tager et par minutter. Vi sprøjter et lokalbedøvende og afsvellende middel i næsen inden, så ubehaget minimeres. De fleste synes, det er meget overkommeligt." },
+          { q: "Hvornår er operation nødvendigt?", a: "Operation overvejes, når medicinsk behandling ikke er tilstrækkelig, eller når der er strukturelle årsager som næsepolypper, afvigende næseskillevæg eller stærkt forstørrede næsemuslinger, der blokerer bihulernes dræning. Vi vurderer det individuelt." },
+          { q: "Kan allergi forårsage bihulebetændelse?", a: "Ja, allergi er en hyppig medvirkende årsag til kronisk bihulebetændelse. Allergisk betændelse i slimhinderne fører til hævelse og dårlig dræning, som skaber gode betingelser for betændelse i bihulerne. Udredning og behandling af allergi kan derfor have en direkte positiv effekt." },
+          { q: "Skal jeg have en henvisning?", a: "Du kan komme til os med eller uden henvisning fra din praktiserende læge. Med en gyldig henvisning dækkes konsultationen typisk af din sygesikring eller forsikring. Ring til os, og vi hjælper dig med at afklare, hvad der gælder for dig." }
+        ]
+      },
+      {
+        name: 'Halsbetændelse og mandelpropper',
+        slug: 'halsbetaendelse',
+        category: 'onh',
+        title: 'Kronisk halsbetændelse og dårlig ånde fra mandelpropper',
+        h2Title: 'Effektiv udredning og behandling af halsgener',
+        shortIntro: 'Tilbagevendende halsbetændelse og mandelpropper med dårlig ånde er tilstande, vi kender godt og behandler effektivt.',
+        narrative: 'Halsbetændelse hører til et af de allervanligste besøgsårsager hos lægen, og de fleste kender den brændende smerte, der gør det svært at sluge. For de fleste går det over af sig selv, men for nogen vender det tilbage igen og igen, og det kan gå ud over arbejde, skole og livskvalitet.\n\nKronisk eller tilbagevendende halsbetændelse skyldes oftest bakterier i mandlerne, men kan også hænge sammen med mandelstens og mandelpropper. Mandelpropper er ophobninger af madrester, bakterier og celler, der sætter sig fast i mandlernes huler og giver dårlig ånde, en ubehagelig smag og til tider smerter i halsen, selv uden egentlig betændelse.\n\nHos Klinik Sirius tager vi en grundig sygehistorie for at vurdere omfanget af problemet. Har du haft mere end fem til seks halsbetændelser om året, eller er det et problem, der har stået på i årevis, er det relevant at drøfte, om en operation kan være løsningen. Jalal Taha Saadi vejleder dig ærligt om fordele og ulemper ved at fjerne mandlerne.\n\nFor dem, der har problemer med mandelpropper men ikke nødvendigvis tilbagevendende betændelse, er der også behandlingsmuligheder. Vi drøfter, hvad der er mest relevant i din situation, og hvad du kan forvente af de forskellige muligheder.\n\nDet er vores erfaring, at mange patienter med disse problemer har gået med dem i lang tid uden at vide, at der er hjælp at hente. Kom ind og få en vurdering. Det kræver ikke, at situationen er akut.',
+        extraInfo: {
+          col1Title: 'Tilbagevendende betændelse',
+          col1Text: 'Mere end fem til seks halsbetændelser om året taler for en speciallægevurdering.',
+          col2Title: 'Mandelpropper',
+          col2Text: 'Kan give dårlig ånde og ubehag uden egentlig betændelse og kan behandles.'
+        },
+        faq: [
+          { q: "Hvornår bør jeg søge speciallæge for halsbetændelse?", a: "Har du haft fem eller flere halsbetændelser om året i mindst to år, eller er betændelserne meget invaliderende, er det relevant at søge speciallæge. Vi vurderer dit forløb og hjælper dig med at tage den rigtige beslutning." },
+          { q: "Hvad er mandelpropper?", a: "Mandelpropper er small ansamlinger af madrester, døde hudceller og bakterier, der sætter sig fast i fordybningerne i mandlerne. De er gule eller hvide og kan give dårlig ånde og en ubehagelig smag i munden. De er ikke farlige, men kan være meget generende." },
+          { q: "Kan dårlig ånde komme fra mandlerne?", a: "Ja, faktisk er mandlerne en hyppig og overset årsag til dårlig ånde. Mandlerne indeholder mange huler, som kan samle bakterier og mandelpropper. Selv med god tandhygiejne kan dette give vedvarende dårlig ånde, som kun afhjælpes ved at behandle mandlerne." },
+          { q: "Er fjernelse af mandler en stor operation?", a: "Fjernelse af mandler er et relativt kortvarigt indgreb, der foregår i fuld narkose. De fleste er ude af hospitalet samme dag eller næste morgen. Heningen tager typisk en til to uger, og de første dage kan smerterne være mærkbare. Det er dog et indgreb, der giver varig effekt." },
+          { q: "Kan voksne få fjernet mandlerne?", a: "Ja, operation er ikke forbeholdt børn. Mange voksne har stor gavn af at få fjernet mandlerne, særligt hvis de har haft gentagne betændelser gennem mange år. Helingstiden er typisk lidt længere for voksne end for børn, men resultatet er det samme." }
+        ]
+      },
+      {
+        name: 'Laryngoskopi',
+        slug: 'laryngoskopi',
+        category: 'onh',
+        title: 'Laryngoskopi, kikkertundersøgelse af svælg og strube',
+        h2Title: 'Grundig undersøgelse af svælg og strube',
+        shortIntro: 'Laryngoskopi giver os et direkte blik ind i svælg og strube og er afgørende ved vedvarende hæshed, synkevanskeligheder eller smerter i halsen.',
+        narrative: 'Laryngoskopi er en undersøgelse, hvor vi bruger et fleksibelt kikkertinstrument til at se direkte ind i svælget og struben. Det giver os mulighed for at vurdere stemmebåndene, strubehovedet og svælget i detaljer og opdage forandringer, som man ikke kan se på anden vis.\n\nUndersøgelsen er relevant ved en række symptomer. Vedvarende hæshed, som ikke går over efter to til tre uger, er den hyppigste årsag til, at vi foretager en laryngoskopi. Andre årsager er synkevanskeligheder, en følelse af noget i halsen, tilbagevendende smerter i halsen uden betændelse, hoste og i sjældne tilfælde kortåndethed eller stemmeskift.\n\nJalal Taha Saadi har bred erfaring med laryngoskopi og vurderer forandringer i struben med stor præcision. Undersøgelsen kan afsløre stemmebåndsknuder, polypper, godartede vækster, betændelse eller i sjældenere tilfælde tegn på mere alvorlige forandringer, der kræver yderligere udredning.\n\nProceduren foretages i klinikken og tager typisk fem til ti minutter. Vi sprøjter et lokalbedøvende middel i næsen inden, så instrumentet kan føres ned uden ubehag. Du vil mærke instrumentet, men det er ikke smertefuldt, og de fleste synes, det er meget overkommeligt.\n\nResultatet drøftes med dig umiddelbart efter undersøgelsen. Finder vi noget, der kræver videre handling, hjælper vi med at lægge en klar plan og sikrer, at du er tryg ved det videre forløb.',
+        extraInfo: {
+          col1Title: 'Hvornår er det relevant',
+          col1Text: 'Vedvarende hæshed i mere end to til tre uger bør altid undersøges med laryngoskopi.',
+          col2Title: 'Hurtig procedure',
+          col2Text: 'Undersøgelsen tager fem til ti minutter og foretages direkte i klinikken.'
+        },
+        faq: [
+          { q: "Gør laryngoskopi ondt?", a: "Nej, undersøgelsen er ikke smertefuld. Vi bedøver næse og svælg med et lokalbedøvende middel inden. Du vil mærke instrumentet, og nogle har en let hoste eller brækrefleks, men det er hurtigt overstået. De fleste er overraskede over, hvor lidt det generer." },
+          { q: "Hvornår bør jeg søge hjælp for hæshed?", a: "Hæshed, der ikke forsvinder inden for to til tre uger, bør undersøges. Det gælder særligt, hvis du er ryger, bruger stemmen meget professionelt, eller hvis hæsheden kom pludseligt uden en forkølelse. Vedvarende hæshed er aldrig normalt og bør ikke ignoreres." },
+          { q: "Hvad kan laryngoskopi afsløre?", a: "Undersøgelsen kan vise stemmebåndsknuder fra overbelastning af stemmen, polypper, cyster, betændelse i struben, sure opstød der har skadet slimhinden og i sjældenere tilfælde tegn på kræft i svælg eller strube. En tidlig undersøgelse er altid den bedste strategi." },
+          { q: "Kan jeg spise og drikke inden undersøgelsen?", a: "Ja, du kan spise og drikke normalt inden en laryngoskopi. Det anbefales dog ikke at spise et tungt måltid umiddelbart inden, da brækrefleksen kan aktiveres. Undgå at ryge inden undersøgelsen, da det kan påvirke slimhindernes udseende." },
+          { q: "Kan jeg arbejde samme dag som undersøgelsen?", a: "De fleste kan sagtens arbejde samme dag. Den lokalbedøvelse, vi giver, er kortvarig og påvirker ikke din almentilstand. Bedøvelsen i halsen aftager inden for en time, og du kan spise og drikke normalt igen derefter." }
+        ]
+      },
+      {
+        name: 'Mellemøreproblemer',
+        slug: 'mellemoereproblem',
+        category: 'onh',
+        title: 'Udredning af mellemøreproblemer hos børn og voksne',
+        h2Title: 'Væske, tryk og betændelse i mellemøret',
+        shortIntro: 'Mellemøreproblemer er hyppige hos børn men rammer også voksne. Vi udreder og behandler tilstanden grundigt.',
+        narrative: 'Mellemøret er rummet bag trommehinden, og når noget går galt her, kan det give alt fra trykfornemmelse og nedsat hørelse til smerte og hyppige øreinfektioner. Det er en af de hyppigste årsager til, at forældre søger læge med deres børn, men mellemøreproblemer rammer bestemt også voksne.\n\nDen hyppigste tilstand er sekretotitis media, også kaldet limsyge, hvor der samler sig en sej væske i mellemøret uden egentlig betændelse. Barnet hører dårligere, taler måske højere end normalt, og kan virke uopmærksomt. Hos voksne giver det typisk en trykfyldt fornemmelse i øret og nedsat hørelse, særligt efter flyvning eller i forbindelse med forkølelse.\n\nHos Klinik Sirius udreder vi mellemøreproblemer med tympanometri, som måler trykket bag trommehinden og viser, om der er væske til stede. Kombineret med en audiometri får vi et fuldstændigt billede af, hvad der foregår, og hvad der er bedst at gøre.\n\nJalal Taha Saadi vejleder dig om behandlingsmulighederne baseret på fundene. I mange tilfælde forsvinder problemet af sig selv, og vi anbefaler at afvente. I andre tilfælde er drænanlæggelse den bedste løsning, særligt hvis barnet har haft problemer i lang tid og sproget er påvirket.\n\nVi tager os god tid til at forklare forældre, hvad vi finder, hvad det betyder for barnets hørsel og trivsel, og hvad næste skridt er. En tryg og velinformeret forælder er det bedste udgangspunkt for et godt forløb.',
+        extraInfo: {
+          col1Title: 'Tympanometri',
+          col1Text: 'Præcis måling af tryk og væske i mellemøret giver os det grundlag, vi har brug for.',
+          col2Title: 'Børn og voksne',
+          col2Text: 'Vi er vant til at undersøge og vejlede begge aldersgrupper med tilpassede metoder.'
+        },
+        faq: [
+          { q: "Hvordan ved jeg, om mit barn har mellemøreproblemer?", a: "Typiske tegn er hyppige øreinfektioner, at barnet hører dårligere, taler højere end normalt, ikke reagerer på sit navn, eller at læreren har bemærket opmærksomhedsproblemer. Adfærdsændringer hos mindre børn kan også skyldes hørenedsættelse fra mellemøreproblemer." },
+          { q: "Er mellemørebetændelse det samme som limsyge?", a: "Nej, det er to forskellige tilstande. Mellemørebetændelse er en akut infektion med smerte, feber og pludselig hørenedsættelse. Limsyge, eller sekretotitis media, er en ophobning af sej væske i mellemøret uden infektion. Begge kan give hørenedsættelse, men limsyge er smertefri." },
+          { q: "Hvornår er drænanlæggelse nødvendig?", a: "Drænanlæggelse overvejes, når barnet har haft væske i mellemøret i mere end tre måneder med vedvarende hørenedsættelse, eller hvis hyppige mellemøreinfektioner påvirker barnets trivsel og udvikling. Vi vurderer altid individuelt og anbefaler aldrig operation unødigt." },
+          { q: "Hvad er tympanometri?", a: "Tympanometri er en automatisk måling, der tager under et minut. En lille sonde holdes mod øreindgangen og sender lufttryk og lyd ind i øregangen. Instrumentet måler, hvordan trommehinden bevæger sig, og giver os information om tryk og eventuel væske i mellemøret." },
+          { q: "Kan mellemøreproblemer gå over af sig selv?", a: "Ja, det kan de. Mange tilfælde af limsyge forsvinder af sig selv inden for tre måneder, og vi anbefaler oftest at afvente i første omgang. Vi følger op og vurderer løbende, om tilstanden bedres. Akut mellemørebetændelse behandles med smertestillende og i nogen tilfælde antibiotika." }
+        ]
+      },
+      {
+        name: 'Næseblødning',
+        slug: 'naeseblodning',
+        category: 'onh',
+        title: 'Udredning og behandling af næseblødning',
+        h2Title: 'Effektiv hjælp ved tilbagevendende næseblødning',
+        shortIntro: 'En enkelt næseblødning er sjældent bekymrende, men tilbagevendende næseblødning kan have en årsag, der bør undersøges.',
+        narrative: 'Næseblødning er noget de fleste har prøvet, og en enkelt episode er sjældent grund til bekymring. Men hvis næseblødning opstår igen og igen, særligt hvis den er svær at stoppe eller sker om natten, er det vigtigt at finde ud af, hvad der forårsager det.\n\nDe fleste næseblødninger stammer fra et lille område i forreste del af næseskillevæggen, hvor blodkarrene ligger tæt under slimhinden. Tør luft, forkølelse, næsepillen og allergi kan alle irritere slimhinden og gøre den tilbøjelig til at bløde. I sjældnere tilfælde kan årsagen være en blodfortyndende medicin, et blødningsforstyrrende syndrom eller en vækst i næsen.\n\nHos Klinik Sirius undersøger vi næsen med et kikkertinstrument for at kortlægge, hvorfra blødningen stammer, og om der er synlige årsager som forstørrede blodkar, betændelse eller polypper. Det giver os grundlaget for at vælge den rette behandling.\n\nEn hyppig og effektiv behandling er ætsning eller koagulation af de blødende blodkar. Det er en kort og relativt smertefri procedure, der kan udføres direkte i klinikken, og som hos mange eliminerer problemet fuldstændigt. Vi forklarer proceduren grundigt inden og sikrer, at du er tryg.\n\nVi vejleder dig også om, hvad du kan gøre i hverdagen for at mindske risikoen for blødning, herunder brug af næsesalve, luftfugtning og korrekt første hjælp, hvis blødningen opstår igen derhjemme.',
+        extraInfo: {
+          col1Title: 'Kikkertundersøgelse',
+          col1Text: 'Vi kortlægger præcist, hvorfra blødningen stammer, inden vi beslutter behandlingen.',
+          col2Title: 'Koagulation',
+          col2Text: 'Ætsning af de blødende blodkar kan udføres i klinikken og giver varig lindring.'
+        },
+        faq: [
+          { q: "Hvornår er næseblødning farlig?", a: "De fleste næseblødninger er ufarlige. Du bør søge akut hjælp, hvis blødningen ikke stopper efter 20 minutters tryk, blødningen er meget kraftig, eller du har fået et slag mod næsen. Tilbagevendende næseblødning uden åbenlys årsag bør undersøges hos en speciallæge." },
+          { q: "Hvad gør jeg, når næsen bløder?", a: "Klem de bløde dele af næsen godt sammen med fingre og tommelfinger og hold i ti minutter uden at slippe. Læn dig lidt frem, ikke bagover, da blodet ellers løber ned i halsen. Undgå at snøfte eller blæse næsen umiddelbart efter. Koldt på nakken hjælper ikke medicinsk men kan virke beroligende." },
+          { q: "Kan børn få behandling for næseblødning?", a: "Ja, behandling er mulig fra en tidlig alder. Hos børn er næseblødning meget almindelig og skyldes oftest, at slimhinden er tør og sart. Vi undersøger næsen og vurderer, om det er relevant at behandle blodkarrene, eller om hjemmeråd er tilstrækkeligt." },
+          { q: "Gør koagulationen ondt?", a: "Vi bedøver næsen lokalt inden proceduren, så du ikke mærker smerte under selve behandlingen. Efterfølgende kan der være en let brændende fornemmelse i næsen i et par dage, og næsen kan virke tilstoppet. De fleste synes, det er meget overkommeligt i forhold til den lindring, det giver." },
+          { q: "Kan medicin forårsage næseblødning?", a: "Ja, blodfortyndende medicin som Magnyl, Trombyl, Warfarin og de nyere blodfortyndere øger risikoen for næseblødning markant. Næsespray med kortison kan ved langvarig forkert brug tynde slimhinden. Fortæl os altid om din medicin, så vi kan tage det med i vurderingen." }
+        ]
+      },
+      {
+        name: 'Stritøre, vurdering',
+        slug: 'stritoere',
+        category: 'onh',
+        title: 'Vurdering af stritøre',
+        h2Title: 'Er du kandidat til en ørenoperation?',
+        shortIntro: 'Stritøre, også kaldet fremstående ører, kan afhjælpes kirurgisk. Vi tilbyder en grundig vurdering og rådgivning om mulighederne.',
+        narrative: 'Stritøre er en tilstand, hvor ørerne stikker tydeligt ud fra siden af hovedet. Det skyldes oftest manglende foldning af brusken i øret under fosterudviklingen eller en større afstand end normalt fra ørets bagende til kraniet. Det er en rent kosmetisk tilstand der ikke påvirker hørelsen, men for mange, særligt børn og unge, kan det have stor indvirkning på selvtillid og trivsel.\n\nHos Klinik Sirius tilbyder vi en grundig konsultation, hvor vi vurderer din situation og gennemgår dine muligheder. Jalal Taha Saadi er specialist i ørekirurgi og har stor erfaring med netop denne type vurdering. Konsultationen giver dig et realistisk billede af, hvad en operation kan gøre for dig, hvad indgrebet indebærer, og hvad du kan forvente af resultat og heling.\n\nDet er en personlig beslutning at korrigere stritøre, og vi presser aldrig på. Vi tror på, at en godt informeret patient træffer den bedste beslutning for sig selv, og vi sørger for, at du har den viden, du har brug for inden du beslutter dig.\n\nFor børn anbefaler vi generelt at afvente til barnet er gammelt nok til selv at ønske operationen, typisk fra seksårsalderen og opefter. Det er vigtigt, at motivationen for indgrebet kommer fra barnet selv og ikke kun fra omgivelserne.\n\nVi gennemgår hele forløbet fra vurdering til operation og opfølgning, og du er altid velkommen til at stille spørgsmål undervejs.',
+        extraInfo: {
+          col1Title: 'Grundig vurdering',
+          col1Text: 'Vi vurderer, om du er en god kandidat, og hvad du realistisk kan forvente af resultatet.',
+          col2Title: 'Børn og voksne',
+          col2Text: 'Operationen kan foretages fra seksårsalderen, men det er altid barnets eget ønske der tæller.'
+        },
+        faq: [
+          { q: "Fra hvilken alder kan man operere stritøre?", a: "Teknisk set kan operationen foretages fra ca. seksårsalderen, da brusken i øret er fuldt udviklet. Det vigtigste er dog, at barnet selv ønsker operationen og forstår, hvad det indebærer. Vi anbefaler aldrig at operere et barn, der ikke er motiveret for det." },
+          { q: "Er der alternativer til operation?", a: "Hos nyfødte og spædbørn op til ca. seks ugers alder kan brusken i øret formes med et ørefitterapparat, da den på dette tidspunkt stadig er meget formbar. Herfra er operation den eneste permanente løsning. Der findes ingen cremer eller øvelser, der ændrer bruskens form." },
+          { q: "Dækker sygesikringen operationen?", a: "En operation for stritøre er i Danmark betragtet som kosmetisk kirurgi og er som udgangspunkt ikke dækket af sygesikringen. Det kan dog variere afhængigt af graden af stritørerne og den psykiske belastning de medfører. Vi vejleder dig om mulighederne ved konsultationen." },
+          { q: "Hvad sker der under konsultationen?", a: "Vi tager en samtale om dine ønsker og forventninger, undersøger ørerne og vurderer bruskkonstruktion og symmetri. Du får en ærlig vurdering af, hvad en operation kan opnå for dig, og hvad processen indebærer. Der er ingen forpligtelse til at gå videre med operationen." },
+          { q: "Kan stritøre påvirke hørelsen?", a: "Nej, stritøre er udelukkende en kosmetisk tilstand og påvirker ikke høreevnen. Ørets ydre form spiller en minimal rolle for, hvor godt man hører. Det er ørens indre strukturer, der er afgørende for hørelsen." }
+        ]
+      },
+      {
+        name: 'Struboskopi',
+        slug: 'struboskopi',
+        category: 'onh',
+        title: 'Struboskopi, kikkertundersøgelse af stemmebånd',
+        h2Title: 'Præcis vurdering af stemmebåndenes funktion',
+        shortIntro: 'Struboskopi er en avanceret undersøgelse, der viser stemmebåndenes bevægelighed og funktion i detaljer ved hæshed og stemmeproblemer.',
+        narrative: 'Stemmebåndene er to fine muskel- og slimhindestykker, der vibrerer mod hinanden og danner grundlaget for vores stemme. Når noget er galt med stemmebåndene, påvirkes stemmen, og det kan vise sig som hæshed, stemmetræthed, manglende stemmestyrke, toneskift eller en følelse af tryk i halsen.\n\nStruboskopi er en specialiseret undersøgelse, der bruger stroboskoplys til at belyse stemmebåndene, mens de svinger. Det giver os et billede i slow motion og lader os se detaljer i stemmebåndenes bevægelighed og slimhindens funktion, som man ikke kan se med almindeligt lys. Det er den mest præcise metode til at vurdere stemmebåndsproblemer.\n\nJalal Taha Saadi anvender struboskopi til at diagnosticere stemmebåndsknuder, polypper, cyster, stemmebåndslammelse og andre forandringer, der kan forklare stemmeproblemer. Undersøgelsen er særligt værdifuld for professionelle stemmebrugere som sangere, lærere, skuespillere og andre, for hvem stemmen er et arbejdsredskab.\n\nForberedelsen er minimal. Vi anbefaler, at du ikke har spist et tungt måltid inden og gerne undlader at røge på dagen. Selve undersøgelsen tager ca. ti minutter og foretages i klinikken. Vi gennemgår fundene med dig umiddelbart bagefter og drøfter, hvad der er den bedste vej frem.\n\nBehandlingen afhænger naturligvis af diagnosen. I mange tilfælde er stemmehvile og logopædi tilstrækkeligt. I andre tilfælde er en lille operation på stemmebåndene den rette løsning, og vi planlægger det forløb med dig.',
+        extraInfo: {
+          col1Title: 'Slow-motion billede',
+          col1Text: 'Stroboskopisk lys giver os et unikt billede af stemmebåndenes bevægelighed og slimhindens funktion.',
+          col2Title: 'Professionelle stemmebrugere',
+          col2Text: 'Vi er vant til at vurdere og behandle sangere, lærere og andre med særlige krav til stemmen.'
+        },
+        faq: [
+          { q: "Hvad er forskellen på laryngoskopi og struboskopi?", a: "Laryngoskopi er en generel kikkertundersøgelse af svælg og strube med normalt lys. Struboskopi er en mere specialiseret undersøgelse med stroboskoplys, der lader os se stemmebåndenes svingninger i slow motion. Struboskopi bruges, når vi specifikt skal vurdere stemmebåndenes funktion og bevægelighed." },
+          { q: "Hvornår er struboskopi relevant?", a: "Struboskopi er relevant ved vedvarende hæshed, stemmetræthed, manglende stemmestyrke, toneskift eller pludselige stemmeforandringer. Det er særligt vigtigt ved professionelle stemmebrugere og bør overvejes ved hæshed, der har stået på i mere end to til tre uger." },
+          { q: "Hvad er stemmebåndsknuder?", a: "Stemmebåndsknuder er små, godartede fortykkelser på stemmebåndene, typisk opstået ved vedvarende overbelastning af stemmen, for eksempel hos lærere, sangere og folk der taler meget og højt i jobbet. De giver hæshed og stemmetræthed og behandles med stemmehvile, logopædi og i nogle tilfælde operation." },
+          { q: "Kan jeg tale normalt efter undersøgelsen?", a: "Ja, du kan tale normalt umiddelbart efter. Den bedøvelse, vi giver i næsen og halsen, er kortvarig og påvirker ikke taleevnen. Vi anbefaler at undlade at spise og drikke varme drikke i den første time efter, til bedøvelsen er aftaget." },
+          { q: "Skal professionelle sangere regelmæssigt kontrolleres?", a: "Det er en god idé, særligt hvis man bruger stemmen intensivt. Regelmæssig kontrol kan opdage begyndende forandringer, inden de udvikler sig til et egentligt problem. Vi kan rådgive om, hvor hyppigt det er relevant i din situation." }
+        ]
+      },
+      {
+        name: 'Svimmelhedsudredning',
+        slug: 'svimmelhed',
+        category: 'onh',
+        title: 'Svimmelhedsudredning med VHIT',
+        h2Title: 'Find årsagen til din svimmelhed',
+        shortIntro: 'Svimmelhed kan have mange årsager. Med moderne VHIT-udstyr udreder vi balancesystemets funktion præcist og hurtigt.',
+        narrative: 'Svimmelhed er et symptom, der kan betyde mange forskellige ting. Nogle oplever en roterende fornemmelse, som om verden drejer rundt. Andre har en mere diffus ubalancefornemmelse, eller de føler, at de er ved at falde. Uanset hvordan det opleves, er svimmelhed et symptom, der bør undersøges, særligt hvis det er tilbagevendende eller vedvarende.\n\nEn stor del af svimmelhedstilfælde stammer fra øret og balancesystemet. Det indre øre indeholder ikke bare høreorganet men også balanceorganet, og forstyrrelser her kan give kraftig svimmelhed. Den hyppigste årsag er benign paroxymal positionel vertigo, BPPV, som opstår, når små kalkpartikler i det indre øre løsner sig og vandrer ind i en forkert kanal.\n\nVi anvender Video Head Impulse Test, VHIT, til at vurdere balancesystemets funktion. Det er et avanceret diagnostisk redskab, der måler øjnenes refleksbevægelse som svar på hurtige hovedbevægelser og giver os præcise informationer om, hvilken del af balancesystemet der eventuelt er svækket. Det er en hurtig og ikke-invasiv undersøgelse.\n\nJalal Taha Saadi gennemgår fundene og kombinerer dem med en grundig sygehistorie for at stille den korrekte diagnose. Mange tilfælde af svimmelhed kan behandles effektivt i klinikken. BPPV kan for eksempel behandles med en specifik manøvre, der repositionerer de løse kalkpartikler, og mange patienter mærker bedring umiddelbart.\n\nAndet svimmelhed kan kræve medicinsk behandling, fysioterapi eller videre udredning. Vi sørger for, at du har en klar diagnose og en konkret plan, inden du forlader klinikken.',
+        extraInfo: {
+          col1Title: 'VHIT-teknologi',
+          col1Text: 'Avanceret udstyr der præcist kortlægger balancesystemets funktion uden stråling eller ubehag.',
+          col2Title: 'Effektiv behandling',
+          col2Text: 'Mange svimmelhedstilstande kan behandles direkte i klinikken ved første besøg.'
+        },
+        faq: [
+          { q: "Hvad er BPPV?", a: "Benign paroxymal positionel vertigo er den hyppigste årsag til pludselig svimmelhed. Det skyldes, at små kalkpartikler i det indre øre løsner sig og vandrer ind i en af balancekanalerne. Det giver kraftig, kortvarig svimmelhed, der typisk udløses af bestemte hovedbevægelser som at lægge sig ned eller se op." },
+          { q: "Hvad er VHIT-undersøgelse?", a: "Video Head Impulse Test er en hurtig og præcis test af balancesystemet. Du sidder med specielle briller med et kamera, der filmer dine øjne. Undersøgeren laver korte, hurtige drejninger af dit hoved, og kameraet registrerer øjnenes kompensatoriske bevægelse. Det afslører, om balancenerven fra det indre øre fungerer normalt." },
+          { q: "Kan svimmelhed komme fra hjertet eller hjernen?", a: "Ja, svimmelhed kan have mange årsager ud over øret. Blodtryksfald, hjerterytmeforstyrrelser, migræne og i sjældenere tilfælde forstyrrelser i hjernen kan give svimmelhed. Vi tager en grundig sygehistorie og vurderer, om den primære årsag er i øret, eller om der er brug for at involvere andre specialister." },
+          { q: "Er Menieres sygdom en mulig årsag?", a: "Ja, Menieres sygdom er en tilstand i det indre øre, der giver anfald af kraftig svimmelhed kombineret med hørenedsættelse, øresus og trykfornemmelse i øret. Det er ikke en hyppig diagnose, men vi er opmærksomme på den og udreder grundigt, om mønsteret passer." },
+          { q: "Hvad kan jeg gøre, mens jeg venter på udredning?", a: "Undgå pludselige bevægelser, der udløser svimmelheden. Sid eller lig ned, hvis anfaldene opstår. Undgå at køre bil, hvis svimmelheden er kraftig og uforudsigelig. Mange finder det hjælpsomt at notere, hvornår svimmelheden opstår, og hvad der udløser den, da det er nyttigt information til konsultationen." }
+        ]
+      }
+    ],
+    onhOperationer: [
+      {
+        name: 'Operation af ydre næse',
+        slug: 'naese-operation',
+        category: 'onh',
+        title: 'Operation af ydre næse, rhinoplastik',
+        h2Title: 'Kirurgisk korrektion af næsens form og funktion',
+        shortIntro: 'Vi tilbyder rhinoplastik, operation af næsens ydre form, med fokus på et naturligt resultat og en forbedret funktion.',
+        narrative: 'Rhinoplastik er en af de mest teknisk krævende operationer inden for plastikkirurgi, og det er en operation, der kræver stor erfaring og et præcist håndværk. Jalal Taha Saadi er specialist i netop denne type kirurgi og har gennemført mange rhinoplastikoperationer med fokus på både æstetik og funktion.\n\nEn operation på næsen kan have to formål: at ændre næsens ydre udseende, eller at forbedre vejrtrækningen, eller begge dele på én gang. Mange patienter kommer til os med en næse, der generer dem kosmetisk, men som også giver problemer med vejrtrækning på grund af afvigelser i den indre struktur. I sådanne tilfælde kan vi løse begge problemer i samme indgreb.\n\nKonsultationen er en vigtig del af forløbet. Vi gennemgår dine ønsker og forventninger grundigt og vurderer, hvad der er realistisk og muligt at opnå. Vi bruger tid på at forklare, hvad indgrebet indebærer, og hvad du kan forvente af heling og resultat. Et godt resultat kræver en fælles forståelse af målet og realistiske forventninger på begge sider.\n\nIndgrebet foregår i fuld narkose og tager typisk to til tre timer. Helingen kan tage op til et år, inden det endelige resultat er synligt, men de fleste er socialt præsentable igen efter to uger. Hævelse og blå mærker i de første dage er normalt og forsvinder gradvist.\n\nVi følger dig tæt i opfølgningsperioden og er tilgængelige med svar på spørgsmål undervejs. Du skal aldrig føle, at du er overladt til dig selv efter operationen.',
+        extraInfo: {
+          col1Title: 'Æstetik og funktion',
+          col1Text: 'Vi kan forbedre næsens form og vejrtrækning i samme indgreb, hvis det er relevant.',
+          col2Title: 'Naturligt resultat',
+          col2Text: 'Målet er altid et harmonisk og naturligt udseende, der passer til dit ansigt.'
+        },
+        faq: [
+          { q: "Hvad kan rhinoplastik ændre?", a: "Rhinoplastik kan ændre næsens størrelse, formen på næseryggen, næsespidsen, næseborenes størrelse og form og forholdet mellem næse og overlæbe. Det kan også forbedre vejrtrækning ved at rette indre strukturer. Vi drøfter dine specifikke ønsker og vurderer, hvad der er opnåeligt." },
+          { q: "Hvornår ser jeg det endelige resultat?", a: "Næsen vil se markant bedre ud allerede efter to til tre uger, men hævelse kan forblive i op til et år, særligt i næsespidsen. Det endelige resultat er typisk synligt efter seks til tolv måneder. Vi forbereder dig grundigt på dette, så forventningerne er realistiske fra starten." },
+          { q: "Er operationen smertefuld?", a: "Selve operationen foregår i narkose, så du mærker ingenting. I de første dage efter er der trykfornemmelse og let smerte, som håndteres med smertestillende medicin. De fleste beskriver ubehaget som overkommeligt. Det er de proppers, der sidder i næsen de første dage, der generer mest." },
+          { q: "Hvornår kan jeg vende tilbage til hverdagen?", a: "De fleste kan vende tilbage til kontorarbejde efter syv til ti dage. Fysisk aktivitet og sport bør undgås i fire til seks uger. Du skal undgå soleksponering af næsen i mindst seks måneder efter operationen for at undgå pigmentering af det helede væv." },
+          { q: "Er rhinoplastik dækket af sygesikringen?", a: "Ren kosmetisk rhinoplastik er ikke dækket af sygesikringen. Hvis operationen har et funktionelt formål, for eksempel korrektion af en skæv næseskillevæg der giver vejrtrækningsproblemer, kan en del af indgrebet i visse tilfælde dækkes. Vi afklarer dette grundigt ved konsultationen." }
+        ]
+      },
+      {
+        name: 'Næseskillevæg og næsemuslinger',
+        slug: 'naeseskillevaeg',
+        category: 'onh',
+        title: 'Operation af næseskillevæg og næsemuslinger',
+        h2Title: 'Bedre vejrtrækning gennem kirurgisk korrektion',
+        shortIntro: 'En skæv næseskillevæg og forstørrede næsemuslinger er hyppige årsager til tilstoppet næse. Operation giver ofte varig forbedring.',
+        narrative: 'Svær ved at trække vejret gennem næsen er et problem, der kan påvirke søvn, energi og livskvalitet markant. Mange vænner sig til det over tid og opdager ikke, hvor meget det egentlig generer dem, før de endelig får hjælp. To af de hyppigste årsager er en skæv næseskillevæg og forstørrede næsemuslinger.\n\nNæseskillevæggen er den brusk- og benstruktur, der deler næsen i to. Hos de fleste mennesker er den ikke helt lige, men kun når den er udtalt skæv, giver den symptomer som ensidig eller bilateral tilstoppet næse, hyppig snorken og forstyrret søvn. En operation, en septumplastik, retter skillevæggen og giver mere luft til begge næsegange.\n\nNæsemuslingerne er tre par slimhindebeklædte knoglestruktur inde i næsen, der regulerer luftstrømmen og fugter og varmer den indåndede luft. Når de er kronisk forstørrede, typisk pga. allergi eller kronisk betændelse, giver de en konstant tilstoppet følelse. De kan skrumpes med en lille operation, der bevarer funktionen men fjerner det overskydende væv.\n\nJalal Taha Saadi er specialist i netop denne type kirurgi og udfører operationen med stor præcision. Det er et indgreb, der typisk foretages i fuld narkose, tager ca. to timer og har en forholdsvis let heling. De fleste kan vende tilbage til arbejde efter en til to uger.\n\nFordelen er, at resultatet er varigt. En vellykket septumplastik og næsemuslingereduktion giver mange patienter en markant bedre næsevejrtrækning for resten af livet, og det forbedrer søvnkvaliteten og den generelle velvære betydeligt.',
+        extraInfo: {
+          col1Title: 'Septumplastik',
+          col1Text: 'Rettelse af den skæve næseskillevæg giver permanent forbedring af vejrtrækning.',
+          col2Title: 'Næsemuslingereduktion',
+          col2Text: 'Vi reducerer forstørrede næsemuslinger med minimal indvirkning på funktion.'
+        },
+        faq: [
+          { q: "Hvordan ved jeg, om jeg har en skæv næseskillevæg?", a: "Symptomerne er typisk kronisk tilstoppet næse, oftest mere på den ene side, hyppig snorken, vejrtrækningsproblemer under fysisk aktivitet og i nogen tilfælde hyppige bihulebetændelser. En kikkertundersøgelse af næsen kan bekræfte diagnosen." },
+          { q: "Kan begge ting opereres på én gang?", a: "Ja, det er faktisk meget almindeligt at korrigere næseskillevæggen og reducere næsemuslingerne i samme operation. Det giver det bedste samlede resultat og kræver kun én heling og én sygemelding." },
+          { q: "Gør det ondt at have prop i næsen?", a: "Efter operationen anlægger vi som regel tamponade i næsen i et til to døgn. Det er ubehageligt og giver en følelse af tryk og tilstopning. Fjernelsen af propperne er hurtigt overstået og ikke smertefuld. De fleste siger, at det er det, der generer mest i forløbet." },
+          { q: "Er der risiko for, at næsen ser anderledes ud?", a: "Septumplastik og næsemuslingereduktion er indre operationer og påvirker ikke næsens ydre form. Det er kun, hvis der kombineres med en ydre rhinoplastik, at næsens udseende ændres. Vi er altid tydelige om, hvad indgrebet præcist indebærer." },
+          { q: "Skal jeg have en henvisning?", a: "Med en gyldig henvisning fra din praktiserende læge dækkes konsultationen af sygesikringen, og operationen kan i mange tilfælde dækkes, da det er et funktionelt indgreb. Vi vejleder dig om dette ved konsultationen." }
+        ]
+      },
+      {
+        name: 'Fjernelse af mandler',
+        slug: 'mandler-fjernelse',
+        category: 'onh',
+        title: 'Fjernelse af mandler, tonsillektomi',
+        h2Title: 'Varig løsning på tilbagevendende halsbetændelse',
+        shortIntro: 'Fjernelse af mandlerne er en af de mest udbredte operationer og giver varig lindring ved gentagen halsbetændelse.',
+        narrative: 'Tonsillektomi, fjernelse af mandlerne, er en veletableret operation med en lang og god dokumentation for effekten. Det er en operation, vi foretager hos patienter, der har haft tilbagevendende halsbetændelse, og som ikke længere ønsker at leve med hyppige sygdomsforløb, brug af antibiotika og sygedage.\n\nBeslutningen om at fjerne mandlerne tages aldrig let og altid i fællesskab med patienten. Vi vurderer, om du opfylder kriterierne, som typisk er fem til seks eller flere halsbetændelser om året i mindst to år, eller færre men meget invaliderende forløb. Er du et barn, er det selvfølgelig forældrene, vi taler med, men vi forsøger altid at inddrage barnet i samtalen.\n\nJalal Taha Saadi udfører tonsillektomien i fuld narkose. Operationen tager ca. 30 minutter, og de fleste er hjemme igen samme dag. Helingen tager ca. to uger, og de første dage kan smerterne mærkes. Det er vigtigt at spise blødt, drikke rigeligt og hvile sig tilstrækkeligt i den periode.\n\nDet er normalt, at der opstår et hvidt belæg i halsen de første dage. Det er en del af helingen og ikke tegn på infektion. Vi informerer dig grundigt om, hvad du skal kigge efter, og hvornår du bør kontakte os.\n\nResultatet er for langt de fleste permanent. Fjernede mandler vokser ikke tilbage, og de fleste patienter oplever en markant forbedring i livskvalitet og en dramatisk reduktion i antallet af sygdomsdage.',
+        extraInfo: {
+          col1Title: 'Kort indgreb',
+          col1Text: 'Operationen tager ca. 30 minutter i fuld narkose, og de fleste er hjemme samme dag.',
+          col2Title: 'Varig effekt',
+          col2Text: 'Fjernede mandler vokser ikke tilbage, og resultatet er permanent.'
+        },
+        faq: [
+          { q: "Hvornår er fjernelse af mandler indiceret?", a: "Vi vurderer fjernelse, når du har haft fem eller flere halsbetændelser om året i mindst to år, eller når betændelserne er så invaliderende, at de markant påvirker din hverdag og livskvalitet. Mandler, der er så store, at de giver søvnapnø, er også en indikation." },
+          { q: "Er det farligt at fjerne mandlerne?", a: "Tonsillektomi er et rutineindgreb med en meget lav risikoprofil. Den væsentligste risiko er blødning efter operationen, som forekommer hos cirka to procent af patienterne og typisk behandles effektivt. Vi informerer dig grundigt om tegn på blødning og hvad du skal gøre." },
+          { q: "Kan voksne også få fjernet mandlerne?", a: "Ja, operationen er ikke forbeholdt børn. Voksne har generelt en lidt længere helingsperiode og kan opleve lidt mere smerte i de første dage end børn, men resultatet er det samme. For mange voksne er det en operation, de fortryder, at de ikke fik foretaget tidligere." },
+          { q: "Hvad spiser man efter operationen?", a: "I de første dage anbefaler vi bløde fødevarer som is, yoghurt, suppe og mos. Undgå hård, skarp og varm mad i to uger. Det kan virke modkørende, men kolde drikke og mad kan faktisk lindre smerterne. Sørg for at drikke rigeligt for at holde halsen fugtig og fremme helingen." },
+          { q: "Hvornår kan barnet vende tilbage til skolen?", a: "De fleste børn er klar til at vende tilbage til skolen efter syv til ti dage. Fysisk aktivitet og sport bør undgås i to uger. Det er vigtigt at holde barnet hjemme, til det er smertefrit og spiser normalt, uanset om det er gået nok dage." }
+        ]
+      },
+      {
+        name: 'Reduktion af mandler',
+        slug: 'mandler-reduktion',
+        category: 'onh',
+        title: 'Reduktion af mandler, tonsillotomi',
+        h2Title: 'Skånsom formindskelse af store mandler',
+        shortIntro: 'Tonsillotomi er en skånsom operation, der reducerer store mandler og forbedrer vejrtrækning og søvn uden at fjerne dem helt.',
+        narrative: 'Tonsillotomi er en alternativ procedure til den klassiske tonsillektomi. I stedet for at fjerne mandlerne helt reduceres de, typisk med laser eller radiofrekvensteknologi, så de ikke længere blokerer luftvejen. Det er en mere skånsom operation med hurtigere heling og kortere sygdomsperiode.\n\nIndgrebet er særligt relevant for børn med store mandler, der giver vejrtrækningsproblemer, snorken og søvnapnø, men som ikke har hyppige betændelser. Her er en reduktion af mandlernes volumen ofte tilstrækkelig til at løse problemet, uden at man behøver at fjerne mandlerne helt.\n\nJalal Taha Saadi vurderer ved konsultationen, om tonsillotomi eller tonsillektomi er det rigtige valg i din eller dit barns situation. Det er en individuel vurdering, der afhænger af årsagen til problemet, barnets alder og symptomernes karakter. Begge procedurer er veletablerede og velunderbyggede.\n\nProceduren foretages i fuld narkose og tager ca. 15 til 20 minutter. Fordi en del af mandelvævet bevares, er helingen typisk hurtigere end efter en fuld fjernelse, og smerteniveauet er lavere. De fleste børn er aktive igen inden for tre til fem dage.\n\nDen bevarede del af mandlen bibeholder sin immunologiske funktion, om end i reduceret omfang. Risikoen for tilbagevendende betændelse er lidt højere end efter en fuld fjernelse, men for de fleste patienter, der primært har problemer med mandlernes størrelse, er tonsillotomi et fremragende valg.',
+        extraInfo: {
+          col1Title: 'Hurtig heling',
+          col1Text: 'Kortere helingstid og lavere smerteniveau end ved fuld fjernelse af mandlerne.',
+          col2Title: 'Bevaret funktion',
+          col2Text: 'Den resterende del af mandlen bibeholder sin immunologiske rolle i kroppen.'
+        },
+        faq: [
+          { q: "Hvad er forskellen på tonsillotomi og tonsillektomi?", a: "Tonsillotomi er en reduktion af mandlernes størrelse, mens tonsillektomi er en fuld fjernelse. Tonsillotomi er skånsom, har kortere heling og er bedst ved store mandler uden hyppig betændelse. Tonsillektomi er bedst ved hyppige betændelsesinfektioner, da hele mandlen fjernes og risikoen for fremtidig betændelse elimineres." },
+          { q: "Hvem er den bedste kandidat til tonsillotomi?", a: "Tonsillotomi er primært velegnet til børn med store mandler, der giver søvnapnø, snorken og vejrtrækningsproblemer, men som sjældent eller aldrig har egentlig halsbetændelse. Det er også relevant for voksne i visse tilfælde. Vi vurderer det individuelt ved konsultationen." },
+          { q: "Vokser mandlerne tilbage efter en reduktion?", a: "Det kan forekomme, særligt hos yngre børn, hvor mandlerne stadig vokser. Det sker dog ikke hos alle, og for de fleste er effekten varig. Er der tilbagefald, kan der i visse tilfælde foretages en supplerende procedure." },
+          { q: "Hvornår kan barnet vende tilbage til hverdagen?", a: "De fleste børn er aktive og spiser relativt normalt igen inden for tre til fem dage, hvilket er markant hurtigere end efter en tonsillektomi. Fysisk aktivitet og sport bør dog undgås i en til to uger." },
+          { q: "Er tonsillotomi dækket af sygesikringen?", a: "Det afhænger af den kliniske indikation. Er der en veldokumenteret medicinsk indikation som søvnapnø med dokumenteret effekt på barnets trivsel og søvn, kan operationen dækkes. Vi hjælper med at afklare det ved konsultationen og sørger for den rette dokumentation." }
+        ]
+      },
+      {
+        name: 'Fjernelse af næsepolypper',
+        slug: 'naesepolypper',
+        category: 'onh',
+        title: 'Fjernelse af næsepolypper',
+        h2Title: 'Fri næse og bedre vejrtrækning efter polypfjernelse',
+        shortIntro: 'Næsepolypper kan blokere næsen og bihulerne og forringe lugte- og smagsansen. Vi fjerner dem med minimal indgreb og lang holdbarhed.',
+        narrative: 'Næsepolypper er bløde, godartede vækster, der opstår i næsens og bihulernes slimhinder som følge af kronisk betændelse. De er typisk forbundet med allergi, astma eller kronisk bihulebetændelse og kan vokse til at blokere næsegangene og forringe vejrtrækning, lugtesans og livskvalitet markant.\n\nMange patienter med næsepolypper har levet med en tilstoppet næse og nedsat lugtesans i lang tid uden at vide, at der er tale om polypper. En kikkertundersøgelse af næsen afslører dem hurtigt og giver os et klart billede af omfanget.\n\nDen primære behandling er næsespray med kortison, som kan reducere polyppernes størrelse og i nogen tilfælde er tilstrækkelig alene. Når de er for store til at reagere på medicin, er en operation den rette løsning. Jalal Taha Saadi udfører polypfjernelse med et endoskopisk kikkertinstrument, hvilket giver præcis fjernelse med minimal blødning og hurtig heling.\n\nOperationen foregår i fuld narkose og tager typisk en til to timer afhængigt af omfanget. De fleste er hjemme dagen efter og kan vende tilbage til arbejde inden for en til to uger. Lugtesansen vender ofte hurtigt tilbage, og for mange er det en af de mest mærkbare forbedringer efter indgrebet.\n\nEt vigtigt budskab er, at polypper har en tendens til at vokse igen, særligt hvis den underliggende årsag som allergi eller astma ikke er under kontrol. Vi lægger altid en plan for, hvordan risikoen for tilbagefald minimeres, og hvornår der er behov for opfølgning.',
+        extraInfo: {
+          col1Title: 'Endoskopisk teknik',
+          col1Text: 'Præcis fjernelse med kikkertudstyr giver minimal blødning og hurtig heling.',
+          col2Title: 'Lugtesansen vender tilbage',
+          col2Text: 'De fleste patienter oplever markant forbedring af lugt og smag kort efter operationen.'
+        },
+        faq: [
+          { q: "Hvad forårsager næsepolypper?", a: "Næsepolypper opstår ved vedvarende betændelse i næsens og bihulernes slimhinder. De er stærkt forbundet med allergi, astma og kronisk bihulebetændelse. Acetylsalicylsyreintolerance, som ses hos en del astmapatienter, er en særlig stærk risikofaktor." },
+          { q: "Kan polypper behandles uden operation?", a: "Ja, i mange tilfælde kan kortikosteroide næsesprays reducere polypperne effektivt og er altid første behandlingsvalg. Systemisk kortison kan i kortere perioder give yderligere reduktion. Men er polypperne store og medicin utilstrækkelig, er operation nødvendig." },
+          { q: "Vokser polypper tilbage efter operation?", a: "Det kan de. Tilbagefaldshyppigheden afhænger af den underliggende årsag og af, om man holder allergi og astma under kontrol. Regelmæssig brug af næsespray med kortison efter operationen er vigtig for at forebygge tilbagefald. Vi lægger en plan for opfølgning." },
+          { q: "Mister man lugtesansen permanent ved polypper?", a: "Nej, tab af lugtesans ved polypper er ikke permanent. Når polypperne fjernes og betændelsen behandles, vender lugtesansen som regel tilbage, om end det kan tage lidt tid. For nogen er generhvervelsen af lugtesansen den mest glædesbringende del af bedringen." },
+          { q: "Er det smertefuldt at have prop i næsen efter operationen?", a: "Tamponade i næsen i de første dage giver en trykfornemmelse og tilstoppet fornemmelse, der kan være ubehageligt. Fjernelsen er hurtig. Alternativt bruger vi i nogen tilfælde opløselige skum eller blot lade det heles uden tamponade. Vi afgør det baseret på indgrebets omfang." }
+        ]
+      },
+      {
+        name: 'Operation af bihuler',
+        slug: 'bihuler-operation',
+        category: 'onh',
+        title: 'Operation af bihuler, FESS',
+        h2Title: 'Endoskopisk bihuleoperation ved kronisk betændelse',
+        shortIntro: 'Funktionel endoskopisk bihuleoperation, FESS, er en skånsom og effektiv metode til at åbne bihulerne og genskabe normal dræning.',
+        narrative: 'Kronisk bihulebetændelse, der ikke responderer på medicinsk behandling, er den primære indikation for en bihuleoperation. Det er en tilstand, mange lever med i årevis med konstant tryk i ansigtet, tilstoppet næse, tykt sekret og nedsat lugtesans, og for dem kan en operation betyde en markant forbedring i livskvaliteten.\n\nOperationen vi udfører hedder FESS, Functional Endoscopic Sinus Surgery. Det er en endoskopisk procedure, hvor vi bruger et kikkertinstrument og præcise instrumenter til at åbne de naturlige åbninger til bihulerne og fjerne beskadiget slimhinde, polypper og evt. fremstående knoglestykker, der blokerer dræningen. Det er en skånsom teknik, der ikke kræver udvendige snit.\n\nJalal Taha Saadi er specialist i bihulekirurgi og har gennemført mange FESS-procedurer. Hans erfaring giver en præcis og sikker operation med minimal risiko for komplikationer og hurtig heling. Indgrebet foregår i fuld narkose og tager typisk en til to timer.\n\nDe fleste patienter er hjemme dagen efter. Næsen kan være tilstoppet og hævet i de første uger, men forbedring mærkes typisk inden for en til tre måneder. En god næseskylning i helingsfasen er vigtig for at holde næse og bihuler rene og fremme helingen.\n\nEn bihuleoperation helbreder ikke en allergi, men den giver bihulerne de bedste betingelser for at fungere normalt. Kombination med allergimedicin og næsespray efter operationen er ofte nøglen til et langtidsholdbart resultat.',
+        extraInfo: {
+          col1Title: 'FESS-teknik',
+          col1Text: 'Endoskopisk operation uden udvendige snit, med hurtig heling og god effekt.',
+          col2Title: 'Specialist i bihulekirurgi',
+          col2Text: 'Jalal Taha Saadi har mange års erfaring med netop denne type operation.'
+        },
+        faq: [
+          { q: "Hvornår er operation nødvendigt?", a: "Operation overvejes, når kronisk bihulebetændelse ikke bedres tilstrækkeligt efter mindst tre måneder med medicinsk behandling, inkl. antibiotika og næsespray med kortison. En CT-scanning af bihulerne bruges til at kortlægge forandringerne inden operationen." },
+          { q: "Hvad er FESS?", a: "FESS er en forkortelse for Functional Endoscopic Sinus Surgery. Det er en teknik, hvor vi bruger et tyndt kikkertinstrument ført ind gennem næsen til at åbne bihulernes naturlige åbninger og fjerne det, der blokerer dem. Det kræver ingen ydre snit og giver minimale ar." },
+          { q: "Er bihuleoperation farlig?", a: "FESS er et veletableret indgreb med lav risikoprofil. Som ved alle operationer er der en lille risiko for blødning og infektion. Fordi bihulerne ligger tæt op ad øjne og hjerne, kræver operationen stor præcision, men disse komplikationer er yderst sjældne hos erfarne kirurger." },
+          { q: "Hvornår mærker jeg forbedring?", a: "I de første to til fire uger efter operationen kan næsen føles mere tilstoppet end inden, da slimhinderne er hævede fra indgrebet. Herefter begynder forbedringen gradvist. De fleste mærker tydeligt bedre vejrtrækning og færre symptomer inden for en til tre måneder." },
+          { q: "Skal jeg lave noget specielt for at pleje næsen efter?", a: "Ja, næseskylning med saltvand er meget vigtig i helingsfasen. Det holder næsen ren, fjerner skorper og fremmer helingen. Vi gennemgår teknikken grundigt og anbefaler, at du fortsætter skylningen i mindst seks uger efter operationen." }
+        ]
+      },
+      {
+        name: 'Operation af stritører',
+        slug: 'stritoere-operation',
+        category: 'onh',
+        title: 'Operation af stritører, otoplastik',
+        h2Title: 'Kirurgisk korrektion af fremstående ører',
+        shortIntro: 'Otoplastik er en veletableret operation, der permanent korrigerer stritøre og giver et naturligt og harmonisk udseende.',
+        narrative: 'Otoplastik, korrektion af stritøre, er en operation, der giver mange patienter, særligt børn og unge, en markant forbedring i selvtillid og trivsel. Operationen kan foretages fra ca. seksårsalderen, da øret er fuldt udviklet på dette tidspunkt, og brusken er stadig relativ formbar.\n\nStritøre skyldes typisk manglende foldning af brusken i øret under fosterudviklingen, stor afstand fra ørets bagside til kraniet, eller begge dele. Operationen går ud på at folde og forme brusken, så øret lægges tættere mod kraniet og fremstår med en naturlig fold. Det er et indgreb, der kræver stor kirurgisk præcision og et godt øje for symmetri og proportion.\n\nJalal Taha Saadi har gennemført mange otoplastikoperationer og lægger stor vægt på et naturligt resultat, der ser ud, som om ørerne altid har siddet der. Et godt resultat er ét, som ingen lægger mærke til, fordi det ser så naturligt ud.\n\nOperationen foretages typisk i fuld narkose hos børn og lokal bedøvelse hos voksne, og tager ca. en time. Efterfølgende anlægges en forbinding rundt om hovedet, som bæres i et par uger. Der kan være lidt ømhed og hævelse i de første dage, men de fleste er aktive igen relativt hurtigt.\n\nResultatet er permanent. Brusken holder sin nye form, og ørerne vender ikke tilbage til den oprindelige position. For mange patienter og forældre er det en operation med stor positiv psykologisk effekt, og tilbagemeldingerne er overvejende meget positive.',
+        extraInfo: {
+          col1Title: 'Naturligt resultat',
+          col1Text: 'Målet er ører, der ser naturlige ud, og som ikke tiltrækker sig opmærksomhed.',
+          col2Title: 'Permanent effekt',
+          col2Text: 'Brusken holder sin nye form, og ørerne vender ikke tilbage til den oprindelige position.'
+        },
+        faq: [
+          { q: "Fra hvilken alder kan man operere?", a: "Otoplastik kan foretages fra ca. seksårsalderen, når øret er fuldt udviklet. Det anbefales at vente, til barnet selv ønsker operationen og forstår, hvad det indebærer. Operationen kan også foretages på voksne, og der er ingen øvre aldersgrænse." },
+          { q: "Gør det ondt at have forbinding om hovedet?", a: "Forbindingen kan føles trykkende og varm, men de fleste børn vænner sig til den hurtigt. Den er vigtig for at holde ørerne i den rette position, mens de heler. Vi giver klare instruktioner om, hvornår den skal skiftes, og hvornår den kan tages af permanent." },
+          { q: "Hvornår kan barnet vende tilbage til skolen?", a: "De fleste børn kan vende tilbage til skolen efter syv til ti dage, når forbindingen er skiftet til et blødere øreband. Kontaktsport og aktiviteter, der involverer risiko for slag mod ørerne, bør undgås i seks uger." },
+          { q: "Er resultatet symmetrisk?", a: "Vi tilstræber altid den bedst mulige symmetri, men det er vigtigt at vide, at perfekt symmetri aldrig er garanteret. Naturlige ører er sjældent fuldstændig ens, og vi arbejder ud fra naturlige proportioner frem for en matematisk perfekt symmetri. Vi drøfter forventningerne grundigt ved konsultationen." },
+          { q: "Er operationen dækket af sygesikringen?", a: "Som udgangspunkt er otoplastik en kosmetisk operation, der ikke dækkes af sygesikringen. I tilfælde, hvor der er dokumenteret psykisk belastning hos barnet som følge af stritørerne, kan der i visse tilfælde ansøges om dækning. Vi vejleder dig om mulighederne." }
+        ]
+      },
+      {
+        name: 'Fjernelse af børnepolypper',
+        slug: 'bornepolypper',
+        category: 'onh',
+        title: 'Fjernelse af børnepolypper, adenoidektomi',
+        h2Title: 'Fri næse og bedre søvn for dit barn',
+        shortIntro: 'Børnepolypper kan give tilstoppet næse, snorken og hyppige øre- og næseinfektioner. Fjernelse er et kortvarigt og effektivt indgreb.',
+        narrative: 'Børnepolypper, eller adenoider, er en lymfekirtelvævssamling bagerst i næsesvælget, bag ved næsen og over tonsillerne. De er en del af barnets immunforsvar og er normalt størst i fireårsalderen, hvorefter de gradvist skrumper ind. Men hos nogen vokser de sig så store, at de blokerer næsesvælget og giver en række generende symptomer.\n\nDe typiske tegn på store børnepolypper er kronisk tilstoppet næse, mundvejrtrækning, snorken og afbrudt søvn. Barnet kan virke træt og uoplagt, have svært ved at koncentrere sig og tale med en næseklang. Hyppige øreinfektioner og mellemøreproblemer er også hyppigt forekommende, da børnepolypperne kan blokere eustachian-tuberne, der regulerer trykket i mellemøret.\n\nJalal Taha Saadi foretager adenoidektomien i fuld narkose. Det er et kortvarigt indgreb, der tager ca. 15 til 20 minutter. Barnet er som regel hjemme samme dag og er aktivt og spiser normalt igen inden for to til tre dage. Det er en operation med hurtig heling og meget lav komplikationsrisiko.\n\nEn adenoidektomi kan kombineres med drænanlæggelse i ørerne, hvis barnet også har mellemøreproblemer. Det er meget almindeligt at foretage begge dele i samme narkose, da det sparer barnet for to separate indgreb.\n\nResultatet er for de fleste børn dramatisk. Vejrtrækningen forbedres umiddelbart, søvnkvaliteten bedres, og de fleste forældre beretter om et barn, der er mere veloplagt og aktiv i hverdagen.',
+        extraInfo: {
+          col1Title: 'Kortvarigt indgreb',
+          col1Text: 'Operationen tager 15 til 20 minutter, og barnet er hjemme samme dag.',
+          col2Title: 'Kan kombineres med dræn',
+          col2Text: 'Vi kan anlægge dræn i ørerne i samme narkose, hvis mellemørene er påvirket.'
+        },
+        faq: [
+          { q: "Hvordan ved jeg, om mit barn har store børnepolypper?", a: "Typiske tegn er kronisk tilstoppet næse, mundvejrtrækning, snorken, afbrudt søvn og hyppige øre- eller næseinfektioner. Barnet taler måske med en lukket næseklang og virker træthedspræget. Vi undersøger næsesvælget med et lille kikkertinstrument, der bekræfter diagnosen hurtigt." },
+          { q: "Hvad er risiciene ved operationen?", a: "Adenoidektomi er et meget sikkert indgreb. Den primære risiko er blødning, som er sjælden. Fordi indgrebet foretages i narkose, er der den generelle narkosirisiko, men den er minimal ved børn, der er raske. Vi gennemgår risiciene grundigt inden." },
+          { q: "Vokser børnepolypperne tilbage?", a: "Ja, det kan ske, særligt hos yngre børn, da adenoidvævet hos dem stadig er aktivt. Tilbagefald er dog ikke det hyppigste. Er der tilbagefald med de samme symptomer, kan en ny operation overvejes. Med alderen skrumper adenoidvævet naturligt, så problemet løser sig typisk af sig selv." },
+          { q: "Kan man mærke, at de er væk bagefter?", a: "Barnet mærker ikke, at der mangler noget. Immunforsvaret kompenserer, og der er ingen dokumentation for, at fjernelse af børnepolypper svækker barnets almene immunforsvar. Tværtimod er mange børn syge langt sjældnere efter, fordi øre- og næseinfektionerne reduceres markant." },
+          { q: "Hvornår kan barnet gå i skole og daginstitution igen?", a: "De fleste børn kan vende tilbage til daginstitution eller skole efter tre til fem dage. Vi anbefaler at holde barnet hjemme, til det er veloplagt og spiser normalt. Fysisk aktivitet og leg er fint fra dag to til tre, men kontaktleg bør afventes i ca. en uge." }
+        ]
+      },
+      {
+        name: 'Drænanlæggelse',
+        slug: 'draenanlaeggelse',
+        category: 'onh',
+        title: 'Drænanlæggelse i ørerne',
+        h2Title: 'Effektiv behandling af væske og tryk i mellemøret',
+        shortIntro: 'Drænanlæggelse er et kortvarigt og sikkert indgreb, der hurtigt giver bedre hørelse og færre øreinfektioner hos børn med mellemøreproblemer.',
+        narrative: 'Drænanlæggelse er et af de hyppigst udførte kirurgiske indgreb hos børn og er en velafprøvet og sikker behandling af vedvarende væske i mellemøret og hyppige mellemøreinfektioner. Selv om det er et lille indgreb, kan effekten på barnets hørelse, søvn og trivsel være meget stor.\n\nNår væske samler sig i mellemøret over lang tid, trommehinden trykkes ind, og lydledningen forringes. Barnet hører dårligere, reagerer sløvt, taler højere end normalt og kan have svært ved at koncentrere sig. Skolegang og sociale relationer kan påvirkes, og for nogen børn er det endda forbundet med forsinket sprogudvikling.\n\nEt dræn er et lille ventilationsrør, der sættes ind i en lille åbning i trommehinden under narkose. Det tager kun fem til ti minutter. Røret holder åbningen åben, så luft kan komme ind i mellemøret, og ophobningen af sekret kan løbe ud. Høreprøver, der foretages inden og efter indgrebet, viser typisk en markant forbedring i høreevnen umiddelbart efter.\n\nJalal Taha Saadi tilbyder drænanlæggelse alene eller i kombination med adenoidektomi, hvis barnet også har store børnepolypper. Det er meget almindeligt at foretage begge dele i samme korte narkose og dermed give barnet den samlede effekt af begge indgreb på én gang.\n\nDrænene falder som regel ud af sig selv efter seks til tolv måneder, når trommehinden er helet. Hullerne lukker typisk af sig selv. I perioden med dræn bør barnet holde vand ude af ørerne, og vi vejleder om, hvad det konkret betyder i hverdagen.',
+        extraInfo: {
+          col1Title: 'Hurtig procedure',
+          col1Text: 'Selve drænanlæggelsen tager fem til ti minutter og foretages i kort narkose.',
+          col2Title: 'Umiddelbar effekt',
+          col2Text: 'Høreprøver efter indgrebet viser typisk markant forbedring allerede samme dag.'
+        },
+        faq: [
+          { q: "Hvornår er drænanlæggelse nødvendig?", a: "Vi overvejer dræn, når barnet har haft dokumenteret væske i mellemøret i mere end tre måneder med vedvarende hørenedsættelse, eller ved hyppige og behandlingskrævende mellemøreinfektioner. Vi afventer altid i første omgang, da mange tilfælde løser sig selv." },
+          { q: "Er der en risiko for, at trommehinden ikke heler?", a: "Det er en sjælden komplikation. Hos de fleste lukker hullet i trommehinden af sig selv, når drænrøret falder ud. I ca. to procent af tilfældene er hullet stadig åbent et år efter, at drænrøret er faldet ud. Det kan i de fleste tilfælde lukkes med et lille supplement-indgreb." },
+          { q: "Hvad med vand i ørerne, bad og svømning?", a: "Drænrørene lader vand komme ind i mellemøret, og der er en risiko for infektion. Vi anbefaler svømmeprop eller ørepropper i badet og fraråder dyk og svømning under vand uden prop. Vi gennemgår reglerne grundigt, inden I tager hjem." },
+          { q: "Falder drænene ud af sig selv?", a: "Ja, det er meningen. Drænrørene er designet til at falde ud, efterhånden som trommehinden fornyer sig. Det sker typisk efter seks til tolv måneder og er smertefrit. Barnet mærker det sjældent. Kom til kontrol, hvis drænrøret sidder i mere end to år." },
+          { q: "Kan drænene anlægges uden narkose?", a: "Hos voksne er det muligt med lokalbedøvelse, da det tager meget kort tid. Hos børn er fuld narkose nødvendig, fordi barnet skal ligge helt stille under proceduren. Narkosen er kortvarig, og børn vågner typisk hurtigt og er friske samme dag." }
         ]
       }
     ]
@@ -494,7 +878,8 @@ const App = () => {
           <nav className="hidden lg:flex items-center space-x-8">
             <button onClick={() => setActivePage('forside')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'forside' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Forside</button>
             <NavItemComponent title="Hudsygdomme" items={services.hud} id="hud" />
-            <NavItemComponent title="Øre, Næse, Hals" items={services.onh} id="onh" />
+            <NavItemComponent title="ØNH Undersøgelser" items={services.onhUndersogelser} id="onhU" />
+            <NavItemComponent title="ØNH Operationer" items={services.onhOperationer} id="onhO" />
             <button onClick={() => setActivePage('patientinfo')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'patientinfo' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Patientinfo</button>
             <button onClick={() => setActivePage('personale')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'personale' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Personale</button>
             <button onClick={() => setActivePage('find-os')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'find-os' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Find os</button>
@@ -566,18 +951,43 @@ const App = () => {
               )}
             </div>
 
-            {/* ØNH accordion */}
+            {/* ØNH Undersøgelser accordion */}
             <div>
               <button
-                onClick={() => setIsServicesOpen(isServicesOpen === 'onh' ? null : 'onh')}
+                onClick={() => setIsServicesOpen(isServicesOpen === 'onhU' ? null : 'onhU')}
                 className="w-full flex items-center justify-between px-4 py-4 rounded-2xl font-black text-sm uppercase tracking-widest text-slate-700 hover:bg-slate-50 transition-colors"
               >
-                <span>Øre, Næse, Hals</span>
-                <ChevronDown size={16} className={`text-slate-400 transition-transform duration-200 ${isServicesOpen === 'onh' ? 'rotate-180' : ''}`} />
+                <span>ØNH Undersøgelser</span>
+                <ChevronDown size={16} className={`text-slate-400 transition-transform duration-200 ${isServicesOpen === 'onhU' ? 'rotate-180' : ''}`} />
               </button>
-              {isServicesOpen === 'onh' && (
+              {isServicesOpen === 'onhU' && (
                 <div className="ml-4 mb-2 border-l-2 border-emerald-100 pl-4 space-y-1">
-                  {services.onh.map(s => (
+                  {services.onhUndersogelser.map(s => (
+                    <button
+                      key={s.slug}
+                      onClick={() => setActivePage(s.slug)}
+                      className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest text-slate-500 hover:bg-emerald-50 hover:text-emerald-800 transition-colors"
+                    >
+                      {s.name}
+                      <ChevronRight size={12} className="text-slate-300" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* ØNH Operationer accordion */}
+            <div>
+              <button
+                onClick={() => setIsServicesOpen(isServicesOpen === 'onhO' ? null : 'onhO')}
+                className="w-full flex items-center justify-between px-4 py-4 rounded-2xl font-black text-sm uppercase tracking-widest text-slate-700 hover:bg-slate-50 transition-colors"
+              >
+                <span>ØNH Operationer</span>
+                <ChevronDown size={16} className={`text-slate-400 transition-transform duration-200 ${isServicesOpen === 'onhO' ? 'rotate-180' : ''}`} />
+              </button>
+              {isServicesOpen === 'onhO' && (
+                <div className="ml-4 mb-2 border-l-2 border-emerald-100 pl-4 space-y-1">
+                  {services.onhOperationer.map(s => (
                     <button
                       key={s.slug}
                       onClick={() => setActivePage(s.slug)}
@@ -727,8 +1137,8 @@ const App = () => {
         )}
 
         {/* Dynamic service pages */}
-        {[...services.hud, ...services.onh].some(s => s.slug === activePage) && (
-          <ServiceLandingPage service={[...services.hud, ...services.onh].find(s => s.slug === activePage)} />
+        {[...services.hud, ...services.onhUndersogelser, ...services.onhOperationer].some(s => s.slug === activePage) && (
+          <ServiceLandingPage service={[...services.hud, ...services.onhUndersogelser, ...services.onhOperationer].find(s => s.slug === activePage)} />
         )}
 
         {/* Patientinfo */}
