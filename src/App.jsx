@@ -118,6 +118,138 @@ const App = () => {
           { q: "Gør det ondt at få fjernet et modermærke?", a: "Vi bedøver det lokale område inden indgrebet, så du ikke mærker smerte undervejs. Efterfølgende kan der være lidt ømhed de første dage, men de fleste klarer sig fint uden stærk smertestillende medicin. Helingen går typisk hurtigt." },
           { q: "Er alle hudforandringer farlige?", a: "Langt de fleste er det ikke. Der er mange typer godartede hudforandringer, som kan se bekymrende ud men er fuldstændig harmløse. Netop fordi det kan være svært at skelne selv, er en professionel gennemgang med dermatoskopi den tryggeste vej frem. Vi giver dig en klar besked om, hvad vi ser." }
         ]
+      },
+      {
+        name: 'Hudkræft',
+        slug: 'hudkraeft',
+        category: 'hud',
+        title: 'Undersøgelse og behandling af hudkræft',
+        h2Title: 'Tidlig opdagelse gør den afgørende forskel',
+        shortIntro: 'Hudkræft er en af de mest almindelige kræftformer i Danmark, og jo tidligere den opdages, desto bedre er mulighederne for behandling.',
+        narrative: 'Hudkræft er noget rigtig mange danskere stifter bekendtskab med i løbet af livet, og forekomsten stiger. Det skyldes blandt andet mange års soleksponering, og det er en af grundene til, at regelmæssig kontrol af huden er så vigtig. De fleste tilfælde af hudkræft kan behandles effektivt, hvis de opdages tidligt nok.\n\nDer findes flere typer hudkræft. Basalcellekarcinom er den hyppigste og sjældent livstruende, men den vokser og bør fjernes. Pladeepitelkarcinom kan sprede sig og kræver hurtig handling. Modermærkekræft, også kaldet malignt melanom, er den mest alvorlige form og kræver specialiseret behandling. I klinikken er vi i stand til at undersøge og i mange tilfælde håndtere alle tre typer.\n\nVores speciallæge Kawa Ajgeiy anvender dermatoskopi til at vurdere hudforandringer med langt større præcision end ved det blotte øje. Det giver os mulighed for at skelne mellem godartede og potentielt ondartede forandringer og tage de rigtige beslutninger hurtigt. Mange patienter kommer til os med bekymring over en plet, de har lagt mærke til, og det er præcis den slags tidlig opmærksomhed, der redder liv.\n\nHvis vi finder noget, der bør fjernes, kan vi i mange tilfælde gøre det samme dag under lokalbedøvelse. Vævsprøven sendes altid til patologisk analyse, og vi vender tilbage med resultatet. Hvis der er behov for videre udredning eller behandling på sygehus, hjælper vi med en hurtig og relevant henvisning.\n\nVi anbefaler, at du henvender dig, hvis du har en hudplet, der har forandret sig i størrelse, form eller farve, som bløder uden grund, eller som bare ikke ser rigtig ud. Det koster ikke noget at få det undersøgt, og sindsroen er det hele værd.',
+        extraInfo: {
+          col1Title: 'Dermatoskopi',
+          col1Text: 'Avanceret forstørrelsesværktøj med specielt lys giver os et præcist billede af hudforandringer under overfladen.',
+          col2Title: 'Hurtig behandling',
+          col2Text: 'Mistænkelige forandringer kan i mange tilfælde fjernes direkte i klinikken under lokalbedøvelse.'
+        },
+        faq: [
+          { q: "Hvad er tegnene på hudkræft?", a: "Hold øje med forandringer ved hjælp af ABCDE-reglen: Asymmetri, ujævne Begrænsninger, flere Farver, Diameter over 6 mm og Ændring over tid. Derudover bør du være opmærksom på sår, der ikke heler, pletter der bløder, og nye vækster, der vokser hurtigt." },
+          { q: "Hvem er i størst risiko?", a: "Lyshudede personer med mange modermærker, en familiehistorie med hudkræft eller en lang historie med soleksponering og solforbrænding har en forhøjet risiko. Men hudkræft kan ramme alle, uanset hudfarve og alder, så regelmæssig kontrol er vigtig for de fleste voksne." },
+          { q: "Kan hudkræft kureres?", a: "Ja, i langt de fleste tilfælde, særligt hvis den opdages tidligt. Basalcellekarcinom og pladeepitelkarcinom har meget gode behandlingsresultater ved tidlig opdagelse. Malignt melanom er mere alvorligt, men også her er tidlig opdagelse afgørende for prognosen." },
+          { q: "Hvad sker der efter en fjernelse?", a: "Vævsprøven sendes til patologisk undersøgelse, og vi kontakter dig med resultatet. Viser det sig at være kræft, afhænger det videre forløb af typen og stadiet. I mange tilfælde er fjernelsen tilstrækkelig behandling. Kræver det mere, hjælper vi med en hurtig henvisning til det rette sted." },
+          { q: "Giver solfaktor nok beskyttelse?", a: "Solfaktor er et vigtigt redskab, men det er ikke nok alene. Det skal bruges korrekt og påføres tilstrækkeligt. Derudover er det vigtigt at undgå soleksponering i de varmeste timer og at dække huden til. Solarium øger risikoen markant og bør undgås helt." }
+        ]
+      },
+      {
+        name: 'Rosacea',
+        slug: 'rosacea',
+        category: 'hud',
+        title: 'Behandling af rosacea',
+        h2Title: 'Ro på den røde og følsomme hud',
+        shortIntro: 'Rosacea er en kronisk hudtilstand med rødme, synlige blodkar og i nogle tilfælde bumser. Vi hjælper dig med at få kontrol over symptomerne.',
+        narrative: 'Rosacea er en tilstand, mange lever med i årevis uden at vide, hvad det egentlig er. Den typiske patient er en voksen person, der let bliver rød i ansigtet, oplever en brændende eller stikkende fornemmelse i huden og måske har synlige fine blodkar eller bumser på kinder, næse, pande og hage. Det kan forveksles med akne eller solskade, men det er en helt anden tilstand med sine egne årsager og behandlinger.\n\nÅrsagen til rosacea er ikke fuldt ud forstået, men vi ved, at immunsystemet og nervesystemet i huden er involveret. Der er en tydelig arvelig komponent, og tilstanden ses oftere hos lyshudede. Den forværres typisk af sol, varme, stærk mad og krydderier, alkohol, stress og visse hudplejeprodukter. At kende sine egne triggere er en vigtig del af at leve godt med rosacea.\n\nVores tilgang starter med en grundig samtale og en klinisk vurdering. Vi kortlægger dine symptomer og finder ud af, hvilken type rosacea der er tale om, da det afgør, hvad der virker bedst for dig. Der er forskel på behandlingen af rødme og synlige blodkar kontra den bumseagtige form, og vi tilpasser planen præcist til din hud.\n\nBehandlingsmulighederne er mange. Det kan være lokale præparater, der dæmper rødme og betændelse, mundtlig medicin i kortere perioder og rådgivning om hudpleje og livsstil. Det er ikke en tilstand, der forsvinder af sig selv, men med den rette behandling og viden om egne triggere kan de fleste opnå en hverdag med markant færre gener.\n\nNoget af det vigtigste, vi giver vores rosacea-patienter, er forklaring og forståelse. Når du forstår, hvad der sker i din hud og hvorfor, er det langt lettere at tage kontrol over situationen frem for at føle, at huden styrer dig.',
+        extraInfo: {
+          col1Title: 'Individuelle triggere',
+          col1Text: 'Sol, varme, alkohol og stress er typiske triggere, men de varierer fra person til person.',
+          col2Title: 'Målrettet behandling',
+          col2Text: 'Vi skelner mellem rosaceas undertyper og tilpasser behandlingen præcist til dig.'
+        },
+        faq: [
+          { q: "Hvad er forskellen på rosacea og akne?", a: "Rosacea og akne kan ligne hinanden, men er to forskellige tilstande. Akne skyldes primært tilstoppede porer og bakterier og ses oftest hos unge. Rosacea er en kronisk betændelsestilstand i huden, der typisk rammer voksne over 30 og er kendetegnet ved rødme, brændende fornemmelse og synlige blodkar. Det er vigtigt at skelne, da de behandles forskelligt." },
+          { q: "Kan rosacea kureres?", a: "Rosacea er en kronisk tilstand, der ikke kan kureres i traditionel forstand. Men den kan holdes under kontrol. Med den rette behandling og viden om egne triggere er det realistisk at opnå lange perioder med minimal eller ingen synlig rødme og meget få symptomer." },
+          { q: "Hvad forværrer rosacea?", a: "De hyppigste triggere er sol og varme, stærk mad og krydderier, alkohol, stress, anstrengende motion og visse kosmetiske produkter med alkohol eller parfume. Det varierer fra person til person, og vi hjælper dig med at kortlægge dine egne mønstre." },
+          { q: "Hvilken hudpleje passer til rosacea?", a: "Rosacea-hud er følsom og kræver skånsom pleje. Undgå produkter med alkohol, stærke syrer og parfume. Vælg milde, uparfumerede renseprodukter og fugtighedscremer med beroligende ingredienser. Solfaktor er afgørende, da sol er en af de hyppigste triggere. Vi rådgiver gerne specifikt om produktvalg." },
+          { q: "Kan rosacea sprede sig?", a: "Rosacea kan ændre sig over tid. Hos nogle forbliver det primært rødme, mens det hos andre udvikler sig til bumser og fortykkelse af huden, særligt på næsen. Netop derfor er det en fordel at komme tidligt og starte behandling, frem for at vente til tilstanden forværres." }
+        ]
+      },
+      {
+        name: 'Akne',
+        slug: 'akne',
+        category: 'hud',
+        title: 'Effektiv behandling af akne',
+        h2Title: 'Klar hud gennem målrettet behandling',
+        shortIntro: 'Akne påvirker både udseende og selvtillid. Vi tilbyder en grundig udredning og en behandlingsplan, der rent faktisk virker.',
+        narrative: 'Akne er en af de mest udbredte hudlidelser overhovedet og rammer langt fra kun teenagere. Mange voksne kæmper med akne godt ind i tyverne, trediverne og endda fyrrerne, og for en del er det forbundet med skam og frustration, særligt hvis man har prøvet mange ting uden varig effekt. Hos Klinik Sirius møder vi dig, hvor du er, og tager problemet alvorligt uanset alder.\n\nAkne opstår, når talgkirtlerne producerer for meget talg, og porerne tilstoppes. Bakterier trives i det miljø og skaber betændelse, der viser sig som buler, bylder og ar. Det er ikke et spørgsmål om manglende hygiejne. Det er en biologisk proces, som er stærkt påvirket af hormoner, arvelighed og i nogen grad kost og stress.\n\nVores speciallæge Kawa Ajgeiy starter altid med at se på helheden. Hvad slags akne er der tale om? Sidder den overfladisk eller dybt? Er der hormonelle mønstre, der peger på en underliggende årsag? Svarene på de spørgsmål afgør, hvilken behandling der er den rette. Der er stor forskel på, om vi skal bruge en lokal creme, en mundtlig antibiotikakur, hormonal behandling eller noget helt andet.\n\nEt forløb hos os handler ikke om at finde en hurtig løsning, der virker i to måneder og derefter holder op. Vi arbejder på at finde den behandling, der giver langvarig bedring, og vi følger dig tæt undervejs. Mange patienter har oplevet en enorm forskel i livskvalitet, når aknen kommer under kontrol, og det driver os i vores arbejde.\n\nSelvom ar allerede er opstået, er der muligheder. Vi vejleder om, hvad der kan hjælpe på eksisterende arvæv, og hvad du fremover kan gøre for at mindske risikoen for nye ar. Det er aldrig for sent at søge hjælp.',
+        extraInfo: {
+          col1Title: 'Alle aldre',
+          col1Text: 'Vi behandler akne hos både unge og voksne og tilpasser altid planen til den enkeltes situation.',
+          col2Title: 'Langsigtet effekt',
+          col2Text: 'Målet er vedvarende bedring, ikke bare en kortvarig forbedring.'
+        },
+        faq: [
+          { q: "Hvad forårsager akne?", a: "Akne skyldes en kombination af faktorer: overproduktion af talg, tilstoppede porer, bakterier og betændelse. Hormoner spiller en central rolle, hvilket forklarer, hvorfor akne er hyppig i puberteten, under menstruation og graviditet, og ved hormonelle forstyrrelser. Arvelighed har også betydning." },
+          { q: "Hjælper kost mod akne?", a: "Forskning tyder på, at visse madvarer kan forværre akne hos nogle. Produkter med højt glykæmisk indeks og mælkeprodukter er de mest diskuterede. Men det er individuelt, og kost er sjældent den eneste årsag. Vi tager det med i rådgivningen uden at overdrive kostens rolle." },
+          { q: "Hvornår bør jeg søge hjælp?", a: "Hvis aknen ikke bedres efter to til tre måneder med receptfri midler, eller hvis den er smertefuld, sidder dybt, efterlader ar, eller påvirker dit velbefindende og selvtillid, er det tid til at komme til os. Jo hurtigere vi kommer i gang, desto bedre er chancerne for at undgå permanente ar." },
+          { q: "Kan akne efterlade permanente ar?", a: "Det kan den desværre. Dyb betændt akne har størst risiko for at efterlade ar. Netop derfor anbefaler vi at behandle akne tidligt og effektivt frem for at vente og se. Vi vejleder også om, hvad man kan gøre for eksisterende ar." },
+          { q: "Er der forskel på akne hos kvinder og mænd?", a: "Ja, der er forskel. Kvinder oplever ofte hormonel akne, der forværres i forbindelse med menstruation, graviditet eller ved brug af visse præventionsmidler. Det åbner for behandlingsmuligheder, der ikke er relevante for mænd. Vi vurderer altid det hormonelle billede som en del af udredningen hos kvinder." }
+        ]
+      },
+      {
+        name: 'Fnat',
+        slug: 'fnat',
+        category: 'hud',
+        title: 'Behandling af fnat',
+        h2Title: 'Hurtig og effektiv udryddelse af fnat',
+        shortIntro: 'Fnat er meget smitsomt, men heldigvis nemt at behandle. Vi hjælper dig og din husstand med at komme helt fri.',
+        narrative: 'Fnat er forårsaget af en mikroskopisk mide, der graver sig ned i huden og lægger æg. Det giver en kraftig kløe, som typisk er værst om natten og forværres af varme. Kløen skyldes en allergisk reaktion på miderne og deres afføring, og den kan fortsætte i uger efter, at selve infestationen er behandlet. Det er vigtigt at vide, så man ikke tror, at behandlingen ikke har virket.\n\nFnat er ikke et tegn på dårlig hygiejne. Det smitter ved tæt hud til hud-kontakt og kan ramme alle, uanset livsstil og renlighed. Alle i husstanden og nære kontakter skal behandles på samme tid, ellers er risikoen for gensmitta meget høj. Det er netop den del, mange ikke får gjort ordentligt, og som betyder, at fnat kan komme igen.\n\nVores speciallæge Kawa Ajgeiy stiller diagnosen klinisk ved at se på huden. Typiske tegn er kløe i fingermellemmorum, håndled, talje, genitalier og under brysterne. Hos børn kan det også ramme hoved og hals. Vi forklarer dig præcist, hvordan behandlingen skal gennemføres, og hvad du skal gøre ved sengetøj, tøj og møbler for at undgå gensmitta.\n\nBehandlingen er et godkendt middel, der påføres hele kroppen fra hals til tæer og vaskes af efter en bestemt tid. Det er effektivt og kan bruges af de fleste, herunder gravide og børn over to måneder, om end i reduceret form. Vi sørger for, at du forlader klinikken med en klar og præcis plan, du kan gå hjem og følge.\n\nNogle oplever fortsat kløe i op til seks uger efter behandlingen. Det er normalt og skyldes ikke ny smitta, men hudens reaktion på de døde mider og deres efterladenskaber. Vi informerer dig grundigt, så du ikke bekymrer dig unødigt og ved præcis, hvornår du skal søge opfølgning.',
+        extraInfo: {
+          col1Title: 'Hele husstanden',
+          col1Text: 'Alle, der deler hjem med den smittede, skal behandles på samme dag for at undgå gensmitta.',
+          col2Title: 'Klar behandlingsplan',
+          col2Text: 'Vi gennemgår præcist, hvordan midlet anvendes, og hvad der skal gøres med tøj og sengetøj.'
+        },
+        faq: [
+          { q: "Hvordan smitter fnat?", a: "Fnat smitter primært ved langvarig, tæt hud til hud-kontakt. Det er typisk ved seksuel kontakt, men også ved at sove i samme seng eller have tæt kropslig kontakt over tid. Kortvarig kontakt som håndtryk er sjældent nok. Smitte via tøj og sengetøj er mulig men langt sjældnere." },
+          { q: "Hvornår begynder det at klø?", a: "Ved første gang man smittes, kan der gå fire til seks uger, inden kløen opstår, fordi kroppen skal opbygge en allergisk reaktion. Er man smittet igen, kan kløen komme meget hurtigere, inden for et par dage, fordi immunforsvaret allerede kender miderne." },
+          { q: "Skal alle i familien behandles?", a: "Ja, alle, der bor i samme husstand, skal behandles på samme dag, uanset om de har symptomer eller ej. Nære kontakter som kærester, der ikke bor i husstanden, bør også behandles. Hvis ikke alle behandles samtidig, risikerer man at smitte hinanden igen." },
+          { q: "Hvad gør jeg ved tøj og sengetøj?", a: "Alt tøj, sengetøj og håndklæder, der har været brugt de seneste tre dage, skal vaskes ved mindst 60 grader. Det, der ikke kan vaskes ved den temperatur, kan lægges i en forseglet plastikpose i 72 timer, da miderne ikke overlever uden menneskelig vært." },
+          { q: "Kløen er ikke stoppet efter behandlingen. Hvad nu?", a: "Det er normalt at kløe i op til seks uger efter korrekt behandling. Det skyldes hudens allergiske reaktion på rester af de døde mider og ikke ny smitta. Kløen aftager gradvist. Oplever du nye ganggrave i huden eller forværring efter seks uger, bør du komme til kontrol." }
+        ]
+      },
+      {
+        name: 'Hyperhidrose',
+        slug: 'hyperhidrose',
+        category: 'hud',
+        title: 'Behandling af hyperhidrose (overdrevet svedtendens)',
+        h2Title: 'Effektiv hjælp til overdreven svedtendens',
+        shortIntro: 'Overdreven svedtendens kan påvirke hverdagen og selvtilliden markant. Vi tilbyder effektive behandlinger, der giver langvarig lindring.',
+        narrative: 'Sved er en naturlig og nødvendig funktion i kroppen, men for nogen producerer kroppen langt mere sved end nødvendigt. Det kalder vi hyperhidrose, og det rammer primært armhuler, hænder, fødder og ansigt. Det kan være meget generende i hverdagen, påvirke valget af tøj, begrænse sociale situationer og skabe en konstant bekymring for, at andre opdager det.\n\nHyperhidrose er ikke et spørgsmål om manglende hygiejne eller nervøsitet, selvom mange med tilstanden desværre oplever den stigmatisering. Det er en fysiologisk tilstand, hvor svedkirtlerne er overaktive og reagerer på signaler, der ikke kræver den mængde sved, der produceres. Det kan opstå helt uden åbenlys grund, og mange har haft det siden barndommen.\n\nVi tager altid en grundig sygehistorie for at afklare, om der er en underliggende årsag til svedtendenesen, da visse sygdomme og lægemidler kan give lignende symptomer. Hvis der ikke er en identificerbar årsag, taler vi om primær hyperhidrose, og her har vi gode behandlingsmuligheder.\n\nEn af de mest effektive behandlinger er injektioner med botulintoksin i de berørte områder. Det blokerer de nerveimpulser, der aktiverer svedkirtlerne, og giver typisk seks til tolv måneder uden overdreven svedproduktion. Behandlingen er hurtig, effektiv og godt dokumenteret. Vi går grundigt igennem, hvad du kan forvente, inden vi går i gang.\n\nDet er vigtigt for os, at du forlader klinikken med en realistisk forventning om, hvad behandlingen kan. Vi ser det som vores opgave ikke bare at behandle huden men at hjælpe dig til en mere tryg og fri hverdag.',
+        extraInfo: {
+          col1Title: 'Botulintoksin',
+          col1Text: 'Injektioner i de berørte områder giver typisk seks til tolv måneders effektiv lindring.',
+          col2Title: 'Grundig udredning',
+          col2Text: 'Vi afklarer altid, om der er en underliggende årsag, inden vi fastlægger behandlingsplanen.'
+        },
+        faq: [
+          { q: "Er overdreven svedtendens en sygdom?", a: "Ja, hyperhidrose er en anerkendt medicinsk tilstand og ikke bare noget, man skal leve med. Primær hyperhidrose opstår uden nogen underliggende årsag og er oftest betinget af en overaktivitet i det autonome nervesystem. Sekundær hyperhidrose kan skyldes en anden sygdom eller et lægemiddel, og den behandles ved at adressere årsagen." },
+          { q: "Hvad er botulintoksin, og er det sikkert?", a: "Botulintoksin er et stof, der blokerer nerveimpulser til muskler og kirtler. Det er veldokumenteret og bruges medicinsk til mange formål. Ved hyperhidrose injiceres det i huden over de overaktive svedkirtler og forhindrer dem i at modtage signalet om at producere sved. Det er sikkert og veltolereret hos langt de fleste." },
+          { q: "Gør injektionerne ondt?", a: "Der vil være en vis ubehag forbundet med injektionerne, da der gives mange små stik i det berørte område. I armhulen er det de fleste uproblematisk. På hænder og fødder, hvor huden er tykkere og mere følsom, bruger vi ofte en lokalbedøvende creme inden behandlingen for at mindske ubehaget." },
+          { q: "Hvornår mærker jeg effekten, og hvor længe varer den?", a: "De fleste mærker en tydelig forskel inden for en til to uger efter behandlingen. Effekten varer typisk fra seks til tolv måneder, hvorefter behandlingen kan gentages. Med gentagne behandlinger oplever mange, at intervallerne bliver længere over tid." },
+          { q: "Er der andre behandlingsmuligheder end botulintoksin?", a: "Ja. Første skridt er altid et stærkt aluminiumklorid-baseret antiperspirant, der påføres om natten. Det kan alene hjælpe mange tilstrækkeligt. For hænder og fødder findes der iontoforeseterapi, hvor huden behandles med svag elektrisk strøm i vand. Vi gennemgår mulighederne og finder den løsning, der passer bedst til dig." }
+        ]
+      },
+      {
+        name: 'Kondylomer og vorter',
+        slug: 'kondylomer',
+        category: 'hud',
+        title: 'Behandling af kondylomer og vorter',
+        h2Title: 'Diskret og effektiv behandling',
+        shortIntro: 'Vi tilbyder behandling af både kondylomer og vorter i en tryg og fortrolig ramme.',
+        narrative: 'Vorter og kondylomer er begge forårsaget af human papillomavirus, HPV, men de er forskellige typer af virussen og sidder typisk forskellige steder på kroppen. Vorter sidder oftest på hænder, fødder og knæ, mens kondylomer er en seksuelt overført infektion, der sidder på og omkring kønsorganerne og endetarmsåbningen. Begge kan behandles effektivt, men de kræver forskellige tilgange.\n\nKondylomer er en af de mest udbredte seksuelt overførte infektioner og er ikke forbundet med dårlig hygiejne eller en bestemt livsstil. Det er meget let at smitte andre, også uden synlige vorter, og mange ved slet ikke, at de er smittede. Hos Klinik Sirius behandler vi kondylomer med fuld diskretion og i en tryg atmosfære, uden at du behøver at føle dig flov eller bekymret for fortrolighed.\n\nVores speciallæge Kawa Ajgeiy har bred erfaring med behandling af begge tilstande. Vi starter altid med en grundig undersøgelse, så vi er sikre på diagnosen, inden vi fastlægger planen. Det er vigtigt, fordi visse andre hudforandringer kan ligne vorter eller kondylomer, og en fejldiagnose kan forsinke den rette behandling.\n\nBehandlingsmulighederne afhænger af, hvilken type vækst der er tale om, og hvor den sidder. Det kan være lokale behandlingscremer, der over tid nedbryder væksten, eller mekanisk fjernelse direkte i klinikken. Begge metoder er effektive, og vi vælger den løsning, der er mest hensigtsmæssig i netop din situation.\n\nEt vigtigt råd til alle, der har kondylomer, er at tale åbent med seksuelle partnere, så de også kan blive undersøgt og eventuelt behandlet. Vi hjælper dig gerne med, hvordan du bedst håndterer den samtale. Vaccination mod HPV er desuden mulig og kan beskytte mod de hyppigste kræftfremkaldende typer.',
+        extraInfo: {
+          col1Title: 'Fuld diskretion',
+          col1Text: 'Vi behandler kondylomer i en tryg og fortrolig ramme uden vurdering.',
+          col2Title: 'Effektiv fjernelse',
+          col2Text: 'Vorter og kondylomer kan fjernes direkte i klinikken eller behandles med godkendte cremer.'
+        },
+        faq: [
+          { q: "Smitter vorter?", a: "Ja, vorter er smitsomme. HPV-virussen overføres ved direkte kontakt med vorten og trives i fugtige miljøer som baderum og swimmingpools. Børn er særligt modtagelige. At undgå at rive i vorterne og vaske hænder regelmæssigt reducerer risikoen for spredning." },
+          { q: "Er kondylomer farlige?", a: "De fleste kondylomer er forårsaget af HPV-typer, der ikke giver kræft. Men visse HPV-typer kan på sigt føre til kræft i livmoderhalsregionen, endetarmen og svælget. Det er en af grundene til, at kondylomer bør behandles, og at det nationale HPV-vaccinationsprogram er vigtigt." },
+          { q: "Kan kondylomer forsvinde af sig selv?", a: "Ja, det kan de faktisk hos nogen, da immunsystemet kan bekæmpe HPV over tid. Men det er usikkert, hvornår det sker, og i mellemtiden kan man smitte andre. Behandling er den sikreste og hurtigste vej til at komme af med dem." },
+          { q: "Kan man vaccinere sig mod HPV som voksen?", a: "Ja, det kan man. Vaccinen er mest effektiv inden første seksuelle kontakt, men kan stadig give beskyttelse mod de typer, man ikke allerede er smittet med. Vi kan rådgive om, hvad det er relevant for dig, og hjælpe med at få det sat i gang." },
+          { q: "Vender vorter og kondylomer tilbage efter behandling?", a: "Det kan de, fordi HPV-virussen kan ligge latent i huden, selv efter væksten er fjernet. Sandsynligheden afhænger af immunsystemets evne til at holde virussen nede. Det er normalt, at der skal mere end én behandling til, og vi følger dig, til vi er sikre på, at resultatet er stabilt." }
+        ]
       }
     ],
     onh: [
