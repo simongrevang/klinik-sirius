@@ -60,7 +60,7 @@ const App = () => {
         title: 'Akut og kronisk nældefeber',
         h2Title: 'Effektiv lindring af nældefeberudbrud',
         shortIntro: 'Få hurtig hjælp til at identificere årsagen bag dine udslæt og opnå effektiv lindring.',
-        narrative: 'Nældefeber opstår ofte helt ud af det blå som kløende hævelser. Behandlingen tager altid udgangspunkt i at give dig ro med det samme, typisk gennem moderne antihistaminer.',
+        narrative: 'Nældefeber er en tilstand, de fleste kender til enten selv eller fra nogen i familien. Pludselig opstår der kløende, hævede pletter på huden, og mange beskriver det som at have ramt brændenælder uden at vide, hvornår det skete. Det kan være ubehageligt, forvirrende og til tider bekymrende, og netop derfor er det vigtigt at få det undersøgt ordentligt.\n\nVi ser mange patienter med nældefeber i klinikken, og vi ved, at det ikke altid er let at finde frem til årsagen. Udløserne er mange og spænder bredt. Det kan være en infektion, en fødevare, et lægemiddel, pres mod huden, kulde eller varme. Hos en del patienter finder vi aldrig en entydig årsag, men det betyder ikke, at vi ikke kan hjælpe.\n\nFørste prioritet er at give dig ro i kroppen. Vi starter typisk med moderne antihistaminer, der hurtigt kan dæmpe reaktionen. Derefter tager vi en grundig snak om, hvornår udbrudene opstår, og hvad der eventuelt kan kobles til dem. Den kortlægning er ofte nøglen til at undgå fremtidige anfald.\n\nHvis nældefeberens varer ved i mere end seks uger, taler vi om kronisk nældefeber, og her er det endnu vigtigere at have en specialist på sagen. Kawa Ajgeiy har bred erfaring med netop de komplekse og langvarige forløb, og han vil tage sig tid til at gå din situation grundigt igennem.\n\nMange af vores patienter fortæller, at det at have en konkret plan giver en enorm lettelse, selv når årsagen ikke er fuldstændig opklaret. Vi sørger for, at du forlader klinikken med viden om, hvad du skal gøre, og hvornår du bør komme tilbage.',
         extraInfo: {
           col1Title: 'Udløsende faktorer',
           col1Text: 'Det kan være komplekst, da udløserne spænder vidt fra infektioner til fysiske påvirkninger.',
@@ -68,7 +68,11 @@ const App = () => {
           col2Text: 'Vi prioriterer hurtig indsats, så du kan få ro på huden med det samme.'
         },
         faq: [
-          { q: "Hvor længe varer et anfald?", a: "Enkelte hævelser forsvinder normalt inden for 24 timer, men nye kan opstå." }
+          { q: "Hvor længe varer et anfald?", a: "Enkelte hævelser forsvinder som regel inden for 24 timer, men nye kan dukke op undervejs. Hos nogen varer et samlet udbrud kun et par dage, mens andre oplever det stå på i uger. Hvis det varer mere end seks uger, taler vi om kronisk nældefeber, og det kræver en mere systematisk tilgang." },
+          { q: "Hvad udløser nældefeber?", a: "Der er mange mulige årsager. De hyppigste er infektioner, fødevarer, lægemidler, insektstik og fysiske påvirkninger som tryk, kulde eller varme. Hos en del patienter finder man aldrig en specifik udløser, og det kalder vi idiopatisk nældefeber. Det er helt normalt og ændrer ikke på, at vi stadig kan behandle dig effektivt." },
+          { q: "Er nældefeber farligt?", a: "I de fleste tilfælde er nældefeber ubehageligt men ikke farligt. Det er dog vigtigt at være opmærksom, hvis du oplever hævelse i ansigt, læber eller hals, eller hvis du får vejrtrækningsbesvær. Det kan være tegn på angioødem, som kræver akut behandling. Oplever du disse symptomer, skal du kontakte akuthjælp med det samme." },
+          { q: "Kan nældefeber komme igen?", a: "Ja, det kan det godt, særligt hvis man ikke ved, hvad der udløser det. Derfor er det en god idé at holde en slags dagbog over, hvornår udbrudene sker, hvad du har spist, og hvad du har lavet. Den information er guld værd i konsultationen og hjælper os med at kortlægge et mønster." },
+          { q: "Hvilken behandling tilbyder I?", a: "Vi starter oftest med antihistaminer, som er meget effektive mod symptomerne. Hvis de ikke er tilstrækkelige, har vi andre muligheder at trække på, herunder biologiske behandlinger til de svære kroniske forløb. Vi tilpasser altid planen til dig og din situation frem for at bruge en standardløsning." }
         ]
       },
       {
@@ -78,7 +82,7 @@ const App = () => {
         title: 'Moderne behandling af psoriasis',
         h2Title: 'Vejen til en bedre hverdag med psoriasis',
         shortIntro: 'Vi tilbyder de nyeste behandlingsformer, så du kan opnå en hverdag med færre symptomer.',
-        narrative: 'Psoriasis skyldes, at hudcellerne fornyer sig alt for hurtigt. I dag behøver man ikke acceptere en hud, der altid er dækket af skæl.\n\nVi arbejder med alt fra specialudviklede cremer til de nyeste medicinske løsninger.',
+        narrative: 'Psoriasis er en kronisk hudsygdom, der opstår, fordi immunsystemet sender forkerte signaler og får hudcellerne til at fornye sig alt for hurtigt. Det resulterer i de karakteristiske røde, skælagtige pletter, som typisk sidder på albuer, knæ, hårbund og ryg, men som i princippet kan opstå alle steder på kroppen. For mange er det ikke bare et kosmetisk problem men noget, der påvirker selvbillede, søvn og livskvalitet.\n\nVi har hjulpet mange patienter med psoriasis i klinikken, og det første vi gør er at sætte os grundigt ind i dit forløb. Hvornår kom det første gang? Hvilke områder er ramt? Hvad gør det bedre, og hvad gør det værre? Svarene på de spørgsmål er afgørende for at sætte den rigtige behandling ind fra starten.\n\nBehandlingsmulighederne er heldigvis mange og langt bedre i dag end for bare ti år siden. Vi begynder typisk med lokale præparater som specielle cremer og salver, der retter sig direkte mod de ramte områder. Hvis de ikke er tilstrækkelige, har vi adgang til yderligere behandlingsformer, herunder lysbehandling og systemisk medicin.\n\nEn ting, vi ser igen og igen, er at stress spiller en stor rolle. Mange oplever, at psoriasis blusser op i perioder med meget pres, og at sygdommen roer sig, når hverdagen bliver mere overskuelig. Vi taler altid med dig om de faktorer, du selv kan påvirke, fordi behandling og livsstil fungerer bedst sammen.\n\nMålet er ikke nødvendigvis at kurere psoriasis, da det er en kronisk tilstand. Men med den rette behandling og opfølgning er det realistisk at opnå lange perioder med næsten fri hud og en hverdag, hvor sygdommen ikke sidder i forsædet.',
         extraInfo: {
           col1Title: 'Livsstil',
           col1Text: 'Stress og miljø kan have en mærkbar indflydelse på sygdommens aktivitet.',
@@ -86,7 +90,11 @@ const App = () => {
           col2Text: 'Vi starter med de mest skånsomme løsninger og følger din udvikling tæt.'
         },
         faq: [
-          { q: "Er det arveligt?", a: "Ja, der er en stærk genetisk komponent involveret i psoriasis." }
+          { q: "Er psoriasis arveligt?", a: "Ja, der er en tydelig genetisk komponent. Har du forældre eller søskende med psoriasis, er risikoen for selv at udvikle det større. Men arvelighed er ikke skæbne. Mange med genetisk disposition får det aldrig, og omvendt opstår det også hos folk uden arvelig baggrund." },
+          { q: "Smitter psoriasis?", a: "Nej, psoriasis smitter absolut ikke. Det er en fejl i immunsystemets signaler i din egen krop og har ingenting med bakterier eller virus at gøre. Du kan roligt have tæt kontakt med andre mennesker uden risiko for at overføre det." },
+          { q: "Hvad forværrer psoriasis?", a: "De mest almindelige triggere er stress, infektioner, visse lægemidler, alkohol og hudskader som ridsning eller solforbrænding. Mange oplever også, at sygdommen er sæsonbestemt og forværres om vinteren, hvor huden er tørre og sollyset er svagt. At kende sine egne triggere er en vigtig del af at leve godt med psoriasis." },
+          { q: "Kan psoriasis kureres?", a: "Det er en kronisk sygdom, som ikke kan kureres i traditionel forstand. Men det betyder ikke, at man bare skal leve med det. Med den rette behandling kan man opnå meget lange remissionsperioder med næsten fri hud. Mange patienter lever et normalt hverdagsliv med psoriasis under god kontrol." },
+          { q: "Har psoriasis forbindelse til andre sygdomme?", a: "Ja, det er vigtigt at vide. En del patienter med psoriasis udvikler psoriasisgigt, som giver smerter og hævelse i led. Derudover ses der øget forekomst af hjerte-kar-sygdomme og metabolisk syndrom hos patienter med svær psoriasis. Det er en af grundene til, at vi altid ser på hele billedet og ikke kun huden isoleret." }
         ]
       },
       {
@@ -96,7 +104,7 @@ const App = () => {
         title: 'Tryghed gennem professionel kontrol',
         h2Title: 'Specialiseret gennemgang med dermatoskopi',
         shortIntro: 'Få foretaget en grundig gennemgang af dine modermærker for rettidig omhu.',
-        narrative: 'Modermærkekræft er en af de sygdomme, der bedst kan behandles, hvis den opdages tidligt. Hvis et mærke skal fjernes, gør vi det her på stedet under lokalbedøvelse.',
+        narrative: 'Modermærker er noget de fleste af os har, og langt de fleste er fuldstændig ufarlige. Men modermærkekræft er en af de kræftformer, der vokser hurtigst i Danmark, og det gør det vigtigt at holde øje med forandringer. Det gode er, at tidlig opdagelse gør en enorm forskel for behandlingsmulighederne og udsigterne.\n\nHos Klinik Sirius foretager vi en grundig gennemgang af dine modermærker med dermatoskopi, et avanceret forstørrelsesværktøj med specielt lys, som giver os mulighed for at se strukturer i huden, man ikke kan se med det blotte øje. Det løfter præcisionen markant i forhold til en almindelig visuel inspektion.\n\nVores speciallæge Kawa Ajgeiy har mange års erfaring med netop dermatoskopi og diagnosticering af hudforandringer fra sine år på hudafdelingerne i Odense og Aarhus. Det er ikke noget, der bare kræves et hurtigt blik. Det kræver erfaring at tolke de mønstre og strukturer, man ser, og den erfaring bringer han med sig til hver eneste konsultation.\n\nHvis vi finder et mærke, der giver anledning til bekymring, kan vi i mange tilfælde fjerne det samme dag under lokalbedøvelse. Det tager typisk kort tid, er næsten smertefrit, og vævsprøven sendes herefter til en patologisk analyse, så vi er helt sikre på, hvad vi har at gøre med.\n\nVi anbefaler en kontrol, hvis du har mærker, der har forandret sig, er asymmetriske, har ujævne kanter, indeholder flere farver, er større end seks millimeter, eller blot er nye og vokser. Du behøver ikke vente, til du er helt sikker. Det er langt bedre at komme forbi og høre, at alt er fint, end at vente for længe.',
         extraInfo: {
           col1Title: 'Egenkontrol',
           col1Text: 'Lær dine egne mærker at kende, så du hurtigt opdager forandringer.',
@@ -104,7 +112,11 @@ const App = () => {
           col2Text: 'Vævet bliver altid sendt til en grundig analyse for din sikkerhed.'
         },
         faq: [
-          { q: "Hvor tit skal de tjekkes?", a: "Vi anbefaler en årlig kontrol, hvis du har mange mærker." }
+          { q: "Hvor tit skal mine modermærker tjekkes?", a: "Har du mange modermærker, mærker med usædvanligt udseende eller en familiehistorie med modermærkekræft, anbefaler vi en årlig kontrol. Er du i tvivl om et specifikt mærke, behøver du ikke vente til næste planlagte kontrol. Kom ind og få det set." },
+          { q: "Hvad skal jeg kigge efter selv?", a: "Hukommelsesreglen er ABCDE: Asymmetri, ujævne Begrænsninger, flere Farver, Diameter over 6 mm og Ændring over tid. Hvis et mærke ændrer sig på nogen af disse punkter, eller hvis du mærker kløe eller bløder fra et mærke, bør du bestille tid." },
+          { q: "Hvad sker der, hvis I finder noget mistænkeligt?", a: "Hvis vi ser noget, der giver anledning til nærmere undersøgelse, anbefaler vi at fjerne mærket. Det gøres her i klinikken under lokalbedøvelse, og det tager som regel kun et kvarter. Vævsprøven sendes til patologisk undersøgelse, og vi kontakter dig med svaret." },
+          { q: "Gør det ondt at få fjernet et modermærke?", a: "Vi bedøver det lokale område inden indgrebet, så du ikke mærker smerte undervejs. Efterfølgende kan der være lidt ømhed de første dage, men de fleste klarer sig fint uden stærk smertestillende medicin. Helingen går typisk hurtigt." },
+          { q: "Er alle hudforandringer farlige?", a: "Langt de fleste er det ikke. Der er mange typer godartede hudforandringer, som kan se bekymrende ud men er fuldstændig harmløse. Netop fordi det kan være svært at skelne selv, er en professionel gennemgang med dermatoskopi den tryggeste vej frem. Vi giver dig en klar besked om, hvad vi ser." }
         ]
       }
     ],
@@ -176,11 +188,11 @@ const App = () => {
       name: 'Kawa Ajgeiy',
       role: 'Speciallæge i hudsygdomme',
       expertise: 'Specialist i hudsygdomme, allergologi og dermatoskopi.',
-      summary: 'Uddannet læge fra SDU med specialisering fra de førende hudafdelinger i Odense og Aarhus.',
+      summary: 'Uddannet læge fra Syddansk Universitet i Odense 2013. Speciallægeuddannet i hudsygdomme ved Odense Universitetshospital og Aarhus Universitetshospital i 2019.',
       details: [
-        { label: 'Uddannelse', items: ['Læge fra Syddansk Universitet (2013)', 'Speciallægeuddannet ved OUH og Aarhus Universitetshospital (2019)'] },
-        { label: 'Fagligt virke', items: ['Speciallæge ved Hudafdeling og Allergicentret på OUH', 'Bred erfaring indenfor diagnosticering af hudsygdomme'] },
-        { label: 'Autoritet', items: ['Medlem af Dansk Dermatologisk Selskab', 'Videnskabelige publikationer om hudsygdomme'] }
+        { label: 'Uddannelse', items: ['Læge fra Syddansk Universitet, Odense (2013)', 'Speciallæge i hudsygdomme, OUH og Aarhus Universitetshospital (2019)'] },
+        { label: 'Fagligt virke', items: ['Ansat som speciallæge ved Hudafdeling og Allergicentret, OUH', 'Bred erfaring inden for diagnose og behandling af hudsygdomme'] },
+        { label: 'Autoritet', items: ['Medlem af Dansk Dermatologisk Selskab', 'Flere videnskabelige publikationer inden for hudsygdomme'] }
       ]
     }
   ];
