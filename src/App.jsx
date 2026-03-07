@@ -911,8 +911,11 @@ const App = () => {
               <div className="bg-white border border-slate-100 p-10 rounded-[3rem] shadow-xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full translate-x-10 -translate-y-10"></div>
                 <div className="flex items-center space-x-5 mb-10 relative z-10">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 font-black text-2xl uppercase italic shadow-inner">
-                    {service.category === 'hud' ? 'KA' : 'JS'}
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center shadow-inner">
+                    {service.category === 'hud'
+                      ? <span className="text-blue-900 font-black text-2xl uppercase italic">KA</span>
+                      : <img src="/Jalal%20Taha%20Saadi.png" alt="Jalal Taha Saadi" className="w-full h-full object-cover object-top" />
+                    }
                   </div>
                   <div>
                     <p className="font-black text-xl leading-none uppercase italic text-slate-900">{service.category === 'hud' ? 'Kawa Ajgeiy' : 'Jalal Taha Saadi'}</p>
