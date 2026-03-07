@@ -297,15 +297,15 @@ const App = () => {
                   </div>
                   <div>
                     <p className="font-black text-xl leading-none uppercase italic text-slate-900">{service.category === 'hud' ? 'Kawa Ajgeiy' : 'Jalal Taha Saadi'}</p>
-                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mt-2">Speciallægeansvarlig</p>
+                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mt-2">{service.category === 'hud' ? 'Speciallæge i hudsygdomme' : 'Speciallæge i ØNH'}</p>
                   </div>
                 </div>
                 <div className="space-y-4 relative z-10">
                   <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight italic">
-                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> Certificeret specialist
+                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'OUH og Aarhus Universitetshospital' : 'SVS Esbjerg og OUH'}
                   </div>
                   <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight italic">
-                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> Akkrediteret klinik
+                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'Dansk Dermatologisk Selskab' : 'Dansk Rhinologisk Selskab'}
                   </div>
                 </div>
               </div>
@@ -547,7 +547,7 @@ const App = () => {
                     <Stethoscope size={32} />
                   </div>
                   <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight italic">Hudsygdomme</h3>
-                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light italic">Speciallæge Kawa Ajgeiy varetager udredning og behandling af alle hudlidelser, herunder modermærkekontrol og akne.</p>
+                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light italic">Speciallæge Kawa Ajgeiy varetager udredning og behandling af eksem, nældefeber, psoriasis og modermærker. Han er uddannet ved OUH og Aarhus Universitetshospital og er ansat ved Hudafdeling og Allergicentret på OUH.</p>
                   <button onClick={() => setActivePage('eksem')} className="flex items-center font-black text-blue-900 uppercase text-[10px] tracking-[0.3em] group italic">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-emerald-600" />
                   </button>
