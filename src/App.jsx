@@ -1185,7 +1185,7 @@ const App = () => {
                   </button>
                 </nav>
                 <div className="max-w-4xl">
-                  <h1 className="text-3xl sm:text-4xl lg:text-8xl font-black text-blue-900 mb-8 uppercase tracking-tight lg:tracking-tighter italic break-words">Patientinformation</h1>
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-blue-900 mb-8 uppercase tracking-tight lg:tracking-tighter italic">Patientinformation</h1>
                   <p className="text-xl text-slate-600 leading-relaxed font-light border-l-8 border-emerald-700 pl-8 italic">
                     Få overblik over dine rettigheder som patient, uanset om du kommer via det offentlige, din forsikring eller som privatbetalende.
                   </p>
