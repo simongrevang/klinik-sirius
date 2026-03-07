@@ -781,6 +781,7 @@ const App = () => {
   const staff = [
     {
       name: 'Jalal Taha Saadi',
+      image: '/Jalal%20Taha%20Saadi.png',
       role: 'Øre-, Næse-, Halsspecialist',
       expertise: 'Ekspert i kirurgiske indgreb, skjoldbruskkirtel og rhinoplastik.',
       summary: 'Uddannet læge ved Syddansk Universitet 2009. Arbejdet i forskellige kirurgiske specialer i Danmark samt i almen praksis i Danmark og Norge.',
@@ -795,7 +796,7 @@ const App = () => {
       role: 'Speciallæge i anæstesi',
       expertise: 'Overlæge og ekspert i anæstesiologi, intensiv medicin og sundhedsledelse.',
       summary: 'Tidligere direktør og lægefaglig ansvarlig ved Hjertecenter Varde gennem 20 år (1997-2017).',
-      image: '/Ricardo%20Sanchez.webp',
+      image: '/Ricardo%20Sanchez.png',
       details: [
         { label: 'Baggrund', items: ['Læge fra Univ. Valencia (1976)', 'Speciallæge i anæstesiologi og intensiv medicin (1988)', 'Master of Health Management fra CBS (2006)'] },
         { label: 'Karriere', items: ['Direktør v. Hjertecenter Varde (1997-2017)', 'Overlæge ved anæstesi og intensiv afd., SVS Esbjerg'] },
