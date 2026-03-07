@@ -1036,10 +1036,9 @@ const App = () => {
                   </div>
                 </div>
                 <div className="relative hidden lg:block">
-                  <div className="w-full h-[650px] bg-slate-100 rounded-[3rem] shadow-2xl relative overflow-hidden group border-8 border-white flex flex-col items-center justify-center text-slate-300">
+                  <div className="w-full h-[650px] rounded-[3rem] shadow-2xl relative overflow-hidden group border-8 border-white">
+                    <img src="/klinik-sirius-hero.webp" alt="Klinik Sirius, Speciallæger i Varde" className="w-full h-full object-cover object-center" />
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 to-transparent"></div>
-                    <MapPin size={100} className="mb-6 opacity-20" />
-                    <p className="uppercase tracking-[0.3em] font-black text-xs opacity-40 italic">Klinik Sirius, Varde</p>
                   </div>
                   <div className="absolute -bottom-6 -left-10 bg-white p-8 rounded-3xl shadow-2xl border border-slate-50 max-w-xs">
                     <div className="flex items-center space-x-4 mb-3">
