@@ -858,7 +858,7 @@ const App = () => {
               {service.shortIntro}
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="https://www.patientportalen.dk" target="_blank" rel="noopener noreferrer" className={`px-10 py-5 rounded-2xl text-white font-black uppercase tracking-widest text-xs shadow-xl hover:-translate-y-1 transition-all inline-flex items-center ${colors.accent}`}>
+              <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`px-10 py-5 rounded-2xl text-white font-black uppercase tracking-widest text-xs shadow-xl hover:-translate-y-1 transition-all inline-flex items-center ${colors.accent}`}>
                 Book tid online
               </a>
               <div className="flex items-center px-6 text-slate-500 font-black uppercase text-xs tracking-widest italic">
@@ -936,7 +936,7 @@ const App = () => {
                 <div className="relative z-10">
                   <h4 className="text-2xl font-black mb-4 uppercase tracking-tight italic">Book tid nu</h4>
                   <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium italic">Få en specialistvurdering hurtigt uden unødig ventetid.</p>
-                  <a href="https://www.patientportalen.dk" target="_blank" rel="noopener noreferrer" className={`w-full py-5 rounded-2xl text-white font-black uppercase tracking-widest text-[10px] transition-all shadow-lg active:scale-95 inline-block text-center ${colors.accent}`}>
+                  <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`w-full py-5 rounded-2xl text-white font-black uppercase tracking-widest text-[10px] transition-all shadow-lg active:scale-95 inline-block text-center ${colors.accent}`}>
                     Gå til selvbetjening
                   </a>
                 </div>
@@ -985,10 +985,11 @@ const App = () => {
             <NavItemComponent title="Hudsygdomme" items={services.hud} id="hud" />
             <NavItemComponent title="ØNH Undersøgelser" items={services.onhUndersogelser} id="onhU" />
             <NavItemComponent title="ØNH Operationer" items={services.onhOperationer} id="onhO" />
+            <button onClick={() => setActivePage('personale')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'personale' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Personale</button>
           </nav>
 
           <div className="flex items-center space-x-4">
-            <a href="https://www.patientportalen.dk" target="_blank" rel="noopener noreferrer" className={`hidden sm:flex items-center px-6 py-3 rounded-2xl text-white text-[10px] font-black uppercase tracking-widest transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 ${colors.accent}`}>
+            <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`hidden sm:flex items-center px-6 py-3 rounded-2xl text-white text-[10px] font-black uppercase tracking-widest transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 ${colors.accent}`}>
               Selvbetjening <ExternalLink size={14} className="ml-2" />
             </a>
             <button className="lg:hidden p-2 text-slate-600" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -1099,7 +1100,7 @@ const App = () => {
           {/* CTA */}
           <div className="px-6 pb-8 pt-4 border-t border-slate-100 shrink-0">
             <a
-              href="https://www.patientportalen.dk"
+              href="https://patientportal.egclinea.com/?id=838"
               target="_blank"
               rel="noopener noreferrer"
               className={`flex items-center justify-center w-full py-5 rounded-2xl text-white font-black uppercase tracking-widest text-xs shadow-lg ${colors.accent}`}
@@ -1130,7 +1131,7 @@ const App = () => {
                     <p className="mb-4 text-slate-700 font-bold">Klinik Sirius er stiftet med en vision om at gøre specialistbehandling tilgængelig og tryg. Vi forener årtiers erfaring med en moderne patientfokuseret tilgang.</p>
                   </div>
                   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-5 justify-center lg:justify-start font-black uppercase tracking-widest text-[10px]">
-                    <a href="https://www.patientportalen.dk" target="_blank" rel="noopener noreferrer" className={`px-10 py-5 rounded-[2rem] text-white font-bold shadow-xl hover:-translate-y-1 transition-all active:scale-95 inline-block text-center ${colors.accent}`}>
+                    <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`px-10 py-5 rounded-[2rem] text-white font-bold shadow-xl hover:-translate-y-1 transition-all active:scale-95 inline-block text-center ${colors.accent}`}>
                       Book tid nu
                     </a>
                     <button
