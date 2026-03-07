@@ -1584,7 +1584,6 @@ const App = () => {
             <div>
               <h6 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px] italic">Genveje</h6>
               <ul className="space-y-4 text-slate-300 font-bold text-[10px] uppercase tracking-widest italic">
-                <li onClick={() => setActivePage('forside')} className="hover:text-white cursor-pointer transition-colors">Forside</li>
                 <li onClick={() => setActivePage('patientinfo')} className="hover:text-white cursor-pointer transition-colors">Patientinfo</li>
                 <li onClick={() => setActivePage('personale')} className="hover:text-white cursor-pointer transition-colors">Personale</li>
                 <li onClick={() => setActivePage('find-os')} className="hover:text-white cursor-pointer transition-colors">Kontakt</li>
