@@ -879,9 +879,6 @@ const App = () => {
             <NavItemComponent title="Hudsygdomme" items={services.hud} id="hud" />
             <NavItemComponent title="ØNH Undersøgelser" items={services.onhUndersogelser} id="onhU" />
             <NavItemComponent title="ØNH Operationer" items={services.onhOperationer} id="onhO" />
-            <button onClick={() => setActivePage('patientinfo')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'patientinfo' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Patientinfo</button>
-            <button onClick={() => setActivePage('personale')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'personale' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Personale</button>
-            <button onClick={() => setActivePage('find-os')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'find-os' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Find os</button>
           </nav>
 
           <div className="flex items-center space-x-4">
@@ -991,21 +988,6 @@ const App = () => {
               )}
             </div>
 
-            {/* Øvrige sider */}
-            {[
-              { label: 'Patientinfo', page: 'patientinfo' },
-              { label: 'Personale', page: 'personale' },
-              { label: 'Find os', page: 'find-os' },
-            ].map(item => (
-              <button
-                key={item.page}
-                onClick={() => setActivePage(item.page)}
-                className={`flex items-center justify-between px-4 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-colors ${activePage === item.page ? 'bg-blue-50 text-blue-900' : 'text-slate-700 hover:bg-slate-50'}`}
-              >
-                {item.label}
-                <ChevronRight size={16} className="text-slate-300" />
-              </button>
-            ))}
           </nav>
 
           {/* CTA */}
