@@ -243,7 +243,7 @@ const App = () => {
           <div className="lg:col-span-2 space-y-12">
             <div className="bg-white">
               <h2 className="text-3xl font-black mb-8 text-blue-900 uppercase italic tracking-tight">{service.h2Title}</h2>
-              <div className="text-xl text-slate-600 leading-relaxed font-light space-y-8 italic">
+              <div className="text-xl text-slate-600 leading-relaxed font-light space-y-8">
                 {service.narrative.split('\n\n').map((paragraph, i) => (
                   <p key={i}>{paragraph}</p>
                 ))}
@@ -265,7 +265,7 @@ const App = () => {
                       </div>
                     </button>
                     {openFaq === idx && (
-                      <div className="px-8 pb-8 text-slate-500 leading-relaxed font-medium italic">
+                      <div className="px-8 pb-8 text-slate-500 leading-relaxed font-medium">
                         {item.a}
                       </div>
                     )}
