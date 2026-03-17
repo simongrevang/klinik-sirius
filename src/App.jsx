@@ -1150,9 +1150,9 @@ const App = () => {
                   <div className="absolute -bottom-6 -left-10 bg-white p-8 rounded-3xl shadow-2xl border border-slate-50 max-w-xs">
                     <div className="flex items-center space-x-4 mb-3">
                       <Award size={24} className="text-emerald-700" />
-                      <span className="font-extrabold text-blue-900 uppercase tracking-widest text-[12px] italic">Akkrediteret</span>
+                      <span className="font-extrabold text-blue-900 uppercase tracking-widest text-[12px] italic">Erfarne speciallæger</span>
                     </div>
-                    <p className="text-xs text-slate-500 font-medium italic leading-relaxed">Vi lever op til de nationale standarder for kvalitet og patientsikkerhed (IKAS).</p>
+                    <p className="text-xs text-slate-500 font-medium italic leading-relaxed">Vores speciallæger har mange års erfaring og sikrer dig faglig kompetent behandling.</p>
                   </div>
                 </div>
               </div>
