@@ -41,7 +41,7 @@ const App = () => {
     const staticMeta = {
       forside:       { title: 'Klinik Sirius | Speciallæger i Varde – Hud og ØNH', desc: 'Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme. Vi betjener patienter fra Varde, Esbjerg og hele Sydvestjylland.' },
       patientinfo:   { title: 'Patientinfo | Klinik Sirius, Varde', desc: 'Praktisk information til patienter hos Klinik Sirius i Varde. Priser, forsikring, åbningstider og hvad du skal medbringe.' },
-      personale:     { title: 'Vores personale | Klinik Sirius, Varde', desc: 'Mød speciallægerne bag Klinik Sirius i Varde: Jalal Taha Saadi (ØNH) og Kawa Ajgeiy (hudsygdomme).' },
+      personale:     { title: 'Vores personale | Klinik Sirius, Varde', desc: 'Mød speciallægerne bag Klinik Sirius i Varde: Jalal Taha Saadi (ØNH), Kawa Ajgeiy (hudsygdomme) og Jerzy Stiasny (håndkirurgi).' },
       'find-os':     { title: 'Find os | Klinik Sirius, Søndertoften 22, Varde', desc: 'Find Klinik Sirius på Søndertoften 22, 6800 Varde. Book tid online eller ring på 32 22 32 24.' },
       privacypolitik:{ title: 'Privatlivspolitik | Klinik Sirius, Varde', desc: 'Privatlivspolitik for Klinik Sirius, privat speciallægepraksis i Varde.' },
     };
@@ -1015,6 +1015,18 @@ const App = () => {
         { label: 'Fagligt virke', items: ['Ansat som speciallæge ved Hudafdeling og Allergicentret, OUH', 'Bred erfaring inden for diagnose og behandling af hudsygdomme'] },
         { label: 'Autoritet', items: ['Medlem af Dansk Dermatologisk Selskab', 'Flere videnskabelige publikationer inden for hudsygdomme'] }
       ]
+    },
+    {
+      name: 'Jerzy Stiasny',
+      image: '/Jerzy%20Stiasny.png',
+      role: 'Dr. med., Speciallæge i ortopædkirurgi & overlæge i håndkirurgi',
+      expertise: 'Ekspert i håndkirurgi, nerveskader, rekonstruktiv kirurgi og plexus brachialis læsioner.',
+      summary: 'Dr. med. og speciallæge i ortopædkirurgi med mange års erfaring inden for håndkirurgi. Sektoransvarlig overlæge ved Håndkirurgisk sektor, Sygehus Sønderjylland siden 2019. Har haft ophold ved førende internationale centre inden for hånd- og nerveskirurgi.',
+      details: [
+        { label: 'Erfaring', items: ['Sektoransvarlig overlæge, Håndkirurgisk sektor, Sygehus Sønderjylland (2019–nu)', 'Overlæge, Ortopædkirurgisk afdeling, Odense Universitetshospital (2012–2017)', 'Overlæge og afdelingslæge, Håndkirurgisk sektor, OUH (2007–2012)'] },
+        { label: 'Internationale ophold', items: ['Hånd- og Mikrokirurgi, Rikshospitalet, Oslo (2011)', 'Peripheral Nerve Injury Unit, Royal National Orthopaedic Hospital, London (2010)'] },
+        { label: 'Forskning & publikationer', items: ['Internationalt randomiseret studie om TFCC-rupturer, REINFORCER (2022–nu)', 'Randomiseret studie om CMC-1 artrose, Weilby projekt (2017–2023)', 'Publikationer i The Danish Medical Journal, Ugeskrift for Læger m.fl.'] }
+      ]
     }
   ];
 
@@ -1117,21 +1129,21 @@ const App = () => {
                     {service.category === 'hud'
                       ? <span className="text-blue-900 font-black text-2xl uppercase italic">KA</span>
                       : service.category === 'haand'
-                      ? <span className="text-blue-900 font-black text-2xl uppercase italic">HK</span>
+                      ? <img src="/Jerzy%20Stiasny.png" alt="Jerzy Stiasny" className="w-full h-full object-cover object-top" />
                       : <img src="/Jalal%20Taha%20Saadi.png" alt="Jalal Taha Saadi" className="w-full h-full object-cover object-top" />
                     }
                   </div>
                   <div>
-                    <p className="font-black text-xl leading-none uppercase italic text-slate-900">{service.category === 'hud' ? 'Kawa Ajgeiy' : service.category === 'haand' ? 'Klinik Sirius' : 'Jalal Taha Saadi'}</p>
-                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mt-2">{service.category === 'hud' ? 'Speciallæge i hudsygdomme' : service.category === 'haand' ? 'Speciallæge i håndkirurgi' : 'Speciallæge i ØNH'}</p>
+                    <p className="font-black text-xl leading-none uppercase italic text-slate-900">{service.category === 'hud' ? 'Kawa Ajgeiy' : service.category === 'haand' ? 'Jerzy Stiasny' : 'Jalal Taha Saadi'}</p>
+                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mt-2">{service.category === 'hud' ? 'Speciallæge i hudsygdomme' : service.category === 'haand' ? 'Dr. med., overlæge i håndkirurgi' : 'Speciallæge i ØNH'}</p>
                   </div>
                 </div>
                 <div className="space-y-4 relative z-10">
                   <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight italic">
-                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'OUH og Aarhus Universitetshospital' : service.category === 'haand' ? 'Specialiseret håndkirurgisk klinik' : 'SVS Esbjerg og OUH'}
+                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'OUH og Aarhus Universitetshospital' : service.category === 'haand' ? 'OUH & Sygehus Sønderjylland' : 'SVS Esbjerg og OUH'}
                   </div>
                   <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight italic">
-                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'Dansk Dermatologisk Selskab' : service.category === 'haand' ? 'Lokal bedøvelse – hurtig heling' : 'Dansk Rhinologisk Selskab'}
+                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'Dansk Dermatologisk Selskab' : service.category === 'haand' ? 'Internationale ophold, hånd- og nerveskirurgi' : 'Dansk Rhinologisk Selskab'}
                   </div>
                 </div>
               </div>
