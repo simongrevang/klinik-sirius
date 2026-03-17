@@ -1067,15 +1067,15 @@ const App = () => {
               <span className="mx-3">/</span>
               <span className="text-blue-900">{service.category === 'hud' ? 'Hudsygdomme' : 'Øre, Næse, Hals'}</span>
             </nav>
-            <h1 className="text-3xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase italic tracking-tighter">{service.title}</h1>
-            <p className="text-xl text-slate-600 mb-10 leading-relaxed font-light border-l-8 border-emerald-700 pl-8 italic">
+            <h1 className="text-3xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tighter">{service.title}</h1>
+            <p className="text-xl text-slate-600 mb-10 leading-relaxed font-light border-l-8 border-emerald-700 pl-8">
               {service.shortIntro}
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`px-10 py-5 rounded-2xl text-white font-black uppercase tracking-widest text-xs shadow-xl hover:-translate-y-1 transition-all inline-flex items-center ${colors.accent}`}>
                 Book tid online
               </a>
-              <div className="flex items-center px-6 text-slate-500 font-black uppercase text-xs tracking-widest italic">
+              <div className="flex items-center px-6 text-slate-500 font-black uppercase text-xs tracking-widest">
                 <Phone size={18} className="mr-3 text-blue-900" /> 32 22 32 24
               </div>
             </div>
@@ -1087,7 +1087,7 @@ const App = () => {
         <div className="grid lg:grid-cols-3 gap-16">
           <div className="lg:col-span-2 space-y-12">
             <div className="bg-white">
-              <h2 className="text-3xl font-black mb-8 text-blue-900 uppercase italic tracking-tight">{service.h2Title}</h2>
+              <h2 className="text-3xl font-black mb-8 text-blue-900 uppercase tracking-tight">{service.h2Title}</h2>
               <div className="text-xl text-slate-600 leading-relaxed font-light space-y-8">
                 {service.narrative.split('\n\n').map((paragraph, i) => (
                   <p key={i}>{paragraph}</p>
@@ -1096,7 +1096,7 @@ const App = () => {
             </div>
 
             <div className="pt-16 border-t border-slate-100">
-              <h3 className="text-3xl font-black mb-10 text-slate-900 uppercase italic tracking-tight">Ofte stillede spørgsmål</h3>
+              <h3 className="text-3xl font-black mb-10 text-slate-900 uppercase tracking-tight">Ofte stillede spørgsmål</h3>
               <div className="grid gap-4">
                 {service.faq.map((item, idx) => (
                   <div key={idx} className="bg-slate-50 rounded-[2rem] transition-all border border-transparent hover:border-slate-200 shadow-sm">
@@ -1127,22 +1127,22 @@ const App = () => {
                 <div className="flex items-center space-x-5 mb-10 relative z-10">
                   <div className="w-16 h-16 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center shadow-inner">
                     {service.category === 'hud'
-                      ? <span className="text-blue-900 font-black text-2xl uppercase italic">KA</span>
+                      ? <span className="text-blue-900 font-black text-2xl uppercase">KA</span>
                       : service.category === 'haand'
                       ? <img src="/Jerzy%20Stiasny.png" alt="Jerzy Stiasny" className="w-full h-full object-cover object-top" />
                       : <img src="/Jalal%20Taha%20Saadi.png" alt="Jalal Taha Saadi" className="w-full h-full object-cover object-top" />
                     }
                   </div>
                   <div>
-                    <p className="font-black text-xl leading-none uppercase italic text-slate-900">{service.category === 'hud' ? 'Kawa Ajgeiy' : service.category === 'haand' ? 'Jerzy Stiasny' : 'Jalal Taha Saadi'}</p>
+                    <p className="font-black text-xl leading-none uppercase text-slate-900">{service.category === 'hud' ? 'Kawa Ajgeiy' : service.category === 'haand' ? 'Jerzy Stiasny' : 'Jalal Taha Saadi'}</p>
                     <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mt-2">{service.category === 'hud' ? 'Speciallæge i hudsygdomme' : service.category === 'haand' ? 'Dr. med., overlæge i håndkirurgi' : 'Speciallæge i ØNH'}</p>
                   </div>
                 </div>
                 <div className="space-y-4 relative z-10">
-                  <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight italic">
+                  <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight">
                     <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'OUH og Aarhus Universitetshospital' : service.category === 'haand' ? 'OUH & Sygehus Sønderjylland' : 'SVS Esbjerg og OUH'}
                   </div>
-                  <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight italic">
+                  <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight">
                     <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'Dansk Dermatologisk Selskab' : service.category === 'haand' ? 'Internationale ophold, hånd- og nerveskirurgi' : 'Dansk Rhinologisk Selskab'}
                   </div>
                 </div>
@@ -1150,8 +1150,8 @@ const App = () => {
 
               <div className="bg-blue-900 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
                 <div className="relative z-10">
-                  <h4 className="text-2xl font-black mb-4 uppercase tracking-tight italic">Book tid nu</h4>
-                  <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium italic">Få en specialistvurdering hurtigt uden unødig ventetid.</p>
+                  <h4 className="text-2xl font-black mb-4 uppercase tracking-tight">Book tid nu</h4>
+                  <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium">Få en specialistvurdering hurtigt uden unødig ventetid.</p>
                   <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`w-full py-5 rounded-2xl text-white font-black uppercase tracking-widest text-[10px] transition-all shadow-lg active:scale-95 inline-block text-center ${colors.accent}`}>
                     Gå til selvbetjening
                   </a>
@@ -1189,10 +1189,10 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
           <div className="flex items-center cursor-pointer group" onClick={() => setActivePage('forside')}>
             <div className="w-10 h-10 bg-blue-900 rounded-xl flex items-center justify-center mr-4 shadow-lg transition-transform group-hover:scale-105 group-hover:rotate-3">
-              <span className="text-white font-bold text-xl italic">S</span>
+              <span className="text-white font-bold text-xl">S</span>
             </div>
             <div className="flex flex-col items-start">
-              <h2 className="text-xl font-extrabold tracking-tight text-blue-900 leading-none italic uppercase">KLINIK SIRIUS</h2>
+              <h2 className="text-xl font-extrabold tracking-tight text-blue-900 leading-none uppercase">KLINIK SIRIUS</h2>
               <p className="uppercase tracking-[0.25em] text-slate-400 font-bold mt-1.5 leading-none text-[8px]">SPECIALLÆGECENTER</p>
             </div>
           </div>
@@ -1223,10 +1223,10 @@ const App = () => {
           <div className="flex justify-between items-center px-6 h-20 border-b border-slate-100 shrink-0">
             <div className="flex items-center">
               <div className="w-10 h-10 bg-blue-900 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                <span className="text-white font-bold text-xl italic">S</span>
+                <span className="text-white font-bold text-xl">S</span>
               </div>
               <div className="flex flex-col items-start">
-                <span className="text-xl font-extrabold tracking-tight text-blue-900 leading-none italic uppercase">KLINIK SIRIUS</span>
+                <span className="text-xl font-extrabold tracking-tight text-blue-900 leading-none uppercase">KLINIK SIRIUS</span>
                 <span className="uppercase tracking-[0.25em] text-slate-400 font-bold mt-1.5 leading-none text-[8px]">SPECIALLÆGECENTER</span>
               </div>
             </div>
@@ -1365,11 +1365,11 @@ const App = () => {
                     <Shield size={14} className="text-blue-600" />
                     <span>Høj faglighed & trygge rammer</span>
                   </div>
-                  <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 mb-8 leading-[1.05] tracking-tight uppercase italic">
+                  <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 mb-8 leading-[1.05] tracking-tight uppercase">
                     Speciallæger <br />
                     <span className="text-blue-900">tæt på dig i Varde.</span>
                   </h1>
-                  <div className="text-xl text-slate-500 mb-12 max-w-xl leading-relaxed font-light mx-auto lg:mx-0 italic border-l-8 border-emerald-500 pl-8">
+                  <div className="text-xl text-slate-500 mb-12 max-w-xl leading-relaxed font-light mx-auto lg:mx-0 border-l-8 border-emerald-500 pl-8">
                     <p className="mb-4 text-slate-700 font-bold">Klinik Sirius er stiftet med en vision om at gøre specialistbehandling tilgængelig og tryg. Vi forener årtiers erfaring med en moderne patientfokuseret tilgang.</p>
                   </div>
                   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-5 justify-center lg:justify-start font-black uppercase tracking-widest text-[10px]">
@@ -1378,7 +1378,7 @@ const App = () => {
                     </a>
                     <button
                       onClick={() => setActivePage('patientinfo')}
-                      className="px-10 py-5 rounded-[2rem] bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all shadow-sm active:scale-95 italic"
+                      className="px-10 py-5 rounded-[2rem] bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all shadow-sm active:scale-95"
                     >
                       Patientrettigheder
                     </button>
@@ -1392,9 +1392,9 @@ const App = () => {
                   <div className="absolute -bottom-6 -left-10 bg-white p-8 rounded-3xl shadow-2xl border border-slate-50 max-w-xs">
                     <div className="flex items-center space-x-4 mb-3">
                       <Award size={24} className="text-emerald-700" />
-                      <span className="font-extrabold text-blue-900 uppercase tracking-widest text-[12px] italic">Erfarne speciallæger</span>
+                      <span className="font-extrabold text-blue-900 uppercase tracking-widest text-[12px]">Erfarne speciallæger</span>
                     </div>
-                    <p className="text-xs text-slate-500 font-medium italic leading-relaxed">Vores speciallæger har mange års erfaring og sikrer dig faglig kompetent behandling.</p>
+                    <p className="text-xs text-slate-500 font-medium leading-relaxed">Vores speciallæger har mange års erfaring og sikrer dig faglig kompetent behandling.</p>
                   </div>
                 </div>
               </div>
@@ -1408,9 +1408,9 @@ const App = () => {
                   <div className="w-16 h-16 bg-blue-900 text-white rounded-2xl flex items-center justify-center mb-10 group-hover:rotate-6 transition-transform shadow-lg">
                     <Stethoscope size={32} />
                   </div>
-                  <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight italic">Hudsygdomme</h3>
-                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light italic">Speciallæge Kawa Ajgeiy varetager udredning og behandling af eksem, nældefeber, psoriasis og modermærker. Han er uddannet ved OUH og Aarhus Universitetshospital og er ansat ved Hudafdeling og Allergicentret på OUH.</p>
-                  <button onClick={() => setActivePage('eksem')} className="flex items-center font-black text-blue-900 uppercase text-[10px] tracking-[0.3em] group italic">
+                  <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Hudsygdomme</h3>
+                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Kawa Ajgeiy varetager udredning og behandling af eksem, nældefeber, psoriasis og modermærker. Han er uddannet ved OUH og Aarhus Universitetshospital og er ansat ved Hudafdeling og Allergicentret på OUH.</p>
+                  <button onClick={() => setActivePage('eksem')} className="flex items-center font-black text-blue-900 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-emerald-600" />
                   </button>
                 </div>
@@ -1420,9 +1420,9 @@ const App = () => {
                   <div className="w-16 h-16 bg-emerald-700 text-white rounded-2xl flex items-center justify-center mb-10 group-hover:rotate-6 transition-transform shadow-lg">
                     <Ear size={32} />
                   </div>
-                  <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight italic">Øre, Næse, Hals</h3>
-                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light italic">Speciallæge Jalal Taha Saadi varetager vores ØNH-afdeling med fokus på alt fra høreprøver til avanceret kirurgi.</p>
-                  <button onClick={() => setActivePage('allergi')} className="flex items-center font-black text-emerald-800 uppercase text-[10px] tracking-[0.3em] group italic">
+                  <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Øre, Næse, Hals</h3>
+                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Jalal Taha Saadi varetager vores ØNH-afdeling med fokus på alt fra høreprøver til avanceret kirurgi.</p>
+                  <button onClick={() => setActivePage('allergi')} className="flex items-center font-black text-emerald-800 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-blue-900" />
                   </button>
                 </div>
@@ -1432,8 +1432,8 @@ const App = () => {
             {/* Journey */}
             <section className="py-24 bg-white">
               <div className="max-w-7xl mx-auto px-6 text-center mb-20">
-                <h2 className="text-4xl font-black text-blue-900 uppercase tracking-tight italic mb-4">Dit forløb hos os</h2>
-                <p className="text-slate-500 max-w-2xl mx-auto text-lg font-light italic">Vi har gjort det nemt og overskueligt at blive patient. Her er de fire trin i din behandling.</p>
+                <h2 className="text-4xl font-black text-blue-900 uppercase tracking-tight mb-4">Dit forløb hos os</h2>
+                <p className="text-slate-500 max-w-2xl mx-auto text-lg font-light">Vi har gjort det nemt og overskueligt at blive patient. Her er de fire trin i din behandling.</p>
               </div>
               <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
                 {[
@@ -1444,10 +1444,10 @@ const App = () => {
                 ].map((item, i) => (
                   <div key={i} className="relative group">
                     <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 transition-all group-hover:bg-blue-900 group-hover:text-white group-hover:-translate-y-2 shadow-sm h-full">
-                      <div className="text-blue-900 font-black text-5xl mb-6 opacity-20 group-hover:text-white group-hover:opacity-40 italic">{item.step}</div>
+                      <div className="text-blue-900 font-black text-5xl mb-6 opacity-20 group-hover:text-white group-hover:opacity-40">{item.step}</div>
                       <div className="mb-6 flex justify-center text-emerald-600 group-hover:text-white transition-colors">{item.icon}</div>
-                      <h4 className="text-xl font-bold mb-3 uppercase tracking-tight italic">{item.title}</h4>
-                      <p className="text-sm opacity-70 leading-relaxed font-medium italic">{item.desc}</p>
+                      <h4 className="text-xl font-bold mb-3 uppercase tracking-tight">{item.title}</h4>
+                      <p className="text-sm opacity-70 leading-relaxed font-medium">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -1468,13 +1468,13 @@ const App = () => {
               <div className="absolute top-0 right-0 w-1/4 h-full bg-blue-900/5 -skew-x-12 translate-x-1/2"></div>
               <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <nav className="mb-8 text-xs font-black uppercase tracking-widest text-slate-400">
-                  <button onClick={() => setActivePage('forside')} className="hover:text-blue-900 transition-colors flex items-center italic">
+                  <button onClick={() => setActivePage('forside')} className="hover:text-blue-900 transition-colors flex items-center">
                     <ChevronLeft size={16} className="mr-1" /> Forside
                   </button>
                 </nav>
                 <div className="max-w-4xl">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-blue-900 mb-8 uppercase tracking-tight lg:tracking-tighter italic">Patientinformation</h1>
-                  <p className="text-xl text-slate-600 leading-relaxed font-light border-l-8 border-emerald-700 pl-8 italic">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-blue-900 mb-8 uppercase tracking-tight lg:tracking-tighter">Patientinformation</h1>
+                  <p className="text-xl text-slate-600 leading-relaxed font-light border-l-8 border-emerald-700 pl-8">
                     Få overblik over dine rettigheder som patient, uanset om du kommer via det offentlige, din forsikring eller som privatbetalende.
                   </p>
                 </div>
@@ -1487,13 +1487,13 @@ const App = () => {
                   <div className="w-full lg:w-1/3 lg:sticky lg:top-32">
                     <div className="bg-blue-50 p-8 lg:p-12 rounded-[2rem] lg:rounded-[3rem] border border-blue-100 shadow-sm relative overflow-hidden">
                       <HeartPulse className="text-blue-900 mb-6" size={40} />
-                      <h2 className="text-xl font-black text-blue-900 uppercase tracking-tight mb-4 leading-tight italic">Patient i det offentlige?</h2>
-                      <p className="text-slate-600 text-sm leading-relaxed mb-6 font-medium italic">
+                      <h2 className="text-xl font-black text-blue-900 uppercase tracking-tight mb-4 leading-tight">Patient i det offentlige?</h2>
+                      <p className="text-slate-600 text-sm leading-relaxed mb-6 font-medium">
                         Hvis ventetiden i det offentlige er lang, har du ofte ret til at blive undersøgt og behandlet hos os via lovbestemte garantier.
                       </p>
                       <div className="pt-6 border-t border-blue-200">
-                        <p className="text-xs font-black uppercase text-blue-400 tracking-widest mb-2 italic">Kontakt først</p>
-                        <p className="text-sm font-bold text-blue-900 uppercase italic">Patientvejledningen i din region</p>
+                        <p className="text-xs font-black uppercase text-blue-400 tracking-widest mb-2">Kontakt først</p>
+                        <p className="text-sm font-bold text-blue-900 uppercase">Patientvejledningen i din region</p>
                       </div>
                     </div>
                   </div>
@@ -1502,40 +1502,40 @@ const App = () => {
                     <div className="bg-slate-50 p-8 lg:p-16 rounded-[2rem] lg:rounded-[4rem] border border-slate-100 space-y-8 lg:space-y-10 shadow-sm">
                       <div>
                         <div className="flex items-center gap-4 mb-6">
-                          <div className="w-12 h-12 shrink-0 bg-slate-900 text-white rounded-2xl flex items-center justify-center font-black italic text-xl shadow-xl">30</div>
-                          <h3 className="text-xl lg:text-3xl font-black text-slate-900 uppercase tracking-tighter italic leading-tight">Udredningsret & Garanti</h3>
+                          <div className="w-12 h-12 shrink-0 bg-slate-900 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-xl">30</div>
+                          <h3 className="text-xl lg:text-3xl font-black text-slate-900 uppercase tracking-tighter leading-tight">Udredningsret & Garanti</h3>
                         </div>
-                        <p className="text-base lg:text-xl text-slate-600 leading-relaxed font-light italic mb-6">
+                        <p className="text-base lg:text-xl text-slate-600 leading-relaxed font-light mb-6">
                           Som patient har du ret til at blive udredt inden for <span className="font-black text-slate-900 underline decoration-emerald-500 underline-offset-4">30 dage</span> efter din henvisning er modtaget.
                         </p>
                         <ul className="space-y-4 lg:space-y-6">
                           <li className="flex items-start">
                             <div className="mt-1.5 mr-4 w-2 h-2 bg-emerald-500 rounded-full shrink-0" />
-                            <p className="text-sm text-slate-500 italic font-bold uppercase tracking-tight leading-relaxed">Hvis fristen ikke kan overholdes, skal regionen henvise dig til et privat behandlingssted som Klinik Sirius.</p>
+                            <p className="text-sm text-slate-500 font-bold uppercase tracking-tight leading-relaxed">Hvis fristen ikke kan overholdes, skal regionen henvise dig til et privat behandlingssted som Klinik Sirius.</p>
                           </li>
                           <li className="flex items-start">
                             <div className="mt-1.5 mr-4 w-2 h-2 bg-emerald-500 rounded-full shrink-0" />
-                            <p className="text-sm text-slate-500 italic font-bold uppercase tracking-tight leading-relaxed">Kontakt Patientvejledningen/Patientkontoret i din region for at benytte din ret.</p>
+                            <p className="text-sm text-slate-500 font-bold uppercase tracking-tight leading-relaxed">Kontakt Patientvejledningen/Patientkontoret i din region for at benytte din ret.</p>
                           </li>
                         </ul>
                       </div>
 
                       <div className="pt-8 lg:pt-10 border-t border-slate-200">
                         <div className="flex items-center gap-4 mb-6">
-                          <div className="w-12 h-12 shrink-0 bg-emerald-700 text-white rounded-2xl flex items-center justify-center font-black italic text-xl shadow-xl">25</div>
-                          <h3 className="text-xl lg:text-3xl font-black text-slate-900 uppercase tracking-tighter italic leading-tight">Behandlingsgaranti (2025)</h3>
+                          <div className="w-12 h-12 shrink-0 bg-emerald-700 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-xl">25</div>
+                          <h3 className="text-xl lg:text-3xl font-black text-slate-900 uppercase tracking-tighter leading-tight">Behandlingsgaranti (2025)</h3>
                         </div>
-                        <p className="text-base lg:text-xl text-slate-600 leading-relaxed font-light italic mb-6">
+                        <p className="text-base lg:text-xl text-slate-600 leading-relaxed font-light mb-6">
                           Fra og med <span className="font-black text-blue-900">2025</span> har du ret til behandling inden for 30 dage fra diagnosetidspunktet, når behandlingsbehovet er vurderet.
                         </p>
                         <ul className="space-y-4 lg:space-y-6">
                           <li className="flex items-start">
                             <div className="mt-1.5 mr-4 w-2 h-2 bg-emerald-500 rounded-full shrink-0" />
-                            <p className="text-sm text-slate-500 italic font-bold uppercase tracking-tight leading-relaxed">Du skal være færdigudredt — en diagnose skal foreligge.</p>
+                            <p className="text-sm text-slate-500 font-bold uppercase tracking-tight leading-relaxed">Du skal være færdigudredt — en diagnose skal foreligge.</p>
                           </li>
                           <li className="flex items-start">
                             <div className="mt-1.5 mr-4 w-2 h-2 bg-emerald-500 rounded-full shrink-0" />
-                            <p className="text-sm text-slate-500 italic font-bold uppercase tracking-tight leading-relaxed">Klinik Sirius skal have aftale med din region om behandling af den pågældende lidelse.</p>
+                            <p className="text-sm text-slate-500 font-bold uppercase tracking-tight leading-relaxed">Klinik Sirius skal have aftale med din region om behandling af den pågældende lidelse.</p>
                           </li>
                         </ul>
                       </div>
@@ -1552,24 +1552,24 @@ const App = () => {
                   <div>
                     <div className="inline-flex items-center space-x-2 bg-white/10 px-5 py-2.5 rounded-2xl border border-white/10 mb-6 shadow-sm">
                       <Shield className="text-emerald-400" size={20} />
-                      <span className="text-xs font-black uppercase tracking-[0.3em] italic">Forsikring & Privat</span>
+                      <span className="text-xs font-black uppercase tracking-[0.3em]">Forsikring & Privat</span>
                     </div>
-                    <h2 className="text-3xl lg:text-7xl font-black uppercase tracking-tight mb-6 lg:mb-10 italic leading-tight lg:leading-[0.95]">Brug din forsikring.</h2>
-                    <p className="text-base lg:text-xl text-blue-100 font-light leading-relaxed mb-8 italic">
+                    <h2 className="text-3xl lg:text-7xl font-black uppercase tracking-tight mb-6 lg:mb-10 leading-tight lg:leading-[0.95]">Brug din forsikring.</h2>
+                    <p className="text-base lg:text-xl text-blue-100 font-light leading-relaxed mb-8">
                       Klinik Sirius samarbejder med en række danske forsikringsselskaber og kan i mange tilfælde tilbyde både diagnostik og behandling inden for forsikringsdækningen.
                     </p>
                     <div className="space-y-5 lg:space-y-8">
-                      <p className="text-sm font-bold uppercase tracking-widest italic flex items-start lg:items-center"><CheckCircle size={18} className="text-emerald-400 mr-4 shrink-0 mt-0.5 lg:mt-0" /> Undersøg om du er dækket via din arbejdsgiver</p>
-                      <p className="text-sm font-bold uppercase tracking-widest italic flex items-start lg:items-center"><CheckCircle size={18} className="text-emerald-400 mr-4 shrink-0 mt-0.5 lg:mt-0" /> Kontakt selskabet og få godkendelse inden booking</p>
+                      <p className="text-sm font-bold uppercase tracking-widest flex items-start lg:items-center"><CheckCircle size={18} className="text-emerald-400 mr-4 shrink-0 mt-0.5 lg:mt-0" /> Undersøg om du er dækket via din arbejdsgiver</p>
+                      <p className="text-sm font-bold uppercase tracking-widest flex items-start lg:items-center"><CheckCircle size={18} className="text-emerald-400 mr-4 shrink-0 mt-0.5 lg:mt-0" /> Kontakt selskabet og få godkendelse inden booking</p>
                     </div>
                   </div>
                   <div className="bg-white/10 backdrop-blur-xl p-8 lg:p-12 rounded-[2rem] lg:rounded-[4rem] border border-white/20 relative shadow-2xl">
                     <Wallet className="text-emerald-400 mb-6" size={48} />
-                    <h3 className="text-2xl font-black uppercase mb-4 italic tracking-tight">Privatbetaling</h3>
-                    <p className="text-blue-100 font-light leading-relaxed mb-8 italic text-base lg:text-lg">
-                      Som privatbetalende får du direkte adgang til speciallæge med <span className="font-bold text-white uppercase italic underline decoration-emerald-500">minimal ventetid</span>.
+                    <h3 className="text-2xl font-black uppercase mb-4 tracking-tight">Privatbetaling</h3>
+                    <p className="text-blue-100 font-light leading-relaxed mb-8 text-base lg:text-lg">
+                      Som privatbetalende får du direkte adgang til speciallæge med <span className="font-bold text-white uppercase underline decoration-emerald-500">minimal ventetid</span>.
                     </p>
-                    <a href="mailto:info@kliniksirius.dk" className="w-full py-5 bg-white text-slate-900 rounded-2xl font-black uppercase text-xs tracking-[0.3em] shadow-xl active:scale-95 italic transition-all hover:bg-slate-100 block text-center">
+                    <a href="mailto:info@kliniksirius.dk" className="w-full py-5 bg-white text-slate-900 rounded-2xl font-black uppercase text-xs tracking-[0.3em] shadow-xl active:scale-95 transition-all hover:bg-slate-100 block text-center">
                       Kontakt os for priser
                     </a>
                   </div>
@@ -1588,8 +1588,8 @@ const App = () => {
                   <Microscope size={14} className="text-emerald-600" />
                   <span>Klinik Sirius Specialister</span>
                 </div>
-                <h2 className="text-4xl lg:text-9xl font-black text-blue-900 mb-6 lg:mb-10 uppercase tracking-tighter italic leading-tight lg:leading-[0.85]">Ekspertise <br />& Erfaring.</h2>
-                <p className="text-lg lg:text-2xl text-slate-500 font-light leading-relaxed italic border-l-4 lg:border-l-8 border-emerald-500 pl-6 lg:pl-10">
+                <h2 className="text-4xl lg:text-9xl font-black text-blue-900 mb-6 lg:mb-10 uppercase tracking-tighter leading-tight lg:leading-[0.85]">Ekspertise <br />& Erfaring.</h2>
+                <p className="text-lg lg:text-2xl text-slate-500 font-light leading-relaxed border-l-4 lg:border-l-8 border-emerald-500 pl-6 lg:pl-10">
                   Mød holdet bag Klinik Sirius i Varde. Vores læger kombinerer mange års praksis i det danske sygehusvæsen med dedikeret patientkontakt.
                 </p>
               </div>
@@ -1602,28 +1602,28 @@ const App = () => {
                         {p.image ? (
                           <img src={p.image} alt={p.name} className="w-full h-full object-cover object-top" />
                         ) : (
-                          <div className="absolute inset-0 bg-slate-200 flex flex-col items-center justify-center text-slate-400 font-black p-12 text-center italic group-hover:bg-slate-50 transition-colors uppercase tracking-[0.3em] text-xs">
+                          <div className="absolute inset-0 bg-slate-200 flex flex-col items-center justify-center text-slate-400 font-black p-12 text-center group-hover:bg-slate-50 transition-colors uppercase tracking-[0.3em] text-xs">
                             <User size={80} className="mb-8 opacity-10 group-hover:scale-110 transition-transform duration-700" />
                             [Professionelt Portræt]
                           </div>
                         )}
                         <div className="absolute top-4 left-4 lg:top-8 lg:left-8 bg-white/90 backdrop-blur-md px-4 py-2 lg:px-6 lg:py-3 rounded-xl lg:rounded-2xl shadow-xl border border-white/50">
-                          <p className="text-[10px] font-black text-blue-900 uppercase tracking-widest italic">Specialist</p>
+                          <p className="text-[10px] font-black text-blue-900 uppercase tracking-widest">Specialist</p>
                         </div>
                       </div>
                     </div>
 
                     <div className="lg:col-span-8 lg:pt-8">
                       <div className="mb-8 lg:mb-14">
-                        <h3 className="text-3xl lg:text-7xl font-black text-slate-900 uppercase tracking-tighter italic mb-3 leading-tight">{p.name}</h3>
+                        <h3 className="text-3xl lg:text-7xl font-black text-slate-900 uppercase tracking-tighter mb-3 leading-tight">{p.name}</h3>
                         <p className="text-blue-900 font-black uppercase text-xs tracking-[0.3em] flex items-center">
                           <span className="w-8 lg:w-12 h-1 bg-emerald-500 mr-4 lg:mr-6 inline-block shrink-0"></span> {p.role}
                         </p>
                       </div>
 
                       <div className="mb-8 lg:mb-16">
-                        <p className="text-lg lg:text-2xl font-black text-slate-800 leading-tight mb-6 italic uppercase tracking-tighter border-b-4 border-slate-50 pb-8">{p.expertise}</p>
-                        <p className="text-base lg:text-xl text-slate-500 font-light leading-relaxed italic">
+                        <p className="text-lg lg:text-2xl font-black text-slate-800 leading-tight mb-6 uppercase tracking-tighter border-b-4 border-slate-50 pb-8">{p.expertise}</p>
+                        <p className="text-base lg:text-xl text-slate-500 font-light leading-relaxed">
                           "{p.summary}"
                         </p>
                       </div>
@@ -1636,7 +1636,7 @@ const App = () => {
                               {detail.items.map((item, iIdx) => (
                                 <li key={iIdx} className="flex items-start">
                                   <div className="mt-2 mr-4 lg:mr-5 w-1.5 h-1.5 bg-emerald-500 rounded-full shrink-0 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
-                                  <p className="text-sm text-slate-600 font-bold uppercase tracking-tight italic">{item}</p>
+                                  <p className="text-sm text-slate-600 font-bold uppercase tracking-tight">{item}</p>
                                 </li>
                               ))}
                             </ul>
@@ -1661,8 +1661,8 @@ const App = () => {
                   <MapPin size={16} />
                   <span>Varde Center</span>
                 </div>
-                <h2 className="text-6xl lg:text-9xl font-black text-blue-900 mb-10 uppercase tracking-tighter italic leading-none">Find vej <br />til klinikken.</h2>
-                <p className="text-2xl text-slate-500 max-w-3xl font-light leading-relaxed italic border-l-8 border-blue-900 pl-10">
+                <h2 className="text-6xl lg:text-9xl font-black text-blue-900 mb-10 uppercase tracking-tighter leading-none">Find vej <br />til klinikken.</h2>
+                <p className="text-2xl text-slate-500 max-w-3xl font-light leading-relaxed border-l-8 border-blue-900 pl-10">
                   Vi holder til i lyse lokaler på Søndertoften 22. Der er elevator i bygningen og gode adgangsforhold for alle patienter.
                 </p>
               </div>
@@ -1674,22 +1674,22 @@ const App = () => {
                   <div className="grid md:grid-cols-2 gap-10 text-center md:text-left">
                     <div className="bg-white p-12 rounded-[4rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
                       <MapPin className="text-blue-900 mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform" size={40} />
-                      <h3 className="text-xl font-black text-slate-900 uppercase tracking-widest mb-6 italic">Adresse</h3>
-                      <p className="text-slate-600 font-black uppercase text-xs italic leading-relaxed">
+                      <h3 className="text-xl font-black text-slate-900 uppercase tracking-widest mb-6">Adresse</h3>
+                      <p className="text-slate-600 font-black uppercase text-xs leading-relaxed">
                         Søndertoften 22<br />6800 Varde
                       </p>
                     </div>
                     <div className="bg-white p-12 rounded-[4rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
                       <Phone className="text-emerald-700 mb-6 mx-auto md:mx-0 group-hover:scale-110 transition-transform" size={40} />
-                      <h3 className="text-xl font-black text-slate-900 uppercase tracking-widest mb-6 italic">Telefon</h3>
-                      <a href="tel:+4532223224" className="text-slate-900 font-black text-2xl italic tracking-tighter uppercase hover:text-blue-900 transition-colors">32 22 32 24</a>
+                      <h3 className="text-xl font-black text-slate-900 uppercase tracking-widest mb-6">Telefon</h3>
+                      <a href="tel:+4532223224" className="text-slate-900 font-black text-2xl tracking-tighter uppercase hover:text-blue-900 transition-colors">32 22 32 24</a>
                     </div>
                   </div>
 
                   <div className="bg-white p-12 rounded-[4rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
                     <Mail className="text-blue-900 mb-6 group-hover:scale-110 transition-transform" size={40} />
-                    <h3 className="text-xl font-black text-slate-900 uppercase tracking-widest mb-6 italic">E-mail</h3>
-                    <a href="mailto:info@kliniksirius.dk" className="text-slate-900 font-black text-lg italic tracking-tight hover:text-blue-900 transition-colors">info@kliniksirius.dk</a>
+                    <h3 className="text-xl font-black text-slate-900 uppercase tracking-widest mb-6">E-mail</h3>
+                    <a href="mailto:info@kliniksirius.dk" className="text-slate-900 font-black text-lg tracking-tight hover:text-blue-900 transition-colors">info@kliniksirius.dk</a>
                   </div>
 
                   <div className="bg-slate-900 text-white p-12 lg:p-16 rounded-[4rem] shadow-2xl relative overflow-hidden">
@@ -1697,14 +1697,14 @@ const App = () => {
                       <section>
                         <div className="flex items-center space-x-4 mb-8">
                           <Clock className="text-emerald-400" size={24} />
-                          <h4 className="font-black uppercase tracking-widest text-[10px] italic">Telefontider</h4>
+                          <h4 className="font-black uppercase tracking-widest text-[10px]">Telefontider</h4>
                         </div>
                         <div className="space-y-5">
-                          <div className="flex justify-between border-b border-white/10 pb-5 text-[10px] font-black italic uppercase tracking-widest">
+                          <div className="flex justify-between border-b border-white/10 pb-5 text-[10px] font-black uppercase tracking-widest">
                             <span className="text-blue-300">Man - Tor</span>
                             <span>11:00-13:00 & 14:00-15:00</span>
                           </div>
-                          <div className="flex justify-between text-[10px] font-black italic uppercase tracking-widest">
+                          <div className="flex justify-between text-[10px] font-black uppercase tracking-widest">
                             <span className="text-blue-300">Fredag</span>
                             <span>10:00-12:00</span>
                           </div>
@@ -1713,14 +1713,14 @@ const App = () => {
                       <section>
                         <div className="flex items-center space-x-4 mb-8">
                           <Clock className="text-blue-400" size={24} />
-                          <h4 className="font-black uppercase tracking-widest text-[10px] italic">Åbningstider</h4>
+                          <h4 className="font-black uppercase tracking-widest text-[10px]">Åbningstider</h4>
                         </div>
                         <div className="space-y-5">
-                          <div className="flex justify-between border-b border-white/10 pb-5 text-[10px] font-black italic uppercase tracking-widest">
+                          <div className="flex justify-between border-b border-white/10 pb-5 text-[10px] font-black uppercase tracking-widest">
                             <span className="text-blue-300">Man - Tor</span>
                             <span>15:00-19:00</span>
                           </div>
-                          <div className="flex justify-between text-[10px] font-black italic uppercase tracking-widest">
+                          <div className="flex justify-between text-[10px] font-black uppercase tracking-widest">
                             <span className="text-blue-300">Fredag</span>
                             <span>12:30-18:00</span>
                           </div>
@@ -1728,11 +1728,11 @@ const App = () => {
                       </section>
                     </div>
                     <div className="mt-12 pt-12 border-t border-white/10 relative z-10">
-                      <div className="flex items-center space-x-4 mb-4 text-[10px] font-black italic uppercase tracking-widest">
+                      <div className="flex items-center space-x-4 mb-4 text-[10px] font-black uppercase tracking-widest">
                         <Info className="text-blue-400" size={24} />
                         <h4>Parkering</h4>
                       </div>
-                      <p className="text-xs text-blue-100/60 font-bold italic leading-relaxed uppercase tracking-widest">Gratis parkering lige uden for døren. Husk P-skive (2 timer).</p>
+                      <p className="text-xs text-blue-100/60 font-bold leading-relaxed uppercase tracking-widest">Gratis parkering lige uden for døren. Husk P-skive (2 timer).</p>
                     </div>
                   </div>
                 </div>
@@ -1754,7 +1754,7 @@ const App = () => {
                     href="https://maps.google.com/?q=Søndertoften+22,+6800+Varde"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-6 block w-full py-6 bg-blue-900 text-white rounded-3xl font-black uppercase text-[10px] tracking-[0.3em] text-center shadow-2xl active:scale-95 transition-all italic hover:bg-blue-800"
+                    className="mt-6 block w-full py-6 bg-blue-900 text-white rounded-3xl font-black uppercase text-[10px] tracking-[0.3em] text-center shadow-2xl active:scale-95 transition-all hover:bg-blue-800"
                   >
                     Åbn rutevejledning <ExternalLink size={14} className="inline ml-3" />
                   </a>
@@ -1770,13 +1770,13 @@ const App = () => {
             <section className="bg-slate-50 py-16 lg:py-24 border-b border-slate-100 relative overflow-hidden">
               <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <nav className="mb-8 text-xs font-black uppercase tracking-widest text-slate-400">
-                  <button onClick={() => setActivePage('forside')} className="hover:text-blue-900 transition-colors flex items-center italic">
+                  <button onClick={() => setActivePage('forside')} className="hover:text-blue-900 transition-colors flex items-center">
                     <ChevronLeft size={16} className="mr-1" /> Forside
                   </button>
                 </nav>
                 <div className="max-w-4xl">
-                  <h1 className="text-4xl lg:text-7xl font-black text-blue-900 mb-8 uppercase tracking-tighter italic">Privatlivspolitik</h1>
-                  <p className="text-xl text-slate-600 leading-relaxed font-light border-l-8 border-emerald-700 pl-8 italic">
+                  <h1 className="text-4xl lg:text-7xl font-black text-blue-900 mb-8 uppercase tracking-tighter">Privatlivspolitik</h1>
+                  <p className="text-xl text-slate-600 leading-relaxed font-light border-l-8 border-emerald-700 pl-8">
                     Behandling af personoplysninger for patienter hos Klinik Sirius.
                   </p>
                 </div>
@@ -1788,30 +1788,30 @@ const App = () => {
                 <div className="prose prose-slate max-w-none space-y-12">
 
                   <div className="bg-slate-50 p-12 rounded-[3rem] border border-slate-100">
-                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight italic mb-6">Behandling af oplysninger</h2>
-                    <p className="text-slate-600 leading-relaxed italic font-medium">
+                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight mb-6">Behandling af oplysninger</h2>
+                    <p className="text-slate-600 leading-relaxed font-medium">
                       I forbindelse med vores undersøgelse, diagnostik og behandling af dig som patient indsamler og behandler Klinik Sirius en række personoplysninger om dig. I denne privatlivspolitik beskrives, hvordan Klinik Sirius behandler, bruger og videregiver dine personoplysninger.
                     </p>
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight italic mb-6">Typer af oplysninger</h2>
-                    <p className="text-slate-600 leading-relaxed italic font-medium mb-6">Klinik Sirius indsamler og behandler følgende typer af personoplysninger:</p>
+                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight mb-6">Typer af oplysninger</h2>
+                    <p className="text-slate-600 leading-relaxed font-medium mb-6">Klinik Sirius indsamler og behandler følgende typer af personoplysninger:</p>
                     <div className="grid md:grid-cols-2 gap-8">
                       <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
-                        <h3 className="font-black text-slate-900 uppercase text-xs tracking-widest italic mb-4">Almindelige oplysninger</h3>
-                        <p className="text-sm text-slate-500 italic leading-relaxed">Navn, adresse, e-mailadresse, telefonnummer, CPR-nummer, køn, familierelationer, arbejdsrelationer og uddannelse.</p>
+                        <h3 className="font-black text-slate-900 uppercase text-xs tracking-widest mb-4">Almindelige oplysninger</h3>
+                        <p className="text-sm text-slate-500 leading-relaxed">Navn, adresse, e-mailadresse, telefonnummer, CPR-nummer, køn, familierelationer, arbejdsrelationer og uddannelse.</p>
                       </div>
                       <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
-                        <h3 className="font-black text-slate-900 uppercase text-xs tracking-widest italic mb-4">Følsomme oplysninger</h3>
-                        <p className="text-sm text-slate-500 italic leading-relaxed">Helbredsoplysninger (journaler, prøvesvar, røntgenbilleder), seksuelle forhold, race eller etnisk oprindelse samt religiøse forhold.</p>
+                        <h3 className="font-black text-slate-900 uppercase text-xs tracking-widest mb-4">Følsomme oplysninger</h3>
+                        <p className="text-sm text-slate-500 leading-relaxed">Helbredsoplysninger (journaler, prøvesvar, røntgenbilleder), seksuelle forhold, race eller etnisk oprindelse samt religiøse forhold.</p>
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight italic mb-6">Formål</h2>
-                    <p className="text-slate-600 italic font-medium mb-6">Vi behandler dine personoplysninger til følgende formål:</p>
+                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight mb-6">Formål</h2>
+                    <p className="text-slate-600 font-medium mb-6">Vi behandler dine personoplysninger til følgende formål:</p>
                     <ul className="space-y-4">
                       {[
                         'Undersøgelse, diagnostik og behandling',
@@ -1826,22 +1826,22 @@ const App = () => {
                       ].map((item, i) => (
                         <li key={i} className="flex items-start">
                           <div className="mt-2 mr-4 w-2 h-2 bg-emerald-500 rounded-full shrink-0"></div>
-                          <p className="text-sm text-slate-600 italic font-medium">{item}</p>
+                          <p className="text-sm text-slate-600 font-medium">{item}</p>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   <div className="bg-blue-50 p-12 rounded-[3rem] border border-blue-100">
-                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight italic mb-6">Frivillighed</h2>
-                    <p className="text-slate-600 leading-relaxed italic font-medium">
+                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight mb-6">Frivillighed</h2>
+                    <p className="text-slate-600 leading-relaxed font-medium">
                       Når vi indsamler personoplysninger direkte fra dig, giver du personoplysningerne frivilligt. Du er ikke forpligtet til at give disse personoplysninger til os. Konsekvensen af ikke at give os personoplysningerne vil i nogle tilfælde betyde, at vi ikke kan undersøge, diagnosticere eller behandle dig.
                     </p>
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight italic mb-6">Videregivelse</h2>
-                    <p className="text-slate-600 italic font-medium mb-6">Dine personoplysninger videregives i nødvendigt omfang til:</p>
+                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight mb-6">Videregivelse</h2>
+                    <p className="text-slate-600 font-medium mb-6">Dine personoplysninger videregives i nødvendigt omfang til:</p>
                     <ul className="space-y-4">
                       {[
                         'Andre sundhedspersoner i forbindelse med et aktuelt behandlingsforløb',
@@ -1852,23 +1852,23 @@ const App = () => {
                       ].map((item, i) => (
                         <li key={i} className="flex items-start">
                           <div className="mt-2 mr-4 w-2 h-2 bg-emerald-500 rounded-full shrink-0"></div>
-                          <p className="text-sm text-slate-600 italic font-medium">{item}</p>
+                          <p className="text-sm text-slate-600 font-medium">{item}</p>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight italic mb-6">Opbevaring</h2>
-                    <p className="text-slate-600 leading-relaxed italic font-medium">
+                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight mb-6">Opbevaring</h2>
+                    <p className="text-slate-600 leading-relaxed font-medium">
                       Vi opbevarer personoplysninger om dig, så længe vi har behov for at varetage de angivne formål. I henhold til journalføringsbekendtgørelsen er vi forpligtet til at opbevare oplysninger i minimum 10 år efter seneste tilførsel til journalen.
                     </p>
-                    <p className="text-slate-500 italic font-medium mt-4 text-sm">Vores databehandler: EG Clinea</p>
+                    <p className="text-slate-500 font-medium mt-4 text-sm">Vores databehandler: EG Clinea</p>
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight italic mb-6">Dine rettigheder</h2>
-                    <p className="text-slate-600 italic font-medium mb-6">Du har med lovens begrænsninger følgende rettigheder:</p>
+                    <h2 className="text-2xl font-black text-blue-900 uppercase tracking-tight mb-6">Dine rettigheder</h2>
+                    <p className="text-slate-600 font-medium mb-6">Du har med lovens begrænsninger følgende rettigheder:</p>
                     <div className="grid md:grid-cols-2 gap-6">
                       {[
                         'Ret til indsigt i personoplysninger',
@@ -1880,22 +1880,22 @@ const App = () => {
                       ].map((right, i) => (
                         <div key={i} className="flex items-center bg-slate-50 p-6 rounded-2xl">
                           <CheckCircle size={18} className="text-emerald-500 mr-4 shrink-0" />
-                          <p className="text-sm text-slate-700 italic font-bold uppercase tracking-tight">{right}</p>
+                          <p className="text-sm text-slate-700 font-bold uppercase tracking-tight">{right}</p>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   <div className="bg-slate-900 text-white p-12 rounded-[3rem]">
-                    <h2 className="text-2xl font-black uppercase tracking-tight italic mb-6">Kontakt</h2>
-                    <p className="text-blue-100 italic font-medium mb-8">
+                    <h2 className="text-2xl font-black uppercase tracking-tight mb-6">Kontakt</h2>
+                    <p className="text-blue-100 font-medium mb-8">
                       Har du spørgsmål til behandlingen af dine personoplysninger eller udnyttelsen af dine rettigheder, er du velkommen til at kontakte os:
                     </p>
                     <div className="space-y-4">
-                      <p className="font-black uppercase text-xs tracking-widest italic">Klinik Sirius · Søndertoften 22 · 6800 Varde</p>
-                      <a href="mailto:info@kliniksirius.dk" className="text-emerald-400 font-black text-sm italic hover:text-emerald-300 transition-colors">info@kliniksirius.dk</a>
+                      <p className="font-black uppercase text-xs tracking-widest">Klinik Sirius · Søndertoften 22 · 6800 Varde</p>
+                      <a href="mailto:info@kliniksirius.dk" className="text-emerald-400 font-black text-sm hover:text-emerald-300 transition-colors">info@kliniksirius.dk</a>
                     </div>
-                    <p className="text-slate-500 text-[10px] italic font-bold uppercase tracking-widest mt-8">Privatlivspolitik gældende fra 01-06-2022</p>
+                    <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mt-8">Privatlivspolitik gældende fra 01-06-2022</p>
                   </div>
 
                 </div>
@@ -1912,17 +1912,17 @@ const App = () => {
             <div className="col-span-1">
               <div className="flex items-center mb-10">
                 <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mr-3 shadow-md">
-                  <span className="text-blue-900 font-black italic text-xl">S</span>
+                  <span className="text-blue-900 font-black text-xl">S</span>
                 </div>
-                <span className="font-extrabold text-white tracking-tighter leading-none uppercase italic text-sm">KLINIK SIRIUS</span>
+                <span className="font-extrabold text-white tracking-tighter leading-none uppercase text-sm">KLINIK SIRIUS</span>
               </div>
-              <p className="text-slate-400 leading-relaxed mb-8 font-medium italic">Privat speciallægepraksis i Varde med fokus på faglighed og tryghed.</p>
-              <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest italic opacity-40">CVR: 43033018</p>
+              <p className="text-slate-400 leading-relaxed mb-8 font-medium">Privat speciallægepraksis i Varde med fokus på faglighed og tryghed.</p>
+              <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest opacity-40">CVR: 43033018</p>
             </div>
 
             <div>
-              <h6 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px] italic">Specialer</h6>
-              <ul className="space-y-4 text-slate-300 font-bold text-[10px] uppercase tracking-widest italic">
+              <h6 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Specialer</h6>
+              <ul className="space-y-4 text-slate-300 font-bold text-[10px] uppercase tracking-widest">
                 <li onClick={() => setActivePage('eksem')} className="hover:text-white cursor-pointer transition-colors">Hudsygdomme</li>
                 <li onClick={() => setActivePage('hoere')} className="hover:text-white cursor-pointer transition-colors">Øre, Næse, Hals</li>
                 <li onClick={() => setActivePage('allergi')} className="hover:text-white cursor-pointer transition-colors">Allergiudredning</li>
@@ -1930,8 +1930,8 @@ const App = () => {
             </div>
 
             <div>
-              <h6 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px] italic">Genveje</h6>
-              <ul className="space-y-4 text-slate-300 font-bold text-[10px] uppercase tracking-widest italic">
+              <h6 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Genveje</h6>
+              <ul className="space-y-4 text-slate-300 font-bold text-[10px] uppercase tracking-widest">
                 <li onClick={() => setActivePage('patientinfo')} className="hover:text-white cursor-pointer transition-colors">Patientinfo</li>
                 <li onClick={() => setActivePage('personale')} className="hover:text-white cursor-pointer transition-colors">Personale</li>
                 <li onClick={() => setActivePage('find-os')} className="hover:text-white cursor-pointer transition-colors">Kontakt</li>
@@ -1939,14 +1939,14 @@ const App = () => {
             </div>
 
             <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10">
-              <h6 className="font-black mb-8 uppercase tracking-[0.3em] text-emerald-500 text-[10px] italic">Kontakt</h6>
-              <p className="text-white font-black mb-1 tracking-tight uppercase text-xs italic leading-none">Søndertoften 22</p>
-              <p className="text-slate-400 mb-6 font-bold text-[10px] uppercase tracking-tighter italic">6800 Varde</p>
-              <a href="tel:+4532223224" className="text-xl font-black text-white mb-2 tracking-tighter uppercase italic leading-none block hover:text-emerald-400 transition-colors">32 22 32 24</a>
-              <a href="mailto:info@kliniksirius.dk" className="text-slate-400 font-bold text-[10px] italic hover:text-white transition-colors">info@kliniksirius.dk</a>
+              <h6 className="font-black mb-8 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Kontakt</h6>
+              <p className="text-white font-black mb-1 tracking-tight uppercase text-xs leading-none">Søndertoften 22</p>
+              <p className="text-slate-400 mb-6 font-bold text-[10px] uppercase tracking-tighter">6800 Varde</p>
+              <a href="tel:+4532223224" className="text-xl font-black text-white mb-2 tracking-tighter uppercase leading-none block hover:text-emerald-400 transition-colors">32 22 32 24</a>
+              <a href="mailto:info@kliniksirius.dk" className="text-slate-400 font-bold text-[10px] hover:text-white transition-colors">info@kliniksirius.dk</a>
             </div>
           </div>
-          <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[8px] font-black text-slate-500 uppercase tracking-[0.4em] italic">
+          <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[8px] font-black text-slate-500 uppercase tracking-[0.4em]">
             <div className="flex space-x-12 mb-8 md:mb-0">
               <button onClick={() => setActivePage('privacypolitik')} className="hover:text-white transition-colors">Privatlivspolitik</button>
               <span className="hover:text-white cursor-pointer transition-colors">Cookies</span>
