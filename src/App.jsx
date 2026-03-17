@@ -853,7 +853,7 @@ const App = () => {
               <span className="mx-3">/</span>
               <span className="text-blue-900">{service.category === 'hud' ? 'Hudsygdomme' : 'Øre, Næse, Hals'}</span>
             </nav>
-            <h1 className="text-4xl lg:text-7xl font-black text-slate-900 mb-8 leading-tight uppercase italic tracking-tighter">{service.title}</h1>
+            <h1 className="text-3xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase italic tracking-tighter">{service.title}</h1>
             <p className="text-xl text-slate-600 mb-10 leading-relaxed font-light border-l-8 border-emerald-700 pl-8 italic">
               {service.shortIntro}
             </p>
