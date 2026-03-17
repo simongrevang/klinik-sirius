@@ -36,7 +36,7 @@ const App = () => {
     if (window.location.pathname !== url) window.history.pushState({}, '', url);
 
     // Opdater title og meta description
-    const allServices = [...services.hud, ...services.onhUndersogelser, ...services.onhOperationer];
+    const allServices = [...services.hud, ...services.onhUndersogelser, ...services.onhOperationer, ...services.haandkirurgi];
     const service = allServices.find(s => s.slug === activePage);
     const staticMeta = {
       forside:       { title: 'Klinik Sirius | Speciallæger i Varde – Hud og ØNH', desc: 'Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme. Vi betjener patienter fra Varde, Esbjerg og hele Sydvestjylland.' },
@@ -82,7 +82,7 @@ const App = () => {
         'name': service.title,
         'description': service.shortIntro,
         'procedureType': 'https://schema.org/TherapeuticProcedure',
-        'relevantSpecialty': service.category === 'hud' ? 'Dermatology' : 'Otolaryngology',
+        'relevantSpecialty': service.category === 'hud' ? 'Dermatology' : service.category === 'haand' ? 'PlasticSurgery' : 'Otolaryngology',
         'recognizingAuthority': { '@type': 'Organization', 'name': 'Klinik Sirius, Varde' }
       }) : '';
     }
@@ -106,6 +106,7 @@ const App = () => {
     if (breadcrumbEl) {
       if (service) {
         const categoryName = service.category === 'hud' ? 'Hudsygdomme'
+          : service.category === 'haand' ? 'Håndkirurgi'
           : services.onhUndersogelser.some(s => s.slug === activePage) ? 'ØNH Undersøgelser' : 'ØNH Operationer';
         breadcrumbEl.textContent = JSON.stringify({
           '@context': 'https://schema.org',
@@ -776,6 +777,207 @@ const App = () => {
         ]
       }
     ]
+  ,
+  haandkirurgi: [
+    {
+      name: 'Karpaltunnelsyndrom',
+      slug: 'karpaltunnelsyndrom',
+      category: 'haand',
+      title: 'Behandling af karpaltunnelsyndrom',
+      h2Title: 'Effektiv lindring af smerte og følelsesløshed i hånden',
+      shortIntro: 'Karpaltunnelsyndrom er den hyppigste nerveafklemning og giver smerter, prikkende fornemmelse og svaghed i hånden. Vi tilbyder udredning og behandling, fra skinne og injektioner til kirurgisk frigørelse.',
+      narrative: 'Karpaltunnelsyndrom opstår, når mediannerven klemmes inde i karpaltunnelen, en smal passage i håndleddet. Det er den hyppigste form for nerveafklemning, og mange patienter kender til de karakteristiske symptomer: prikkende fornemmelse, følelsesløshed og smerter i tommelfinger, pegefinger, langfinger og den indvendige del af ringfingeren. Mange oplever, at symptomerne er værst om natten og vækker dem fra søvne.\n\nTilstanden ses hyppigt hos personer, der arbejder med gentagne bevægelser af hånden og håndleddet, men den kan ramme alle. Gravide er også særligt udsatte på grund af væskeansamlinger i vævet. Ubehandlet kan vedvarende afklemning over tid føre til svækkelse af musklerne ved tommelfingen og permanent nedsat følsomhed.\n\nVores tilgang starter med en grundig klinisk undersøgelse. Vi vurderer symptomernes art og sværhedsgrad og sætter en målrettet behandlingsplan. Ved lette til moderate tilfælde afprøves konservative metoder som natskinne, der holder håndleddet i neutral stilling, og eventuelt en kortisonindsprøjtning, der reducerer betændelsen i tunnelen.\n\nHvis konservativ behandling ikke giver tilstrækkelig effekt, eller hvis tilstanden er mere fremskreden med muskelsvind, er en kirurgisk frigørelse af karpaltunnelen den mest effektive løsning. Operationen er kortvarig og foregår i lokal bedøvelse. Et lille snit i håndfladen frigør det ligament, der lægger pres på nerven, og de fleste mærker hurtigt forbedring i symptomerne.\n\nResultaterne efter operation er generelt meget gode. Smerter og natlige gener forsvinder typisk hurtigt, mens genoprettelse af fuld følsomhed og styrke kan tage lidt længere tid, afhængigt af hvor længe afklemningen har stået på.',
+      extraInfo: {
+        col1Title: 'Natlige symptomer',
+        col1Text: 'Mange oplever at vågne om natten med prikkende og sovende fingre. Det er et klassisk tegn på karpaltunnelsyndrom.',
+        col2Title: 'Hurtig bedring',
+        col2Text: 'Smerter forsvinder typisk hurtigt efter operation, mens fuld styrke og følsomhed vender gradvist tilbage.'
+      },
+      faq: [
+        { q: 'Hvem får karpaltunnelsyndrom?', a: 'Det er mest udbredt hos kvinder mellem 40 og 60 år, men det kan ramme alle. Risikofaktorer inkluderer gentagne håndbevægelser i arbejdet, graviditet, overvægt, diabetes og reumatoid artritis. Der er også en arvelig komponent.' },
+        { q: 'Kan det gå over af sig selv?', a: 'Milde tilfælde kan bedres med afventen og aflastning, særligt hos gravide, hvor tilstanden ofte forsvinder efter fødslen. Men ved vedvarende eller forværrede symptomer anbefaler vi at søge behandling for at undgå permanent nerveskade.' },
+        { q: 'Hvad er risiciene ved operation?', a: 'Frigørelse af karpaltunnelen er et veletableret indgreb med lav komplikationsrate. Risici inkluderer infektion, arvæv og sjældent midlertidigt ubehag i arret. Alvorlige komplikationer er meget sjældne ved erfarne kirurger.' },
+        { q: 'Hvornår kan jeg arbejde igen efter operation?', a: 'Det afhænger af dit arbejde. Kontor- og administrativt arbejde kan ofte genoptages inden for en til to uger. Fysisk håndkrævende arbejde kræver typisk seks til otte ugers restitution. Vi vejleder dig specifikt ud fra dit erhverv.' },
+        { q: 'Kan karpaltunnelsyndrom komme igen efter operation?', a: 'Tilbagefald efter vellykket operation er sjælden. Operationen løser den strukturelle årsag til afklemningen. I meget sjældne tilfælde kan arvævsudvikling føre til ny afklemning, men det er undtagelsen snarere end reglen.' }
+      ]
+    },
+    {
+      name: 'Kubitaltunnelsyndrom',
+      slug: 'kubitaltunnelsyndrom',
+      category: 'haand',
+      title: 'Kubitaltunnelsyndrom – afklemning af ulnarisnerven',
+      h2Title: 'Frigørelse af ulnarisnerven ved albuen',
+      shortIntro: 'Kubitaltunnelsyndrom skyldes afklemning af ulnarisnerven ved albuen og giver prikkende fornemmelse og svaghed i ringfinger og lillefinger. Vi tilbyder målrettet behandling og kirurgisk frigørelse.',
+      narrative: 'Kubitaltunnelsyndrom er den næst hyppigste nerveafklemning og opstår, når ulnarisnerven klemmes i en smal kanal på indersiden af albuen. Mange kender ulnarisnerven som "den morsomme nerve", der giver et ubehageligt elektrisk stød, når man slår albuen mod en hård kant. Denne nerve er særligt sårbar ved albuen, fordi den løber tæt på overfladen og bøjer skarpt rundt om en knoglefremstående.\n\nTypiske symptomer er prikkende fornemmelse og følelsesløshed i ringfingeren og lillefingeren, som ofte er værst, når albuen holdes bøjet i lang tid, for eksempel under søvn eller ved telefonsamtaler. Med tiden kan der opstå svaghed i håndens muskulatur, vanskeligheder med at sprede fingrene og i svære tilfælde en karakteristisk klofom.\n\nRisikofaktorer inkluderer arbejde med støttet albue, gentagen bøjning og strækning af albuen samt direkte tryk mod indersiden af albuen. Tidligere brud eller ledsygdomme kan også disponere.\n\nVi starter behandlingen med en grundig vurdering. Konservative tiltag som natteskinne, der forhindrer fuld bøjning af albuen, kan hjælpe ved lette tilfælde. Hvis symptomerne er vedvarende eller der er tegn på muskelpåvirkning, er kirurgisk frigørelse indiceret.\n\nOperationen foretages under lokal bedøvelse og frigør nerven fra det omgivende bindevæv. I nogle tilfælde flyttes nerven til en ny position på forsiden af albuen for at undgå ny afklemning. Resultaterne er gode ved behandling på det rette tidspunkt, og de fleste oplever markant bedring i symptomerne.',
+      extraInfo: {
+        col1Title: 'Søvnpåvirkning',
+        col1Text: 'Mange oplever forværring om natten, fordi albuen holdes bøjet under søvn. En natskinne kan give god lindring.',
+        col2Title: 'Timing er vigtigt',
+        col2Text: 'Jo tidligere behandling sættes ind, desto bedre er chancerne for fuld genopretning af nervefunktionen.'
+      },
+      faq: [
+        { q: 'Hvad er forskellen på karpaltunnel og kubitaltunnel?', a: 'Begge er nerveafklemninger, men ved forskellige nerver og steder. Karpaltunnelsyndrom rammer mediannerven ved håndleddet og giver symptomer i de tre første fingre. Kubitaltunnelsyndrom rammer ulnarisnerven ved albuen og giver symptomer i ring- og lillefingeren.' },
+        { q: 'Kan jeg sidde med albuen mod bordet?', a: 'Direkte pres mod indersiden af albuen forværrer typisk symptomerne. Vi anbefaler at undgå at støtte albuen mod hårde flader og at holde armen let bøjet frem for helt bøjet i lang tid.' },
+        { q: 'Hvad sker der, hvis det ikke behandles?', a: 'Ubehandlet kan vedvarende afklemning føre til permanent muskelsvækkelse og nedsat følsomhed. I svære tilfælde opstår klofingre, fordi de muskler, der strækker fingrene, er svækkede. Det er vigtigt at handle, inden der opstår irreversibel nerveskade.' },
+        { q: 'Hvor lang tid tager operationen?', a: 'Selve operationen tager typisk 30 til 60 minutter og foretages i lokal bedøvelse. Du er som regel hjemme samme dag. Restitutionen afhænger af, hvilken operationsteknik der benyttes, men de fleste er funktionsdygtige igen inden for et par uger.' },
+        { q: 'Er der alternativ til operation?', a: 'Ved lette tilfælde kan natskinne og adfærdsmodifikation hjælpe. Kortisoninjektioner er generelt ikke standardbehandling her i modsætning til karpaltunnelsyndrom. Kommer symptomerne ikke under kontrol med konservativ behandling, er operation den mest effektive løsning.' }
+      ]
+    },
+    {
+      name: 'Perifere nerveafklemninger',
+      slug: 'perifere-nerveafklemninger',
+      category: 'haand',
+      title: 'Andre perifere nerveafklemninger i hånd og underarm',
+      h2Title: 'Præcis diagnosticering og behandling af nerveafklemninger',
+      shortIntro: 'Udover de klassiske syndromer kan nerver afklemmes på mange niveauer i hånd og underarm. Vi tilbyder en grundig udredning og skræddersyet behandling.',
+      narrative: 'Nerver i hånd og underarm kan afklemmes på mange steder udover de velkendte karpaltunnel og kubitaltunnel. Radialnerven, der løber på ydersiden af armen, kan afklemmes ved albuen og give smerter i underarmen og håndleddet, en tilstand man kalder posteriort interosseussyndrom eller radialtunnelsyndrom. Mediannerven kan også afklemmes højere oppe i underarmen ved pronator teres-musklen, det såkaldte pronatorsyndrom.\n\nFælles for disse tilstande er, at de kan være svære at diagnosticere, fordi symptomerne er mere diffuse end ved de klassiske syndromer. Smerter, træthed i armen, prikkende fornemmelse og svaghed kan optræde i varierende kombinationer, og tilstandene forveksles ofte med tennisalbue eller andre overbelastningsskader.\n\nEn grundig og erfaren klinisk vurdering er afgørende. Vi gennemgår symptomernes fordeling og karakter, foretager en målrettet undersøgelse af nerveforsyningen og supplerer om nødvendigt med EMG-undersøgelse og billeddiagnostik for at fastlægge præcist, hvor nerven er påvirket.\n\nBehandlingen afhænger af afklemningens årsag og placering. Konservative tiltag som afventen, aflastning, fysioterapi og tilpasning af arbejdsstillinger afprøves først. Ved vedvarende symptomer eller klare tegn på nerveskade er kirurgisk frigørelse den rette løsning.\n\nVores erfaring med håndkirurgi sikrer, at du kommer i hænder, der kender disse tilstande indgående og kan hjælpe dig med en præcis diagnose og den rette behandling, hvad enten den er konservativ eller operativ.',
+      extraInfo: {
+        col1Title: 'Præcis diagnose',
+        col1Text: 'Nerveafklemninger kan sidde på mange niveauer. En grundig klinisk vurdering er fundamentet for den rigtige behandling.',
+        col2Title: 'Individuel plan',
+        col2Text: 'Vi tilpasser behandlingen til den specifikke afklemning og din hverdag.'
+      },
+      faq: [
+        { q: 'Hvordan ved jeg, om det er en nerveafklemning?', a: 'Typiske tegn er prikkende fornemmelse, følelsesløshed, svaghed og smerter i et bestemt mønster svarende til en nervs forsyningsområde. Symptomerne forværres ofte ved bestemte stillinger eller belastninger. En klinisk vurdering og eventuelt EMG-undersøgelse afklarer diagnosen.' },
+        { q: 'Hvad er EMG?', a: 'EMG (elektromyografi) og nerveledningshastighed er en undersøgelse, der måler nervernes og musklernes elektriske aktivitet. Den hjælper med at fastslå, om der er nerveskade, og præcist hvor nerven er påvirket. Det er et vigtigt redskab ved uklare nerveafklemninger.' },
+        { q: 'Kan det forveksles med muskel- og seneskader?', a: 'Ja, det er faktisk et hyppigt problem. Radialnerveafklemning forveksles for eksempel ofte med tennisalbue, da begge giver smerter på ydersiden af albuen og underarmen. En erfaren specialist kan skelne tilstandene klinisk og sætte den rette behandling ind.' },
+        { q: 'Hvornår er det nødvendigt med operation?', a: 'Operation overvejes, når konservativ behandling ikke giver tilstrækkelig effekt efter en rimelig periode, og når der er tegn på tiltagende nerveskade i form af muskelsvind eller forværret følelsesløshed. Timing er vigtigt for at undgå permanente skader.' },
+        { q: 'Kan arbejdsstilling og ergonomi have indflydelse?', a: 'Ja, det kan det i høj grad. Vedvarende ugunstige arbejdsstillinger kan fremprovokere og vedligeholde nerveafklemninger. En ergonomisk tilpasning af arbejdspladsen er ofte en vigtig del af det samlede behandlingsbillede.' }
+      ]
+    },
+    {
+      name: 'Springfinger (triggerfinger)',
+      slug: 'springfinger',
+      category: 'haand',
+      title: 'Behandling af springfinger (triggerfinger)',
+      h2Title: 'Fri og smertefri bevægelighed i fingeren',
+      shortIntro: 'Springfinger giver en karakteristisk klikken og fastlåsning, når fingeren bøjes. Vi tilbyder effektiv behandling fra kortisonindsprøjtning til kirurgisk frigørelse.',
+      narrative: 'Springfinger, eller triggerfinger som det hedder på fagsprog, er en tilstand, hvor en fingers sene klikker eller hægter sig fast, når man forsøger at bøje eller strække fingeren. I milde tilfælde opleves blot en klikken. I mere udtalte tilfælde sidder fingeren fast i bøjet stilling og skal rettes ud med den anden hånd, ofte med smerter.\n\nTilstanden opstår, fordi senen og dens omgivende skedehinde, der normalt glider problemfrit, bliver fortykket og ikke kan passere frit gennem en lille tunnel i håndfladen. Det er den første ringlige, pulleys, der oftest er årsagen. Tilstanden er hyppigere hos kvinder, hos diabetikere og hos personer med reumatoid artritis.\n\nVi starter med en klinisk vurdering. I de fleste tilfælde er diagnosen klar ud fra sygehistorien og den kliniske undersøgelse. Behandlingen tilpasses graden af symptomerne.\n\nEn kortisonindsprøjtning lokalt ved den fortykkede ring reducerer betændelsen og er effektiv hos en stor del af patienterne, særligt ved kortere sygehistorie. Effekten kan holde i måneder og i nogen tilfælde permanent. Er der behov for det, kan indsprøjtningen gentages.\n\nHvis kortisonbehandling ikke giver tilstrækkelig effekt, eller ved svære tilfælde med fuldstændig fastlåsning, er en kortvarig operation den bedste løsning. Indgrebet foregår i lokal bedøvelse og indebærer en lille åbning i den fortykkede ring, så senen igen kan glide frit. Heling er hurtig, og de fleste kan bruge fingeren igen inden for kort tid.',
+      extraInfo: {
+        col1Title: 'Kortisonindsprøjtning',
+        col1Text: 'Mange patienter oplever langvarig og i nogen tilfælde permanent bedring efter én til to injektioner.',
+        col2Title: 'Hurtig operation',
+        col2Text: 'Operationen er kortvarig i lokal bedøvelse, og fingeren kan bruges igen hurtigt efter.'
+      },
+      faq: [
+        { q: 'Er springfinger farligt?', a: 'Springfinger er ikke farligt i medicinsk forstand, men det kan være smertefuldt og begrænsende i hverdagen. I svære tilfælde, hvor fingeren sidder fuldstændig fast i bøjet stilling, er behandling nødvendig for at genoprette funktion og forhindre kontraktur.' },
+        { q: 'Kan det gå over af sig selv?', a: 'Milde tilfælde kan bedres med hvile og aflastning. Men er symptomerne mere udtalte, tilstanden varer ved, eller opstår der fastlåsning, er behandling klart at foretrække frem for afventen.' },
+        { q: 'Hvem er mest udsat?', a: 'Springfinger ses hyppigere hos kvinder, personer over 40 år, diabetikere og patienter med reumatoid artritis. Det ses i alle fingre, men tommelfingeren, langfingeren og ringfingeren er oftest ramt.' },
+        { q: 'Gør kortisonindsprøjtningen ondt?', a: 'Indsprøjtningen kan give et kortvarigt ubehag eller stikkende fornemmelse, men er generelt godt tolereret. Nogle oplever mild ømhed i et par dage efter. Effekten ses typisk inden for en til to uger.' },
+        { q: 'Kan alle fingre rammes?', a: 'Ja, springfinger kan opstå i alle fingre, herunder tommelfingeren. Hos diabetikere kan flere fingre på samme hånd være ramt. Vi vurderer og behandler hver finger individuelt ud fra symptomernes sværhedsgrad.' }
+      ]
+    },
+    {
+      name: 'De Quervains seneskedehindebetændelse',
+      slug: 'de-quervains',
+      category: 'haand',
+      title: 'De Quervains seneskedehindebetændelse',
+      h2Title: 'Effektiv lindring af smerter ved tommelfinger og håndled',
+      shortIntro: 'De Quervains seneskedehindebetændelse giver smerter langs tommelfingersiden af håndleddet. Tilstanden er hyppig hos forældre til nyfødte og ved gentagne tommelbevægelser. Vi tilbyder effektiv behandling.',
+      narrative: 'De Quervains seneskedehindebetændelse er en betændelsestilstand i seneskedehinden om to sener, der løber på tommelfingersiden af håndleddet. Det giver karakteristiske smerter ved den lille knoglefremstående på tommelfingersidens håndled, og smerten forværres typisk ved at bevæge tommelfingren eller holde om noget.\n\nTilstanden ses hyppigt hos nybagte forældre, fordi gentagen håndtering af et spædbarn belaster netop disse sener. Det er ikke ualmindeligt, at mødre oplever svære smerter på håndleddet i de første måneder efter fødslen, kombineret med graviditetsbetingede hormonforandringer. Men tilstanden rammer bredere end som så og ses ved enhver aktivitet med gentagne tommelbevægelser.\n\nDiagnosen stilles klinisk. Finkelsteins test er et klassisk greb, der provocerer smerten og bekræfter diagnosen. Vi vurderer sværhedsgraden og tilpasser behandlingen.\n\nI første omgang anbefales aflastning, eventuelt med en skinne, der immobiliserer tommelfingerens grundled, og anti-inflammatorisk medicin. En kortisonindsprøjtning i seneskedehinden er effektiv hos mange patienter og kan give lang tids symptomlindring.\n\nVed utilstrækkelig effekt af konservativ behandling tilbydes en kortvarig operation i lokal bedøvelse, hvor den forsnævrede seneskedehinde åbnes, så senerne frit kan glide. Operationen er meget effektiv og giver de fleste patienter permanent lindring.',
+      extraInfo: {
+        col1Title: 'Hyppig hos forældre',
+        col1Text: 'Mange nybagte mødre og fædre rammes af tilstanden. Genopretning er mulig med den rette behandling.',
+        col2Title: 'Kortisoninjektionen virker',
+        col2Text: 'Indsprøjtning i seneskedehinden er effektiv hos flertallet og kan give langvarig bedring.'
+      },
+      faq: [
+        { q: 'Er det farligt at have De Quervains under graviditet?', a: 'Det er ikke farligt, men kan være meget generende. Graviditets- og amningshormonerne kan bidrage til tilstanden. Behandling med skinne og i udvalgte tilfælde kortison anbefales. Vi tilpasser behandlingen nøje til gravide og ammende.' },
+        { q: 'Kan det forveksles med gigt?', a: 'Ja, smerter ved tommelfingersiden af håndleddet kan i første omgang ligne slidgigt i tommelfingerens rodled. En grundig klinisk undersøgelse skelner de to tilstande, som behandles forskelligt.' },
+        { q: 'Virker kortison altid?', a: 'Kortison er effektivt hos mange, men ikke alle. Studier viser, at 50 til 80 procent oplever god effekt af én injektion. Effekten kan i nogen tilfælde vare i årevis, i andre tilfælde er den mere kortvarig. Ved utilstrækkelig effekt er operation næste skridt.' },
+        { q: 'Kan jeg bruge hånden efter operation?', a: 'Ja. Operationen foretages i lokal bedøvelse, og du kan som regel bruge fingrene igen samme dag. Heling af snittet tager to til tre uger. De fleste er tilbage til daglige aktiviteter hurtigt.' },
+        { q: 'Kan tilstanden komme igen?', a: 'Tilbagefald kan forekomme, særligt hvis den udløsende aktivitet fortsætter. Vi vejleder om forebyggelse og ergonomi for at minimere risikoen for recidiv.' }
+      ]
+    },
+    {
+      name: 'Seneskedebetændelser',
+      slug: 'seneskedebetaendelser',
+      category: 'haand',
+      title: 'Behandling af seneskedebetændelser i hånd og underarm',
+      h2Title: 'Smertefri hverdag med den rette behandling',
+      shortIntro: 'Seneskedebetændelse giver smerter, hævelse og nedsat bevægelighed ved de berørte sener. Vi diagnosticerer og behandler alle former for seneskedebetændelse i hånden og underarmen.',
+      narrative: 'Seneskedebetændelse er en betændelsestilstand i den væskeproducerende hinde, der omgiver mange af senerne i hånden og underarmen. Denne skedehinde, synovialhinden, producerer normalt en lille smule ledvæske, der smører senen og gør, at den kan glide gnidningsfrit. Når hinden betændes og fortykkes, giver det smerter, hævelse og stivhed.\n\nÅrsagerne er mange. Overbelastning ved gentagne bevægelser er hyppigt, men seneskedebetændelse kan også opstå ved gigtlidelser som reumatoid artritis, psoriasisgigt og reaktiv artrit. I sjældnere tilfælde kan bakteriel betændelse opstå, ofte efter punktering af huden, og det er en tilstand, der kræver hurtig behandling.\n\nSymptomerne afhænger af, hvilken sene der er ramt. Generelt ses smerter langs senens forløb, som forværres ved aktiv brug og stræk, hævelse over det berørte område og i nogen tilfælde en knitrende fornemmelse ved bevægelse, det man kalder krepitation.\n\nVi starter altid med at fastlægge årsagen til betændelsen. Det er afgørende for behandlingen. Ved ikke-infektiøs seneskedebetændelse er hvile, anti-inflammatorisk behandling og i mange tilfælde en lokal kortisonindsprøjtning meget effektivt. Fysioterapi og ergonomisk vejledning supplerer behandlingen.\n\nVed mistanke om bakteriel seneskedebetændelse er hurtig handling afgørende. Tilstanden kræver antibiotika og i de fleste tilfælde kirurgisk skylning af seneskedehinden for at undgå permanent skade på senen.',
+      extraInfo: {
+        col1Title: 'Mange årsager',
+        col1Text: 'Overbelastning, gigtlidelser og infektion kan alle give seneskedebetændelse. Årsagen bestemmer behandlingen.',
+        col2Title: 'Hurtig indsats ved infektion',
+        col2Text: 'Bakteriel seneskedebetændelse kræver hurtig behandling for at beskytte senens funktion.'
+      },
+      faq: [
+        { q: 'Hvad er forskellen på seneskedebetændelse og senebetændelse?', a: 'Senebetændelse er en forandring i selve senen som følge af overbelastning. Seneskedebetændelse er betændelse i den hinde, der omgiver senen. De kan optræde sammen, men er to forskellige processer. Behandlingen kan variere afhængigt af, hvad der primært er ramt.' },
+        { q: 'Kan jeg fortsat arbejde med seneskedebetændelse?', a: 'Det afhænger af graden og din type arbejde. I milde tilfælde kan aktivitetsmodifikation gøre det muligt at fortsætte, men med forsigtighed. I mere alvorlige tilfælde kan hvile og sygemelding være nødvendig for at undgå forværring og fremme heling.' },
+        { q: 'Hvornår skal jeg søge akut hjælp?', a: 'Søg læge akut, hvis du oplever tiltagende hævelse, rødme og varme i hånden kombineret med feber og stærke smerter ved den mindste bevægelse af fingeren. Det kan være tegn på bakteriel seneskedebetændelse, som kræver hurtig behandling.' },
+        { q: 'Kan ultralyd hjælpe med diagnosen?', a: 'Ja, ultralydsskanning er et nyttigt redskab til at visualisere seneskedehinderne og bekræfte diagnosen. Det kan vise fortykket skedehinde og væske i skedehinden og hjælpe med at guide en kortisonindsprøjtning præcist.' },
+        { q: 'Hjælper kortison altid?', a: 'Kortisonindsprøjtning er effektiv ved inflammatorisk seneskedebetændelse og giver mange patienter god og langvarig lindring. Den bruges ikke ved bakteriel seneskedebetændelse, da kortison kan forværre en infektion. Vi vurderer altid årsagen, inden vi tilbyder kortison.' }
+      ]
+    },
+    {
+      name: 'Ganglion (seneknuder)',
+      slug: 'ganglion',
+      category: 'haand',
+      title: 'Behandling af ganglion og seneknuder',
+      h2Title: 'Sikker fjernelse af ganglion i hånd og håndled',
+      shortIntro: 'Ganglion er godartede væskefyldte cyster, der opstår ved led og sener i hånd og håndled. Vi tilbyder en grundig vurdering og behandling, herunder aspiration og kirurgisk fjernelse.',
+      narrative: 'Et ganglion er en godartet, væskefyldt cyste, der opstår i tilknytning til en led eller en sene. Det er den hyppigste godartede svulst i hånden og håndleddet og ses oftest på håndryggen, men kan også optræde på håndfladsesiden, ved tommelfingeren og andre steder.\n\nGanglion opstår, når leddets eller seneskedens indvendige beklædning svulmer ud og danner en cyste, der fyldes med en tyktflydende, geléagtig væske. Den præcise årsag er ikke fuldt ud forstået, men overbelastning og tidligere skader kan disponere. Mange ganglier er asymptomatiske og giver kun genér på grund af udseendet. Andre kan give smerter, trykkende fornemmelse eller begrænsning i bevægelighed, særligt hvis de sidder tæt på en sene eller nerve.\n\nVi starter med en grundig vurdering. De fleste ganglier er let genkendelige klinisk, men en ultralydsskanning kan bekræfte diagnosen og afklare, hvad cysten er forbundet med. Det er vigtigt at skelne et ganglion fra andre typer knuder, der kan kræve en anderledes tilgang.\n\nBehandlingsmulighederne afhænger af symptomerne. Mange ganglier kan med fordel observeres, da de i nogen tilfælde forsvinder spontant. Er der smerter eller funktionspåvirkning, tilbydes aspiration, hvor cysten punkteres og væsken suges ud. Det er effektivt, men tilbagefald er hyppigere end ved operation.\n\nKirurgisk fjernelse er den mest effektive behandling og indebærer, at cysten og dens stilk fjernes ved roden i lokal bedøvelse. Recidivraten er lav ved korrekt udført operation.',
+      extraInfo: {
+        col1Title: 'Godartet',
+        col1Text: 'Ganglion er altid godartet. Det er aldrig kræft, men bør vurderes af en specialist ved tvivl.',
+        col2Title: 'Observation mulig',
+        col2Text: 'Asymptomatiske ganglier kan blot overvåges, da de i nogen tilfælde forsvinder af sig selv.'
+      },
+      faq: [
+        { q: 'Er ganglion farligt?', a: 'Nej, ganglion er en godartet tilstand og aldrig kræft. Det er dog en god idé at få det vurderet af en specialist, så diagnosen er sikker og eventuelle symptomer kan behandles.' },
+        { q: 'Kan ganglion forsvinde af sig selv?', a: 'Ja, det kan det. En del ganglier forsvinder spontant over måneder til år. Det er en acceptabel strategi ved asymptomatiske ganglier. Er der smerter eller funktionspåvirkning, er aktiv behandling at foretrække.' },
+        { q: 'Virker det at slå på ganglionet med en bog?', a: 'Det er en gammel folkemetode, som ikke anbefales. Selv om det i nogen tilfælde kan sprænge cysten og midlertidigt reducere den, er risikoen for skade på omliggende strukturer til stede, og tilbagefaldet er hyppigt. Vi anbefaler professionel behandling frem for selvbehandling.' },
+        { q: 'Er operationen farlig?', a: 'Kirurgisk fjernelse er et veletableret og relativt enkelt indgreb. Risici inkluderer infektion, arvæv, stivhed og i sjældne tilfælde skade på nærliggende nerver. Ved erfarne håndkirurger er komplikationsraten lav.' },
+        { q: 'Kan ganglionet komme igen efter operation?', a: 'Tilbagefald kan ske, men er langt sjældnere ved operation end ved aspiration. Vi informerer dig grundigt om forventningerne inden behandlingen.' }
+      ]
+    },
+    {
+      name: 'Dupuytrens kontraktur',
+      slug: 'dupuytrens-kontraktur',
+      category: 'haand',
+      title: 'Behandling af Dupuytrens kontraktur',
+      h2Title: 'Stræk fingrene igen med effektiv behandling',
+      shortIntro: 'Dupuytrens kontraktur giver strammende strenge i håndfladen, der gradvist bøjer fingrene indad. Vi tilbyder vurdering og behandling af denne arvelige bindevævssygdom.',
+      narrative: 'Dupuytrens kontraktur er en tilstand, hvor bindevævet i håndfladen, den palmare fascie, gradvist tykner og danner strenge, der trækker en eller flere fingre ind i bøjet stilling. Typisk rammes ringfingeren og lillefingeren, men alle fingre kan påvirkes. Over tid kan bøjningen blive så udtalt, at det er umuligt at strække fingeren og lægge hånden fladt ned mod en flade.\n\nSygdommen er hyppigere hos mænd, hos nordeuropæere og hos personer med en familiehistorie med tilstanden. Arvelig disponering er den største risikofaktor, men tilstanden ses også hyppigere ved diabetes, epilepsi, alkoholoverforbrug og rygning. Den debuterer typisk efter 50-årsalderen og progredierer langsomt.\n\nI de tidlige stadier ses kun fortykkede knuder i håndfladen. Mange patienter opdager tilstanden, fordi de mærker faste, smertefrie knuder i håndfladen. Smerter er ikke et fremtrædende træk. Funktionspåvirkning opstår, efterhånden som bøjningen tiltar.\n\nVi vurderer stadiet af kontrakturen ud fra bøjningsgraden. Behandling er indiceret, når kontrakturen begynder at påvirke funktionen.\n\nOperativ behandling er standardbehandling og indebærer, at de syge strenge i hånden deles og fjernes under lokal bedøvelse. Det giver den bedste langsigtede effekt. Hos udvalgte patienter kan enzymatisk behandling med kollagenase overvejes, hvor enzymet injiceres i strengen og opløser den. Restitution inkluderer håndtræning og skinnebehandling for at optimere resultatet.',
+      extraInfo: {
+        col1Title: 'Arvelig disposition',
+        col1Text: 'Tilstanden er hyppig i Skandinavien og løber i familier. Tidlig vurdering kan forebygge svær kontraktur.',
+        col2Title: 'Operation hjælper',
+        col2Text: 'Kirurgisk behandling giver langvarig bedring og genopretter håndens funktion.'
+      },
+      faq: [
+        { q: 'Gør Dupuytrens kontraktur ondt?', a: 'Selve kontrakturen giver typisk ikke smerter. Mange patienter opdager den ved at mærke hårde knuder i håndfladen eller ved, at fingeren gradvist bliver sværere at strække. Lejlighedsvis kan der være ubehag, men smerte er ikke det primære symptom.' },
+        { q: 'Hvornår bør jeg have behandling?', a: 'Vi anbefaler behandling, når kontrakturen påvirker funktionen. En tommelfingerregel er, at et fingerbøjningsunderskud på mere end 30 grader i grundleddet er indikation for behandling. Jo tidligere behandling sættes ind, desto enklere er indgrebet og bedre er resultaterne.' },
+        { q: 'Kan strækøvelser hjælpe?', a: 'Stræk og tøjning kan ikke vende eller stoppe progression af Dupuytrens kontraktur. Bindevævsformationen er ikke reversibel ved øvelser. Fysioterapi kan supplere behandling og er vigtig efter operation, men er ikke kurativt alene.' },
+        { q: 'Hvad er forskellen på operation og enzyminjektion?', a: 'Operation er den mest grundige behandling med lavest recidivrate. Enzyminjektion er et mindre invasivt alternativ, der kan egne sig til udvalgte patienter med enkeltstående strenge. Recidivraten er noget højere end ved operation. Vi drøfter mulighederne med dig.' },
+        { q: 'Kan Dupuytrens kontraktur komme igen?', a: 'Tilbagefald kan forekomme, da sygdomsdispositionen er til stede i bindevævet. Ny behandling kan tilbydes ved tilbagefald. Regelmæssig kontrol hjælper med at opdage nye strenge tidligt.' }
+      ]
+    },
+    {
+      name: 'Godartede tumorer i hånd og fingre',
+      slug: 'godartede-tumorer-haand',
+      category: 'haand',
+      title: 'Fjernelse af godartede tumorer i hånd og fingre',
+      h2Title: 'Sikker vurdering og fjernelse af knuder og svulster i hånden',
+      shortIntro: 'Godartede tumorer i hånd og fingre er hyppige og dækker alt fra enkle cyster til fedtknuder og fortykkede nervevæv. Vi tilbyder en præcis vurdering og sikker fjernelse.',
+      narrative: 'Knuder og svulster i hånden er et hyppigt fund og giver naturligt anledning til bekymring. Langt størstedelen er godartede og ikke farlige. Men det er vigtigt at få dem undersøgt af en specialist, der kan fastlægge diagnosen og rådgive om behandling.\n\nDen hyppigste godartede tumor i hånden er ganglionet, der behandles separat. Ud over ganglion er de hyppigste typer lipomer, fedtvævssvulster, der sidder blødt og bevægeligt under huden. Glomustumorer er sjældne, men karakteristiske svulster, der sidder under neglen og giver intens trykømhed og kuldefølsomhed. Inklusionskyster opstår typisk efter en lille hudlæsion og indeholder keratin.\n\nI nerveforsyningen kan godartede tumorer som neurilemmomer opstå og give smerter eller neurologiske symptomer, afhængigt af hvilken nerve der er involveret. Netop fordi symptombilledet kan variere, er en grundig klinisk vurdering vigtig.\n\nVores tilgang starter med en grundig klinisk undersøgelse. Ultralydsscanning og MR-skanning kan bruges til at karakterisere svulsten, inden beslutning om behandling træffes. De fleste godartede tumorer i hånden behandles ved kirurgisk fjernelse under lokal bedøvelse. Operationen er relativt kortvarig, og komplikationsrisikoen er lav ved erfarne kirurger.\n\nVi sørger for en klar og tryg kommunikation om fund og diagnose og sikrer, at du forstår, hvad vi finder, og hvad den bedste behandlingsplan er for netop dig.',
+      extraInfo: {
+        col1Title: 'Næsten altid godartet',
+        col1Text: 'Langt de fleste knuder i hånden er godartede. En vurdering afklarer diagnosen og giver dig ro i sindet.',
+        col2Title: 'Sikker fjernelse',
+        col2Text: 'Godartede tumorer kan fjernes sikkert i lokal bedøvelse med lav komplikationsrisiko.'
+      },
+      faq: [
+        { q: 'Kan en knude i hånden være kræft?', a: 'Ondartede tumorer i hånden er sjældne, men de forekommer. Netop derfor er det vigtigt at få alle nye og voksende knuder vurderet af en specialist. De fleste viser sig at være godartede, men sikkerheden for dig som patient kræver, at vi undersøger det.' },
+        { q: 'Hvad er en glomustumor?', a: 'En glomustumor er en lille, godartet svulst, der opstår fra de specielle glomuslegemer, der regulerer blodforsyningen til huden. Den sidder hyppigt under fingerneglene og giver intens ømhed ved let tryk og stærk kuldeoverfølsomhed. Fjernelse giver typisk fuldstændig symptomlindring.' },
+        { q: 'Skal alle godartede tumorer fjernes?', a: 'Ikke nødvendigvis. Asymptomatiske og sikre godartede tumorer kan observeres. Behandling anbefales, hvis der er smerter, funktionspåvirkning, usikkerhed om diagnosen, eller hvis svulsten vokser. Vi rådgiver dig ud fra din specifikke situation.' },
+        { q: 'Hvad sker der med det fjernede væv?', a: 'Alt fjernet væv sendes til patologisk undersøgelse, hvor en speciallæge undersøger det under mikroskop og bekræfter diagnosen. Det er standard procedure og giver dig den endelige sikkerhed for, hvad vi har fjernet.' },
+        { q: 'Er heling efter operation lang?', a: 'Det afhænger af indgrebets omfang og placeringen. Mange patienter kan bruge fingre og hånd relativt hurtigt efter operationen. Heling af snittet tager typisk to til tre uger. Vi guider dig om begrænsninger og genoptræning undervejs.' }
+      ]
+    }
+  ]
   };
 
   const staff = [
@@ -914,20 +1116,22 @@ const App = () => {
                   <div className="w-16 h-16 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center shadow-inner">
                     {service.category === 'hud'
                       ? <span className="text-blue-900 font-black text-2xl uppercase italic">KA</span>
+                      : service.category === 'haand'
+                      ? <span className="text-blue-900 font-black text-2xl uppercase italic">HK</span>
                       : <img src="/Jalal%20Taha%20Saadi.png" alt="Jalal Taha Saadi" className="w-full h-full object-cover object-top" />
                     }
                   </div>
                   <div>
-                    <p className="font-black text-xl leading-none uppercase italic text-slate-900">{service.category === 'hud' ? 'Kawa Ajgeiy' : 'Jalal Taha Saadi'}</p>
-                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mt-2">{service.category === 'hud' ? 'Speciallæge i hudsygdomme' : 'Speciallæge i ØNH'}</p>
+                    <p className="font-black text-xl leading-none uppercase italic text-slate-900">{service.category === 'hud' ? 'Kawa Ajgeiy' : service.category === 'haand' ? 'Klinik Sirius' : 'Jalal Taha Saadi'}</p>
+                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mt-2">{service.category === 'hud' ? 'Speciallæge i hudsygdomme' : service.category === 'haand' ? 'Speciallæge i håndkirurgi' : 'Speciallæge i ØNH'}</p>
                   </div>
                 </div>
                 <div className="space-y-4 relative z-10">
                   <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight italic">
-                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'OUH og Aarhus Universitetshospital' : 'SVS Esbjerg og OUH'}
+                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'OUH og Aarhus Universitetshospital' : service.category === 'haand' ? 'Specialiseret håndkirurgisk klinik' : 'SVS Esbjerg og OUH'}
                   </div>
                   <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight italic">
-                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'Dansk Dermatologisk Selskab' : 'Dansk Rhinologisk Selskab'}
+                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'Dansk Dermatologisk Selskab' : service.category === 'haand' ? 'Lokal bedøvelse – hurtig heling' : 'Dansk Rhinologisk Selskab'}
                   </div>
                 </div>
               </div>
@@ -985,6 +1189,7 @@ const App = () => {
             <NavItemComponent title="Hudsygdomme" items={services.hud} id="hud" />
             <NavItemComponent title="ØNH Undersøgelser" items={services.onhUndersogelser} id="onhU" />
             <NavItemComponent title="ØNH Operationer" items={services.onhOperationer} id="onhO" />
+            <NavItemComponent title="Håndkirurgi" items={services.haandkirurgi} id="haand" />
             <button onClick={() => setActivePage('personale')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'personale' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Personale</button>
           </nav>
 
@@ -1086,6 +1291,31 @@ const App = () => {
                       key={s.slug}
                       onClick={() => setActivePage(s.slug)}
                       className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest text-slate-500 hover:bg-emerald-50 hover:text-emerald-800 transition-colors"
+                    >
+                      {s.name}
+                      <ChevronRight size={12} className="text-slate-300" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Håndkirurgi accordion */}
+            <div>
+              <button
+                onClick={() => setIsServicesOpen(isServicesOpen === 'haand' ? null : 'haand')}
+                className="w-full flex items-center justify-between px-4 py-4 rounded-2xl font-black text-sm uppercase tracking-widest text-slate-700 hover:bg-slate-50 transition-colors"
+              >
+                <span>Håndkirurgi</span>
+                <ChevronDown size={16} className={`text-slate-400 transition-transform duration-200 ${isServicesOpen === 'haand' ? 'rotate-180' : ''}`} />
+              </button>
+              {isServicesOpen === 'haand' && (
+                <div className="ml-4 mb-2 border-l-2 border-blue-100 pl-4 space-y-1">
+                  {services.haandkirurgi.map(s => (
+                    <button
+                      key={s.slug}
+                      onClick={() => setActivePage(s.slug)}
+                      className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest text-slate-500 hover:bg-blue-50 hover:text-blue-900 transition-colors"
                     >
                       {s.name}
                       <ChevronRight size={12} className="text-slate-300" />
