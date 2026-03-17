@@ -1445,8 +1445,8 @@ const App = () => {
         )}
 
         {/* Dynamic service pages */}
-        {[...services.hud, ...services.onhUndersogelser, ...services.onhOperationer].some(s => s.slug === activePage) && (
-          <ServiceLandingPage service={[...services.hud, ...services.onhUndersogelser, ...services.onhOperationer].find(s => s.slug === activePage)} />
+        {[...services.hud, ...services.onhUndersogelser, ...services.onhOperationer, ...services.haandkirurgi].some(s => s.slug === activePage) && (
+          <ServiceLandingPage service={[...services.hud, ...services.onhUndersogelser, ...services.onhOperationer, ...services.haandkirurgi].find(s => s.slug === activePage)} />
         )}
 
         {/* Patientinfo */}
