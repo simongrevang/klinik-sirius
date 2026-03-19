@@ -1065,7 +1065,7 @@ const App = () => {
             <nav className="flex mb-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
               <button onClick={() => setActivePage('forside')} className="hover:text-blue-900 transition-colors">Forside</button>
               <span className="mx-3">/</span>
-              <span className="text-blue-900">{service.category === 'hud' ? 'Hudsygdomme' : service.category === 'haand' ? 'Håndkirurgi' : 'Øre, Næse, Hals'}</span>
+              <span className="text-blue-900">{service.category === 'hud' ? 'Hudsygdomme' : service.category === 'haand' ? 'Håndkirurgi' : services.onhUndersogelser.some(s => s.slug === service.slug) ? 'ØNH Undersøgelser' : 'ØNH Operationer'}</span>
             </nav>
             <h1 className="text-3xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tighter">{service.title}</h1>
             <p className="text-xl text-slate-600 mb-10 leading-relaxed font-light border-l-8 border-emerald-700 pl-8">
