@@ -1516,7 +1516,7 @@ const App = () => {
                   </button>
                 </nav>
                 <div className="max-w-4xl">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-blue-900 mb-8 uppercase tracking-tight lg:tracking-tighter">Patientinformation</h1>
+                  <h1 className="text-3xl lg:text-6xl font-black text-blue-900 mb-8 uppercase tracking-tighter">Patientinformation</h1>
                   <p className="text-xl text-slate-600 leading-relaxed font-light border-l-8 border-emerald-700 pl-8">
                     Få overblik over dine rettigheder som patient, uanset om du kommer via det offentlige, din forsikring eller som privatbetalende.
                   </p>
@@ -1704,7 +1704,7 @@ const App = () => {
                   <MapPin size={16} />
                   <span>Varde Center</span>
                 </div>
-                <h2 className="text-6xl lg:text-9xl font-black text-blue-900 mb-10 uppercase tracking-tighter leading-none">Find vej <br />til klinikken.</h2>
+                <h2 className="text-3xl lg:text-6xl font-black text-blue-900 mb-10 uppercase tracking-tighter leading-tight">Find vej <br />til klinikken.</h2>
                 <p className="text-2xl text-slate-500 max-w-3xl font-light leading-relaxed border-l-8 border-blue-900 pl-10">
                   Vi holder til i lyse lokaler på Søndertoften 22. Der er elevator i bygningen og gode adgangsforhold for alle patienter.
                 </p>
@@ -1818,7 +1818,7 @@ const App = () => {
                   </button>
                 </nav>
                 <div className="max-w-4xl">
-                  <h1 className="text-4xl lg:text-7xl font-black text-blue-900 mb-8 uppercase tracking-tighter">Privatlivspolitik</h1>
+                  <h1 className="text-3xl lg:text-6xl font-black text-blue-900 mb-8 uppercase tracking-tighter">Privatlivspolitik</h1>
                   <p className="text-xl text-slate-600 leading-relaxed font-light border-l-8 border-emerald-700 pl-8">
                     Behandling af personoplysninger for patienter hos Klinik Sirius.
                   </p>
