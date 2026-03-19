@@ -39,11 +39,14 @@ const App = () => {
     const allServices = [...services.hud, ...services.onhUndersogelser, ...services.onhOperationer, ...services.haandkirurgi];
     const service = allServices.find(s => s.slug === activePage);
     const staticMeta = {
-      forside:       { title: 'Klinik Sirius | Speciallæger i Varde – Hud og ØNH', desc: 'Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme. Vi betjener patienter fra Varde, Esbjerg og hele Sydvestjylland.' },
-      patientinfo:   { title: 'Patientinfo | Klinik Sirius, Varde', desc: 'Praktisk information til patienter hos Klinik Sirius i Varde. Priser, forsikring, åbningstider og hvad du skal medbringe.' },
-      personale:     { title: 'Vores personale | Klinik Sirius, Varde', desc: 'Mød speciallægerne bag Klinik Sirius i Varde: Jalal Taha Saadi (ØNH), Kawa Ajgeiy (hudsygdomme) og Jerzy Stiasny (håndkirurgi).' },
-      'find-os':     { title: 'Find os | Klinik Sirius, Søndertoften 22, Varde', desc: 'Find Klinik Sirius på Søndertoften 22, 6800 Varde. Book tid online eller ring på 32 22 32 24.' },
-      privacypolitik:{ title: 'Privatlivspolitik | Klinik Sirius, Varde', desc: 'Privatlivspolitik for Klinik Sirius, privat speciallægepraksis i Varde.' },
+      forside:           { title: 'Klinik Sirius | Speciallæger i Varde – Hud og ØNH', desc: 'Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme. Vi betjener patienter fra Varde, Esbjerg og hele Sydvestjylland.' },
+      patientinfo:       { title: 'Patientinfo | Klinik Sirius, Varde', desc: 'Praktisk information til patienter hos Klinik Sirius i Varde. Priser, forsikring, åbningstider og hvad du skal medbringe.' },
+      personale:         { title: 'Vores personale | Klinik Sirius, Varde', desc: 'Mød speciallægerne bag Klinik Sirius i Varde: Jalal Taha Saadi (ØNH), Kawa Ajgeiy (hudsygdomme) og Jerzy Stiasny (håndkirurgi).' },
+      'find-os':         { title: 'Find os | Klinik Sirius, Søndertoften 22, Varde', desc: 'Find Klinik Sirius på Søndertoften 22, 6800 Varde. Book tid online eller ring på 32 22 32 24.' },
+      privacypolitik:    { title: 'Privatlivspolitik | Klinik Sirius, Varde', desc: 'Privatlivspolitik for Klinik Sirius, privat speciallægepraksis i Varde.' },
+      hudsygdomme:       { title: 'Hudsygdomme i Varde | Klinik Sirius', desc: 'Klinik Sirius tilbyder speciallægevurdering og behandling af alle former for hudsygdomme i Varde. Speciallæge Kawa Ajgeiy udreder eksem, psoriasis, modermærker, hudkræft og meget mere.' },
+      'ore-naese-hals':  { title: 'Øre, Næse & Hals i Varde | Klinik Sirius', desc: 'Klinik Sirius tilbyder et bredt spektrum af ØNH-undersøgelser og operationer i Varde. Speciallæge Jalal Taha Saadi varetager alt fra allergiudredning til avanceret kirurgi.' },
+      haandkirurgi:      { title: 'Håndkirurgi i Varde | Klinik Sirius', desc: 'Klinik Sirius tilbyder specialiseret håndkirurgi i Varde med Dr. med. Jerzy Stiasny. Vi behandler nerveafklemninger, seneskedebetændelse, ganglion, Dupuytrens kontraktur og meget mere.' },
     };
     if (service) {
       document.title = `${service.title} i Varde | Klinik Sirius`;
@@ -1030,15 +1033,14 @@ const App = () => {
     }
   ];
 
-  const NavItemComponent = ({ title, items, id }) => (
+  const NavItemComponent = ({ title, items, id, categorySlug }) => (
     <div className="relative group">
-      <button
-        className={`flex items-center space-x-1 py-2 font-black transition-colors uppercase tracking-tight text-xs ${isServicesOpen === id ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}
-        onClick={() => setIsServicesOpen(isServicesOpen === id ? null : id)}
-      >
-        <span>{title}</span>
-        <ChevronDown size={14} className={`transition-transform duration-300 ${isServicesOpen === id ? 'rotate-180' : ''}`} />
-      </button>
+      <div className={`flex items-center py-2 font-black transition-colors uppercase tracking-tight text-xs ${isServicesOpen === id ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>
+        <button onClick={() => { setActivePage(categorySlug); setIsServicesOpen(null); }} className="hover:text-blue-900 transition-colors">{title}</button>
+        <button onClick={() => setIsServicesOpen(isServicesOpen === id ? null : id)} className="ml-1 p-1">
+          <ChevronDown size={14} className={`transition-transform duration-300 ${isServicesOpen === id ? 'rotate-180' : ''}`} />
+        </button>
+      </div>
       <div className={`absolute left-0 mt-4 w-72 bg-white border border-slate-100 shadow-2xl rounded-[2rem] py-6 z-50 transition-all duration-300 transform origin-top ${isServicesOpen === id ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
         <div className="px-4 space-y-1">
           {items.map((item, idx) => (
@@ -1058,13 +1060,12 @@ const App = () => {
 
   const OnhNavComponent = () => (
     <div className="relative group">
-      <button
-        className={`flex items-center space-x-1 py-2 font-black transition-colors uppercase tracking-tight text-xs ${isServicesOpen === 'onh' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}
-        onClick={() => setIsServicesOpen(isServicesOpen === 'onh' ? null : 'onh')}
-      >
-        <span>Øre, Næse & Hals</span>
-        <ChevronDown size={14} className={`transition-transform duration-300 ${isServicesOpen === 'onh' ? 'rotate-180' : ''}`} />
-      </button>
+      <div className={`flex items-center py-2 font-black transition-colors uppercase tracking-tight text-xs ${isServicesOpen === 'onh' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>
+        <button onClick={() => { setActivePage('ore-naese-hals'); setIsServicesOpen(null); }} className="hover:text-blue-900 transition-colors">Øre, Næse & Hals</button>
+        <button onClick={() => setIsServicesOpen(isServicesOpen === 'onh' ? null : 'onh')} className="ml-1 p-1">
+          <ChevronDown size={14} className={`transition-transform duration-300 ${isServicesOpen === 'onh' ? 'rotate-180' : ''}`} />
+        </button>
+      </div>
       <div className={`absolute left-0 mt-4 w-[580px] bg-white border border-slate-100 shadow-2xl rounded-[2rem] py-6 z-50 transition-all duration-300 transform origin-top ${isServicesOpen === 'onh' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
         <div className="grid grid-cols-2 gap-0 px-4">
           <div>
@@ -1102,6 +1103,135 @@ const App = () => {
     </div>
   );
 
+  const categoryMeta = {
+    hud: {
+      slug: 'hudsygdomme',
+      title: 'Hudsygdomme',
+      h2: 'Ekspertbehandling af alle hudsygdomme',
+      intro: 'Klinik Sirius tilbyder speciallægevurdering og behandling af alle former for hudsygdomme i Varde. Med speciallæge Kawa Ajgeiy får du en grundig udredning og en behandlingsplan tilpasset din hudtype og dine symptomer.',
+      narrative: 'Vi behandler alt fra kroniske hudlidelser som eksem og psoriasis til pludselige udbrud og kontrol af modermærker. Kawa Ajgeiy er uddannet ved OUH og Aarhus Universitetshospital og er tilknyttet Hudafdeling og Allergicentret på OUH.\n\nHos Klinik Sirius kan du komme som privatbetalende, via din sundhedsforsikring eller som ventetidsgaranti-patient fra regionen. Vi tilbyder hurtig adgang til en specialist – uden unødig ventetid.\n\nUanset om du er bekymret for et nyt modermærke, kæmper med tilbagevendende eksem eller ønsker behandling af en kronisk hudlidelse, er du i trygge hænder hos os i Varde.',
+      specialist: { name: 'Kawa Ajgeiy', role: 'Speciallæge i hudsygdomme', cred1: 'OUH og Aarhus Universitetshospital', cred2: 'Dansk Dermatologisk Selskab', img: null },
+      services: [{ label: null, items: 'hud' }],
+    },
+    onh: {
+      slug: 'ore-naese-hals',
+      title: 'Øre, Næse & Hals',
+      h2: 'Specialiseret ØNH-behandling i Varde',
+      intro: 'Klinik Sirius tilbyder et bredt spektrum af øre-, næse- og halsundersøgelser og operationer i Varde. Speciallæge Jalal Taha Saadi varetager alt fra allergiudredning og høreprøver til avanceret kirurgi.',
+      narrative: 'Vores ØNH-speciallæge Jalal Taha Saadi har mange års erfaring fra SVS Esbjerg og OUH og er specialiseret i diagnostik og behandling af øre-, næse- og halssygdomme hos børn og voksne.\n\nVi tilbyder både udredende undersøgelser og kirurgiske indgreb under samme tag i Varde, og du kan komme som privatbetalende, via forsikring eller som ventetidsgaranti-patient.\n\nFra allergiudredning og svimmelhedsudredning til mandel- og bihuleoperationer – vi dækker hele spektret af ØNH-behandlinger i trygge og professionelle rammer.',
+      specialist: { name: 'Jalal Taha Saadi', role: 'Speciallæge i ØNH', cred1: 'SVS Esbjerg og OUH', cred2: 'Dansk Rhinologisk Selskab', img: '/Jalal%20Taha%20Saadi.png' },
+      services: [{ label: 'Undersøgelser', items: 'onhUndersogelser' }, { label: 'Operationer', items: 'onhOperationer' }],
+    },
+    haand: {
+      slug: 'haandkirurgi',
+      title: 'Håndkirurgi',
+      h2: 'Præcis håndkirurgi og nervebehandling',
+      intro: 'Klinik Sirius tilbyder specialiseret håndkirurgi i Varde med Dr. med. Jerzy Stiasny. Vi udreder og behandler nerveafklemninger, senesygdomme, ganglion, Dupuytrens kontraktur og godartede tumorer i hånd, håndled og underarm.',
+      narrative: 'Jerzy Stiasny er dr. med. og speciallæge i ortopædkirurgi med mange års erfaring inden for håndkirurgi. Han er sektoransvarlig overlæge ved Håndkirurgisk sektor, Sygehus Sønderjylland og har haft ophold ved førende internationale centre inden for hånd- og nerveskirurgi.\n\nHos Klinik Sirius tilbyder vi en grundig specialistvurdering, så du hurtigt får klarhed over din tilstand og de bedste behandlingsmuligheder – hvad enten det drejer sig om konservativ behandling eller kirurgi.\n\nDu kan komme som privatbetalende, via sundhedsforsikring eller som ventetidsgaranti-patient fra regionen.',
+      specialist: { name: 'Jerzy Stiasny', role: 'Dr. med., overlæge i håndkirurgi', cred1: 'OUH & Sygehus Sønderjylland', cred2: 'Internationale ophold, hånd- og nerveskirurgi', img: '/Jerzy%20Stiasny.png' },
+      services: [{ label: null, items: 'haandkirurgi' }],
+    },
+  };
+
+  const CategoryLandingPage = ({ cat }) => {
+    const meta = categoryMeta[cat];
+    return (
+      <div className="animate-in fade-in duration-700">
+        <section className="bg-slate-50 py-16 lg:py-24 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-900/5 -skew-x-12 translate-x-1/2"></div>
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="max-w-3xl">
+              <nav className="flex flex-wrap mb-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                <button onClick={() => setActivePage('forside')} className="hover:text-blue-900 transition-colors">Forside</button>
+                <span className="mx-3">/</span>
+                <span className="text-blue-900">{meta.title}</span>
+              </nav>
+              <h1 className="text-3xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tighter">{meta.title}</h1>
+              <p className="text-xl text-slate-600 mb-10 leading-relaxed font-light border-l-8 border-emerald-700 pl-8">{meta.intro}</p>
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`px-10 py-5 rounded-2xl text-white font-black uppercase tracking-widest text-xs shadow-xl hover:-translate-y-1 transition-all inline-flex items-center ${colors.accent}`}>
+                  Book tid online
+                </a>
+                <div className="flex items-center px-6 text-slate-500 font-black uppercase text-xs tracking-widest">
+                  <Phone size={18} className="mr-3 text-blue-900" /> 32 22 32 24
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-3 gap-16">
+            <div className="lg:col-span-2 space-y-12">
+              <div>
+                <h2 className="text-3xl font-black mb-8 text-blue-900 uppercase tracking-tight">{meta.h2}</h2>
+                <div className="text-xl text-slate-600 leading-relaxed font-light space-y-8">
+                  {meta.narrative.split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
+                </div>
+              </div>
+              <div className="pt-12 border-t border-slate-100 space-y-12">
+                {meta.services.map((section, si) => (
+                  <div key={si}>
+                    {section.label && <h3 className="text-xl font-black uppercase tracking-[0.2em] text-slate-400 mb-6">{section.label}</h3>}
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {services[section.items].map((item, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => { setActivePage(item.slug); setOpenFaq(null); }}
+                          className="flex items-center justify-between px-6 py-5 bg-slate-50 hover:bg-blue-900 hover:text-white rounded-2xl transition-all group text-left border border-transparent hover:border-blue-900 shadow-sm hover:shadow-xl hover:-translate-y-0.5"
+                        >
+                          <span className="font-black text-[11px] uppercase tracking-widest text-slate-700 group-hover:text-white">{item.name}</span>
+                          <ChevronRight size={14} className="text-slate-300 group-hover:text-white transition-all -translate-x-1 group-hover:translate-x-0 shrink-0 ml-3" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:col-span-1">
+              <div className="sticky top-32 space-y-8">
+                <div className="bg-white border border-slate-100 p-10 rounded-[3rem] shadow-xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full translate-x-10 -translate-y-10"></div>
+                  <div className="flex items-center space-x-5 mb-10 relative z-10">
+                    <div className="w-16 h-16 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center shadow-inner">
+                      {meta.specialist.img
+                        ? <img src={meta.specialist.img} alt={meta.specialist.name} className="w-full h-full object-cover object-top" />
+                        : <span className="text-blue-900 font-black text-2xl uppercase">KA</span>
+                      }
+                    </div>
+                    <div>
+                      <p className="font-black text-xl leading-none uppercase text-slate-900">{meta.specialist.name}</p>
+                      <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mt-2">{meta.specialist.role}</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4 relative z-10">
+                    <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight">
+                      <CheckCircle size={18} className="text-emerald-500 mr-4 shrink-0" /> {meta.specialist.cred1}
+                    </div>
+                    <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight">
+                      <CheckCircle size={18} className="text-emerald-500 mr-4 shrink-0" /> {meta.specialist.cred2}
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-blue-900 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
+                  <div className="relative z-10">
+                    <h4 className="text-2xl font-black mb-4 uppercase tracking-tight">Book tid nu</h4>
+                    <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium">Få en specialistvurdering hurtigt uden unødig ventetid.</p>
+                    <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`w-full py-5 rounded-2xl text-white font-black uppercase tracking-widest text-[10px] transition-all shadow-lg active:scale-95 inline-block text-center ${colors.accent}`}>
+                      Gå til selvbetjening
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  };
+
   const ServiceLandingPage = ({ service }) => (
     <div className="animate-in fade-in duration-700">
       <section className="bg-slate-50 py-16 lg:py-24 relative overflow-hidden">
@@ -1111,7 +1241,9 @@ const App = () => {
             <nav className="flex flex-wrap mb-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
               <button onClick={() => setActivePage('forside')} className="hover:text-blue-900 transition-colors">Forside</button>
               <span className="mx-3">/</span>
-              <span>{service.category === 'hud' ? 'Hudsygdomme' : service.category === 'haand' ? 'Håndkirurgi' : 'Øre, Næse & Hals'}</span>
+              <button onClick={() => setActivePage(service.category === 'hud' ? 'hudsygdomme' : service.category === 'haand' ? 'haandkirurgi' : 'ore-naese-hals')} className="hover:text-blue-900 transition-colors">
+                {service.category === 'hud' ? 'Hudsygdomme' : service.category === 'haand' ? 'Håndkirurgi' : 'Øre, Næse & Hals'}
+              </button>
               <span className="mx-3">/</span>
               <span className="text-blue-900">{service.name}</span>
             </nav>
@@ -1246,9 +1378,9 @@ const App = () => {
           </div>
 
           <nav className="hidden lg:flex items-center space-x-8">
-            <NavItemComponent title="Hudsygdomme" items={services.hud} id="hud" />
+            <NavItemComponent title="Hudsygdomme" items={services.hud} id="hud" categorySlug="hudsygdomme" />
             <OnhNavComponent />
-            <NavItemComponent title="Håndkirurgi" items={services.haandkirurgi} id="haand" />
+            <NavItemComponent title="Håndkirurgi" items={services.haandkirurgi} id="haand" categorySlug="haandkirurgi" />
             <button onClick={() => setActivePage('personale')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'personale' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Personale</button>
           </nav>
 
@@ -1498,6 +1630,11 @@ const App = () => {
             </section>
           </>
         )}
+
+        {/* Category pages */}
+        {activePage === 'hudsygdomme' && <CategoryLandingPage cat="hud" />}
+        {activePage === 'ore-naese-hals' && <CategoryLandingPage cat="onh" />}
+        {activePage === 'haandkirurgi' && <CategoryLandingPage cat="haand" />}
 
         {/* Dynamic service pages */}
         {[...services.hud, ...services.onhUndersogelser, ...services.onhOperationer, ...services.haandkirurgi].some(s => s.slug === activePage) && (
@@ -1966,9 +2103,9 @@ const App = () => {
             <div>
               <h6 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Specialer</h6>
               <ul className="space-y-4 text-slate-300 font-bold text-[10px] uppercase tracking-widest">
-                <li onClick={() => setActivePage('eksem')} className="hover:text-white cursor-pointer transition-colors">Hudsygdomme</li>
-                <li onClick={() => setActivePage('hoere')} className="hover:text-white cursor-pointer transition-colors">Øre, Næse, Hals</li>
-                <li onClick={() => setActivePage('allergi')} className="hover:text-white cursor-pointer transition-colors">Allergiudredning</li>
+                <li onClick={() => setActivePage('hudsygdomme')} className="hover:text-white cursor-pointer transition-colors">Hudsygdomme</li>
+                <li onClick={() => setActivePage('ore-naese-hals')} className="hover:text-white cursor-pointer transition-colors">Øre, Næse & Hals</li>
+                <li onClick={() => setActivePage('haandkirurgi')} className="hover:text-white cursor-pointer transition-colors">Håndkirurgi</li>
               </ul>
             </div>
 
