@@ -1577,7 +1577,7 @@ const App = () => {
 
             {/* Specialties */}
             <section className="py-24 bg-slate-50">
-              <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+              <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
                 <div className="bg-white p-12 rounded-[3.5rem] shadow-xl border border-slate-100 group relative overflow-hidden hover:shadow-2xl transition-all duration-500">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full translate-x-12 -translate-y-12"></div>
                   <div className="w-16 h-16 bg-blue-900 text-white rounded-2xl flex items-center justify-center mb-10 group-hover:rotate-6 transition-transform shadow-lg">
@@ -1599,6 +1599,18 @@ const App = () => {
                   <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Jalal Taha Saadi varetager vores ØNH-afdeling med fokus på alt fra høreprøver til avanceret kirurgi.</p>
                   <button onClick={() => setActivePage('allergi')} className="flex items-center font-black text-emerald-800 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-blue-900" />
+                  </button>
+                </div>
+
+                <div className="bg-white p-12 rounded-[3.5rem] shadow-xl border border-slate-100 group relative overflow-hidden hover:shadow-2xl transition-all duration-500">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full translate-x-12 -translate-y-12"></div>
+                  <div className="w-16 h-16 bg-indigo-800 text-white rounded-2xl flex items-center justify-center mb-10 group-hover:rotate-6 transition-transform shadow-lg">
+                    <Layers size={32} />
+                  </div>
+                  <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Håndkirurgi</h3>
+                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Dr. med. Jerzy Stiasny varetager specialiseret håndkirurgi med fokus på nerveafklemninger, senesygdomme, ganglion og Dupuytrens kontraktur.</p>
+                  <button onClick={() => setActivePage('haandkirurgi')} className="flex items-center font-black text-indigo-800 uppercase text-[10px] tracking-[0.3em] group">
+                    Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-emerald-600" />
                   </button>
                 </div>
               </div>
