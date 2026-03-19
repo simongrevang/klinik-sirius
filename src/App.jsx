@@ -1590,7 +1590,7 @@ const App = () => {
                   <Microscope size={14} className="text-emerald-600" />
                   <span>Klinik Sirius Specialister</span>
                 </div>
-                <h2 className="text-[26px] lg:text-[118px] font-black text-blue-900 mb-6 lg:mb-10 uppercase tracking-tighter leading-tight lg:leading-[0.85]">Ekspertise <br />& Erfaring.</h2>
+                <h2 className="text-3xl lg:text-7xl font-black text-blue-900 mb-6 lg:mb-10 uppercase tracking-tighter leading-tight lg:leading-[0.85]">Ekspertise <br />& Erfaring.</h2>
                 <p className="text-lg lg:text-2xl text-slate-500 font-light leading-relaxed border-l-4 lg:border-l-8 border-emerald-500 pl-6 lg:pl-10">
                   Mød holdet bag Klinik Sirius i Varde. Vores læger kombinerer mange års praksis i det danske sygehusvæsen med dedikeret patientkontakt.
                 </p>
@@ -1617,7 +1617,7 @@ const App = () => {
 
                     <div className="lg:col-span-8 lg:pt-8">
                       <div className="mb-8 lg:mb-14">
-                        <h3 className="text-[20px] lg:text-[62px] font-black text-slate-900 uppercase tracking-tighter mb-3 leading-tight">{p.name}</h3>
+                        <h3 className="text-xl lg:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-3 leading-tight">{p.name}</h3>
                         <p className="text-blue-900 font-black uppercase text-xs tracking-[0.3em] flex items-center">
                           <span className="w-8 lg:w-12 h-1 bg-emerald-500 mr-4 lg:mr-6 inline-block shrink-0"></span> {p.role}
                         </p>
