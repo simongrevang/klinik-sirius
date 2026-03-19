@@ -1371,6 +1371,15 @@ const App = () => {
               )}
             </div>
 
+            {/* Personale */}
+            <button
+              onClick={() => { setActivePage('personale'); setIsMenuOpen(false); }}
+              className="w-full flex items-center justify-between px-4 py-4 rounded-2xl font-black text-sm uppercase tracking-widest text-slate-700 hover:bg-slate-50 transition-colors"
+            >
+              <span>Personale</span>
+              <ChevronRight size={16} className="text-slate-300" />
+            </button>
+
           </nav>
 
           {/* CTA */}
