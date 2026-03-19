@@ -1584,7 +1584,7 @@ const App = () => {
                     <Stethoscope size={32} />
                   </div>
                   <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Hudsygdomme</h3>
-                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Kawa Ajgeiy varetager udredning og behandling af eksem, nældefeber, psoriasis og modermærker. Han er uddannet ved OUH og Aarhus Universitetshospital og er ansat ved Hudafdeling og Allergicentret på OUH.</p>
+                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Kawa Ajgeiy varetager udredning og behandling af alle former for hudsygdomme. Vi dækker eksem, nældefeber, psoriasis, modermærker og meget mere.</p>
                   <button onClick={() => setActivePage('eksem')} className="flex items-center font-black text-blue-900 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-emerald-600" />
                   </button>
@@ -1596,7 +1596,7 @@ const App = () => {
                     <Ear size={32} />
                   </div>
                   <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Øre, Næse, Hals</h3>
-                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Jalal Taha Saadi varetager vores ØNH-afdeling med fokus på alt fra høreprøver til avanceret kirurgi.</p>
+                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Jalal Taha Saadi varetager undersøgelser og operationer inden for øre, næse og hals. Vi tilbyder alt fra allergiudredning og høreprøver til avanceret kirurgi.</p>
                   <button onClick={() => setActivePage('allergi')} className="flex items-center font-black text-emerald-800 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-blue-900" />
                   </button>
@@ -1608,7 +1608,7 @@ const App = () => {
                     <Layers size={32} />
                   </div>
                   <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Håndkirurgi</h3>
-                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Dr. med. Jerzy Stiasny varetager specialiseret håndkirurgi med fokus på nerveafklemninger, senesygdomme, ganglion og Dupuytrens kontraktur.</p>
+                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Dr. med. Jerzy Stiasny varetager specialiseret håndkirurgi med mange års klinisk erfaring. Vi behandler nerveafklemninger, senesygdomme, ganglion og Dupuytrens kontraktur.</p>
                   <button onClick={() => setActivePage('haandkirurgi')} className="flex items-center font-black text-indigo-800 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-emerald-600" />
                   </button>
