@@ -107,7 +107,7 @@ const App = () => {
       if (service) {
         const categoryName = service.category === 'hud' ? 'Hudsygdomme'
           : service.category === 'haand' ? 'Håndkirurgi'
-          : services.onhUndersogelser.some(s => s.slug === activePage) ? 'ØNH Undersøgelser' : 'ØNH Operationer';
+          : 'Øre, Næse & Hals';
         breadcrumbEl.textContent = JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
@@ -1056,6 +1056,52 @@ const App = () => {
     </div>
   );
 
+  const OnhNavComponent = () => (
+    <div className="relative group">
+      <button
+        className={`flex items-center space-x-1 py-2 font-black transition-colors uppercase tracking-tight text-xs ${isServicesOpen === 'onh' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}
+        onClick={() => setIsServicesOpen(isServicesOpen === 'onh' ? null : 'onh')}
+      >
+        <span>Øre, Næse & Hals</span>
+        <ChevronDown size={14} className={`transition-transform duration-300 ${isServicesOpen === 'onh' ? 'rotate-180' : ''}`} />
+      </button>
+      <div className={`absolute left-0 mt-4 w-[580px] bg-white border border-slate-100 shadow-2xl rounded-[2rem] py-6 z-50 transition-all duration-300 transform origin-top ${isServicesOpen === 'onh' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
+        <div className="grid grid-cols-2 gap-0 px-4">
+          <div>
+            <p className="px-5 pb-3 text-[9px] font-black uppercase tracking-[0.3em] text-slate-300">Undersøgelser</p>
+            <div className="space-y-1">
+              {services.onhUndersogelser.map((item, idx) => (
+                <button
+                  key={idx}
+                  className="w-full text-left px-5 py-3 text-[10px] font-black uppercase tracking-widest text-slate-500 hover:bg-blue-50 hover:text-blue-900 transition-all flex items-center justify-between group rounded-xl"
+                  onClick={() => { setActivePage(item.slug); setIsServicesOpen(null); setOpenFaq(null); }}
+                >
+                  {item.name}
+                  <ChevronRight size={12} className="opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="border-l border-slate-100">
+            <p className="px-5 pb-3 text-[9px] font-black uppercase tracking-[0.3em] text-slate-300">Operationer</p>
+            <div className="space-y-1">
+              {services.onhOperationer.map((item, idx) => (
+                <button
+                  key={idx}
+                  className="w-full text-left px-5 py-3 text-[10px] font-black uppercase tracking-widest text-slate-500 hover:bg-blue-50 hover:text-blue-900 transition-all flex items-center justify-between group rounded-xl"
+                  onClick={() => { setActivePage(item.slug); setIsServicesOpen(null); setOpenFaq(null); }}
+                >
+                  {item.name}
+                  <ChevronRight size={12} className="opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   const ServiceLandingPage = ({ service }) => (
     <div className="animate-in fade-in duration-700">
       <section className="bg-slate-50 py-16 lg:py-24 relative overflow-hidden">
@@ -1065,7 +1111,7 @@ const App = () => {
             <nav className="flex flex-wrap mb-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
               <button onClick={() => setActivePage('forside')} className="hover:text-blue-900 transition-colors">Forside</button>
               <span className="mx-3">/</span>
-              <span>{service.category === 'hud' ? 'Hudsygdomme' : service.category === 'haand' ? 'Håndkirurgi' : services.onhUndersogelser.some(s => s.slug === service.slug) ? 'ØNH Undersøgelser' : 'ØNH Operationer'}</span>
+              <span>{service.category === 'hud' ? 'Hudsygdomme' : service.category === 'haand' ? 'Håndkirurgi' : 'Øre, Næse & Hals'}</span>
               <span className="mx-3">/</span>
               <span className="text-blue-900">{service.name}</span>
             </nav>
@@ -1201,8 +1247,7 @@ const App = () => {
 
           <nav className="hidden lg:flex items-center space-x-8">
             <NavItemComponent title="Hudsygdomme" items={services.hud} id="hud" />
-            <NavItemComponent title="ØNH Undersøgelser" items={services.onhUndersogelser} id="onhU" />
-            <NavItemComponent title="ØNH Operationer" items={services.onhOperationer} id="onhO" />
+            <OnhNavComponent />
             <NavItemComponent title="Håndkirurgi" items={services.haandkirurgi} id="haand" />
             <button onClick={() => setActivePage('personale')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'personale' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Personale</button>
           </nav>
@@ -1264,46 +1309,33 @@ const App = () => {
               )}
             </div>
 
-            {/* ØNH Undersøgelser accordion */}
+            {/* Øre, Næse & Hals accordion */}
             <div>
               <button
-                onClick={() => setIsServicesOpen(isServicesOpen === 'onhU' ? null : 'onhU')}
+                onClick={() => setIsServicesOpen(isServicesOpen === 'onh' ? null : 'onh')}
                 className="w-full flex items-center justify-between px-4 py-4 rounded-2xl font-black text-sm uppercase tracking-widest text-slate-700 hover:bg-slate-50 transition-colors"
               >
-                <span>ØNH Undersøgelser</span>
-                <ChevronDown size={16} className={`text-slate-400 transition-transform duration-200 ${isServicesOpen === 'onhU' ? 'rotate-180' : ''}`} />
+                <span>Øre, Næse & Hals</span>
+                <ChevronDown size={16} className={`text-slate-400 transition-transform duration-200 ${isServicesOpen === 'onh' ? 'rotate-180' : ''}`} />
               </button>
-              {isServicesOpen === 'onhU' && (
+              {isServicesOpen === 'onh' && (
                 <div className="ml-4 mb-2 border-l-2 border-emerald-100 pl-4 space-y-1">
+                  <p className="px-4 pt-2 pb-1 text-[9px] font-black uppercase tracking-[0.3em] text-slate-300">Undersøgelser</p>
                   {services.onhUndersogelser.map(s => (
                     <button
                       key={s.slug}
-                      onClick={() => setActivePage(s.slug)}
+                      onClick={() => { setActivePage(s.slug); setIsMenuOpen(false); }}
                       className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest text-slate-500 hover:bg-emerald-50 hover:text-emerald-800 transition-colors"
                     >
                       {s.name}
                       <ChevronRight size={12} className="text-slate-300" />
                     </button>
                   ))}
-                </div>
-              )}
-            </div>
-
-            {/* ØNH Operationer accordion */}
-            <div>
-              <button
-                onClick={() => setIsServicesOpen(isServicesOpen === 'onhO' ? null : 'onhO')}
-                className="w-full flex items-center justify-between px-4 py-4 rounded-2xl font-black text-sm uppercase tracking-widest text-slate-700 hover:bg-slate-50 transition-colors"
-              >
-                <span>ØNH Operationer</span>
-                <ChevronDown size={16} className={`text-slate-400 transition-transform duration-200 ${isServicesOpen === 'onhO' ? 'rotate-180' : ''}`} />
-              </button>
-              {isServicesOpen === 'onhO' && (
-                <div className="ml-4 mb-2 border-l-2 border-emerald-100 pl-4 space-y-1">
+                  <p className="px-4 pt-4 pb-1 text-[9px] font-black uppercase tracking-[0.3em] text-slate-300">Operationer</p>
                   {services.onhOperationer.map(s => (
                     <button
                       key={s.slug}
-                      onClick={() => setActivePage(s.slug)}
+                      onClick={() => { setActivePage(s.slug); setIsMenuOpen(false); }}
                       className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-[11px] font-black uppercase tracking-widest text-slate-500 hover:bg-emerald-50 hover:text-emerald-800 transition-colors"
                     >
                       {s.name}
