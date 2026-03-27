@@ -1585,7 +1585,7 @@ const App = () => {
                   </div>
                   <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Hudsygdomme</h3>
                   <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Kawa Ajgeiy varetager udredning og behandling af alle former for hudsygdomme. Vi dækker eksem, nældefeber, psoriasis, modermærker og meget mere.</p>
-                  <button onClick={() => setActivePage('eksem')} className="flex items-center font-black text-blue-900 uppercase text-[10px] tracking-[0.3em] group">
+                  <button onClick={() => setActivePage('hudsygdomme')} className="flex items-center font-black text-blue-900 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-emerald-600" />
                   </button>
                 </div>
