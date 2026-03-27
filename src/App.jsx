@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Stethoscope, User, MapPin, ChevronDown, ExternalLink, Clock, Phone, Mail,
   Menu, X, Shield, Award, Users, Info, CreditCard, HeartPulse, Plus, Minus,
@@ -31,10 +31,6 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(null);
   const [openFaq, setOpenFaq] = useState(null);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchIndex, setSearchIndex] = useState(0);
-  const searchInputRef = useRef(null);
 
   // Læs URL ved første load og lyt på browser-knapper frem/tilbage
   useEffect(() => {
@@ -47,36 +43,6 @@ const App = () => {
     window.addEventListener('popstate', handlePop);
     return () => window.removeEventListener('popstate', handlePop);
   }, []);
-
-  // Søge-modal: escape lukker, åbn fokuserer input
-  useEffect(() => {
-    if (searchOpen) {
-      setTimeout(() => searchInputRef.current?.focus(), 50);
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-      setSearchQuery('');
-      setSearchIndex(0);
-    }
-    return () => { document.body.style.overflow = ''; };
-  }, [searchOpen]);
-
-  useEffect(() => {
-    const onKey = (e) => {
-      if (!searchOpen) return;
-      if (e.key === 'Escape') { setSearchOpen(false); return; }
-      if (e.key === 'ArrowDown') { setSearchIndex(i => Math.min(i + 1, searchResults.length - 1)); e.preventDefault(); }
-      if (e.key === 'ArrowUp') { setSearchIndex(i => Math.max(i - 1, 0)); e.preventDefault(); }
-      if (e.key === 'Enter' && searchResults[searchIndex]) {
-        setActivePage(searchResults[searchIndex].slug);
-        setSearchOpen(false);
-      }
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [searchOpen, searchResults, searchIndex]);
-
-  useEffect(() => { setSearchIndex(0); }, [searchQuery]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -1185,28 +1151,6 @@ const App = () => {
     },
   };
 
-  // Søge-index — defineres efter services
-  const allSearchItems = useMemo(() => [
-    ...services.hud.map(s => ({ slug: s.slug, title: s.title, category: 'Hudsygdomme' })),
-    ...services.onhUndersogelser.map(s => ({ slug: s.slug, title: s.title, category: 'ØNH Undersøgelse' })),
-    ...services.onhOperationer.map(s => ({ slug: s.slug, title: s.title, category: 'ØNH Operation' })),
-    ...services.haandkirurgi.map(s => ({ slug: s.slug, title: s.title, category: 'Håndkirurgi' })),
-    { slug: 'hudsygdomme', title: 'Hudsygdomme — oversigt', category: 'Oversigt' },
-    { slug: 'ore-naese-hals', title: 'Øre, Næse & Hals — oversigt', category: 'Oversigt' },
-    { slug: 'haandkirurgi', title: 'Håndkirurgi — oversigt', category: 'Oversigt' },
-    { slug: 'personale', title: 'Personale', category: 'Klinikken' },
-    { slug: 'patientinfo', title: 'Patientinfo', category: 'Klinikken' },
-    { slug: 'find-os', title: 'Find os', category: 'Klinikken' },
-  ], []);
-
-  const searchResults = useMemo(() => {
-    if (!searchQuery.trim()) return [];
-    const q = searchQuery.toLowerCase();
-    return allSearchItems.filter(item =>
-      item.title.toLowerCase().includes(q) || item.category.toLowerCase().includes(q)
-    ).slice(0, 8);
-  }, [searchQuery, allSearchItems]);
-
   const CategoryLandingPage = ({ cat }) => {
     const meta = categoryMeta[cat];
     return (
@@ -1418,82 +1362,8 @@ const App = () => {
     </div>
   );
 
-  const categoryColors = {
-    'Hudsygdomme': 'bg-rose-50 text-rose-700',
-    'ØNH Undersøgelse': 'bg-emerald-50 text-emerald-700',
-    'ØNH Operation': 'bg-teal-50 text-teal-700',
-    'Håndkirurgi': 'bg-indigo-50 text-indigo-700',
-    'Oversigt': 'bg-slate-100 text-slate-600',
-    'Klinikken': 'bg-blue-50 text-blue-700',
-  };
-
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
-
-      {/* Søge-modal */}
-      {searchOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col" onClick={() => setSearchOpen(false)}>
-          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" />
-          <div className="relative z-10 max-w-2xl w-full mx-auto mt-24 px-4" onClick={e => e.stopPropagation()}>
-            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
-              {/* Input */}
-              <div className="flex items-center px-6 py-5 border-b border-slate-100">
-                <Search size={20} className="text-slate-400 shrink-0 mr-4" />
-                <input
-                  ref={searchInputRef}
-                  type="text"
-                  value={searchQuery}
-                  onChange={e => setSearchQuery(e.target.value)}
-                  placeholder="Søg efter ydelse, sygdom eller side..."
-                  className="flex-1 text-lg text-slate-800 placeholder-slate-400 focus:outline-none bg-transparent"
-                />
-                <button onClick={() => setSearchOpen(false)} className="ml-4 p-1.5 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors">
-                  <X size={18} />
-                </button>
-              </div>
-              {/* Resultater */}
-              {searchQuery.trim() && (
-                <div className="py-2 max-h-[420px] overflow-y-auto">
-                  {searchResults.length === 0 ? (
-                    <p className="px-6 py-8 text-slate-400 text-sm text-center">Ingen resultater for "{searchQuery}"</p>
-                  ) : (
-                    searchResults.map((item, i) => (
-                      <button
-                        key={item.slug}
-                        onClick={() => { setActivePage(item.slug); setSearchOpen(false); }}
-                        className={`w-full flex items-center justify-between px-6 py-4 text-left transition-colors ${i === searchIndex ? 'bg-blue-50' : 'hover:bg-slate-50'}`}
-                      >
-                        <div>
-                          <p className={`font-bold text-sm ${i === searchIndex ? 'text-blue-900' : 'text-slate-800'}`}>{item.title}</p>
-                        </div>
-                        <span className={`text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shrink-0 ml-4 ${categoryColors[item.category]}`}>
-                          {item.category}
-                        </span>
-                      </button>
-                    ))
-                  )}
-                </div>
-              )}
-              {!searchQuery.trim() && (
-                <div className="px-6 py-5">
-                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">Hurtige links</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['hudsygdomme', 'ore-naese-hals', 'haandkirurgi', 'personale', 'patientinfo'].map(slug => (
-                      <button key={slug} onClick={() => { setActivePage(slug); setSearchOpen(false); }}
-                        className="px-4 py-2 bg-slate-100 hover:bg-blue-50 hover:text-blue-900 rounded-xl text-xs font-bold text-slate-600 transition-colors capitalize">
-                        {slug === 'ore-naese-hals' ? 'Øre, Næse & Hals' : slug === 'haandkirurgi' ? 'Håndkirurgi' : slug === 'patientinfo' ? 'Patientinfo' : slug.charAt(0).toUpperCase() + slug.slice(1)}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-              <div className="px-6 py-3 border-t border-slate-100 flex items-center gap-4 text-[10px] text-slate-400 font-bold">
-                <span>↑↓ naviger</span><span>↵ åbn</span><span>esc luk</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
       {/* Top Bar */}
       <div className="bg-slate-900 text-white py-2.5 px-6 text-xs font-medium hidden md:flex justify-between items-center">
         <div className="flex items-center space-x-6">
@@ -1526,10 +1396,7 @@ const App = () => {
             <button onClick={() => setActivePage('personale')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'personale' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Personale</button>
           </nav>
 
-          <div className="flex items-center space-x-3">
-            <button onClick={() => setSearchOpen(true)} className="p-2.5 rounded-xl text-slate-500 hover:text-blue-900 hover:bg-slate-100 transition-colors" aria-label="Søg">
-              <Search size={20} />
-            </button>
+          <div className="flex items-center space-x-4">
             <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`hidden sm:flex items-center px-6 py-3 rounded-2xl text-white text-[10px] font-black uppercase tracking-widest transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 ${colors.accent}`}>
               Selvbetjening <ExternalLink size={14} className="ml-2" />
             </a>
