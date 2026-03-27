@@ -2212,6 +2212,54 @@ const App = () => {
             </section>
           </div>
         )}
+
+        {/* 404 */}
+        {!['forside','hudsygdomme','ore-naese-hals','haandkirurgi','patientinfo','personale','find-os','privacypolitik'].includes(activePage) &&
+          ![...services.hud, ...services.onhUndersogelser, ...services.onhOperationer, ...services.haandkirurgi].some(s => s.slug === activePage) && (
+          <div className="animate-in fade-in duration-700 min-h-[70vh] flex items-center justify-center">
+            <div className="max-w-xl mx-auto px-6 text-center py-32">
+              <div className="relative inline-block mb-12">
+                <span className="text-[140px] font-black text-slate-100 leading-none select-none">404</span>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-full bg-blue-900/10 flex items-center justify-center">
+                    <Stethoscope size={36} className="text-blue-900 opacity-60" />
+                  </div>
+                </div>
+              </div>
+              <h1 className="text-3xl font-black text-slate-900 uppercase tracking-tight mb-4">Siden findes ikke</h1>
+              <p className="text-slate-500 text-lg font-light leading-relaxed mb-12">
+                Den side du leder efter eksisterer ikke eller er blevet flyttet. Gå tilbage til forsiden og find det du søger.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={() => setActivePage('forside')}
+                  className="px-10 py-4 rounded-2xl bg-blue-900 text-white font-black text-xs uppercase tracking-widest hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-95"
+                >
+                  Til forsiden
+                </button>
+                <button
+                  onClick={() => setSearchOpen(true)}
+                  className="px-10 py-4 rounded-2xl bg-slate-100 text-slate-700 font-black text-xs uppercase tracking-widest hover:bg-slate-200 transition-all flex items-center justify-center gap-2"
+                >
+                  <Search size={14} /> Søg på siden
+                </button>
+              </div>
+              <div className="mt-20 pt-12 border-t border-slate-100 grid sm:grid-cols-3 gap-6 text-left">
+                {[
+                  { label: 'Hudsygdomme', slug: 'hudsygdomme' },
+                  { label: 'Øre, Næse & Hals', slug: 'ore-naese-hals' },
+                  { label: 'Håndkirurgi', slug: 'haandkirurgi' },
+                ].map(({ label, slug }) => (
+                  <button key={slug} onClick={() => setActivePage(slug)}
+                    className="flex items-center justify-between px-5 py-4 bg-slate-50 hover:bg-blue-900 hover:text-white rounded-2xl transition-all group text-left">
+                    <span className="text-[11px] font-black uppercase tracking-widest text-slate-700 group-hover:text-white">{label}</span>
+                    <ChevronRight size={14} className="text-slate-300 group-hover:text-white shrink-0" />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       {/* Footer */}
