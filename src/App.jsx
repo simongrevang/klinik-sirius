@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   Stethoscope, User, MapPin, ChevronDown, ExternalLink, Clock, Phone, Mail,
   Menu, X, Shield, Award, Users, Info, CreditCard, HeartPulse, Plus, Minus,
@@ -31,6 +31,9 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(null);
   const [openFaq, setOpenFaq] = useState(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = useRef(null);
 
   // Læs URL ved første load og lyt på browser-knapper frem/tilbage
   useEffect(() => {
@@ -143,6 +146,15 @@ const App = () => {
       }
     }
   }, [activePage]);
+
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape') { setSearchOpen(false); setSearchQuery(''); } };
+    if (searchOpen) {
+      document.addEventListener('keydown', handleKey);
+      setTimeout(() => searchInputRef.current?.focus(), 50);
+    }
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [searchOpen]);
 
   const colors = {
     primary: 'text-slate-900',
@@ -1051,6 +1063,43 @@ const App = () => {
     }
   ];
 
+  const allServicesFlat = [
+    ...services.hud,
+    ...services.onhUndersogelser,
+    ...services.onhOperationer,
+    ...services.haandkirurgi,
+  ];
+
+  const staticPages = [
+    { name: 'Forside', slug: 'forside', category: 'side' },
+    { name: 'Patientinfo', slug: 'patientinfo', category: 'side' },
+    { name: 'Personale', slug: 'personale', category: 'side' },
+    { name: 'Find os', slug: 'find-os', category: 'side' },
+    { name: 'Privatlivspolitik', slug: 'privacypolitik', category: 'side' },
+    { name: 'Hudsygdomme', slug: 'hudsygdomme', category: 'side' },
+    { name: 'Øre, Næse og Hals', slug: 'ore-naese-hals', category: 'side' },
+    { name: 'Håndkirurgi', slug: 'haandkirurgi', category: 'side' },
+  ];
+
+  const searchQ = searchQuery.trim().toLowerCase();
+  const searchResults = searchQ.length > 1
+    ? [
+        ...allServicesFlat.filter(s =>
+          s.name.toLowerCase().includes(searchQ) ||
+          s.title.toLowerCase().includes(searchQ) ||
+          (s.shortIntro && s.shortIntro.toLowerCase().includes(searchQ))
+        ),
+        ...staticPages.filter(p => p.name.toLowerCase().includes(searchQ)),
+      ].slice(0, 8)
+    : [];
+
+  const categoryLabel = (cat) => {
+    if (cat === 'hud') return 'Hudsygdomme';
+    if (cat === 'onh') return 'Øre, Næse & Hals';
+    if (cat === 'haand') return 'Håndkirurgi';
+    return 'Side';
+  };
+
   const NavItemComponent = ({ title, items, id, categorySlug }) => (
     <div className="relative group">
       <div className={`flex items-center py-2 font-black transition-colors uppercase tracking-tight text-xs ${isServicesOpen === id ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>
@@ -1396,7 +1445,10 @@ const App = () => {
             <button onClick={() => setActivePage('personale')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'personale' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Personale</button>
           </nav>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
+            <button onClick={() => setSearchOpen(true)} className="p-2 text-slate-500 hover:text-blue-900 transition-colors" aria-label="Søg">
+              <Search size={20} />
+            </button>
             <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`hidden sm:flex items-center px-6 py-3 rounded-2xl text-white text-[10px] font-black uppercase tracking-widest transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 ${colors.accent}`}>
               Selvbetjening <ExternalLink size={14} className="ml-2" />
             </a>
@@ -1406,6 +1458,65 @@ const App = () => {
           </div>
         </div>
       </header>
+
+      {/* Search Modal */}
+      {searchOpen && (
+        <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4" onClick={() => { setSearchOpen(false); setSearchQuery(''); }}>
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-xl overflow-hidden" onClick={e => e.stopPropagation()}>
+            <div className="flex items-center px-4 border-b border-slate-100">
+              <Search size={18} className="text-slate-400 shrink-0" />
+              <input
+                ref={searchInputRef}
+                type="text"
+                placeholder="Søg efter ydelse eller side..."
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+                className="w-full px-3 py-4 text-slate-900 placeholder-slate-400 text-base outline-none"
+                autoComplete="off"
+              />
+              <button onClick={() => { setSearchOpen(false); setSearchQuery(''); }} className="p-2 text-slate-400 hover:text-slate-600">
+                <X size={18} />
+              </button>
+            </div>
+            {searchResults.length > 0 && (
+              <ul className="max-h-80 overflow-y-auto py-2">
+                {searchResults.map((item, i) => (
+                  <li key={i}>
+                    <button
+                      className="w-full text-left px-5 py-3 hover:bg-slate-50 transition-colors flex items-center justify-between group"
+                      onClick={() => { setActivePage(item.slug); setSearchOpen(false); setSearchQuery(''); }}
+                    >
+                      <div>
+                        <span className="block text-sm font-semibold text-slate-900">{item.name || item.title}</span>
+                        {item.category && item.category !== 'side' && (
+                          <span className="text-xs text-slate-400">{categoryLabel(item.category)}</span>
+                        )}
+                      </div>
+                      <ChevronRight size={14} className="text-slate-300 group-hover:text-slate-500 transition-colors shrink-0" />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {searchQ.length > 1 && searchResults.length === 0 && (
+              <div className="px-5 py-6 text-sm text-slate-400 text-center">Ingen resultater for "{searchQuery}"</div>
+            )}
+            {searchQ.length <= 1 && (
+              <div className="px-5 py-4">
+                <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-3">Populære sider</p>
+                <div className="flex flex-wrap gap-2">
+                  {['hudsygdomme', 'ore-naese-hals', 'haandkirurgi', 'patientinfo', 'personale', 'find-os'].map(slug => (
+                    <button key={slug} onClick={() => { setActivePage(slug); setSearchOpen(false); setSearchQuery(''); }}
+                      className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-full text-xs text-slate-600 transition-colors capitalize">
+                      {slug === 'ore-naese-hals' ? 'ØNH' : slug === 'haandkirurgi' ? 'Håndkirurgi' : slug === 'hudsygdomme' ? 'Hudsygdomme' : slug === 'patientinfo' ? 'Patientinfo' : slug === 'personale' ? 'Personale' : 'Find os'}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Mobil Menu */}
       {isMenuOpen && (
