@@ -48,28 +48,6 @@ const App = () => {
     return () => window.removeEventListener('popstate', handlePop);
   }, []);
 
-  // Søge-index — alle sider og ydelser
-  const allSearchItems = useMemo(() => [
-    ...services.hud.map(s => ({ slug: s.slug, title: s.title, category: 'Hudsygdomme' })),
-    ...services.onhUndersogelser.map(s => ({ slug: s.slug, title: s.title, category: 'ØNH Undersøgelse' })),
-    ...services.onhOperationer.map(s => ({ slug: s.slug, title: s.title, category: 'ØNH Operation' })),
-    ...services.haandkirurgi.map(s => ({ slug: s.slug, title: s.title, category: 'Håndkirurgi' })),
-    { slug: 'hudsygdomme', title: 'Hudsygdomme — oversigt', category: 'Oversigt' },
-    { slug: 'ore-naese-hals', title: 'Øre, Næse & Hals — oversigt', category: 'Oversigt' },
-    { slug: 'haandkirurgi', title: 'Håndkirurgi — oversigt', category: 'Oversigt' },
-    { slug: 'personale', title: 'Personale', category: 'Klinikken' },
-    { slug: 'patientinfo', title: 'Patientinfo', category: 'Klinikken' },
-    { slug: 'find-os', title: 'Find os', category: 'Klinikken' },
-  ], []);
-
-  const searchResults = useMemo(() => {
-    if (!searchQuery.trim()) return [];
-    const q = searchQuery.toLowerCase();
-    return allSearchItems.filter(item =>
-      item.title.toLowerCase().includes(q) || item.category.toLowerCase().includes(q)
-    ).slice(0, 8);
-  }, [searchQuery, allSearchItems]);
-
   // Søge-modal: escape lukker, åbn fokuserer input
   useEffect(() => {
     if (searchOpen) {
@@ -1206,6 +1184,28 @@ const App = () => {
       services: [{ label: null, items: 'haandkirurgi' }],
     },
   };
+
+  // Søge-index — defineres efter services
+  const allSearchItems = useMemo(() => [
+    ...services.hud.map(s => ({ slug: s.slug, title: s.title, category: 'Hudsygdomme' })),
+    ...services.onhUndersogelser.map(s => ({ slug: s.slug, title: s.title, category: 'ØNH Undersøgelse' })),
+    ...services.onhOperationer.map(s => ({ slug: s.slug, title: s.title, category: 'ØNH Operation' })),
+    ...services.haandkirurgi.map(s => ({ slug: s.slug, title: s.title, category: 'Håndkirurgi' })),
+    { slug: 'hudsygdomme', title: 'Hudsygdomme — oversigt', category: 'Oversigt' },
+    { slug: 'ore-naese-hals', title: 'Øre, Næse & Hals — oversigt', category: 'Oversigt' },
+    { slug: 'haandkirurgi', title: 'Håndkirurgi — oversigt', category: 'Oversigt' },
+    { slug: 'personale', title: 'Personale', category: 'Klinikken' },
+    { slug: 'patientinfo', title: 'Patientinfo', category: 'Klinikken' },
+    { slug: 'find-os', title: 'Find os', category: 'Klinikken' },
+  ], []);
+
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const q = searchQuery.toLowerCase();
+    return allSearchItems.filter(item =>
+      item.title.toLowerCase().includes(q) || item.category.toLowerCase().includes(q)
+    ).slice(0, 8);
+  }, [searchQuery, allSearchItems]);
 
   const CategoryLandingPage = ({ cat }) => {
     const meta = categoryMeta[cat];
