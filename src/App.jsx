@@ -8,6 +8,24 @@ import {
 } from 'lucide-react';
 import './App.css';
 
+const KlinikSiriusLogo = ({ height = 50, className = 'text-blue-900' }) => {
+  const w = Math.round(height * 400 / 120);
+  return (
+    <svg width={w} height={height} viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <g>
+        <path d="M40 80C40 80 32 75 30 65C28 55 34 45 42 42C50 39 58 45 58 45M40 80C50 85 65 83 75 72C85 61 82 45 82 45M58 45C58 45 61 35 68 33C75 31 82 35 84 45M68 33C68 33 75 22 82 25C89 28 86 38 84 45M82 25C82 25 92 25 95 33C98 41 89 45 84 45" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M64 48L66 41L73 39L66 37L64 30L62 37L55 39L62 41L64 48Z" fill="#45B1B8" />
+        <circle cx="64" cy="39" r="1.2" fill="white" />
+      </g>
+      <g>
+        <text x="115" y="60" fill="currentColor" style={{ fontFamily: 'sans-serif', fontSize: '32px', fontWeight: 700, letterSpacing: '0.02em' }}>KLINIK SIRIUS</text>
+        <text x="115" y="86" fill="currentColor" style={{ fontFamily: 'sans-serif', fontSize: '13px', fontWeight: 500, letterSpacing: '0.35em', opacity: 0.7 }}>Speciallæger</text>
+        <rect x="115" y="71" width="220" height="1.5" fill="currentColor" style={{ opacity: 0.1 }} />
+      </g>
+    </svg>
+  );
+};
+
 const App = () => {
   const [activePage, setActivePage] = useState('forside');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -1367,14 +1385,8 @@ const App = () => {
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-          <div className="flex items-center cursor-pointer group" onClick={() => setActivePage('forside')}>
-            <div className="w-10 h-10 bg-blue-900 rounded-xl flex items-center justify-center mr-4 shadow-lg transition-transform group-hover:scale-105 group-hover:rotate-3">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
-            <div className="flex flex-col items-start">
-              <h2 className="text-xl font-extrabold tracking-tight text-blue-900 leading-none uppercase">KLINIK SIRIUS</h2>
-              <p className="uppercase tracking-[0.25em] text-slate-400 font-bold mt-1.5 leading-none text-[8px]">SPECIALLÆGECENTER</p>
-            </div>
+          <div className="flex items-center cursor-pointer" onClick={() => setActivePage('forside')}>
+            <KlinikSiriusLogo height={46} />
           </div>
 
           <nav className="hidden lg:flex items-center space-x-8">
@@ -1401,13 +1413,7 @@ const App = () => {
           {/* Header */}
           <div className="flex justify-between items-center px-6 h-20 border-b border-slate-100 shrink-0">
             <div className="flex items-center">
-              <div className="w-10 h-10 bg-blue-900 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
-              <div className="flex flex-col items-start">
-                <span className="text-xl font-extrabold tracking-tight text-blue-900 leading-none uppercase">KLINIK SIRIUS</span>
-                <span className="uppercase tracking-[0.25em] text-slate-400 font-bold mt-1.5 leading-none text-[8px]">SPECIALLÆGECENTER</span>
-              </div>
+              <KlinikSiriusLogo height={42} />
             </div>
             <button onClick={() => setIsMenuOpen(false)} className="p-2 bg-slate-50 rounded-xl">
               <X size={24} className="text-slate-600" />
@@ -2103,10 +2109,7 @@ const App = () => {
           <div className="grid md:grid-cols-4 gap-16 mb-24 text-sm">
             <div className="col-span-1">
               <div className="flex items-center mb-10">
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center mr-3 shadow-md">
-                  <span className="text-blue-900 font-black text-xl">S</span>
-                </div>
-                <span className="font-extrabold text-white tracking-tighter leading-none uppercase text-sm">KLINIK SIRIUS</span>
+                <KlinikSiriusLogo height={40} className="text-white" />
               </div>
               <p className="text-slate-400 leading-relaxed mb-8 font-medium">Privat speciallægepraksis i Varde med fokus på faglighed og tryghed.</p>
               <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest opacity-40">CVR: 43033018</p>
