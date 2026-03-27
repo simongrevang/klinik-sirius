@@ -1077,7 +1077,7 @@ const App = () => {
     { name: 'Find os', slug: 'find-os', category: 'side' },
     { name: 'Privatlivspolitik', slug: 'privacypolitik', category: 'side' },
     { name: 'Hudsygdomme', slug: 'hudsygdomme', category: 'side' },
-    { name: 'Øre, Næse og Hals', slug: 'ore-naese-hals', category: 'side' },
+    { name: 'Øre, Næse & Hals', slug: 'ore-naese-hals', category: 'side' },
     { name: 'Håndkirurgi', slug: 'haandkirurgi', category: 'side' },
   ];
 
@@ -1097,7 +1097,7 @@ const App = () => {
     if (cat === 'hud') return 'Hudsygdomme';
     if (cat === 'onh') return 'Øre, Næse & Hals';
     if (cat === 'haand') return 'Håndkirurgi';
-    return 'Side';
+    return '';
   };
 
   const NavItemComponent = ({ title, items, id, categorySlug }) => (
@@ -1508,7 +1508,7 @@ const App = () => {
                   {['hudsygdomme', 'ore-naese-hals', 'haandkirurgi', 'patientinfo', 'personale', 'find-os'].map(slug => (
                     <button key={slug} onClick={() => { setActivePage(slug); setSearchOpen(false); setSearchQuery(''); }}
                       className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-full text-xs text-slate-600 transition-colors capitalize">
-                      {slug === 'ore-naese-hals' ? 'ØNH' : slug === 'haandkirurgi' ? 'Håndkirurgi' : slug === 'hudsygdomme' ? 'Hudsygdomme' : slug === 'patientinfo' ? 'Patientinfo' : slug === 'personale' ? 'Personale' : 'Find os'}
+                      {slug === 'ore-naese-hals' ? 'Øre, Næse & Hals' : slug === 'haandkirurgi' ? 'Håndkirurgi' : slug === 'hudsygdomme' ? 'Hudsygdomme' : slug === 'patientinfo' ? 'Patientinfo' : slug === 'personale' ? 'Personale' : 'Find os'}
                     </button>
                   ))}
                 </div>
