@@ -1597,7 +1597,7 @@ const App = () => {
                   </div>
                   <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Øre, Næse, Hals</h3>
                   <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Jalal Taha Saadi varetager undersøgelser og operationer inden for øre, næse og hals. Vi tilbyder alt fra allergiudredning og høreprøver til avanceret kirurgi.</p>
-                  <button onClick={() => setActivePage('allergi')} className="flex items-center font-black text-emerald-800 uppercase text-[10px] tracking-[0.3em] group">
+                  <button onClick={() => setActivePage('ore-naese-hals')} className="flex items-center font-black text-emerald-800 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-blue-900" />
                   </button>
                 </div>
