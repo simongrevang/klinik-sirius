@@ -1542,7 +1542,7 @@ const App = () => {
                   </div>
                   <h1 className="text-5xl lg:text-7xl font-extrabold text-slate-900 mb-8 leading-[1.05] tracking-tight uppercase">
                     Speciallæger <br />
-                    <span className="text-blue-900">tæt på dig i Varde.</span>
+                    <span className="text-blue-900">uden den lange ventetid.</span>
                   </h1>
                   <div className="text-xl text-slate-500 mb-12 max-w-xl leading-relaxed font-light mx-auto lg:mx-0 border-l-8 border-emerald-500 pl-8">
                     <p className="mb-4 text-slate-700 font-bold">Klinik Sirius er stiftet med en vision om at gøre specialistbehandling tilgængelig og tryg. Vi forener årtiers erfaring med en moderne patientfokuseret tilgang.</p>
