@@ -1545,7 +1545,7 @@ const App = () => {
                     <span className="text-blue-900">uden den lange ventetid.</span>
                   </h1>
                   <div className="text-xl text-slate-500 mb-12 max-w-xl leading-relaxed font-light mx-auto lg:mx-0 border-l-8 border-emerald-500 pl-8">
-                    <p className="mb-4 text-slate-700 font-bold">Klinik Sirius er stiftet med en vision om at gøre specialistbehandling tilgængelig og tryg. Vi forener årtiers erfaring med en moderne patientfokuseret tilgang.</p>
+                    <p className="mb-4 text-slate-700 font-bold">Hos Klinik Sirius møder du erfarne speciallæger der handler, når det gælder. Vi sikrer dig den rigtige behandling til rette tid.</p>
                   </div>
                   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-5 justify-center lg:justify-start font-black uppercase tracking-widest text-[10px]">
                     <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`px-10 py-5 rounded-[2rem] text-white font-bold shadow-xl hover:-translate-y-1 transition-all active:scale-95 inline-block text-center ${colors.accent}`}>
