@@ -1054,9 +1054,9 @@ const App = () => {
       image: '/Jerzy%20Stiasny.png',
       role: 'Dr. med., Speciallæge i ortopædkirurgi & overlæge i håndkirurgi',
       expertise: 'Ekspert i håndkirurgi, nerveskader, rekonstruktiv kirurgi og plexus brachialis læsioner.',
-      summary: 'Dr. med. og speciallæge i ortopædkirurgi med mange års erfaring inden for håndkirurgi. Sektoransvarlig overlæge ved Håndkirurgisk sektor, Sygehus Sønderjylland siden 2019. Har haft ophold ved førende internationale centre inden for hånd- og nerveskirurgi.',
+      summary: 'Dr. med. og speciallæge i ortopædkirurgi med mange års erfaring inden for håndkirurgi. Overlæge ved Håndkirurgisk sektor, Sygehus Sønderjylland siden 2017. Har haft ophold ved førende internationale centre inden for hånd- og nerveskirurgi.',
       details: [
-        { label: 'Erfaring', items: ['Sektoransvarlig overlæge, Håndkirurgisk sektor, Sygehus Sønderjylland (2019–nu)', 'Overlæge, Ortopædkirurgisk afdeling, Odense Universitetshospital (2012–2017)', 'Overlæge og afdelingslæge, Håndkirurgisk sektor, OUH (2007–2012)'] },
+        { label: 'Erfaring', items: ['Overlæge, Håndkirurgisk sektor, Sygehus Sønderjylland (2017–nu)', 'Overlæge, Ortopædkirurgisk afdeling, Odense Universitetshospital (2012–2017)', 'Afdelingslæge, Håndkirurgisk sektor, OUH (2007–2012)'] },
         { label: 'Internationale ophold', items: ['Hånd- og Mikrokirurgi, Rikshospitalet, Oslo (2011)', 'Peripheral Nerve Injury Unit, Royal National Orthopaedic Hospital, London (2010)'] },
         { label: 'Forskning & publikationer', items: ['Internationalt randomiseret studie om TFCC-rupturer, REINFORCER (2022–nu)', 'Randomiseret studie om CMC-1 artrose, Weilby projekt (2017–2023)', 'Publikationer i The Danish Medical Journal, Ugeskrift for Læger m.fl.'] }
       ]
@@ -1194,7 +1194,7 @@ const App = () => {
       title: 'Håndkirurgi',
       h2: 'Præcis håndkirurgi og nervebehandling',
       intro: 'Klinik Sirius tilbyder specialiseret håndkirurgi i Varde med Dr. med. Jerzy Stiasny. Vi udreder og behandler nerveafklemninger, senesygdomme, ganglion, Dupuytrens kontraktur og godartede tumorer i hånd, håndled og underarm.',
-      narrative: 'Jerzy Stiasny er dr. med. og speciallæge i ortopædkirurgi med mange års erfaring inden for håndkirurgi. Han er sektoransvarlig overlæge ved Håndkirurgisk sektor, Sygehus Sønderjylland og har haft ophold ved førende internationale centre inden for hånd- og nerveskirurgi.\n\nHos Klinik Sirius tilbyder vi en grundig specialistvurdering, så du hurtigt får klarhed over din tilstand og de bedste behandlingsmuligheder – hvad enten det drejer sig om konservativ behandling eller kirurgi.\n\nDu kan komme som privatbetalende, via sundhedsforsikring eller som ventetidsgaranti-patient fra regionen.',
+      narrative: 'Jerzy Stiasny er dr. med. og speciallæge i ortopædkirurgi med mange års erfaring inden for håndkirurgi. Han er overlæge ved Håndkirurgisk sektor, Sygehus Sønderjylland og har haft ophold ved førende internationale centre inden for hånd- og nerveskirurgi.\n\nHos Klinik Sirius tilbyder vi en grundig specialistvurdering, så du hurtigt får klarhed over din tilstand og de bedste behandlingsmuligheder – hvad enten det drejer sig om konservativ behandling eller kirurgi.\n\nDu kan komme som privatbetalende, via sundhedsforsikring eller som ventetidsgaranti-patient fra regionen.',
       specialist: { name: 'Jerzy Stiasny', role: 'Dr. med., overlæge i håndkirurgi', cred1: 'OUH & Sygehus Sønderjylland', cred2: 'Internationale ophold, hånd- og nerveskirurgi', img: '/Jerzy%20Stiasny.png' },
       services: [{ label: null, items: 'haandkirurgi' }],
     },
