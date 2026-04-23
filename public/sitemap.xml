@@ -2,46 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Forside -->
-  <url><loc>https://sirius.simongrevang.dk/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://kliniksirius.dk/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
 
   <!-- Statiske sider -->
-  <url><loc>https://sirius.simongrevang.dk/patientinfo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/personale</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/find-os</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kliniksirius.dk/patientinfo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kliniksirius.dk/personale</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kliniksirius.dk/find-os</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kliniksirius.dk/privacypolitik</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
+  <!-- Kategori-oversigter -->
+  <url><loc>https://kliniksirius.dk/hudsygdomme</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kliniksirius.dk/ore-naese-hals</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kliniksirius.dk/haandkirurgi</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Hudsygdomme -->
-  <url><loc>https://sirius.simongrevang.dk/eksem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/naeldefeber</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/psoriasis</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/modermaerker</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/hudkraeft</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/rosacea</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/akne</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/fnat</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/hyperhidrose</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/kondylomer</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/eksem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/naeldefeber</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/psoriasis</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/modermaerker</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/hudkraeft</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/rosacea</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/akne</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/fnat</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/hyperhidrose</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/kondylomer</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- ØNH Undersøgelser -->
-  <url><loc>https://sirius.simongrevang.dk/allergi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/hoere</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/bihulebetaendelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/halsbetaendelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/laryngoskopi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/mellemoereproblem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/naeseblodning</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/stritoere</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/struboskopi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/svimmelhed</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/allergi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/hoere</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/bihulebetaendelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/halsbetaendelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/laryngoskopi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/mellemoereproblem</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/naeseblodning</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/stritoere</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/struboskopi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/svimmelhed</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- ØNH Operationer -->
-  <url><loc>https://sirius.simongrevang.dk/naese-operation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/naeseskillevaeg</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/mandler-fjernelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/mandler-reduktion</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/naesepolypper</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/bihuler-operation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/stritoere-operation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/bornepolypper</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sirius.simongrevang.dk/draenanlaeggelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/naese-operation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/naeseskillevaeg</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/mandler-fjernelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/mandler-reduktion</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/naesepolypper</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/bihuler-operation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/stritoere-operation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/bornepolypper</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/draenanlaeggelse</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- Håndkirurgi -->
+  <url><loc>https://kliniksirius.dk/karpaltunnelsyndrom</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/kubitaltunnelsyndrom</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/perifere-nerveafklemninger</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/springfinger</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/de-quervains</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/seneskedebetaendelser</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/ganglion</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/dupuytrens-kontraktur</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://kliniksirius.dk/godartede-tumorer-haand</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
 </urlset>
