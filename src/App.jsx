@@ -371,14 +371,14 @@ const App = ({ initialPage = 'forside' }) => {
             <p className="text-xl text-slate-600 mb-10 leading-relaxed font-light border-l-8 border-emerald-700 pl-8">{job.lead}</p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <a href={`mailto:${job.applyEmail}?subject=${encodeURIComponent('Ansøgning til stillingen som ' + job.name)}`} className={`px-10 py-5 rounded-2xl text-white font-black uppercase tracking-widest text-xs shadow-xl hover:-translate-y-1 transition-all inline-flex items-center ${colors.accent}`}>
-                Send ansøgning <Mail size={16} className="ml-3" />
+                Send en ansøgning <Mail size={16} className="ml-3" />
               </a>
               <div className="flex items-center px-6 text-slate-500 font-black uppercase text-xs tracking-widest">
                 <Phone size={18} className="mr-3 text-blue-900" /> {job.applyPhone}
               </div>
             </div>
             <p className="mt-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
-              Opslået <time dateTime={job.datePosted}>{formatDanishDate(job.datePosted)}</time> · Ansøgningsfrist <time dateTime={job.validThrough}>{formatDanishDate(job.validThrough)}</time>
+              Opslået <time dateTime={job.datePosted}>{formatDanishDate(job.datePosted)}</time> · Ansøgninger behandles løbende
             </p>
           </div>
         </div>
@@ -427,7 +427,7 @@ const App = ({ initialPage = 'forside' }) => {
               <div className="bg-blue-900 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
                 <div className="relative z-10">
                   <h2 className="text-2xl font-black mb-4 uppercase tracking-tight">Søg stillingen</h2>
-                  <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium">Send ansøgning og CV til {job.applyEmail} att. {job.contactName}. Vi holder samtaler løbende.</p>
+                  <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium">Send en kort ansøgning til {job.applyEmail} att. {job.contactName}, eller ring for en uforpligtende samtale.</p>
                   <a href={`mailto:${job.applyEmail}?subject=${encodeURIComponent('Ansøgning til stillingen som ' + job.name)}`} className={`w-full py-5 rounded-2xl text-white font-black uppercase tracking-widest text-[10px] transition-all shadow-lg active:scale-95 inline-block text-center ${colors.accent}`}>
                     Send ansøgning
                   </a>
@@ -474,8 +474,8 @@ const App = ({ initialPage = 'forside' }) => {
                 <p className="text-slate-600 group-hover:text-blue-100 font-light leading-relaxed mb-6">{job.lead}</p>
                 <div className="flex flex-wrap gap-x-8 gap-y-2 text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-blue-200">
                   <span className="flex items-center"><MapPin size={12} className="mr-2" /> Varde</span>
-                  <span className="flex items-center"><Clock size={12} className="mr-2" /> Fuldtid eller deltid</span>
-                  <span className="flex items-center"><Calendar size={12} className="mr-2" /> Frist {formatDanishDate(job.validThrough)}</span>
+                  <span className="flex items-center"><Clock size={12} className="mr-2" /> {job.omfang}</span>
+                  <span className="flex items-center"><Calendar size={12} className="mr-2" /> Løbende ansøgning</span>
                 </div>
                 <span className="inline-flex items-center mt-8 text-[10px] font-black uppercase tracking-[0.2em] text-blue-900 group-hover:text-white">
                   Læs opslaget <ArrowRight size={14} className="ml-3 -translate-x-1 group-hover:translate-x-0 transition-all" />
