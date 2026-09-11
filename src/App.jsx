@@ -15,7 +15,7 @@ import { byer } from './byer.js';
 const KlinikSiriusLogo = ({ height = 50, className = 'text-blue-900' }) => {
   const w = Math.round(height * 400 / 120);
   return (
-    <svg width={w} height={height} viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <svg width={w} height={height} viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} role="img" aria-label="Klinik Sirius Speciallæger">
       <g>
         <path d="M40 80C40 80 32 75 30 65C28 55 34 45 42 42C50 39 58 45 58 45M40 80C50 85 65 83 75 72C85 61 82 45 82 45M58 45C58 45 61 35 68 33C75 31 82 35 84 45M68 33C68 33 75 22 82 25C89 28 86 38 84 45M82 25C82 25 92 25 95 33C98 41 89 45 84 45" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M64 48L66 41L73 39L66 37L64 30L62 37L55 39L62 41L64 48Z" fill="#45B1B8" />
@@ -195,7 +195,7 @@ const App = ({ initialPage = 'forside' }) => {
     <div className="relative group">
       <div className={`flex items-center py-2 font-black transition-colors uppercase tracking-tight text-xs ${isServicesOpen === id ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>
         <a href={pathFor(categorySlug)} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage(categorySlug); setIsServicesOpen(null); }} className="hover:text-blue-900 transition-colors">{title}</a>
-        <button onClick={() => setIsServicesOpen(isServicesOpen === id ? null : id)} className="ml-1 p-1">
+        <button onClick={() => setIsServicesOpen(isServicesOpen === id ? null : id)} className="ml-1 p-1" aria-label={`Vis undersider under ${title}`} aria-expanded={isServicesOpen === id}>
           <ChevronDown size={14} className={`transition-transform duration-300 ${isServicesOpen === id ? 'rotate-180' : ''}`} />
         </button>
       </div>
@@ -220,7 +220,7 @@ const App = ({ initialPage = 'forside' }) => {
     <div className="relative group">
       <div className={`flex items-center py-2 font-black transition-colors uppercase tracking-tight text-xs ${isServicesOpen === 'onh' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>
         <a href={pathFor('ore-naese-hals')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('ore-naese-hals'); setIsServicesOpen(null); }} className="hover:text-blue-900 transition-colors">Øre, Næse & Hals</a>
-        <button onClick={() => setIsServicesOpen(isServicesOpen === 'onh' ? null : 'onh')} className="ml-1 p-1">
+        <button onClick={() => setIsServicesOpen(isServicesOpen === 'onh' ? null : 'onh')} className="ml-1 p-1" aria-label="Vis undersider under Øre, Næse og Hals" aria-expanded={isServicesOpen === 'onh'}>
           <ChevronDown size={14} className={`transition-transform duration-300 ${isServicesOpen === 'onh' ? 'rotate-180' : ''}`} />
         </button>
       </div>
@@ -821,7 +821,7 @@ const App = ({ initialPage = 'forside' }) => {
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-          <a href="/" onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('forside'); }} className="flex items-center" aria-label="Klinik Sirius forside">
+          <a href="/" onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('forside'); }} className="flex items-center">
             <KlinikSiriusLogo height={46} />
           </a>
 
@@ -840,7 +840,7 @@ const App = ({ initialPage = 'forside' }) => {
             <a href="https://patientportal.egclinea.com/?id=838" target="_blank" rel="noopener noreferrer" className={`hidden sm:flex items-center px-6 py-3 rounded-2xl text-white text-[10px] font-black uppercase tracking-widest transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 ${colors.accent}`}>
               Selvbetjening <ExternalLink size={14} className="ml-2" />
             </a>
-            <button className="lg:hidden p-2 text-slate-600" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button className="lg:hidden p-2 text-slate-600" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label={isMenuOpen ? 'Luk menu' : 'Åbn menu'} aria-expanded={isMenuOpen}>
               {isMenuOpen ? <X /> : <Menu />}
             </button>
           </div>
@@ -1097,7 +1097,7 @@ const App = ({ initialPage = 'forside' }) => {
                   <div className="w-16 h-16 bg-blue-900 text-white rounded-2xl flex items-center justify-center mb-10 group-hover:rotate-6 transition-transform shadow-lg">
                     <Stethoscope size={32} />
                   </div>
-                  <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Hudsygdomme</h3>
+                  <h2 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Hudsygdomme</h2>
                   <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Kawa Ajgeiy varetager udredning og behandling af alle former for hudsygdomme. Vi dækker eksem, nældefeber, psoriasis, modermærker og meget mere.</p>
                   <a href={pathFor('hudsygdomme')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('hudsygdomme'); }} className="flex items-center font-black text-blue-900 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-emerald-600" />
@@ -1109,7 +1109,7 @@ const App = ({ initialPage = 'forside' }) => {
                   <div className="w-16 h-16 bg-emerald-700 text-white rounded-2xl flex items-center justify-center mb-10 group-hover:rotate-6 transition-transform shadow-lg">
                     <Ear size={32} />
                   </div>
-                  <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Øre, Næse, Hals</h3>
+                  <h2 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Øre, Næse, Hals</h2>
                   <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Jalal Taha Saadi varetager undersøgelser og operationer inden for øre, næse og hals. Vi tilbyder alt fra allergiudredning og høreprøver til avanceret kirurgi.</p>
                   <a href={pathFor('ore-naese-hals')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('ore-naese-hals'); }} className="flex items-center font-black text-emerald-800 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-blue-900" />
@@ -1121,7 +1121,7 @@ const App = ({ initialPage = 'forside' }) => {
                   <div className="w-16 h-16 bg-indigo-800 text-white rounded-2xl flex items-center justify-center mb-10 group-hover:rotate-6 transition-transform shadow-lg">
                     <Layers size={32} />
                   </div>
-                  <h3 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Håndkirurgi</h3>
+                  <h2 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Håndkirurgi</h2>
                   <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Dr. med. Jerzy Stiasny varetager specialiseret håndkirurgi med mange års klinisk erfaring. Vi behandler nerveafklemninger, senesygdomme, ganglion og Dupuytrens kontraktur.</p>
                   <a href={pathFor('haandkirurgi')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('haandkirurgi'); }} className="flex items-center font-black text-indigo-800 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-emerald-600" />
@@ -1145,9 +1145,9 @@ const App = ({ initialPage = 'forside' }) => {
                 ].map((item, i) => (
                   <div key={i} className="relative group">
                     <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 transition-all group-hover:bg-blue-900 group-hover:text-white group-hover:-translate-y-2 shadow-sm h-full">
-                      <div className="text-blue-900 font-black text-5xl mb-6 opacity-20 group-hover:text-white group-hover:opacity-40">{item.step}</div>
+                      <div className="text-blue-900 font-black text-5xl mb-6 opacity-60 group-hover:text-white group-hover:opacity-80">{item.step}</div>
                       <div className="mb-6 flex justify-center text-emerald-600 group-hover:text-white transition-colors">{item.icon}</div>
-                      <h4 className="text-xl font-bold mb-3 uppercase tracking-tight">{item.title}</h4>
+                      <h3 className="text-xl font-bold mb-3 uppercase tracking-tight">{item.title}</h3>
                       <p className="text-sm opacity-70 leading-relaxed font-medium">{item.desc}</p>
                     </div>
                   </div>
@@ -1696,11 +1696,11 @@ const App = ({ initialPage = 'forside' }) => {
                 <KlinikSiriusLogo height={40} className="text-white" />
               </div>
               <p className="text-slate-400 leading-relaxed mb-8 font-medium">Privat speciallægepraksis i Varde med fokus på faglighed og tryghed.</p>
-              <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest opacity-40">CVR: 43033018</p>
+              <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest opacity-80">CVR: 43033018</p>
             </div>
 
             <div>
-              <h6 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Specialer</h6>
+              <h2 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Specialer</h2>
               <ul className="space-y-4 text-slate-300 font-bold text-[10px] uppercase tracking-widest">
                 <li><a href={pathFor('hudsygdomme')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('hudsygdomme'); }} className="hover:text-white transition-colors block">Hudsygdomme</a></li>
                 <li><a href={pathFor('ore-naese-hals')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('ore-naese-hals'); }} className="hover:text-white transition-colors block">Øre, Næse & Hals</a></li>
@@ -1709,7 +1709,7 @@ const App = ({ initialPage = 'forside' }) => {
             </div>
 
             <div>
-              <h6 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Genveje</h6>
+              <h2 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Genveje</h2>
               <ul className="space-y-4 text-slate-300 font-bold text-[10px] uppercase tracking-widest">
                 <li><a href={pathFor('patientinfo')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('patientinfo'); }} className="hover:text-white transition-colors block">Patientinfo</a></li>
                 <li><a href={pathFor('personale')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('personale'); }} className="hover:text-white transition-colors block">Personale</a></li>
@@ -1719,7 +1719,7 @@ const App = ({ initialPage = 'forside' }) => {
             </div>
 
             <div>
-              <h6 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Områder</h6>
+              <h2 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Områder</h2>
               <ul className="space-y-4 text-slate-300 font-bold text-[10px] uppercase tracking-widest">
                 {byer.map((b) => (
                   <li key={b.slug}>
@@ -1736,14 +1736,14 @@ const App = ({ initialPage = 'forside' }) => {
             </div>
 
             <div className="bg-white/5 p-8 rounded-[2.5rem] border border-white/10">
-              <h6 className="font-black mb-8 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Kontakt</h6>
+              <h2 className="font-black mb-8 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Kontakt</h2>
               <p className="text-white font-black mb-1 tracking-tight uppercase text-xs leading-none">Søndertoften 22</p>
               <p className="text-slate-400 mb-6 font-bold text-[10px] uppercase tracking-tighter">6800 Varde</p>
               <a href="tel:+4532223224" className="text-xl font-black text-white mb-2 tracking-tighter uppercase leading-none block hover:text-emerald-400 transition-colors">32 22 32 24</a>
               <a href="mailto:info@kliniksirius.dk" className="text-slate-400 font-bold text-[10px] hover:text-white transition-colors">info@kliniksirius.dk</a>
             </div>
           </div>
-          <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[8px] font-black text-slate-500 uppercase tracking-[0.4em]">
+          <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[8px] font-black text-slate-300 uppercase tracking-[0.4em]">
             <div className="flex space-x-12 mb-8 md:mb-0">
               <a href={pathFor('privacypolitik')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('privacypolitik'); }} className="hover:text-white transition-colors">Privatlivspolitik</a>
               <span className="hover:text-white cursor-pointer transition-colors">Cookies</span>

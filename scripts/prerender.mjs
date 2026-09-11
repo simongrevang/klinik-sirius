@@ -8,7 +8,15 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const ssr = await import(resolve(root, 'dist-ssr/entry-server.js'));
 const { render, allRoutes, metaFor, ogFor, canonicalFor, schemasFor, SITE_URL } = ssr;
 
-const template = readFileSync(resolve(root, 'dist/index.html'), 'utf-8');
+let template = readFileSync(resolve(root, 'dist/index.html'), 'utf-8');
+
+// Stilarket er den eneste blokerende forespørgsel i den kritiske sti.
+// Det lægges ind i dokumentet, så første visning ikke venter på en rundtur til serveren.
+const cssTag = template.match(/<link rel="stylesheet"[^>]*href="([^"]+)"[^>]*>/);
+if (cssTag) {
+  const css = readFileSync(resolve(root, 'dist', cssTag[1].replace(/^\//, '')), 'utf-8');
+  template = template.replace(cssTag[0], `<style>${css}</style>`);
+}
 
 const escape = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const ld = (obj) => JSON.stringify(obj).replace(/</g, '\\u003c');
