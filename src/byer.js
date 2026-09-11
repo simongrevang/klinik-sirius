@@ -15,7 +15,7 @@ export const byer = [
     rute: 'rute 12',
     station: 'Esbjerg Station',
     h1: 'Speciallæge i Varde for patienter fra Esbjerg',
-    metaTitle: 'Speciallæge tæt på Esbjerg | Klinik Sirius i Varde',
+    metaTitle: 'Speciallæge i Varde for Esbjerg | Klinik Sirius',
     metaDesc: 'Fra Esbjerg er der 17 km til Klinik Sirius i Varde, omkring 21 minutter i bil ad rute 12. Hudsygdomme, øre, næse og hals samt håndkirurgi uden lang ventetid.',
     lead: 'Der er 17 kilometer fra Esbjerg til Klinik Sirius på Søndertoften 22 i Varde. Turen tager omkring 21 minutter i bil.',
     sections: [
@@ -50,8 +50,8 @@ export const byer = [
     rute: 'rute 11',
     station: 'Ribe Station',
     h1: 'Speciallæge i Varde for patienter fra Ribe',
-    metaTitle: 'Speciallæge for patienter fra Ribe | Klinik Sirius i Varde',
-    metaDesc: 'Fra Ribe er der 39 km til Klinik Sirius i Varde, omkring 41 minutter ad rute 11. Undersøgelse og indgreb ligger på samme adresse, så turen skal kun køres én gang.',
+    metaTitle: 'Speciallæge i Varde for Ribe | Klinik Sirius',
+    metaDesc: 'Fra Ribe er der 39 km til Klinik Sirius i Varde, omkring 41 minutter ad rute 11. Undersøgelse og indgreb ligger på samme adresse.',
     lead: 'Fra Ribe er der 39 kilometer til Klinik Sirius i Varde. Turen tager omkring 41 minutter ad rute 11.',
     sections: [
       {
@@ -85,7 +85,7 @@ export const byer = [
     rute: 'rute 11',
     station: 'Bramming Station',
     h1: 'Speciallæge i Varde for patienter fra Bramming',
-    metaTitle: 'Speciallæge for patienter fra Bramming | Klinik Sirius i Varde',
+    metaTitle: 'Speciallæge i Varde for Bramming | Klinik Sirius',
     metaDesc: 'Fra Bramming er der 23 km til Klinik Sirius i Varde, omkring 24 minutter ad rute 11. Hudsygdomme, øre, næse og hals samt håndkirurgi under samme tag.',
     lead: 'Fra Bramming er der 23 kilometer til Klinik Sirius i Varde, og turen tager omkring 24 minutter.',
     sections: [
@@ -120,7 +120,7 @@ export const byer = [
     rute: 'rute 12',
     station: 'Ølgod Station',
     h1: 'Speciallæge i Varde for patienter fra Ølgod',
-    metaTitle: 'Speciallæge for patienter fra Ølgod | Klinik Sirius i Varde',
+    metaTitle: 'Speciallæge i Varde for Ølgod | Klinik Sirius',
     metaDesc: 'Fra Ølgod er der 28 km til Klinik Sirius i Varde, omkring 29 minutter i bil. Ølgod og Varde ligger på samme togbane, så turen kan også klares uden bil.',
     lead: 'Fra Ølgod er der 28 kilometer til Klinik Sirius i Varde. Turen tager omkring 29 minutter i bil.',
     sections: [
@@ -154,7 +154,7 @@ export const byer = [
     rute: 'rute 431',
     station: 'Oksbøl Station',
     h1: 'Speciallæge i Varde for patienter fra Oksbøl og vestkysten',
-    metaTitle: 'Speciallæge for patienter fra Oksbøl | Klinik Sirius i Varde',
+    metaTitle: 'Speciallæge i Varde for Oksbøl | Klinik Sirius',
     metaDesc: 'Fra Oksbøl er der 16 km til Klinik Sirius i Varde, omkring 19 minutter ad rute 431. Også kort vej fra Blåvand, Nørre Nebel og resten af vestkysten.',
     lead: 'Oksbøl ligger 16 kilometer fra Klinik Sirius i Varde. Det er den korteste tur af alle byerne uden for Varde, omkring 19 minutter i bil.',
     sections: [
@@ -188,7 +188,7 @@ export const byer = [
     rute: 'rute 30',
     station: null,
     h1: 'Speciallæge i Varde for patienter fra Grindsted',
-    metaTitle: 'Speciallæge for patienter fra Grindsted | Klinik Sirius i Varde',
+    metaTitle: 'Speciallæge i Varde for Grindsted | Klinik Sirius',
     metaDesc: 'Fra Grindsted er der 38 km til Klinik Sirius i Varde, omkring 39 minutter ad rute 30 og 475. Hudsygdomme, øre, næse og hals samt håndkirurgi på én adresse.',
     lead: 'Fra Grindsted er der 38 kilometer til Klinik Sirius i Varde, og turen tager omkring 39 minutter.',
     sections: [
@@ -222,7 +222,7 @@ export const byer = [
     rute: 'rute 28',
     station: null,
     h1: 'Speciallæge i Varde for patienter fra Billund',
-    metaTitle: 'Speciallæge for patienter fra Billund | Klinik Sirius i Varde',
+    metaTitle: 'Speciallæge i Varde for Billund | Klinik Sirius',
     metaDesc: 'Fra Billund er der 50 km til Klinik Sirius i Varde, omkring 50 minutter ad rute 28, 30 og 475. Tre specialer samlet på én adresse i Varde.',
     lead: 'Billund ligger 50 kilometer fra Klinik Sirius i Varde. Turen tager omkring 50 minutter og går ad rute 28, 30 og 475.',
     sections: [

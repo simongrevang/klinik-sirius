@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const ssr = await import(resolve(root, 'dist-ssr/entry-server.js'));
-const { render, allRoutes, metaFor, ogFor, canonicalFor, schemasFor, SITE_URL } = ssr;
+const { render, allRoutes, metaFor, ogFor, canonicalFor, graphFor, SITE_URL } = ssr;
 
 let template = readFileSync(resolve(root, 'dist/index.html'), 'utf-8');
 
@@ -41,11 +41,9 @@ const build = (slug, { noindex = false } = {}) => {
     html = html.replace(/<meta name="robots" content="[^"]*" \/>/, '<meta name="robots" content="noindex, follow" />');
   }
 
-  for (const [id, schema] of Object.entries(schemasFor(slug))) {
-    const tag = `<script type="application/ld+json" id="${id}">`;
-    if (!html.includes(tag)) throw new Error(`Mangler placeholder for ${id} i index.html`);
-    html = html.replace(`${tag}</script>`, `${tag}${schema ? ld(schema) : ''}</script>`);
-  }
+  const tag = '<script type="application/ld+json" id="graph-schema">';
+  if (!html.includes(tag)) throw new Error('Mangler placeholder for graph-schema i index.html');
+  html = html.replace(`${tag}</script>`, `${tag}${ld(graphFor(slug))}</script>`);
 
   return html;
 };
@@ -89,7 +87,7 @@ const grupper = [
   ['Specialer', ['hudsygdomme', 'ore-naese-hals', 'haandkirurgi']],
   ['Praktisk', ['find-os', 'patientinfo', 'sundhedsforsikring', 'personale', 'job']],
   ['Områder', routes.filter((r) => r.startsWith('speciallaege-'))],
-  ['Hudsygdomme', routes.filter((r) => ssr.schemasFor(r)['dynamic-schema']?.relevantSpecialty === 'Dermatology')],
+  ['Hudsygdomme', routes.filter((r) => ssr.graphFor(r)['@graph'].some((n) => n['@type'] === 'MedicalCondition' && n.relevantSpecialty === 'https://schema.org/Dermatology'))],
 ];
 const llms = [
   '# Klinik Sirius',

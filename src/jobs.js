@@ -106,8 +106,8 @@ export const jobDescriptionHtml = (job) => `<p>${job.lead}</p>` + job.sections.m
   (s.bullets ? `<ul>${s.bullets.map(b => `<li>${b}</li>`).join('')}</ul>` : '')
 ).join('');
 
-export const buildJobPostingSchema = (job) => ({
-  '@context': 'https://schema.org',
+export const buildJobPostingSchema = (job, id) => ({
+  ...(id ? { '@id': id } : { '@context': 'https://schema.org' }),
   '@type': 'JobPosting',
   'title': job.name,
   'description': jobDescriptionHtml(job),
