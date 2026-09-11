@@ -11,6 +11,7 @@ import { jobs, formatDanishDate } from './jobs.js';
 import { services } from './services.js';
 import { metaFor, ogFor, canonicalFor, schemasFor, pathFor } from './seo.js';
 import { byer } from './byer.js';
+import { forsikring } from './forsikring.js';
 
 const KlinikSiriusLogo = ({ height = 50, className = 'text-blue-900' }) => {
   const w = Math.round(height * 400 / 120);
@@ -128,26 +129,15 @@ const App = ({ initialPage = 'forside' }) => {
       ]
     },
     {
-      name: 'Kawa Ajgeiy',
-      role: 'Speciallæge i hudsygdomme',
-      expertise: 'Specialist i hudsygdomme, allergologi og dermatoskopi.',
-      summary: 'Uddannet læge fra Syddansk Universitet i Odense 2013. Speciallægeuddannet i hudsygdomme ved Odense Universitetshospital og Aarhus Universitetshospital i 2019.',
-      details: [
-        { label: 'Uddannelse', items: ['Læge fra Syddansk Universitet, Odense (2013)', 'Speciallæge i hudsygdomme, OUH og Aarhus Universitetshospital (2019)'] },
-        { label: 'Fagligt virke', items: ['Ansat som speciallæge ved Hudafdeling og Allergicentret, OUH', 'Bred erfaring inden for diagnose og behandling af hudsygdomme'] },
-        { label: 'Autoritet', items: ['Medlem af Dansk Dermatologisk Selskab', 'Flere videnskabelige publikationer inden for hudsygdomme'] }
-      ]
-    },
-    {
       name: 'Jerzy Stiasny',
       image: '/img/jerzy-stiasny.webp',
       role: 'Dr. med., Speciallæge i ortopædkirurgi & overlæge i håndkirurgi',
       expertise: 'Ekspert i håndkirurgi, nerveskader, rekonstruktiv kirurgi og plexus brachialis læsioner.',
       summary: 'Dr. med. og speciallæge i ortopædkirurgi med mange års erfaring inden for håndkirurgi. Overlæge ved Håndkirurgisk sektor, Sygehus Sønderjylland siden 2017. Har haft ophold ved førende internationale centre inden for hånd- og nerveskirurgi.',
       details: [
-        { label: 'Erfaring', items: ['Overlæge, Håndkirurgisk sektor, Sygehus Sønderjylland (2017–nu)', 'Overlæge, Ortopædkirurgisk afdeling, Odense Universitetshospital (2012–2017)', 'Afdelingslæge, Håndkirurgisk sektor, OUH (2007–2012)'] },
+        { label: 'Erfaring', items: ['Overlæge, Håndkirurgisk sektor, Sygehus Sønderjylland (2017 til nu)', 'Overlæge, Ortopædkirurgisk afdeling, Odense Universitetshospital (2012 til 2017)', 'Afdelingslæge, Håndkirurgisk sektor, OUH (2007 til 2012)'] },
         { label: 'Internationale ophold', items: ['Hånd- og Mikrokirurgi, Rikshospitalet, Oslo (2011)', 'Peripheral Nerve Injury Unit, Royal National Orthopaedic Hospital, London (2010)'] },
-        { label: 'Forskning & publikationer', items: ['Internationalt randomiseret studie om TFCC-rupturer, REINFORCER (2022–nu)', 'Randomiseret studie om CMC-1 artrose, Weilby projekt (2017–2023)', 'Publikationer i The Danish Medical Journal, Ugeskrift for Læger m.fl.'] }
+        { label: 'Forskning & publikationer', items: ['Internationalt randomiseret studie om TFCC-rupturer, REINFORCER (2022 til nu)', 'Randomiseret studie om CMC-1 artrose, Weilby projekt (2017 til 2023)', 'Publikationer i The Danish Medical Journal, Ugeskrift for Læger m.fl.'] }
       ]
     }
   ];
@@ -266,9 +256,9 @@ const App = ({ initialPage = 'forside' }) => {
       slug: 'hudsygdomme',
       title: 'Hudsygdomme',
       h2: 'Ekspertbehandling af alle hudsygdomme',
-      intro: 'Klinik Sirius tilbyder speciallægevurdering og behandling af alle former for hudsygdomme i Varde. Med speciallæge Kawa Ajgeiy får du en grundig udredning og en behandlingsplan tilpasset din hudtype og dine symptomer.',
-      narrative: 'Vi behandler alt fra kroniske hudlidelser som eksem og psoriasis til pludselige udbrud og kontrol af modermærker. Kawa Ajgeiy er uddannet ved OUH og Aarhus Universitetshospital og er tilknyttet Hudafdeling og Allergicentret på OUH.\n\nHos Klinik Sirius kan du komme som privatbetalende, via din sundhedsforsikring eller som ventetidsgaranti-patient fra regionen. Vi tilbyder hurtig adgang til en specialist – uden unødig ventetid.\n\nUanset om du er bekymret for et nyt modermærke, kæmper med tilbagevendende eksem eller ønsker behandling af en kronisk hudlidelse, er du i trygge hænder hos os i Varde.',
-      specialist: { name: 'Kawa Ajgeiy', role: 'Speciallæge i hudsygdomme', cred1: 'OUH og Aarhus Universitetshospital', cred2: 'Dansk Dermatologisk Selskab', img: null },
+      intro: 'Klinik Sirius tilbyder speciallægevurdering og behandling af alle former for hudsygdomme i Varde. Du får en grundig udredning og en behandlingsplan tilpasset din hudtype og dine symptomer.',
+      narrative: 'Vi behandler alt fra kroniske hudlidelser som eksem og psoriasis til pludselige udbrud og kontrol af modermærker. Udredningen sker med dermatoskopi, og mindre indgreb kan laves i klinikken under lokalbedøvelse.\n\nHos Klinik Sirius kan du komme som privatbetalende, via din sundhedsforsikring eller som ventetidsgaranti-patient fra regionen. Vi tilbyder hurtig adgang til en specialist uden unødig ventetid.\n\nUanset om du er bekymret for et nyt modermærke, kæmper med tilbagevendende eksem eller ønsker behandling af en kronisk hudlidelse, er du i trygge hænder hos os i Varde.',
+      specialist: { name: 'Klinik Sirius', role: 'Hudsygdomme i Varde', cred1: 'Dermatoskopi og hudkirurgi på stedet', cred2: 'Privat, forsikring eller ventetidsgaranti', img: null },
       services: [{ label: null, items: 'hud' }],
     },
     onh: {
@@ -276,7 +266,7 @@ const App = ({ initialPage = 'forside' }) => {
       title: 'Øre, Næse & Hals',
       h2: 'Specialiseret ØNH-behandling i Varde',
       intro: 'Klinik Sirius tilbyder et bredt spektrum af øre-, næse- og halsundersøgelser og operationer i Varde. Speciallæge Jalal Taha Saadi varetager alt fra allergiudredning og høreprøver til avanceret kirurgi.',
-      narrative: 'Vores ØNH-speciallæge Jalal Taha Saadi har mange års erfaring fra SVS Esbjerg og OUH og er specialiseret i diagnostik og behandling af øre-, næse- og halssygdomme hos børn og voksne.\n\nVi tilbyder både udredende undersøgelser og kirurgiske indgreb under samme tag i Varde, og du kan komme som privatbetalende, via forsikring eller som ventetidsgaranti-patient.\n\nFra allergiudredning og svimmelhedsudredning til mandel- og bihuleoperationer – vi dækker hele spektret af ØNH-behandlinger i trygge og professionelle rammer.',
+      narrative: 'Vores ØNH-speciallæge Jalal Taha Saadi har mange års erfaring fra SVS Esbjerg og OUH og er specialiseret i diagnostik og behandling af øre-, næse- og halssygdomme hos børn og voksne.\n\nVi tilbyder både udredende undersøgelser og kirurgiske indgreb under samme tag i Varde, og du kan komme som privatbetalende, via forsikring eller som ventetidsgaranti-patient.\n\nFra allergiudredning og svimmelhedsudredning til mandel- og bihuleoperationer. Vi dækker hele spektret af ØNH-behandlinger i trygge og professionelle rammer.',
       specialist: { name: 'Jalal Taha Saadi', role: 'Speciallæge i ØNH', cred1: 'SVS Esbjerg og OUH', cred2: 'Dansk Rhinologisk Selskab', img: '/img/jalal-taha-saadi.webp' },
       services: [{ label: 'Undersøgelser', items: 'onhUndersogelser' }, { label: 'Operationer', items: 'onhOperationer' }],
     },
@@ -285,7 +275,7 @@ const App = ({ initialPage = 'forside' }) => {
       title: 'Håndkirurgi',
       h2: 'Præcis håndkirurgi og nervebehandling',
       intro: 'Klinik Sirius tilbyder specialiseret håndkirurgi i Varde med Dr. med. Jerzy Stiasny. Vi udreder og behandler nerveafklemninger, senesygdomme, ganglion, Dupuytrens kontraktur og godartede tumorer i hånd, håndled og underarm.',
-      narrative: 'Jerzy Stiasny er dr. med. og speciallæge i ortopædkirurgi med mange års erfaring inden for håndkirurgi. Han er overlæge ved Håndkirurgisk sektor, Sygehus Sønderjylland og har haft ophold ved førende internationale centre inden for hånd- og nerveskirurgi.\n\nHos Klinik Sirius tilbyder vi en grundig specialistvurdering, så du hurtigt får klarhed over din tilstand og de bedste behandlingsmuligheder – hvad enten det drejer sig om konservativ behandling eller kirurgi.\n\nDu kan komme som privatbetalende, via sundhedsforsikring eller som ventetidsgaranti-patient fra regionen.',
+      narrative: 'Jerzy Stiasny er dr. med. og speciallæge i ortopædkirurgi med mange års erfaring inden for håndkirurgi. Han er overlæge ved Håndkirurgisk sektor, Sygehus Sønderjylland og har haft ophold ved førende internationale centre inden for hånd- og nerveskirurgi.\n\nHos Klinik Sirius tilbyder vi en grundig specialistvurdering, så du hurtigt får klarhed over din tilstand og de bedste behandlingsmuligheder, hvad enten det drejer sig om konservativ behandling eller kirurgi.\n\nDu kan komme som privatbetalende, via sundhedsforsikring eller som ventetidsgaranti-patient fra regionen.',
       specialist: { name: 'Jerzy Stiasny', role: 'Dr. med., overlæge i håndkirurgi', cred1: 'OUH & Sygehus Sønderjylland', cred2: 'Internationale ophold, hånd- og nerveskirurgi', img: '/img/jerzy-stiasny.webp' },
       services: [{ label: null, items: 'haandkirurgi' }],
     },
@@ -686,6 +676,96 @@ const App = ({ initialPage = 'forside' }) => {
     </div>
   );
 
+  const ForsikringPage = () => (
+    <div className="animate-in fade-in duration-700">
+      <section className="bg-slate-50 py-16 lg:py-24 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-900/5 -skew-x-12 translate-x-1/2"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-3xl">
+            <nav className="flex flex-wrap mb-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+              <a href="/" onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('forside'); }} className="hover:text-blue-900 transition-colors">Forside</a>
+              <span className="mx-3">/</span>
+              <span className="text-blue-900">Sundhedsforsikring</span>
+            </nav>
+            <h1 className="text-3xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tighter">{forsikring.h1}</h1>
+            <p className="text-xl text-slate-600 mb-10 leading-relaxed font-light border-l-8 border-emerald-700 pl-8">{forsikring.lead}</p>
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href="tel:+4532223224" className={`px-10 py-5 rounded-2xl text-white font-black uppercase tracking-widest text-xs shadow-xl hover:-translate-y-1 transition-all inline-flex items-center ${colors.accent}`}>
+                Ring 32 22 32 24
+              </a>
+              <a href="mailto:info@kliniksirius.dk" className="px-10 py-5 rounded-2xl border-2 border-slate-200 text-slate-600 font-black uppercase tracking-widest text-xs hover:border-blue-900 hover:text-blue-900 transition-all inline-flex items-center">
+                Skriv til os
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-3 gap-16">
+          <div className="lg:col-span-2 space-y-14">
+            {forsikring.sections.map((s, i) => (
+              <div key={i}>
+                <h2 className="text-3xl font-black mb-8 text-blue-900 uppercase tracking-tight">{s.h2}</h2>
+                {s.paragraphs && (
+                  <div className="text-xl text-slate-600 leading-relaxed font-light space-y-6">
+                    {s.paragraphs.map((p, pi) => <p key={pi}>{p}</p>)}
+                  </div>
+                )}
+                {s.trin && (
+                  <ol className="grid sm:grid-cols-2 gap-6">
+                    {s.trin.map((t) => (
+                      <li key={t.nr} className="bg-slate-50 rounded-[2rem] p-8 border border-slate-100">
+                        <span className="block text-blue-900 font-black text-4xl mb-4 opacity-60">{t.nr}</span>
+                        <h3 className="text-lg font-black text-slate-900 mb-3 uppercase tracking-tight">{t.titel}</h3>
+                        <p className="text-slate-600 font-light leading-relaxed">{t.tekst}</p>
+                      </li>
+                    ))}
+                  </ol>
+                )}
+              </div>
+            ))}
+
+            <div>
+              <h2 className="text-3xl font-black mb-8 text-blue-900 uppercase tracking-tight">Spørgsmål og svar</h2>
+              <div className="space-y-6">
+                {forsikring.faq.map((item, i) => (
+                  <div key={i} className="bg-slate-50 rounded-[2rem] p-8 border border-slate-100">
+                    <h3 className="text-lg font-black text-slate-900 mb-3 tracking-tight">{item.q}</h3>
+                    <p className="text-slate-600 font-light leading-relaxed">{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-1">
+            <div className="sticky top-28 space-y-8">
+              <div className="bg-slate-50 p-10 rounded-[3rem] border border-slate-100">
+                <h2 className="font-black mb-8 uppercase tracking-[0.3em] text-emerald-700 text-[10px]">Oplys dette til dit selskab</h2>
+                <dl className="space-y-5">
+                  {forsikring.fakta.map((f) => (
+                    <div key={f.label}>
+                      <dt className="text-[9px] font-black uppercase tracking-[0.25em] text-slate-400 mb-1">{f.label}</dt>
+                      <dd className="text-sm font-bold text-slate-800 leading-snug">{f.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+              <div className="bg-blue-900 text-white p-10 rounded-[3rem] shadow-2xl">
+                <h2 className="text-2xl font-black mb-4 uppercase tracking-tight">Er du i tvivl</h2>
+                <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium">Ring til os, så hjælper vi dig med at finde ud af, hvad dit selskab skal bruge.</p>
+                <a href="tel:+4532223224" className={`w-full py-5 rounded-2xl text-white font-black uppercase tracking-widest text-[10px] transition-all shadow-lg active:scale-95 inline-block text-center ${colors.accent}`}>
+                  Ring 32 22 32 24
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+
   const ServiceLandingPage = ({ service }) => (
     <div className="animate-in fade-in duration-700">
       <section className="bg-slate-50 py-16 lg:py-24 relative overflow-hidden">
@@ -761,23 +841,23 @@ const App = ({ initialPage = 'forside' }) => {
                 <div className="flex items-center space-x-5 mb-10 relative z-10">
                   <div className="w-16 h-16 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center shadow-inner">
                     {service.category === 'hud'
-                      ? <span className="text-blue-900 font-black text-2xl uppercase">KA</span>
+                      ? <Stethoscope size={26} className="text-blue-900" />
                       : service.category === 'haand'
                       ? <img src="/img/jerzy-stiasny.webp" width="800" height="1090" loading="lazy" decoding="async" alt="Jerzy Stiasny" className="w-full h-full object-cover object-top" />
                       : <img src="/img/jalal-taha-saadi.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Jalal Taha Saadi" className="w-full h-full object-cover object-top" />
                     }
                   </div>
                   <div>
-                    <p className="font-black text-xl leading-none uppercase text-slate-900">{service.category === 'hud' ? 'Kawa Ajgeiy' : service.category === 'haand' ? 'Jerzy Stiasny' : 'Jalal Taha Saadi'}</p>
-                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mt-2">{service.category === 'hud' ? 'Speciallæge i hudsygdomme' : service.category === 'haand' ? 'Dr. med., overlæge i håndkirurgi' : 'Speciallæge i ØNH'}</p>
+                    <p className="font-black text-xl leading-none uppercase text-slate-900">{service.category === 'hud' ? 'Klinik Sirius' : service.category === 'haand' ? 'Jerzy Stiasny' : 'Jalal Taha Saadi'}</p>
+                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mt-2">{service.category === 'hud' ? 'Hudsygdomme i Varde' : service.category === 'haand' ? 'Dr. med., overlæge i håndkirurgi' : 'Speciallæge i ØNH'}</p>
                   </div>
                 </div>
                 <div className="space-y-4 relative z-10">
                   <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight">
-                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'OUH og Aarhus Universitetshospital' : service.category === 'haand' ? 'OUH & Sygehus Sønderjylland' : 'SVS Esbjerg og OUH'}
+                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'Dermatoskopi og hudkirurgi på stedet' : service.category === 'haand' ? 'OUH & Sygehus Sønderjylland' : 'SVS Esbjerg og OUH'}
                   </div>
                   <div className="flex items-center text-sm font-bold text-slate-700 uppercase tracking-tight">
-                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'Dansk Dermatologisk Selskab' : service.category === 'haand' ? 'Internationale ophold, hånd- og nerveskirurgi' : 'Dansk Rhinologisk Selskab'}
+                    <CheckCircle size={18} className="text-emerald-500 mr-4" /> {service.category === 'hud' ? 'Privat, forsikring eller ventetidsgaranti' : service.category === 'haand' ? 'Internationale ophold, hånd- og nerveskirurgi' : 'Dansk Rhinologisk Selskab'}
                   </div>
                 </div>
               </div>
@@ -1098,7 +1178,7 @@ const App = ({ initialPage = 'forside' }) => {
                     <Stethoscope size={32} />
                   </div>
                   <h2 className="text-3xl font-extrabold mb-6 text-slate-900 uppercase tracking-tight">Hudsygdomme</h2>
-                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Speciallæge Kawa Ajgeiy varetager udredning og behandling af alle former for hudsygdomme. Vi dækker eksem, nældefeber, psoriasis, modermærker og meget mere.</p>
+                  <p className="text-slate-600 mb-10 text-lg leading-relaxed font-light">Udredning og behandling af alle former for hudsygdomme. Vi dækker eksem, nældefeber, psoriasis, modermærker og meget mere.</p>
                   <a href={pathFor('hudsygdomme')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('hudsygdomme'); }} className="flex items-center font-black text-blue-900 uppercase text-[10px] tracking-[0.3em] group">
                     Se ydelser <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform text-emerald-600" />
                   </a>
@@ -1159,6 +1239,7 @@ const App = ({ initialPage = 'forside' }) => {
 
         {/* Category pages */}
         {byer.filter(b => b.slug === activePage).map(b => <CityPage key={b.slug} by={b} />)}
+        {activePage === 'sundhedsforsikring' && <ForsikringPage />}
         {activePage === 'job' && <JobOverviewPage />}
         {jobs.filter(j => j.slug === activePage).map(j => <JobPostingPage key={j.slug} job={j} />)}
         {activePage === 'hudsygdomme' && <CategoryLandingPage cat="hud" />}
@@ -1240,7 +1321,7 @@ const App = ({ initialPage = 'forside' }) => {
                         <ul className="space-y-4 lg:space-y-6">
                           <li className="flex items-start">
                             <div className="mt-1.5 mr-4 w-2 h-2 bg-emerald-500 rounded-full shrink-0" />
-                            <p className="text-sm text-slate-500 font-bold uppercase tracking-tight leading-relaxed">Du skal være færdigudredt — en diagnose skal foreligge.</p>
+                            <p className="text-sm text-slate-500 font-bold uppercase tracking-tight leading-relaxed">Du skal være færdigudredt, så der foreligger en diagnose.</p>
                           </li>
                           <li className="flex items-start">
                             <div className="mt-1.5 mr-4 w-2 h-2 bg-emerald-500 rounded-full shrink-0" />
@@ -1640,6 +1721,7 @@ const App = ({ initialPage = 'forside' }) => {
         {!['forside','hudsygdomme','ore-naese-hals','haandkirurgi','patientinfo','personale','find-os','privacypolitik','job'].includes(activePage) &&
           !jobs.some(j => j.slug === activePage) &&
           !byer.some(b => b.slug === activePage) &&
+          activePage !== 'sundhedsforsikring' &&
           ![...services.hud, ...services.onhUndersogelser, ...services.onhOperationer, ...services.haandkirurgi].some(s => s.slug === activePage) && (
           <div className="animate-in fade-in duration-700 min-h-[70vh] flex items-center justify-center">
             <div className="max-w-xl mx-auto px-6 text-center py-32">
@@ -1714,6 +1796,7 @@ const App = ({ initialPage = 'forside' }) => {
                 <li><a href={pathFor('patientinfo')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('patientinfo'); }} className="hover:text-white transition-colors block">Patientinfo</a></li>
                 <li><a href={pathFor('personale')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('personale'); }} className="hover:text-white transition-colors block">Personale</a></li>
                 <li><a href={pathFor('find-os')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('find-os'); }} className="hover:text-white transition-colors block">Kontakt</a></li>
+                <li><a href={pathFor('sundhedsforsikring')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('sundhedsforsikring'); }} className="hover:text-white transition-colors block">Sundhedsforsikring</a></li>
                 <li><a href={pathFor('job')} onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage('job'); }} className="hover:text-white transition-colors block">Job</a></li>
               </ul>
             </div>

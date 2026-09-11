@@ -3,6 +3,7 @@
 import { services } from './services.js';
 import { jobs, SITE_URL, buildJobPostingSchema } from './jobs.js';
 import { byer } from './byer.js';
+import { forsikring } from './forsikring.js';
 
 export { SITE_URL };
 
@@ -22,6 +23,7 @@ export const staticMeta = {
   hudsygdomme:      { title: 'Hudsygdomme i Varde | Klinik Sirius', desc: 'Klinik Sirius tilbyder speciallægevurdering og behandling af alle former for hudsygdomme i Varde. Vi udreder eksem, psoriasis, modermærker, hudkræft og meget mere.' },
   'ore-naese-hals': { title: 'Øre, Næse & Hals i Varde | Klinik Sirius', desc: 'Klinik Sirius tilbyder et bredt spektrum af ØNH-undersøgelser og operationer i Varde. Speciallæge Jalal Taha Saadi varetager alt fra allergiudredning til avanceret kirurgi.' },
   haandkirurgi:     { title: 'Håndkirurgi i Varde | Klinik Sirius', desc: 'Klinik Sirius tilbyder specialiseret håndkirurgi i Varde med Dr. med. Jerzy Stiasny. Vi behandler nerveafklemninger, seneskedebetændelse, ganglion, Dupuytrens kontraktur og meget mere.' },
+  sundhedsforsikring: { title: forsikring.metaTitle, desc: forsikring.metaDesc },
   job:              { title: 'Ledige stillinger | Klinik Sirius, Varde', desc: 'Ledige stillinger hos Klinik Sirius, privat speciallægepraksis i Varde. Se de stillinger vi søger at besætte lige nu.' },
   'ikke-fundet':    { title: 'Siden findes ikke | Klinik Sirius, Varde', desc: 'Siden findes ikke. Find i stedet vej til Klinik Sirius i Varde, vores specialer eller kontaktoplysninger.' },
 };
@@ -36,6 +38,8 @@ const categorySlug = (cat) =>
   cat === 'hud' ? 'hudsygdomme' : cat === 'haand' ? 'haandkirurgi' : 'ore-naese-hals';
 
 export const metaFor = (slug) => {
+  if (slug === forsikring.slug) return { title: forsikring.metaTitle, desc: forsikring.metaDesc };
+
   const by = byer.find((b) => b.slug === slug);
   if (by) return { title: by.metaTitle, desc: by.metaDesc };
 
@@ -150,6 +154,15 @@ export const schemasFor = (slug) => {
     return out;
   }
 
+  if (slug === forsikring.slug) {
+    out['faq-schema'] = faqSchema(forsikring.faq);
+    out['breadcrumb-schema'] = crumbs([
+      { name: 'Forside', item: `${SITE_URL}/` },
+      { name: 'Sundhedsforsikring', item: canonicalFor(slug) },
+    ]);
+    return out;
+  }
+
   if (slug === 'job') {
     out['breadcrumb-schema'] = crumbs([
       { name: 'Forside', item: `${SITE_URL}/` },
@@ -179,6 +192,7 @@ export const allRoutes = () => [
   'find-os',
   'privacypolitik',
   'job',
+  'sundhedsforsikring',
   ...jobs.map((j) => j.slug),
   ...allServicesFlat.map((s) => s.slug),
   ...byer.map((b) => b.slug),

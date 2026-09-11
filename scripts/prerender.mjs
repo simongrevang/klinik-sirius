@@ -87,7 +87,7 @@ write('sitemap.xml', sitemap);
 // llms.txt hjælper AI-crawlere med at finde rundt uden at gætte
 const grupper = [
   ['Specialer', ['hudsygdomme', 'ore-naese-hals', 'haandkirurgi']],
-  ['Praktisk', ['find-os', 'patientinfo', 'personale', 'job']],
+  ['Praktisk', ['find-os', 'patientinfo', 'sundhedsforsikring', 'personale', 'job']],
   ['Områder', routes.filter((r) => r.startsWith('speciallaege-'))],
   ['Hudsygdomme', routes.filter((r) => ssr.schemasFor(r)['dynamic-schema']?.relevantSpecialty === 'Dermatology')],
 ];
