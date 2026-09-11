@@ -125,7 +125,7 @@ export const buildJobPostingSchema = (job) => ({
     'name': 'Klinik Sirius',
     'url': SITE_URL,
     'sameAs': SITE_URL,
-    'logo': `${SITE_URL}/klinik-sirius-hero.webp`,
+    'logo': `${SITE_URL}/img/hero-1600.webp`,
     'telephone': '+4532223224',
     'email': 'info@kliniksirius.dk',
     'address': {

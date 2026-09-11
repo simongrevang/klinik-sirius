@@ -11,7 +11,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Klinik Sirius | Speciallæger i Varde – Hud og ØNH</title>
+    <title>Klinik Sirius | Speciallæger i Varde, hud og ØNH</title>
     <meta name="description" content="Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme. Vi betjener patienter fra Varde, Esbjerg og hele Sydvestjylland." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://kliniksirius.dk/" />
@@ -20,14 +20,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="da_DK" />
     <meta property="og:site_name" content="Klinik Sirius" />
-    <meta property="og:title" content="Klinik Sirius | Speciallæger i Varde – Hud og ØNH" />
+    <meta property="og:title" content="Klinik Sirius | Speciallæger i Varde, hud og ØNH" />
     <meta property="og:description" content="Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme. Vi betjener patienter fra Varde, Esbjerg og hele Sydvestjylland." />
-    <meta property="og:image" content="https://kliniksirius.dk/klinik-sirius-hero.webp" />
+    <meta property="og:image" content="https://kliniksirius.dk/img/hero-1600.webp" />
     <meta property="og:url" content="https://kliniksirius.dk/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Klinik Sirius | Speciallæger i Varde – Hud og ØNH" />
+    <meta name="twitter:title" content="Klinik Sirius | Speciallæger i Varde, hud og ØNH" />
     <meta name="twitter:description" content="Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme." />
-    <meta name="twitter:image" content="https://kliniksirius.dk/klinik-sirius-hero.webp" />
+    <meta name="twitter:image" content="https://kliniksirius.dk/img/hero-1600.webp" />
 
     <script type="application/ld+json" id="faq-schema"></script>
     <script type="application/ld+json" id="job-schema"></script>
@@ -51,12 +51,27 @@
         "latitude": 55.6038,
         "longitude": 8.4839
       },
-      "areaServed": [
+      "image": "https://kliniksirius.dk/img/hero-1600.webp",
+      "hasMap": "https://maps.google.com/?q=S%C3%B8ndertoften+22,+6800+Varde",
+      "email": "info@kliniksirius.dk",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 55.6038, "longitude": 8.4839 },
+        "geoRadius": "50000",
+        "description": "Varde og omegn inden for 50 kilometer, herunder Esbjerg, Ribe, Bramming, Ølgod, Oksbøl, Grindsted og Billund"
+      },
+      "serviceArea": [
         { "@type": "City", "name": "Varde" },
         { "@type": "City", "name": "Esbjerg" },
+        { "@type": "City", "name": "Ribe" },
+        { "@type": "City", "name": "Bramming" },
+        { "@type": "City", "name": "Ølgod" },
+        { "@type": "City", "name": "Oksbøl" },
+        { "@type": "City", "name": "Grindsted" },
+        { "@type": "City", "name": "Billund" },
         { "@type": "AdministrativeArea", "name": "Sydvestjylland" }
       ],
-      "medicalSpecialty": ["Dermatology", "Otolaryngology"],
+      "medicalSpecialty": ["Dermatology", "Otolaryngology", "PlasticSurgery"],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",

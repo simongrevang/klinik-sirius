@@ -1,7 +1,7 @@
 import { renderToString } from 'react-dom/server';
 import App from './App.jsx';
 
-export { jobs, SITE_URL, buildJobPostingSchema } from './jobs.js';
+export { allRoutes, metaFor, ogFor, canonicalFor, schemasFor, SITE_URL } from './seo.js';
 
 export function render(page) {
   return renderToString(<App initialPage={page} />);
