@@ -1,71 +1,50 @@
 <!doctype html>
 <html lang="da">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M44FQ7T2');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
+    <!-- Google Tag Manager. Indlæses efter load, så den ikke ligger i den kritiske sti -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      (function (w, d, s, i) {
+        var indlaest = false;
+        function start() {
+          if (indlaest) return;
+          indlaest = true;
+          w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0], j = d.createElement(s);
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i;
+          f.parentNode.insertBefore(j, f);
+        }
+        if (d.readyState === 'complete') start();
+        else w.addEventListener('load', start, { once: true });
+        ['pointerdown', 'keydown', 'touchstart'].forEach(function (e) {
+          w.addEventListener(e, start, { once: true, passive: true });
+        });
+      })(window, document, 'script', 'GTM-M44FQ7T2');
+    </script>
+    <!-- End Google Tag Manager -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Klinik Sirius | Speciallæger i Varde – Hud og ØNH</title>
+    <title>Klinik Sirius | Speciallæger i Varde, hud og ØNH</title>
     <meta name="description" content="Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme. Vi betjener patienter fra Varde, Esbjerg og hele Sydvestjylland." />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://kliniksirius.dk/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="da_DK" />
     <meta property="og:site_name" content="Klinik Sirius" />
-    <meta property="og:title" content="Klinik Sirius | Speciallæger i Varde – Hud og ØNH" />
+    <meta property="og:title" content="Klinik Sirius | Speciallæger i Varde, hud og ØNH" />
     <meta property="og:description" content="Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme. Vi betjener patienter fra Varde, Esbjerg og hele Sydvestjylland." />
-    <meta property="og:image" content="https://sirius.simongrevang.dk/klinik-sirius-hero.webp" />
-    <meta property="og:url" content="https://sirius.simongrevang.dk/" />
+    <meta property="og:image" content="https://kliniksirius.dk/img/hero-1600.webp" />
+    <meta property="og:url" content="https://kliniksirius.dk/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Klinik Sirius | Speciallæger i Varde – Hud og ØNH" />
+    <meta name="twitter:title" content="Klinik Sirius | Speciallæger i Varde, hud og ØNH" />
     <meta name="twitter:description" content="Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme." />
-    <meta name="twitter:image" content="https://sirius.simongrevang.dk/klinik-sirius-hero.webp" />
+    <meta name="twitter:image" content="https://kliniksirius.dk/img/hero-1600.webp" />
 
-    <script type="application/ld+json" id="faq-schema"></script>
-    <script type="application/ld+json" id="breadcrumb-schema"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalClinic",
-      "name": "Klinik Sirius",
-      "url": "https://sirius.simongrevang.dk",
-      "telephone": "+4532223224",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Søndertoften 22",
-        "addressLocality": "Varde",
-        "postalCode": "6800",
-        "addressCountry": "DK"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 55.6038,
-        "longitude": 8.4839
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Varde" },
-        { "@type": "City", "name": "Esbjerg" },
-        { "@type": "AdministrativeArea", "name": "Sydvestjylland" }
-      ],
-      "medicalSpecialty": ["Dermatology", "Otolaryngology"],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "08:00",
-          "closes": "16:00"
-        }
-      ]
-    }
-    </script>
-    <script type="application/ld+json" id="dynamic-schema"></script>
+    <script type="application/ld+json" id="graph-schema"></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
