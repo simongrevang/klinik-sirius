@@ -1365,7 +1365,7 @@ const App = ({ initialPage = 'forside' }) => {
 
                     <div className="lg:col-span-8 lg:pt-8">
                       <div className="mb-8 lg:mb-14">
-                        <h3 className="text-xl lg:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-3 leading-tight">{p.name}</h3>
+                        <h2 className="text-xl lg:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-3 leading-tight">{p.name}</h2>
                         <p className="text-blue-900 font-black uppercase text-xs tracking-[0.3em] flex items-center">
                           <span className="w-8 lg:w-12 h-1 bg-emerald-500 mr-4 lg:mr-6 inline-block shrink-0"></span> {p.role}
                         </p>
@@ -1381,7 +1381,7 @@ const App = ({ initialPage = 'forside' }) => {
                       <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
                         {p.details.map((detail, dIdx) => (
                           <div key={dIdx} className="space-y-4 lg:space-y-8">
-                            <h4 className="font-black uppercase tracking-[0.2em] text-[10px] text-blue-900/30">{detail.label}</h4>
+                            <h3 className="font-black uppercase tracking-[0.2em] text-[10px] text-blue-900/70">{detail.label}</h3>
                             <ul className="space-y-4 lg:space-y-6">
                               {detail.items.map((item, iIdx) => (
                                 <li key={iIdx} className="flex items-start">
