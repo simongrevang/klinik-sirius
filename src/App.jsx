@@ -7,6 +7,7 @@ import {
   Check, Navigation, Scale, Calendar, Heart, Undo2, ChevronLeft
 } from 'lucide-react';
 import './App.css';
+import { SITE_URL, jobs, formatDanishDate, buildJobPostingSchema } from './jobs.js';
 
 const KlinikSiriusLogo = ({ height = 50, className = 'text-blue-900' }) => {
   const w = Math.round(height * 400 / 120);
@@ -26,8 +27,8 @@ const KlinikSiriusLogo = ({ height = 50, className = 'text-blue-900' }) => {
   );
 };
 
-const App = () => {
-  const [activePage, setActivePage] = useState('forside');
+const App = ({ initialPage = 'forside' }) => {
+  const [activePage, setActivePage] = useState(initialPage);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(null);
   const [openFaq, setOpenFaq] = useState(null);
@@ -59,6 +60,7 @@ const App = () => {
     // Opdater title og meta description
     const allServices = [...services.hud, ...services.onhUndersogelser, ...services.onhOperationer, ...services.haandkirurgi];
     const service = allServices.find(s => s.slug === activePage);
+    const job = jobs.find(j => j.slug === activePage);
     const staticMeta = {
       forside:           { title: 'Klinik Sirius | Speciallæger i Varde – Hud og ØNH', desc: 'Klinik Sirius er en privat speciallægeklinik i Varde med speciale i hudsygdomme og øre-, næse- og halssygdomme. Vi betjener patienter fra Varde, Esbjerg og hele Sydvestjylland.' },
       patientinfo:       { title: 'Patientinfo | Klinik Sirius, Varde', desc: 'Praktisk information til patienter hos Klinik Sirius i Varde. Priser, forsikring, åbningstider og hvad du skal medbringe.' },
@@ -67,9 +69,13 @@ const App = () => {
       privacypolitik:    { title: 'Privatlivspolitik | Klinik Sirius, Varde', desc: 'Privatlivspolitik for Klinik Sirius, privat speciallægepraksis i Varde.' },
       hudsygdomme:       { title: 'Hudsygdomme i Varde | Klinik Sirius', desc: 'Klinik Sirius tilbyder speciallægevurdering og behandling af alle former for hudsygdomme i Varde. Speciallæge Kawa Ajgeiy udreder eksem, psoriasis, modermærker, hudkræft og meget mere.' },
       'ore-naese-hals':  { title: 'Øre, Næse & Hals i Varde | Klinik Sirius', desc: 'Klinik Sirius tilbyder et bredt spektrum af ØNH-undersøgelser og operationer i Varde. Speciallæge Jalal Taha Saadi varetager alt fra allergiudredning til avanceret kirurgi.' },
+      job:               { title: 'Ledige stillinger | Klinik Sirius, Varde', desc: 'Ledige stillinger hos Klinik Sirius, privat speciallægepraksis i Varde. Se de stillinger vi søger at besætte lige nu.' },
       haandkirurgi:      { title: 'Håndkirurgi i Varde | Klinik Sirius', desc: 'Klinik Sirius tilbyder specialiseret håndkirurgi i Varde med Dr. med. Jerzy Stiasny. Vi behandler nerveafklemninger, seneskedebetændelse, ganglion, Dupuytrens kontraktur og meget mere.' },
     };
-    if (service) {
+    if (job) {
+      document.title = job.metaTitle;
+      document.querySelector('meta[name="description"]')?.setAttribute('content', job.metaDesc);
+    } else if (service) {
       document.title = `${service.title} i Varde | Klinik Sirius`;
       document.querySelector('meta[name="description"]')?.setAttribute('content',
         `${service.shortIntro} Klinik Sirius er en privat speciallægepraksis i Varde, der betjener patienter fra Esbjerg og hele Sydvestjylland.`
@@ -81,15 +87,17 @@ const App = () => {
     }
 
     // Opdater canonical
-    const canonical = `https://sirius.simongrevang.dk${url}`;
+    const canonical = `${SITE_URL}${url}`;
     let canonEl = document.querySelector('link[rel="canonical"]');
     if (!canonEl) { canonEl = document.createElement('link'); canonEl.rel = 'canonical'; document.head.appendChild(canonEl); }
     canonEl.href = canonical;
 
     // Opdater Open Graph tags
-    const ogTitle = service ? `${service.title} i Varde | Klinik Sirius` : (staticMeta[activePage] || staticMeta.forside).title;
-    const ogDesc = service
-      ? `${service.shortIntro} Klinik Sirius, Varde.`
+    const ogTitle = job ? job.metaTitle
+      : service ? `${service.title} i Varde | Klinik Sirius`
+      : (staticMeta[activePage] || staticMeta.forside).title;
+    const ogDesc = job ? job.metaDesc
+      : service ? `${service.shortIntro} Klinik Sirius, Varde.`
       : (staticMeta[activePage] || staticMeta.forside).desc;
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', ogTitle);
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', ogDesc);
@@ -111,13 +119,20 @@ const App = () => {
       }) : '';
     }
 
+    // JobPosting schema
+    const jobEl = document.getElementById('job-schema');
+    if (jobEl) {
+      jobEl.textContent = job ? JSON.stringify(buildJobPostingSchema(job)) : '';
+    }
+
     // FAQPage schema
     const faqEl = document.getElementById('faq-schema');
+    const faqItems = service?.faq?.length ? service.faq : (job?.faq || []);
     if (faqEl) {
-      faqEl.textContent = service?.faq?.length ? JSON.stringify({
+      faqEl.textContent = faqItems.length ? JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        'mainEntity': service.faq.map(item => ({
+        'mainEntity': faqItems.map(item => ({
           '@type': 'Question',
           'name': item.q,
           'acceptedAnswer': { '@type': 'Answer', 'text': item.a }
@@ -136,9 +151,28 @@ const App = () => {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           'itemListElement': [
-            { '@type': 'ListItem', 'position': 1, 'name': 'Forside', 'item': 'https://sirius.simongrevang.dk/' },
+            { '@type': 'ListItem', 'position': 1, 'name': 'Forside', 'item': `${SITE_URL}/` },
             { '@type': 'ListItem', 'position': 2, 'name': categoryName },
             { '@type': 'ListItem', 'position': 3, 'name': service.title, 'item': canonical }
+          ]
+        });
+      } else if (job) {
+        breadcrumbEl.textContent = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            { '@type': 'ListItem', 'position': 1, 'name': 'Forside', 'item': `${SITE_URL}/` },
+            { '@type': 'ListItem', 'position': 2, 'name': 'Job', 'item': `${SITE_URL}/job` },
+            { '@type': 'ListItem', 'position': 3, 'name': job.name, 'item': canonical }
+          ]
+        });
+      } else if (activePage === 'job') {
+        breadcrumbEl.textContent = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            { '@type': 'ListItem', 'position': 1, 'name': 'Forside', 'item': `${SITE_URL}/` },
+            { '@type': 'ListItem', 'position': 2, 'name': 'Job', 'item': `${SITE_URL}/job` }
           ]
         });
       } else {
@@ -1079,6 +1113,8 @@ const App = () => {
     { name: 'Hudsygdomme', slug: 'hudsygdomme', category: 'side' },
     { name: 'Øre, Næse & Hals', slug: 'ore-naese-hals', category: 'side' },
     { name: 'Håndkirurgi', slug: 'haandkirurgi', category: 'side' },
+    { name: 'Job', slug: 'job', category: 'side' },
+    ...jobs.map(j => ({ name: j.name, slug: j.slug, category: 'side' })),
   ];
 
   const searchQ = searchQuery.trim().toLowerCase();
@@ -1299,6 +1335,169 @@ const App = () => {
     );
   };
 
+  const JobFacts = ({ job }) => (
+    <div className="bg-slate-50 p-10 rounded-[3rem] border border-slate-100">
+      <h2 className="font-black mb-8 uppercase tracking-[0.3em] text-emerald-700 text-[10px]">Kort om stillingen</h2>
+      <dl className="space-y-5">
+        {job.facts.map((f, i) => (
+          <div key={i} className="flex flex-col">
+            <dt className="text-[9px] font-black uppercase tracking-[0.25em] text-slate-400 mb-1">{f.label}</dt>
+            <dd className="text-sm font-bold text-slate-800 leading-snug">{f.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  );
+
+  const JobPostingPage = ({ job }) => (
+    <div className="animate-in fade-in duration-700">
+      <section className="bg-slate-50 py-16 lg:py-24 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-900/5 -skew-x-12 translate-x-1/2"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-3xl">
+            <nav className="flex flex-wrap mb-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+              <button onClick={() => setActivePage('forside')} className="hover:text-blue-900 transition-colors">Forside</button>
+              <span className="mx-3">/</span>
+              <button onClick={() => setActivePage('job')} className="hover:text-blue-900 transition-colors">Job</button>
+              <span className="mx-3">/</span>
+              <span className="text-blue-900">{job.name}</span>
+            </nav>
+            <h1 className="text-3xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tighter">{job.h1}</h1>
+            <p className="text-xl text-slate-600 mb-10 leading-relaxed font-light border-l-8 border-emerald-700 pl-8">{job.lead}</p>
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <a href={`mailto:${job.applyEmail}?subject=${encodeURIComponent('Ansøgning til stillingen som ' + job.name)}`} className={`px-10 py-5 rounded-2xl text-white font-black uppercase tracking-widest text-xs shadow-xl hover:-translate-y-1 transition-all inline-flex items-center ${colors.accent}`}>
+                Send ansøgning <Mail size={16} className="ml-3" />
+              </a>
+              <div className="flex items-center px-6 text-slate-500 font-black uppercase text-xs tracking-widest">
+                <Phone size={18} className="mr-3 text-blue-900" /> {job.applyPhone}
+              </div>
+            </div>
+            <p className="mt-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+              Opslået <time dateTime={job.datePosted}>{formatDanishDate(job.datePosted)}</time> · Ansøgningsfrist <time dateTime={job.validThrough}>{formatDanishDate(job.validThrough)}</time>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-3 gap-16">
+          <div className="lg:col-span-2 space-y-14">
+            {job.sections.map((s, i) => (
+              <div key={i}>
+                <h2 className="text-3xl font-black mb-8 text-blue-900 uppercase tracking-tight">{s.h2}</h2>
+                {s.paragraphs && (
+                  <div className="text-xl text-slate-600 leading-relaxed font-light space-y-6">
+                    {s.paragraphs.map((p, pi) => <p key={pi}>{p}</p>)}
+                  </div>
+                )}
+                {s.bullets && (
+                  <ul className="space-y-4">
+                    {s.bullets.map((b, bi) => (
+                      <li key={bi} className="flex items-start text-lg text-slate-600 font-light leading-relaxed">
+                        <CheckCircle size={20} className="text-emerald-600 mr-4 mt-1 shrink-0" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+
+            <div className="pt-12 border-t border-slate-100">
+              <h2 className="text-3xl font-black mb-10 text-blue-900 uppercase tracking-tight">Spørgsmål og svar</h2>
+              <div className="space-y-6">
+                {job.faq.map((item, i) => (
+                  <div key={i} className="bg-slate-50 rounded-[2rem] p-8 border border-slate-100">
+                    <h3 className="text-lg font-black text-slate-900 mb-3 tracking-tight">{item.q}</h3>
+                    <p className="text-slate-600 font-light leading-relaxed">{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-1">
+            <div className="sticky top-28 space-y-8">
+              <JobFacts job={job} />
+              <div className="bg-blue-900 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
+                <div className="relative z-10">
+                  <h2 className="text-2xl font-black mb-4 uppercase tracking-tight">Søg stillingen</h2>
+                  <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium">Send ansøgning og CV til {job.applyEmail}. Vi holder samtaler løbende.</p>
+                  <a href={`mailto:${job.applyEmail}?subject=${encodeURIComponent('Ansøgning til stillingen som ' + job.name)}`} className={`w-full py-5 rounded-2xl text-white font-black uppercase tracking-widest text-[10px] transition-all shadow-lg active:scale-95 inline-block text-center ${colors.accent}`}>
+                    Send ansøgning
+                  </a>
+                  <a href="tel:+4532223224" className="block mt-6 text-center text-[10px] font-black uppercase tracking-[0.2em] text-blue-200 hover:text-white transition-colors">Ring 32 22 32 24</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+
+  const JobOverviewPage = () => (
+    <div className="animate-in fade-in duration-700">
+      <section className="bg-slate-50 py-16 lg:py-24 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-900/5 -skew-x-12 translate-x-1/2"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-3xl">
+            <nav className="flex flex-wrap mb-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+              <button onClick={() => setActivePage('forside')} className="hover:text-blue-900 transition-colors">Forside</button>
+              <span className="mx-3">/</span>
+              <span className="text-blue-900">Job</span>
+            </nav>
+            <h1 className="text-3xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tighter">Ledige stillinger</h1>
+            <p className="text-xl text-slate-600 leading-relaxed font-light border-l-8 border-emerald-700 pl-8">
+              Klinik Sirius er en privat speciallægepraksis i Varde med hudsygdomme, øre, næse og hals samt håndkirurgi under samme tag. Her står de stillinger, vi søger at besætte lige nu.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-3 gap-16">
+          <div className="lg:col-span-2 space-y-8">
+            {jobs.map((job) => (
+              <button
+                key={job.slug}
+                onClick={() => setActivePage(job.slug)}
+                className="w-full text-left bg-slate-50 hover:bg-blue-900 rounded-[2.5rem] p-10 transition-all group border border-transparent hover:border-blue-900 shadow-sm hover:shadow-xl hover:-translate-y-0.5"
+              >
+                <p className="text-[9px] font-black uppercase tracking-[0.3em] text-emerald-700 group-hover:text-emerald-400 mb-4">Ledig stilling</p>
+                <h2 className="text-2xl font-black text-slate-900 group-hover:text-white uppercase tracking-tight mb-4">{job.name}</h2>
+                <p className="text-slate-600 group-hover:text-blue-100 font-light leading-relaxed mb-6">{job.lead}</p>
+                <div className="flex flex-wrap gap-x-8 gap-y-2 text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-blue-200">
+                  <span className="flex items-center"><MapPin size={12} className="mr-2" /> Varde</span>
+                  <span className="flex items-center"><Clock size={12} className="mr-2" /> Fuldtid eller deltid</span>
+                  <span className="flex items-center"><Calendar size={12} className="mr-2" /> Frist {formatDanishDate(job.validThrough)}</span>
+                </div>
+                <span className="inline-flex items-center mt-8 text-[10px] font-black uppercase tracking-[0.2em] text-blue-900 group-hover:text-white">
+                  Læs opslaget <ArrowRight size={14} className="ml-3 -translate-x-1 group-hover:translate-x-0 transition-all" />
+                </span>
+              </button>
+            ))}
+            {jobs.length === 0 && (
+              <div className="bg-slate-50 rounded-[2.5rem] p-10 border border-slate-100">
+                <p className="text-xl text-slate-600 font-light leading-relaxed">Der er ingen ledige stillinger lige nu.</p>
+              </div>
+            )}
+          </div>
+
+          <div className="lg:col-span-1">
+            <div className="sticky top-28 bg-blue-900 text-white p-10 rounded-[3rem] shadow-2xl">
+              <h2 className="text-2xl font-black mb-4 uppercase tracking-tight">Uopfordret ansøgning</h2>
+              <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium">Er der ingen stilling, der passer, må du gerne skrive til os alligevel. Vi læser med, når vi udvider.</p>
+              <a href="mailto:info@kliniksirius.dk?subject=Uopfordret%20ans%C3%B8gning" className={`w-full py-5 rounded-2xl text-white font-black uppercase tracking-widest text-[10px] transition-all shadow-lg active:scale-95 inline-block text-center ${colors.accent}`}>
+                Skriv til os
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+
   const ServiceLandingPage = ({ service }) => (
     <div className="animate-in fade-in duration-700">
       <section className="bg-slate-50 py-16 lg:py-24 relative overflow-hidden">
@@ -1443,6 +1642,7 @@ const App = () => {
             <OnhNavComponent />
             <NavItemComponent title="Håndkirurgi" items={services.haandkirurgi} id="haand" categorySlug="haandkirurgi" />
             <button onClick={() => setActivePage('personale')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage === 'personale' ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Personale</button>
+            <button onClick={() => setActivePage('job')} className={`font-black text-xs transition-colors uppercase tracking-tight ${activePage.startsWith('job') ? 'text-blue-900' : 'text-slate-500 hover:text-blue-900'}`}>Job</button>
           </nav>
 
           <div className="flex items-center space-x-3">
@@ -1629,6 +1829,15 @@ const App = () => {
               <ChevronRight size={16} className="text-slate-300" />
             </button>
 
+            {/* Job */}
+            <button
+              onClick={() => { setActivePage('job'); setIsMenuOpen(false); }}
+              className="w-full flex items-center justify-between px-4 py-4 rounded-2xl font-black text-sm uppercase tracking-widest text-slate-700 hover:bg-slate-50 transition-colors"
+            >
+              <span>Job</span>
+              <ChevronRight size={16} className="text-slate-300" />
+            </button>
+
           </nav>
 
           {/* CTA */}
@@ -1761,6 +1970,8 @@ const App = () => {
         )}
 
         {/* Category pages */}
+        {activePage === 'job' && <JobOverviewPage />}
+        {jobs.filter(j => j.slug === activePage).map(j => <JobPostingPage key={j.slug} job={j} />)}
         {activePage === 'hudsygdomme' && <CategoryLandingPage cat="hud" />}
         {activePage === 'ore-naese-hals' && <CategoryLandingPage cat="onh" />}
         {activePage === 'haandkirurgi' && <CategoryLandingPage cat="haand" />}
@@ -2214,7 +2425,8 @@ const App = () => {
         )}
 
         {/* 404 */}
-        {!['forside','hudsygdomme','ore-naese-hals','haandkirurgi','patientinfo','personale','find-os','privacypolitik'].includes(activePage) &&
+        {!['forside','hudsygdomme','ore-naese-hals','haandkirurgi','patientinfo','personale','find-os','privacypolitik','job'].includes(activePage) &&
+          !jobs.some(j => j.slug === activePage) &&
           ![...services.hud, ...services.onhUndersogelser, ...services.onhOperationer, ...services.haandkirurgi].some(s => s.slug === activePage) && (
           <div className="animate-in fade-in duration-700 min-h-[70vh] flex items-center justify-center">
             <div className="max-w-xl mx-auto px-6 text-center py-32">
@@ -2289,6 +2501,7 @@ const App = () => {
                 <li onClick={() => setActivePage('patientinfo')} className="hover:text-white cursor-pointer transition-colors">Patientinfo</li>
                 <li onClick={() => setActivePage('personale')} className="hover:text-white cursor-pointer transition-colors">Personale</li>
                 <li onClick={() => setActivePage('find-os')} className="hover:text-white cursor-pointer transition-colors">Kontakt</li>
+                <li onClick={() => setActivePage('job')} className="hover:text-white cursor-pointer transition-colors">Job</li>
               </ul>
             </div>
 

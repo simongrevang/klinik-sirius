@@ -10,6 +10,10 @@
   <url><loc>https://kliniksirius.dk/find-os</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://kliniksirius.dk/privacypolitik</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
+  <!-- Job -->
+  <url><loc>https://kliniksirius.dk/job</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://kliniksirius.dk/job/hudlaege</loc><lastmod>2026-09-11</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
   <!-- Kategori-oversigter -->
   <url><loc>https://kliniksirius.dk/hudsygdomme</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://kliniksirius.dk/ore-naese-hals</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
