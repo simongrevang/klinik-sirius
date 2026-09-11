@@ -1690,7 +1690,7 @@ const App = ({ initialPage = 'forside' }) => {
       {/* Footer */}
       <footer className="bg-slate-900 text-white pt-24 pb-12 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-16 mb-24 text-sm">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-24 text-sm">
             <div className="col-span-1">
               <div className="flex items-center mb-10">
                 <KlinikSiriusLogo height={40} className="text-white" />
@@ -1718,7 +1718,24 @@ const App = ({ initialPage = 'forside' }) => {
               </ul>
             </div>
 
-            <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10">
+            <div>
+              <h6 className="font-black mb-10 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Områder</h6>
+              <ul className="space-y-4 text-slate-300 font-bold text-[10px] uppercase tracking-widest">
+                {byer.map((b) => (
+                  <li key={b.slug}>
+                    <a
+                      href={pathFor(b.slug)}
+                      onClick={(e) => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; e.preventDefault(); setActivePage(b.slug); }}
+                      className="hover:text-white transition-colors block"
+                    >
+                      {b.by}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-white/5 p-8 rounded-[2.5rem] border border-white/10">
               <h6 className="font-black mb-8 uppercase tracking-[0.3em] text-emerald-500 text-[10px]">Kontakt</h6>
               <p className="text-white font-black mb-1 tracking-tight uppercase text-xs leading-none">Søndertoften 22</p>
               <p className="text-slate-400 mb-6 font-bold text-[10px] uppercase tracking-tighter">6800 Varde</p>
