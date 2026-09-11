@@ -1422,7 +1422,7 @@ const App = ({ initialPage = 'forside' }) => {
               <div className="bg-blue-900 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
                 <div className="relative z-10">
                   <h2 className="text-2xl font-black mb-4 uppercase tracking-tight">Søg stillingen</h2>
-                  <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium">Send ansøgning og CV til {job.applyEmail}. Vi holder samtaler løbende.</p>
+                  <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium">Send ansøgning og CV til {job.applyEmail} att. {job.contactName}. Vi holder samtaler løbende.</p>
                   <a href={`mailto:${job.applyEmail}?subject=${encodeURIComponent('Ansøgning til stillingen som ' + job.name)}`} className={`w-full py-5 rounded-2xl text-white font-black uppercase tracking-widest text-[10px] transition-all shadow-lg active:scale-95 inline-block text-center ${colors.accent}`}>
                     Send ansøgning
                   </a>

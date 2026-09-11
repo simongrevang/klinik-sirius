@@ -9,18 +9,20 @@ export const jobs = [
     metaDesc: 'Klinik Sirius i Varde søger en speciallæge i hudsygdomme. Fast stilling på fuldtid eller deltid, ingen vagter, tiltrædelse efter aftale.',
     lead: 'Klinik Sirius søger en speciallæge i hudsygdomme til klinikken i Varde. Du får dit eget speciale, dine egne konsultationsdage og sekretærstøtte fra første dag.',
     datePosted: '2026-09-11',
-    validThrough: '2026-11-30',
+    validThrough: '2026-12-01',
     employmentType: ['FULL_TIME', 'PART_TIME'],
     occupationalCategory: '2212 Speciallæger',
     workHours: 'Hverdage mellem 8 og 16. Ingen vagter og ingen weekendarbejde.',
     applyEmail: 'info@kliniksirius.dk',
+    contactName: 'Jalal Taha Saadi',
     applyPhone: '32 22 32 24',
     facts: [
       { label: 'Speciale', value: 'Dermato-venerologi' },
       { label: 'Ansættelse', value: 'Fast stilling, fuldtid eller deltid' },
       { label: 'Arbejdssted', value: 'Søndertoften 22, 6800 Varde' },
       { label: 'Tiltrædelse', value: 'Efter aftale' },
-      { label: 'Ansøgningsfrist', value: '30. november 2026' },
+      { label: 'Ansøgningsfrist', value: '1. december 2026' },
+      { label: 'Kontaktperson', value: 'Jalal Taha Saadi, speciallæge' },
       { label: 'Kontakt', value: 'info@kliniksirius.dk' },
     ],
     sections: [
@@ -73,8 +75,8 @@ export const jobs = [
       {
         h2: 'Sådan søger du',
         paragraphs: [
-          'Send din ansøgning og dit CV til info@kliniksirius.dk. Skriv gerne, hvor mange dage om ugen du ønsker, og hvornår du kan starte.',
-          'Samtaler holdes løbende, og opslaget lukker, når den rette kandidat er fundet. Spørgsmål til stillingen kan stilles på 32 22 32 24.',
+          'Send din ansøgning og dit CV til info@kliniksirius.dk, att. Jalal Taha Saadi. Skriv gerne, hvor mange dage om ugen du ønsker, og hvornår du kan starte.',
+          'Samtaler holdes løbende, og opslaget lukker, når den rette kandidat er fundet. Spørgsmål til stillingen stilles til speciallæge Jalal Taha Saadi på 32 22 32 24.',
         ],
       },
     ],
@@ -84,7 +86,7 @@ export const jobs = [
       { q: 'Hvilke patienter kommer i klinikken?', a: 'Patienterne kommer som privatbetalende, gennem deres sundhedsforsikring eller som ventetidsgaranti-patienter fra regionen. De fleste bor i Varde, Esbjerg og det øvrige Sydvestjylland.' },
       { q: 'Er der vagter eller weekendarbejde?', a: 'Nej. Arbejdet er ambulant og ligger på hverdage i klinikkens åbningstid mellem 8 og 16.' },
       { q: 'Hvad er lønnen?', a: 'Lønnen aftales efter kvalifikationer og efter hvor mange dage om ugen du ønsker. Vilkårene drøftes ved samtalen.' },
-      { q: 'Hvornår er ansøgningsfristen?', a: 'Ansøgninger behandles løbende frem til 30. november 2026. Stillingen lukkes, så snart den rette kandidat er fundet.' },
+      { q: 'Hvornår er ansøgningsfristen?', a: 'Ansøgninger behandles løbende frem til 1. december 2026. Stillingen lukkes, så snart den rette kandidat er fundet.' },
     ],
   },
 ];
@@ -149,6 +151,7 @@ export const buildJobPostingSchema = (job) => ({
   'applicationContact': {
     '@type': 'ContactPoint',
     'contactType': 'Ansøgning',
+    'name': job.contactName,
     'email': job.applyEmail,
     'telephone': '+4532223224'
   }
